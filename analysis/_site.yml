@@ -1,12 +1,14 @@
-name: Test
+name: Prostata
 output_dir: ../docs
 navbar:
   title: Test
   left:
-  - text: Home
+  - text: Einstieg
     href: index.html
   - text: About
     href: about.html
+  - text: Patienten
+    href: Patienten.html
   - text: License
     href: license.html
   right:
