@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Einstieg"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -10,3 +10,7 @@ editor_options:
 
 Welcome to my research website.
 Click on this [link](first-analysis.html) to see my results
+
+Dies ist die Einstieggsseite zum Projekt "Dosisermittlung und Lagerungserhebung bei Prostatakarzinom im primären Setting". 
+
+Es sind 26 Patienten, die dieselbe Datenerhebungen hinter sich haben. 
