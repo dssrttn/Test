@@ -10,3 +10,20 @@ editor_options:
 Describe your project.
 
 Dies ist eine Testung von workflowr. 
+
+
+```bash
+├── app
+│   ├── css
+│   │   ├── **/*.css
+│   ├── favicon.ico
+│   ├── images
+│   ├── index.html
+│   ├── js
+│   │   ├── **/*.js
+│   └── partials/template
+
+```
+
+* analysis 
+
