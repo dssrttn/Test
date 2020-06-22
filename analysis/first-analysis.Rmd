@@ -36,13 +36,15 @@ y.sd <- DIL_1$sigma
 
 
 var(DIL_1$Mittelwert)
+
+
 ```
 
 
 
 ## Including Plots
 ```{r, fig.width=10, fig.height=7, dev=c('png', 'pdf')}
-plot(x, y, ylim=c(74, 80.2), xlab="Fraktion", family="serif", ylab="Dosis in Gray", family="serif", axes = FALSE, pch=16, cex=0.5, main="Dosisverteilung DIL Mittelwert 1")
+plot(x, y, ylim=c(74, 80.2), xlab="Fraktion", family="serif", ylab="Dosis in Gray", family="serif", axes = FALSE, pch=16, cex=0.9, main="Dosisverteilung DIL Mittelwert 1", type="b")
 text(x=13.4, y = 75.8, labels="Dosisvorgabe Boost", family="serif")> 
 text(x=12.5, y = 80.2, labels="+5% Abweichung von Dosisvorgabe", family="serif")
 axis(1, at=x, label=x, tick=F, family="serif")
@@ -50,6 +52,9 @@ arrows(x0=x, y0=y-y.sd, x1=x, y1=y+y.sd, code=3, angle=90, length=0.05)
 abline(a=76,23, b=0, lty=2)
 abline(a=80.04, b=0, lty=2)
 axis(2, at=seq(74,81,0.5), tick=F, las=2, family="serif")
+
+
+boxplot(DIL_1$Mittelwert)
 ```
 
 ### Ein weiterer Unterpunkt
