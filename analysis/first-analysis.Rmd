@@ -70,15 +70,20 @@ axis(2, at=round(c(min(DIL_1$Mittelwert), mean(DIL_1$Mittelwert), max(DIL_1$Mitt
 
 
 par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
 boxplot(DIL_1$Mittelwert, 
-        ylab="Dosis in Gray", #y-Achse-Beschriftung  
+        ylab= "Dosis in Gray", #y-Achse-Beschriftung  
         #yaxt="n", #suppresses y-axis. Brauch ich das? 
         col="transparent", #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
         ylim=c(min(DIL_1$Mittelwert), max(DIL_1$Mittelwert)), # y-Achse range
-        cex.lab = 1.5, # Größe Label-Beschriftung
-        cex.axis = 1.5, # Größe Achsenbeschriftungen
-        mgp=c(5,1,0) # mpg: Abstand Label zu Achse
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5 # Größe Achsenbeschriftungen
+        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
+     # , xpd = TRUE
+      #labels = FALSE
         )
 
 ```
@@ -95,8 +100,10 @@ boxplot(DIL_1$Mittelwert,
 
 
 ```{r}
-
-hist(DIL_1$Mittelwert, main="DIL Mittelwert", ylab="Dichte der Dosiswerte", xlab="Dosis in Gray", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(76.2, 77.6), cex.lab=1.5, cex.axis=1.5, col = "transparent")
+par(family="serif") # Schriftart
+par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+hist(DIL_1$Mittelwert, main="DIL Mittelwert", ylab="Dichte der Dosiswerte", xlab="Dosis in Gray", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(76.2, 77.6), cex.lab=2, cex.axis=2, col = "transparent")
 rug(jitter(DIL_1$Mittelwert))
 lines(density(DIL_1$Mittelwert), col="black", lwd=2)
 #cex.lab=1.5, cex.axis=1.5
