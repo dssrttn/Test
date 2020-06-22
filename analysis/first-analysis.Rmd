@@ -44,14 +44,18 @@ var(DIL_1$Mittelwert)
 
 ## Including Plots
 ```{r, fig.width=10, fig.height=7, dev=c('png', 'pdf')}
-plot(x, y, ylim=c(74, 80.2), xlab="Fraktion", family="serif", ylab="Dosis in Gray", family="serif", axes = FALSE, pch=16, cex=0.9, main="Dosisverteilung DIL Mittelwert 1", type="b")
-text(x=13.4, y = 75.8, labels="Dosisvorgabe Boost", family="serif")> 
-text(x=12.5, y = 80.2, labels="+5% Abweichung von Dosisvorgabe", family="serif")
-axis(1, at=x, label=x, tick=F, family="serif")
+par(family="serif") # Schriftart
+par(mar = c(5, 8, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(mgp=c(4,1,0)) # mpg: Abstand Label zu Achse
+plot(x, y, ylim=c(74, 80.2), xlab="Fraktion", family="serif", ylab="Dosis in Gray", family="serif", cex.lab=2, cex.axis=1.5, axes = FALSE, pch=16, cex=0.9, #main="Dosisverteilung DIL Mittelwert 1"
+     type="b")
+text(x=13.0, y = 75.8, labels="Dosisvorgabe Boost", family="serif", cex = 1.2) 
+text(x=12.0, y = 80.2, labels="+5% Abweichung von Dosisvorgabe", family="serif", cex = 1.2)
+axis(1, at=x, label=x, tick=F, cex.lab=2, cex.axis=1.5, family="serif")
 arrows(x0=x, y0=y-y.sd, x1=x, y1=y+y.sd, code=3, angle=90, length=0.05)
 abline(a=76,23, b=0, lty=2)
 abline(a=80.04, b=0, lty=2)
-axis(2, at=seq(74,81,0.5), tick=F, las=2, family="serif")
+axis(2, at=seq(74,81,0.5), tick=F, las=2, cex.lab=2, cex.axis=1.5, family="serif")
 ```
 
 
