@@ -55,10 +55,24 @@ axis(2, at=seq(74,81,0.5), tick=F, las=2, family="serif")
 
 
 boxplot(DIL_1$Mittelwert)
+par(bty="n")
+par(family="serif")
+boxplot(DIL_1$Mittelwert, main="Boxplot DIL Mittelwert Patient 1", family="serif", ylab="Dosis in Gray", yaxt="n", col="transparent")
+axis(2, at=round(c(min(DIL_1$Mittelwert),  mean(DIL_1$Mittelwert), max(DIL_1$Mittelwert)), 1), xpd = TRUE, labels = T, par(cex.lab=1.5))
+
+hist(DIL_1$Mittelwert, main="DIL Mittelwert", ylab="Dichte der Dosiswerte", xlab="Dosis in Gray", freq = FALSE, ylim=c(0, 2), col = "transparent", axis(1, seq(76.2, 77.6, by = .2)))
+rug(jitter(DIL_1$Mittelwert))
+lines(density(DIL_1$Mittelwert), col="black", lwd=2)
+
+
 ```
 
 ### Ein weiterer Unterpunkt
 ### Noch einer
+
+
+
+
 
 Lorem ipsum
 
