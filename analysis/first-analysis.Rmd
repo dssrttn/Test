@@ -61,12 +61,25 @@ par(bty="n") # keinen Rahmen
 par(family="serif")
 boxplot(DIL_1$Mittelwert, main="Boxplot DIL Mittelwert Patient 1", family="serif", ylab="Dosis in Gray", yaxt="n",  mgp=c(3,1,0)
         # mpg: Abstand Label zu Achse
-        , cex.lab = 2, cex.axis=1.5, col="transparent")
+        , cex.lab = 1.7, cex.axis=4, col="transparent")
 axis(2, at=round(c(min(DIL_1$Mittelwert), mean(DIL_1$Mittelwert), max(DIL_1$Mittelwert)), 1), las = 2
      # las = 2 Ausrichtung Label-Beschriftung
      , xpd = TRUE, labels = T, cex.lab=2)
 
 
+
+
+par(bty="n") # keinen Rahmen
+boxplot(DIL_1$Mittelwert, 
+        ylab="Dosis in Gray", #y-Achse-Beschriftung  
+        #yaxt="n", #suppresses y-axis. Brauch ich das? 
+        col="transparent", #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        ylim=c(min(DIL_1$Mittelwert), max(DIL_1$Mittelwert)), # y-Achse range
+        cex.lab = 1.5, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(5,1,0) # mpg: Abstand Label zu Achse
+        )
 
 ```
 
