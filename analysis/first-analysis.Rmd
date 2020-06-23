@@ -45,16 +45,21 @@ var(DIL_1$Mittelwert)
 ## Including Plots
 ```{r, fig.width=11, fig.height=7, dev=c('png', 'pdf')}
 par(family="serif") # Schriftart
-par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(lwd = 2)
+par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
-plot(x, y, ylim=c(74, 80.2), xlab="Fraktion", ylab="Dosis in Gray", family="serif", cex = 1, # Größe der Punkte im plot
+plot(x, y, ylim=c(74, 80.2), xlab="Fraction", ylab="Dose in Gray", family="serif", cex = 1, # Größe der Punkte im plot
     cex.lab=2.5, # Erläuterungen der Achsen
     cex.axis = 1.5, # Tickbezeichnungen
-    axes = FALSE #ticks=TRUE
-     , pch=16, #main="Dosisverteilung DIL Mittelwert 1"
+    axes = FALSE , 
+    pch=16, #main="Dosisverteilung DIL Mittelwert 1"
      type="b")
-text(x=13.0, y = 75.8, labels="Dosisvorgabe Boost", family="serif", cex = 1.4) 
-text(x=11.9, y = 80.2, labels="+5% Abweichung von Dosisvorgabe", family="serif", cex = 1.4)
+text(x=13.3, y = 75.8, labels="Boost constraint"
+       #"Dosisvorgabe Boost"
+       , family="serif", cex = 1.4) 
+text(x=11.9, y = 80.2, labels="+5% deviation from boost constraint"
+       #"+5% Abweichung von Dosisvorgabe"
+     , family="serif", cex = 1.4)
 axis(1, at=x, label=x, tick=F, cex.axis=2, family="serif")
 arrows(x0=x, y0=y-y.sd, x1=x, y1=y+y.sd, code=3, angle=90, length=0.05)
 abline(a=76,23, b=0, lty=2)
