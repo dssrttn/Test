@@ -147,3 +147,30 @@ lines(density(DIL_1$Mittelwert), col="black", lwd=2)
 
 
 Lorem ipsum
+
+
+``` {r echo = FALSE, fig.width=10, fig.height=7, dev=c('png', 'pdf')}
+library(ggplot2)
+data <- data.frame(
+x <- (1:14),
+y <- DIL_1$Mittelwert
+)
+
+ggplot(data, aes(x=x, y=y, label = y)) +
+  geom_segment( aes(x=x, xend=x, y=76.23, yend=y), color="grey") +
+  geom_point( color="orange", size=4) +
+  #geom_text(nudge_x = 1.5) +
+   expand_limits(y = c(75.0, 78)) +
+  theme_light() +
+geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
+ scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
+  scale_y_continuous(breaks = seq(75.0,78.0,0.5))
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.x = element_blank()
+  ) +
+  xlab("") +
+  ylab("Dose in Gray")
+
+```
