@@ -67,34 +67,31 @@ abline(a=80.04, b=0, lty=2)
 axis(2, at=seq(74,81,0.5), tick=F, las=2, cex.lab=8, cex.axis=2, family="serif")
 ```
 
-
-```{r, fig.width=11, fig.height=7, dev=c('png', 'pdf')}
+## Kleinerer line plot
+```{r, echo = FALSE, fig.width=11, fig.height=7, dev=c('png', 'pdf')}
 par(family="serif") # Schriftart
 par(lwd = 2)
+par(cex.lab=2.5)      # Größe der Erläuterungen der Achsen
 par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
 plot(x, y, ylim=c(76.1, max(DIL_1$Mittelwert)),
-     xlab="Fraction", ylab="Dose in Gray", family="serif", cex = 1, # Größe der Punkte im plot
-    cex.lab=2.5, # Erläuterungen der Achsen
+     xlab="Fraction", 
+     ylab="Dose in Gray", 
+    cex = 1, # Größe der Punkte im plot
    # cex.axis = 1.5, # Tickbezeichnungen
     #axes = FALSE , 
     pch=16, #main="Dosisverteilung DIL Mittelwert 1"
      type="b",
-     las = 2, # horizontale Markierung der Tick-Beschriftungen
-    )
-text(x=13.3, y = 75.8, labels="Boost constraint"
+     las = 2) # horizontale Markierung der Tick-Beschriftungen
+
+text(x=13.3, y = 76.27, labels="Boost constraint"
        #"Dosisvorgabe Boost"
-       , family="serif", cex = 1.4) 
-text(x=11.9, y = 80.2, labels="+5% deviation from boost constraint"
-       #"+5% Abweichung von Dosisvorgabe"
-     , family="serif", cex = 1.4)
-axis(1, at=x, label=x, #tick=F
-     cex.axis=2 
-     )
-abline(a=76,23, b=0, lty=2)
-abline(a=80.04, b=0, lty=2)
-axis(2, at=seq(74,81,0.5), #tick=F,
-     las=2, cex.lab=8, cex.axis=2, family="serif")
+       , family="serif", cex = 1.4)
+abline(a=76.23, b=0, lty=2)
+#axis(1, las = 2)
+#at=x, label=x, #tick=F, cex.axis=2)
+
+#axis(2, at=seq(74,81,0.5), #tick=F, las=2, cex.lab=8, cex.axis=2, family="serif")
 ```
 
 
