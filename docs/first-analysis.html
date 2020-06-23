@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree048e025bc5d34275351c229bb4ab6ea7889284bbtargetblank048e025a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/048e025bc5d34275351c229bb4ab6ea7889284bb" target="_blank">048e025</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee2d85ab4c01220c3633f531c0247f4542dc98d93targetblanke2d85aba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/e2d85ab4c01220c3633f531c0247f4542dc98d93" target="_blank">e2d85ab</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree048e025bc5d34275351c229bb4ab6ea7889284bbtargetblank048e025a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee2d85ab4c01220c3633f531c0247f4542dc98d93targetblanke2d85aba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/048e025bc5d34275351c229bb4ab6ea7889284bb" target="_blank">048e025</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/e2d85ab4c01220c3633f531c0247f4542dc98d93" target="_blank">e2d85ab</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -565,6 +565,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/e2d85ab4c01220c3633f531c0247f4542dc98d93/analysis/first-analysis.Rmd" target="_blank">e2d85ab</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+<td>
+Tufte plot ggplot2
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/first-analysis.html" target="_blank">34d32f0</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1769,6 +1803,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/figure/first-analysis.Rmd/unnamed-chunk-10-1.png" target="_blank">34d32f0</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/5b7c4955cc68d8aed26a4431f13f13672ae3d28f/docs/figure/first-analysis.Rmd/unnamed-chunk-10-1.png" target="_blank">5b7c495</a>
 </td>
 <td>
@@ -1851,6 +1896,43 @@ ggplot(data, aes(x, y)) +
     plot.title = element_text(size = 8, face = &#39;bold&#39;),
     panel.grid = element_blank() )</code></pre>
 <p><img src="figure/first-analysis.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
+Past versions of unnamed-chunk-12-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-12-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/figure/first-analysis.Rmd/unnamed-chunk-12-1.png" target="_blank">34d32f0</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>library(ggplot2)
 library(ggthemes)
 data &lt;- data.frame(
@@ -1877,9 +1959,88 @@ geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, d
    axis.line = element_line(colour = &quot;black&quot;)) +
    annotate(&quot;text&quot;, x = c(14.5), y = c(76.0), adj=1,  #family=&quot;serif&quot;,
            label = c(&quot;Boost constraint&quot;)) +
-  xlab(&quot;&quot;) +
+  xlab(&quot;Fraction&quot;) +
   ylab(&quot;Dose in Gray&quot;)</code></pre>
 <p><img src="figure/first-analysis.Rmd/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-1">
+Past versions of unnamed-chunk-13-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-13-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/figure/first-analysis.Rmd/unnamed-chunk-13-1.png" target="_blank">34d32f0</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>library(ggplot2)
+library(ggthemes)
+DIL_1_MW &lt;- data.frame(
+x &lt;- (1:14),
+y &lt;- DIL_1$Mittelwert
+)
+
+#par(family=&quot;serif&quot;) # Schriftart
+#par(lwd = 2)
+#par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+
+par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
+ggplot(DIL_1_MW, aes(x,y)) +
+  geom_line() + 
+  geom_point(size=3) + 
+  theme_tufte(base_size = 15) +
+  theme(#axis.title=element_blank(), # lässt keine Achsenbeschreibung zu
+    axis.text=element_text(size=rel(1.5))) + 
+   expand_limits(y = c(75.0, 80.2)) +
+  #labs(y = &quot;Dose in Gray&quot;) +
+  #labs(x = &quot;Fraction&quot;) +
+  #axis.title.x = element_text(size = rel(6)) +
+geom_hline(yintercept = c(76.23, 80.04), lty=2) +
+ scale_y_continuous(breaks=seq(74, 81, 0.5)) + #label=seq((74 81))) + 
+  scale_x_continuous(breaks=x,label=x) +
+ # labs(x = &quot;Dose (mg)&quot;, y = &quot;Teeth length&quot;)
+ annotate(&quot;text&quot;, x = 13.4, y = 76.0, cex =rel(6), label = &quot;Boost constraint&quot;) +
+ annotate(&quot;text&quot;, x = 12, y = 79.8, cex =rel(6), label = &quot;+5% deviation from boost constraint&quot;)</code></pre>
+<p><img src="figure/first-analysis.Rmd/unnamed-chunk-14-1.png" width="1056" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>library(ggplot2)
+library(ggthemes)
+x &lt;- 1967:1977
+y &lt;- c(0.5,1.8,4.6,5.3,5.3,5.7,5.4,5,5.5,6,5)
+d &lt;- data.frame(x, y)
+ggplot(d, aes(x,y)) + geom_line() + geom_point(size=3) + theme_tufte(base_size = 15) +
+  theme(axis.title=element_blank()) + geom_hline(yintercept = c(6), lty=2) + 
+  scale_y_continuous(breaks=seq(1, 6, 1), label=sprintf(&quot;$%s&quot;,seq(300,400,20))) + 
+  scale_x_continuous(breaks=x,label=x) +
+  annotate(&quot;text&quot;, x = c(1977,1977.2), y = c(1.5,5.5), adj=1,  family=&quot;serif&quot;,
+           label = c(&quot;Per capita\nbudget expandures\nin constant dollars&quot;, &quot;5%&quot;))</code></pre>
+<p><img src="figure/first-analysis.Rmd/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
