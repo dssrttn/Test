@@ -36,7 +36,15 @@ y.sd <- DIL_1$sigma
 
 
 var(DIL_1$Mittelwert)
+```
 
+
+## Anteil der Personen, die mehr als den Boost constraint haben 
+```{r}
+#If you have a data frame named DF and a column named age: mean(DF$age > 65). The comparison DF$age > 65 returns TRUE or FALSE. TRUE equals 1 and FALSE equals 0. The mean of the comparison is thus the fraction that are TRUE.
+
+
+mean(DIL_1$Mittelwert > 76.23)
 
 ```
 
