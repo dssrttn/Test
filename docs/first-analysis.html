@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree01e27337f34b0b3e5b57b015e5fc9c0a0b9e5d19targetblank01e2733a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/01e27337f34b0b3e5b57b015e5fc9c0a0b9e5d19" target="_blank">01e2733</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree2dfbf327616c2e3b4ed0324bd10b553713eb8eabtargetblank2dfbf32a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/2dfbf327616c2e3b4ed0324bd10b553713eb8eab" target="_blank">2dfbf32</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree01e27337f34b0b3e5b57b015e5fc9c0a0b9e5d19targetblank01e2733a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree2dfbf327616c2e3b4ed0324bd10b553713eb8eabtargetblank2dfbf32a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/01e27337f34b0b3e5b57b015e5fc9c0a0b9e5d19" target="_blank">01e2733</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/2dfbf327616c2e3b4ed0324bd10b553713eb8eab" target="_blank">2dfbf32</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -565,6 +565,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/2dfbf327616c2e3b4ed0324bd10b553713eb8eab/analysis/first-analysis.Rmd" target="_blank">2dfbf32</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+<td>
+Verbesserungen kleinerer line plot
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/d623971d439722188a6711f854a249dc08c3cc2f/docs/first-analysis.html" target="_blank">d623971</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1116,6 +1150,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/d623971d439722188a6711f854a249dc08c3cc2f/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">d623971</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/12ca773255d976ea7d62540596156cd951ce09fc/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">12ca773</a>
 </td>
 <td>
@@ -1162,23 +1207,33 @@ Mein Vorname
 </table>
 </div>
 </div>
-<pre class="r"><code>par(bty=&quot;n&quot;) # keinen Rahmen
-par(family=&quot;serif&quot;) # Schriftart
-par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
-par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
-boxplot(DIL_1$Mittelwert, 
-        ylab= &quot;Dosis in Gray&quot;, #y-Achse-Beschriftung  
-        #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
-        col=&quot;transparent&quot;, #Farbe des Boxplots
-        las = 2, # horizontale Markierung der Tick-Beschriftungen
-        ylim=c(min(DIL_1$Mittelwert), max(DIL_1$Mittelwert)), # y-Achse range
-        cex.lab = 2, # Größe Label-Beschriftung
-        cex.axis = 1.5 # Größe Achsenbeschriftungen
-        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
-     # , xpd = TRUE
-      #labels = FALSE
-        )</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>par(family=&quot;serif&quot;) # Schriftart
+par(lwd = 2)
+par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
+plot(x, y, ylim=c(76.1, max(DIL_1$Mittelwert)),
+     xlab=&quot;Fraction&quot;, ylab=&quot;Dose in Gray&quot;, family=&quot;serif&quot;, cex = 1, # Größe der Punkte im plot
+    cex.lab=2.5, # Erläuterungen der Achsen
+   # cex.axis = 1.5, # Tickbezeichnungen
+    #axes = FALSE , 
+    pch=16, #main=&quot;Dosisverteilung DIL Mittelwert 1&quot;
+     type=&quot;b&quot;,
+     las = 2, # horizontale Markierung der Tick-Beschriftungen
+    )
+text(x=13.3, y = 75.8, labels=&quot;Boost constraint&quot;
+       #&quot;Dosisvorgabe Boost&quot;
+       , family=&quot;serif&quot;, cex = 1.4) 
+text(x=11.9, y = 80.2, labels=&quot;+5% deviation from boost constraint&quot;
+       #&quot;+5% Abweichung von Dosisvorgabe&quot;
+     , family=&quot;serif&quot;, cex = 1.4)
+axis(1, at=x, label=x, #tick=F
+     cex.axis=2 
+     )
+abline(a=76,23, b=0, lty=2)
+abline(a=80.04, b=0, lty=2)
+axis(2, at=seq(74,81,0.5), #tick=F,
+     las=2, cex.lab=8, cex.axis=2, family=&quot;serif&quot;)</code></pre>
+<p><img src="figure/first-analysis.Rmd/unnamed-chunk-3-1.png" width="1056" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
 Past versions of unnamed-chunk-3-1.png
@@ -1238,20 +1293,22 @@ Mein Vorname
 </table>
 </div>
 </div>
-<div id="ein-weiterer-unterpunkt" class="section level3">
-<h3>Ein weiterer Unterpunkt</h3>
-</div>
-<div id="noch-einer" class="section level3">
-<h3>Noch einer</h3>
-<pre class="r"><code>par(family=&quot;serif&quot;) # Schriftart
-par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
-par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
-hist(DIL_1$Mittelwert, 
-    main=&quot;&quot;,
-    #DIL Mittelwert&quot; 
-     ylab=&quot;Dichte der Dosiswerte&quot;, xlab=&quot;Dosis in Gray&quot;, mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(76.2, 77.6), cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
-rug(jitter(DIL_1$Mittelwert))
-lines(density(DIL_1$Mittelwert), col=&quot;black&quot;, lwd=2)</code></pre>
+<pre class="r"><code>par(bty=&quot;n&quot;) # keinen Rahmen
+par(family=&quot;serif&quot;) # Schriftart
+par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+boxplot(DIL_1$Mittelwert, 
+        ylab= &quot;Dosis in Gray&quot;, #y-Achse-Beschriftung  
+        #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
+        col=&quot;transparent&quot;, #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        ylim=c(min(DIL_1$Mittelwert), max(DIL_1$Mittelwert)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5 # Größe Achsenbeschriftungen
+        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
+     # , xpd = TRUE
+      #labels = FALSE
+        )</code></pre>
 <p><img src="figure/first-analysis.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
@@ -1312,6 +1369,21 @@ Mein Vorname
 </table>
 </div>
 </div>
+<div id="ein-weiterer-unterpunkt" class="section level3">
+<h3>Ein weiterer Unterpunkt</h3>
+</div>
+<div id="noch-einer" class="section level3">
+<h3>Noch einer</h3>
+<pre class="r"><code>par(family=&quot;serif&quot;) # Schriftart
+par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
+hist(DIL_1$Mittelwert, 
+    main=&quot;&quot;,
+    #DIL Mittelwert&quot; 
+     ylab=&quot;Dichte der Dosiswerte&quot;, xlab=&quot;Dosis in Gray&quot;, mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(76.2, 77.6), cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
+rug(jitter(DIL_1$Mittelwert))
+lines(density(DIL_1$Mittelwert), col=&quot;black&quot;, lwd=2)</code></pre>
+<p><img src="figure/first-analysis.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>#cex.lab=1.5, cex.axis=1.5</code></pre>
 <p>Lorem ipsum</p>
 <br>
