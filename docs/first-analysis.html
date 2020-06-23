@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed81f9f1d3c1527fcc231e674557e1bc03e3b246ftargetblankd81f9f1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/d81f9f1d3c1527fcc231e674557e1bc03e3b246f" target="_blank">d81f9f1</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree65b6c29f598058fa35328534479b93029baaab0atargetblank65b6c29a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/65b6c29f598058fa35328534479b93029baaab0a" target="_blank">65b6c29</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed81f9f1d3c1527fcc231e674557e1bc03e3b246ftargetblankd81f9f1a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree65b6c29f598058fa35328534479b93029baaab0atargetblank65b6c29a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/d81f9f1d3c1527fcc231e674557e1bc03e3b246f" target="_blank">d81f9f1</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/65b6c29f598058fa35328534479b93029baaab0a" target="_blank">65b6c29</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -565,6 +565,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/65b6c29f598058fa35328534479b93029baaab0a/analysis/first-analysis.Rmd" target="_blank">65b6c29</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+<td>
+Verbesserungen line plot
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/4f85132494fb6304bde3ddf1a972d336197d79c8/docs/first-analysis.html" target="_blank">4f85132</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1004,14 +1038,16 @@ var(DIL_1$Mittelwert)</code></pre>
 <h2>Including Plots</h2>
 <pre class="r"><code>par(family=&quot;serif&quot;) # Schriftart
 par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
-par(mgp=c(4,1,0)) # mpg: Abstand Label zu Achse
-plot(x, y, ylim=c(74, 80.2), xlab=&quot;Fraktion&quot;, ylab=&quot;Dosis in Gray&quot;, family=&quot;serif&quot;, cex = 1 # Größe der Punkte im plot
-     , axes = FALSE #ticks=TRUE
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
+plot(x, y, ylim=c(74, 80.2), xlab=&quot;Fraktion&quot;, ylab=&quot;Dosis in Gray&quot;, family=&quot;serif&quot;, cex = 1, # Größe der Punkte im plot
+    cex.lab=2.5, # Erläuterungen der Achsen
+    cex.axis = 1.5, # Tickbezeichnungen
+    axes = FALSE #ticks=TRUE
      , pch=16, #main=&quot;Dosisverteilung DIL Mittelwert 1&quot;
      type=&quot;b&quot;)
 text(x=13.0, y = 75.8, labels=&quot;Dosisvorgabe Boost&quot;, family=&quot;serif&quot;, cex = 1.4) 
 text(x=11.9, y = 80.2, labels=&quot;+5% Abweichung von Dosisvorgabe&quot;, family=&quot;serif&quot;, cex = 1.4)
-axis(1, at=x, label=x, tick=F, cex.lab=5, cex.axis=2, family=&quot;serif&quot;)
+axis(1, at=x, label=x, tick=F, cex.axis=2, family=&quot;serif&quot;)
 arrows(x0=x, y0=y-y.sd, x1=x, y1=y+y.sd, code=3, angle=90, length=0.05)
 abline(a=76,23, b=0, lty=2)
 abline(a=80.04, b=0, lty=2)
@@ -1039,6 +1075,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4f85132494fb6304bde3ddf1a972d336197d79c8/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">4f85132</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/9e76f4caecb86881347bf3a7bc8fd9f0ccf18767/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">9e76f4c</a>
