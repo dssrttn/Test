@@ -5,11 +5,12 @@ date: "2020-06-24"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
+
 ---
 
 ## Introduction
 
-```{r}
+```{r DIL Mittelwert, dev=c('png', 'pdf'), echo = FALSE}
 library(ggplot2)
 
 DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
@@ -19,9 +20,132 @@ x <- (1:14),
 y <- DIL_1$Mittelwert
 )
 
-x
-y
-data
+#x
+#y
+#data
+
+ggplot(data, aes(x, y)) + 
+  geom_point() +
+  geom_line() +
+ expand_limits(y = c(75.0, 78)) +
+scale_y_continuous(expand = expand_scale(mult = c(0, .1)), breaks = seq(75.0,78.0,0.25)) +
+  
+  # scale_x_discrete(limits=NULL, breaks=NULL, 0.5) + https://stackoverflow.com/questions/55033695/x-axis-labels-illegible-display-every-other-label-on-x-axis-ggplot2
+# scale_y_discrete(breaks = c(T,F)) +
+
+  scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
+geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
+  theme_classic() +
+  theme(
+  plot.title = element_text(color="black", size=14, face="bold.italic", family ="serif"), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"), # Teilstriche
+  axis.line = element_line(color = 'black', size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+ xlab("Fraction") + # X-Achsen-Beschriftung
+  ylab("Dose in Gray")  #+ # Y-Achsen-Beschriftung
+ #  scale_y_continuous(n.breaks = 10) # setzt eine bestimmte Anzahl von Achsenteilstrichen
+
+
+```
+
+
+
+```{r echo = FALSE}
+
+library(ggplot2)
+library(ggthemes)
+data <- data.frame(
+x <- (1:14),
+y <- DIL_1$Mittelwert
+)
+ggplot(data, aes(x, y)) +
+  geom_line() + #linetype = 0) + um Linie zu entfernen
+  geom_point(
+    aes(colour = cut(DIL_1$Mittelwert, c(-Inf, 76.23, 76.23*1.01,  76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf))),
+    size = 3, show.legend = FALSE ) +
+  expand_limits(y = c(75.0, 80.5)) +
+  scale_color_manual(values = c('green', 'yellow', 'blue', 'orange', 'red')) +
+  labs(title = 'DIL Mittelwert constraints', x = NULL, y = NULL) +
+  theme_light() +
+geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
+ scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
+  scale_y_continuous(breaks = seq(75.0,80.5,0.5)) + 
+   theme_bw() + # remove grid lines, background color ...
+   theme(
+   panel.border = element_blank(), 
+   panel.grid.major = element_blank(),
+   panel.grid.minor = element_blank(), 
+   axis.line = element_line(colour = "black")) +
+   annotate("text", x = c(14.5), y = c(76.0), adj=1,  #family="serif",
+           label = c("Boost constraint")) +
+  xlab("Fraction") +
+  ylab("Dose in Gray")
+
+```
+
+
+```{r  DIL Mittelwert farbige constraints, dev=c('png', 'pdf'), echo = FALSE}
+library(ggplot2)
+
+DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+data <- data.frame(
+x <- (1:14),
+y <- DIL_1$Mittelwert
+)
+
+
+ggplot(data, aes(x, y)) + 
+  geom_point(
+    aes(colour = cut(DIL_1$Mittelwert, c(-Inf, 76.23, 76.23*1.01,  76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf))),
+      size = 3, show.legend = FALSE ) +
+   scale_color_manual(values = c('green', 'yellow', 'blue', 'orange', 'red')) + 
+  geom_line(size = 0.1) +
+  expand_limits(y = c(75.0, 78)) +
+scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
+scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
+geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
+  theme_classic() +
+  theme(
+  plot.title = element_text(color="black", size=14, face="bold.italic", family ="serif"), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"), # Teilstriche
+  axis.line = element_line(color = 'black', size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+ xlab("Fraction") + # X-Achsen-Beschriftung
+  ylab("Dose in Gray")  #+ # Y-Achsen-Beschriftung
+  # scale_y_continuous(n.breaks = 10) # setzt eine bestimmte Anzahl von Achsenteilstrichen
+
+
+```
+
+
+
+
+```{r DIL D99, dev=c('png', 'pdf'), echo = FALSE}
+library(ggplot2)
+
+DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+data <- data.frame(
+x <- (1:14),
+y <- DIL_1$D_99
+)
+
+#x
+#y
+#data
 
 ggplot(data, aes(x, y)) + 
   geom_point() +
@@ -33,18 +157,27 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
    annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
   theme_classic() +
   theme(
-  plot.title = element_text(color="red", size=14, face="bold.italic", family ="serif"),
-  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), "mm"), family = "serif", size=rel(2)),
-  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)),
-  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)),
-  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), "mm"), family = "serif", size=rel(2)),
-  plot.margin = margin(0, 0, 0, 1, "cm"),
-  axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"),
-  axis.line = element_line(color = 'black', size = 0.3, linetype = 1)
+  plot.title = element_text(color="black", size=14, face="bold.italic", family ="serif"), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"), # Teilstriche
+  axis.line = element_line(color = 'black', size = 0.3, linetype = 1) # Achsenlinie
    ) +
- xlab("Fraction") +
-  ylab("Dose in Gray") 
+ xlab("Fraction") + # X-Achsen-Beschriftung
+  ylab("Dose in Gray")  #+ # Y-Achsen-Beschriftung
+  # scale_y_continuous(n.breaks = 10) # setzt eine bestimmte Anzahl von Achsenteilstrichen
 
 
 ```
+
+
+
+
+
+
+
+
 
