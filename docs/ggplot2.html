@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb3a92ab4c80907ba848b4439af10392daaf8d18atargetblankb3a92aba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/b3a92ab4c80907ba848b4439af10392daaf8d18a" target="_blank">b3a92ab</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreefed30a73bdb60566bb55dae9a63a6c4559138499targetblankfed30a7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/fed30a73bdb60566bb55dae9a63a6c4559138499" target="_blank">fed30a7</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb3a92ab4c80907ba848b4439af10392daaf8d18atargetblankb3a92aba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreefed30a73bdb60566bb55dae9a63a6c4559138499targetblankfed30a7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/b3a92ab4c80907ba848b4439af10392daaf8d18a" target="_blank">b3a92ab</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/fed30a73bdb60566bb55dae9a63a6c4559138499" target="_blank">fed30a7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -531,10 +531,8 @@ Ignored files:
 Untracked files:
     Untracked:  README.html
     Untracked:  analysis/ggpubr.Rmd
+    Untracked:  data/.~lock.DIL_1.csv#
     Untracked:  data/DIL_1.csv
-
-Unstaged changes:
-    Modified:   analysis/first-analysis.Rmd
 
 </code></pre>
 <p>
@@ -578,6 +576,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/fed30a73bdb60566bb55dae9a63a6c4559138499/analysis/ggplot2.Rmd" target="_blank">fed30a7</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+ggplot verbesserungen….
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/1d912516e73096c1b4bd8a517bdec0b3ed4dde58/docs/ggplot2.html" target="_blank">1d91251</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/b3a92ab4c80907ba848b4439af10392daaf8d18a/analysis/ggplot2.Rmd" target="_blank">b3a92ab</a>
 </td>
 <td>
@@ -599,58 +631,48 @@ Initiierung von ggplot2-Graphen
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<pre class="r"><code>library(ggplot2)
-
-DIL_1 &lt;- read.table(&#39;data/DIL_1.csv&#39;, header=TRUE, stringsAsFactors=FALSE, sep=&quot;;&quot;, dec=&quot;,&quot;, row.names=&quot;Dosisname&quot;)
-
-data &lt;- data.frame(
-x &lt;- (1:14),
-y &lt;- DIL_1$Mittelwert
-)
-
-x</code></pre>
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14</code></pre>
-<pre class="r"><code>y</code></pre>
-<pre><code> [1] 77.16960 76.74186 76.78767 76.54315 76.70229 76.69017 76.41442 77.03381
- [9] 76.70290 77.16465 76.94086 77.24228 76.95852 77.25280</code></pre>
-<pre class="r"><code>data</code></pre>
-<pre><code>   x.....1.14. y....DIL_1.Mittelwert
-1            1              77.16960
-2            2              76.74186
-3            3              76.78767
-4            4              76.54315
-5            5              76.70229
-6            6              76.69017
-7            7              76.41442
-8            8              77.03381
-9            9              76.70290
-10          10              77.16465
-11          11              76.94086
-12          12              77.24228
-13          13              76.95852
-14          14              77.25280</code></pre>
-<pre class="r"><code>ggplot(data, aes(x, y)) + 
-  geom_point() +
-  geom_line() +
-  expand_limits(y = c(75.0, 78)) +
-scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
-scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
-   annotate(&quot;text&quot;, x = 13.2, y = 76.1, cex =rel(4), label = &quot;Boost constraint&quot;) +
-  theme_classic() +
-  theme(
-  plot.title = element_text(color=&quot;red&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;),
-  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)),
-  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)),
-  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)),
-  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)),
-  plot.margin = margin(0, 0, 0, 1, &quot;cm&quot;),
-  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;),
-  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1)
-   ) +
- xlab(&quot;Fraction&quot;) +
-  ylab(&quot;Dose in Gray&quot;) </code></pre>
+<pre><code>Warning: `expand_scale()` is deprecated; use `expansion()` instead.</code></pre>
+<p><img src="figure/ggplot2.Rmd/DIL%20Mittelwert-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><img src="figure/ggplot2.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-1">
+Past versions of unnamed-chunk-1-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/1d912516e73096c1b4bd8a517bdec0b3ed4dde58/docs/figure/ggplot2.Rmd/unnamed-chunk-1-1.png" target="_blank">1d91251</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="figure/ggplot2.Rmd/DIL%20Mittelwert%20farbige%20constraints-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/ggplot2.Rmd/DIL%20D99-1.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -679,7 +701,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ggplot2_3.3.2   workflowr_1.6.2
+[1] ggthemes_4.2.0  ggplot2_3.3.2   workflowr_1.6.2
 
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.4.6     compiler_4.0.1   pillar_1.4.4     later_1.1.0.1   
