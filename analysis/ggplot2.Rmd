@@ -10,6 +10,14 @@ editor_options:
 
 ## Introduction
 
+Aufgaben für 25.06.2020
+
+* constraints: Farbige Legende
+* für **alle** Dosisvorgaben einen Graph mit constraint Linie erstellen
+* Prozent, die über den constraints liegen und in Tabelle überführen
+* 
+
+
 ```{r DIL Mittelwert, dev=c('png', 'pdf'), echo = FALSE}
 library(ggplot2)
 
@@ -176,8 +184,25 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
 
 
 
+```{r}
+
+
+DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+(share = mean(DIL_1$Mittelwert >= 76.23))
+(share = mean(DIL_1$Mittelwert >= 77.23))
+
+length(DIL_1$Mittelwert)
+length( which( DIL_1$Mittelwert > 76.23))
+length( which( DIL_1$Mittelwert > 76.23*1.01))
+length( which( DIL_1$Mittelwert > 76.23*1.02))
+length( which( DIL_1$Mittelwert > 76.23*1.03))
+length( which( DIL_1$Mittelwert > 76.23*1.04))
+length( which( DIL_1$Mittelwert > 76.23*1.05))
 
 
 
+
+```
 
 
