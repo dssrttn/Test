@@ -1,0 +1,50 @@
+---
+title: "ggplot2"
+author: "Mein Vorname"
+date: "2020-06-24"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+library(ggplot2)
+
+DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+data <- data.frame(
+x <- (1:14),
+y <- DIL_1$Mittelwert
+)
+
+x
+y
+data
+
+ggplot(data, aes(x, y)) + 
+  geom_point() +
+  geom_line() +
+  expand_limits(y = c(75.0, 78)) +
+scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
+scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
+geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
+  theme_classic() +
+  theme(
+  plot.title = element_text(color="red", size=14, face="bold.italic", family ="serif"),
+  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), "mm"), family = "serif", size=rel(2)),
+  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)),
+  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)),
+  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), "mm"), family = "serif", size=rel(2)),
+  plot.margin = margin(0, 0, 0, 1, "cm"),
+  axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"),
+  axis.line = element_line(color = 'black', size = 0.3, linetype = 1)
+   ) +
+ xlab("Fraction") +
+  ylab("Dose in Gray") 
+
+
+```
+
