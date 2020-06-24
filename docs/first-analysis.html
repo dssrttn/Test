@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0ecf027f8e808b0ab156777d711a5a06e055127etargetblank0ecf027a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/0ecf027f8e808b0ab156777d711a5a06e055127e" target="_blank">0ecf027</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreea26c05202f71e1392bacc76e35615fda812345d9targetblanka26c052a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/a26c05202f71e1392bacc76e35615fda812345d9" target="_blank">a26c052</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0ecf027f8e808b0ab156777d711a5a06e055127etargetblank0ecf027a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreea26c05202f71e1392bacc76e35615fda812345d9targetblanka26c052a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/0ecf027f8e808b0ab156777d711a5a06e055127e" target="_blank">0ecf027</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/a26c05202f71e1392bacc76e35615fda812345d9" target="_blank">a26c052</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -526,7 +526,11 @@ Ignored files:
 
 Untracked files:
     Untracked:  README.html
+    Untracked:  analysis/ggpubr.Rmd
     Untracked:  data/DIL_1.csv
+
+Unstaged changes:
+    Modified:   analysis/ggplot2.Rmd
 
 </code></pre>
 <p>
@@ -565,6 +569,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/a26c05202f71e1392bacc76e35615fda812345d9/analysis/first-analysis.Rmd" target="_blank">a26c052</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+Verbesserungen ggplot2
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/2074ed0f3ec6017f5faca7b78a3963ace2ac6b8a/docs/first-analysis.html" target="_blank">2074ed0</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2109,6 +2147,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/2074ed0f3ec6017f5faca7b78a3963ace2ac6b8a/docs/figure/first-analysis.Rmd/unnamed-chunk-14-1.png" target="_blank">2074ed0</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/figure/first-analysis.Rmd/unnamed-chunk-14-1.png" target="_blank">9f71cb5</a>
 </td>
 <td>
@@ -2122,17 +2171,61 @@ Mein Vorname
 </table>
 </div>
 </div>
+</div>
+<div id="tufte" class="section level3">
+<h3>Tufte</h3>
+<p>library(ggplot2) library(ggthemes) x &lt;- 1967:1977 y &lt;- c(0.5,1.8,4.6,5.3,5.3,5.7,5.4,5,5.5,6,5) d &lt;- data.frame(x, y) ggplot(d, aes(x,y)) + geom_line() + geom_point(size=3) + theme_tufte(base_size = 15) + theme(axis.title=element_blank()) + geom_hline(yintercept = c(6), lty=2) + scale_y_continuous(breaks=seq(1, 6, 1), label=sprintf(“$%s”,seq(300,400,20))) + scale_x_continuous(breaks=x,label=x) + annotate(“text”, x = c(1977,1977.2), y = c(1.5,5.5), adj=1, family=“serif”, label = c(“Per capitaexpanduresconstant dollars”, “5%”))</p>
 <pre class="r"><code>library(ggplot2)
-library(ggthemes)
-x &lt;- 1967:1977
-y &lt;- c(0.5,1.8,4.6,5.3,5.3,5.7,5.4,5,5.5,6,5)
-d &lt;- data.frame(x, y)
-ggplot(d, aes(x,y)) + geom_line() + geom_point(size=3) + theme_tufte(base_size = 15) +
-  theme(axis.title=element_blank()) + geom_hline(yintercept = c(6), lty=2) + 
-  scale_y_continuous(breaks=seq(1, 6, 1), label=sprintf(&quot;$%s&quot;,seq(300,400,20))) + 
-  scale_x_continuous(breaks=x,label=x) +
-  annotate(&quot;text&quot;, x = c(1977,1977.2), y = c(1.5,5.5), adj=1,  family=&quot;serif&quot;,
-           label = c(&quot;Per capita\nbudget expandures\nin constant dollars&quot;, &quot;5%&quot;))</code></pre>
+
+DIL_1 &lt;- read.table(&#39;data/DIL_1.csv&#39;, header=TRUE, stringsAsFactors=FALSE, sep=&quot;;&quot;, dec=&quot;,&quot;, row.names=&quot;Dosisname&quot;)
+
+data &lt;- data.frame(
+x &lt;- (1:14),
+y &lt;- DIL_1$Mittelwert
+)
+
+x</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14</code></pre>
+<pre class="r"><code>y</code></pre>
+<pre><code> [1] 77.16960 76.74186 76.78767 76.54315 76.70229 76.69017 76.41442 77.03381
+ [9] 76.70290 77.16465 76.94086 77.24228 76.95852 77.25280</code></pre>
+<pre class="r"><code>data</code></pre>
+<pre><code>   x.....1.14. y....DIL_1.Mittelwert
+1            1              77.16960
+2            2              76.74186
+3            3              76.78767
+4            4              76.54315
+5            5              76.70229
+6            6              76.69017
+7            7              76.41442
+8            8              77.03381
+9            9              76.70290
+10          10              77.16465
+11          11              76.94086
+12          12              77.24228
+13          13              76.95852
+14          14              77.25280</code></pre>
+<pre class="r"><code>ggplot(data, aes(x, y)) + 
+  geom_point() +
+  geom_line() +
+  expand_limits(y = c(75.0, 78)) +
+scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
+scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
+geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   annotate(&quot;text&quot;, x = 13.2, y = 76.1, cex =rel(4), label = &quot;Boost constraint&quot;) +
+  theme_classic() +
+  theme(
+  plot.title = element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0, 0, 0, 1, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+ xlab(&quot;Fraction&quot;) +
+  ylab(&quot;Dose in Gray&quot;) </code></pre>
 <p><img src="figure/first-analysis.Rmd/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-15-1">
