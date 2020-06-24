@@ -412,7 +412,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-23
+<strong>Last updated:</strong> 2020-06-24
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee2d85ab4c01220c3633f531c0247f4542dc98d93targetblanke2d85aba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/e2d85ab4c01220c3633f531c0247f4542dc98d93" target="_blank">e2d85ab</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0ecf027f8e808b0ab156777d711a5a06e055127etargetblank0ecf027a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/0ecf027f8e808b0ab156777d711a5a06e055127e" target="_blank">0ecf027</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee2d85ab4c01220c3633f531c0247f4542dc98d93targetblanke2d85aba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0ecf027f8e808b0ab156777d711a5a06e055127etargetblank0ecf027a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/e2d85ab4c01220c3633f531c0247f4542dc98d93" target="_blank">e2d85ab</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/0ecf027f8e808b0ab156777d711a5a06e055127e" target="_blank">0ecf027</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -565,6 +565,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/0ecf027f8e808b0ab156777d711a5a06e055127e/analysis/first-analysis.Rmd" target="_blank">0ecf027</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+Allgemeines
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/first-analysis.html" target="_blank">9f71cb5</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1986,6 +2020,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/figure/first-analysis.Rmd/unnamed-chunk-13-1.png" target="_blank">9f71cb5</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/figure/first-analysis.Rmd/unnamed-chunk-13-1.png" target="_blank">34d32f0</a>
 </td>
 <td>
@@ -2015,20 +2060,68 @@ par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
 ggplot(DIL_1_MW, aes(x,y)) +
   geom_line() + 
   geom_point(size=3) + 
-  theme_tufte(base_size = 15) +
-  theme(#axis.title=element_blank(), # lässt keine Achsenbeschreibung zu
-    axis.text=element_text(size=rel(1.5))) + 
-   expand_limits(y = c(75.0, 80.2)) +
-  #labs(y = &quot;Dose in Gray&quot;) +
-  #labs(x = &quot;Fraction&quot;) +
-  #axis.title.x = element_text(size = rel(6)) +
+  labs(title=&quot;Mittelwert&quot;, #subtitle=&quot;From midwest dataset&quot;, 
+      y=&quot;Dose in Grey&quot;, x=&quot;Fraction&quot;) +
+      #, caption=&quot;Midwest Demographics&quot;)
+ expand_limits(y = c(75.0, 80.2)) +
+   theme_bw() + # remove grid lines, background color ...
+  theme(#axis.title.x = element_text(size = rel(2)) +
+   panel.border = element_blank(), 
+   panel.grid.major = element_blank(),
+   panel.grid.minor = element_blank(), 
+   axis.line = element_line(colour = &quot;black&quot;)) +
+       #  axis.title.x = element_text(size = rel(2)) 
+  #  axis.text=element_text(size=rel(1.5))
+ #theme(#axis.title=element_blank(), # lässt keine Achsenbeschreibung zu
+  #  axis.text=element_text(size=rel(1.5)) +
+   #   axis.title.x = element_text(size = rel(6)) +
+        # expand_limits(y = c(75.0, 80.2))) +
+  # axis.title.x=element_text(color = &quot;grey20&quot;, size = 12, angle = 0, hjust = .5, vjust = 0, face = &quot;plain&quot;) +
+   # axis.title.y=element_text(color = &quot;grey20&quot;, size = 12, angle = 90, hjust = .5, vjust = .5, face = &quot;plain&quot;)) + 
+#  axis.title.x = element_text(size = rel(6)) +
 geom_hline(yintercept = c(76.23, 80.04), lty=2) +
  scale_y_continuous(breaks=seq(74, 81, 0.5)) + #label=seq((74 81))) + 
   scale_x_continuous(breaks=x,label=x) +
- # labs(x = &quot;Dose (mg)&quot;, y = &quot;Teeth length&quot;)
  annotate(&quot;text&quot;, x = 13.4, y = 76.0, cex =rel(6), label = &quot;Boost constraint&quot;) +
  annotate(&quot;text&quot;, x = 12, y = 79.8, cex =rel(6), label = &quot;+5% deviation from boost constraint&quot;)</code></pre>
 <p><img src="figure/first-analysis.Rmd/unnamed-chunk-14-1.png" width="1056" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-14-1">
+Past versions of unnamed-chunk-14-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-14-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/figure/first-analysis.Rmd/unnamed-chunk-14-1.png" target="_blank">9f71cb5</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>library(ggplot2)
 library(ggthemes)
 x &lt;- 1967:1977
@@ -2041,6 +2134,43 @@ ggplot(d, aes(x,y)) + geom_line() + geom_point(size=3) + theme_tufte(base_size =
   annotate(&quot;text&quot;, x = c(1977,1977.2), y = c(1.5,5.5), adj=1,  family=&quot;serif&quot;,
            label = c(&quot;Per capita\nbudget expandures\nin constant dollars&quot;, &quot;5%&quot;))</code></pre>
 <p><img src="figure/first-analysis.Rmd/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-15-1">
+Past versions of unnamed-chunk-15-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-15-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/figure/first-analysis.Rmd/unnamed-chunk-15-1.png" target="_blank">9f71cb5</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
