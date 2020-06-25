@@ -5,7 +5,6 @@ date: "2020-06-24"
 output: workflowr::wflow_html
 editor_options:
   chunk_output_type: console
-
 ---
 
 ## Introduction
@@ -15,7 +14,8 @@ Aufgaben für 25.06.2020
 * constraints: Farbige Legende
 * für **alle** Dosisvorgaben einen Graph mit constraint Linie erstellen
 * Prozent, die über den constraints liegen und in Tabelle überführen
-* 
+* csv-Tabelle in schöner auf webpage übernehmen?
+* Konfidenzintervall? 
 
 
 ```{r DIL Mittelwert, dev=c('png', 'pdf'), echo = FALSE}
@@ -36,8 +36,11 @@ ggplot(data, aes(x, y)) +
   geom_point() +
   geom_line() +
  expand_limits(y = c(75.0, 78)) +
-scale_y_continuous(expand = expand_scale(mult = c(0, .1)), breaks = seq(75.0,78.0,0.25)) +
   
+scale_y_continuous(breaks = seq(75.0,78.0,0.25), labels = c(75.0, "", 75.5, "", 76.0, "", 76.5, "", 77.0, "" ,77.5, "" , 78.0)) + # Labels und Ticks ungleich, jedoch jedes 2. Label soll nicht angezeigt werden
+#label_number(accuracy = 0.1),
+    # , labels = c(75.0, 75.5, 76.0, 76.5, 77.0, 77.5, 78.0)) +
+  #scale_y_continuous(expand = expand_scale(mult = c(0, .1)), b
   # scale_x_discrete(limits=NULL, breaks=NULL, 0.5) + https://stackoverflow.com/questions/55033695/x-axis-labels-illegible-display-every-other-label-on-x-axis-ggplot2
 # scale_y_discrete(breaks = c(T,F)) +
 
@@ -49,7 +52,8 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
   plot.title = element_text(color="black", size=14, face="bold.italic", family ="serif"), # Titel des Graphen
   axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
   axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
-  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
   axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
   plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), # Abstände um den Graphen in top-right-bottom-left Orientierung
   axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"), # Teilstriche
@@ -62,40 +66,6 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
 
 ```
 
-
-
-```{r echo = FALSE}
-
-library(ggplot2)
-library(ggthemes)
-data <- data.frame(
-x <- (1:14),
-y <- DIL_1$Mittelwert
-)
-ggplot(data, aes(x, y)) +
-  geom_line() + #linetype = 0) + um Linie zu entfernen
-  geom_point(
-    aes(colour = cut(DIL_1$Mittelwert, c(-Inf, 76.23, 76.23*1.01,  76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf))),
-    size = 3, show.legend = FALSE ) +
-  expand_limits(y = c(75.0, 80.5)) +
-  scale_color_manual(values = c('green', 'yellow', 'blue', 'orange', 'red')) +
-  labs(title = 'DIL Mittelwert constraints', x = NULL, y = NULL) +
-  theme_light() +
-geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
- scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
-  scale_y_continuous(breaks = seq(75.0,80.5,0.5)) + 
-   theme_bw() + # remove grid lines, background color ...
-   theme(
-   panel.border = element_blank(), 
-   panel.grid.major = element_blank(),
-   panel.grid.minor = element_blank(), 
-   axis.line = element_line(colour = "black")) +
-   annotate("text", x = c(14.5), y = c(76.0), adj=1,  #family="serif",
-           label = c("Boost constraint")) +
-  xlab("Fraction") +
-  ylab("Dose in Gray")
-
-```
 
 
 ```{r  DIL Mittelwert farbige constraints, dev=c('png', 'pdf'), echo = FALSE}
