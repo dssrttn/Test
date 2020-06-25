@@ -92,8 +92,7 @@ dg <- describe(df)
 kable(dg)
 kable(dh)
 
-DF<- data.frame('2014' = c(30,20,4, 50), '2015' = c(25,40,6, 65), row.names = c("mobile login", "computer login","errors", "total login"))
-DF
+
 
 
 ```
