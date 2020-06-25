@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Mein Vorname" />
+
+<meta name="date" content="2020-06-25" />
+
+<title>Rechnungen</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Test</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Einstieg</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="Patienten.html">Patienten</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/dssrttn/Test">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Rechnungen</h1>
+<h4 class="author">Mein Vorname</h4>
+<h4 class="date">2020-06-25</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2020-06-25
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>Test/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20200620code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20200620)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20200620code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20200620)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree3004090d4391ce5bd72fcab5f3ed6c85aa3af87ctargetblank3004090a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/3004090d4391ce5bd72fcab5f3ed6c85aa3af87c" target="_blank">3004090</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree3004090d4391ce5bd72fcab5f3ed6c85aa3af87ctargetblank3004090a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/3004090d4391ce5bd72fcab5f3ed6c85aa3af87c" target="_blank">3004090</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    analysis/.Rhistory
+    Ignored:    data/.Rhistory
+
+Untracked files:
+    Untracked:  README.html
+    Untracked:  analysis/ggpubr.Rmd
+    Untracked:  data/.~lock.DIL_1.csv#
+    Untracked:  data/DIL_1.csv
+
+Unstaged changes:
+    Modified:   analysis/ggplot2.Rmd
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/Rechnungen.Rmd</code>) and HTML (<code>docs/Rechnungen.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/3004090d4391ce5bd72fcab5f3ed6c85aa3af87c/analysis/Rechnungen.Rmd" target="_blank">3004090</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-25
+</td>
+<td>
+Etwas mehr
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<pre class="r"><code>DIL_1 &lt;- read.table(&#39;data/DIL_1.csv&#39;, header=TRUE, stringsAsFactors=FALSE, sep=&quot;;&quot;, dec=&quot;,&quot;, row.names=&quot;Dosisname&quot;)
+
+(share = mean(DIL_1$Mittelwert &gt;= 76.23 &amp; 76.23*1.01))</code></pre>
+<pre><code>[1] 1</code></pre>
+<pre class="r"><code>(share = mean(DIL_1$Mittelwert &gt;= 76.23*1.01))</code></pre>
+<pre><code>[1] 0.3571429</code></pre>
+<pre class="r"><code>(share = mean(DIL_1$Mittelwert &gt;= 76.23*1.02))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>(share = mean(DIL_1$Mittelwert &gt;= 76.23*1.03))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>(share = mean(DIL_1$Mittelwert &gt;= 76.23*1.04))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>(share = mean(DIL_1$Mittelwert &gt;= 76.23*1.05))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>length(DIL_1$Mittelwert)</code></pre>
+<pre><code>[1] 14</code></pre>
+<pre class="r"><code>length( which( DIL_1$Mittelwert &gt; 76.23))</code></pre>
+<pre><code>[1] 14</code></pre>
+<pre class="r"><code>length( which( DIL_1$Mittelwert &gt; 76.23*1.01))</code></pre>
+<pre><code>[1] 5</code></pre>
+<pre class="r"><code>length( which( DIL_1$Mittelwert &gt; 76.23*1.02))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>length( which( DIL_1$Mittelwert &gt; 76.23*1.03))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>length( which( DIL_1$Mittelwert &gt; 76.23*1.04))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>length( which( DIL_1$Mittelwert &gt; 76.23*1.05))</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>#subset(DIL_1$Mittelwert&gt;76.23 &amp; DIL_1$Mittelwert&lt;78)</code></pre>
+<pre class="r"><code>df &lt;- data.frame(DIL_1$Mittelwert)
+df</code></pre>
+<pre><code>   DIL_1.Mittelwert
+1          77.16960
+2          76.74186
+3          76.78767
+4          76.54315
+5          76.70229
+6          76.69017
+7          76.41442
+8          77.03381
+9          76.70290
+10         77.16465
+11         76.94086
+12         77.24228
+13         76.95852
+14         77.25280</code></pre>
+<pre class="r"><code>fx &lt;- function(x) {
+  c(n=length(x), mean=mean(x), median=quantile(x, .5),
+    std=sd(x), var=var(x), max=max(x), min=min(x))
+}
+
+agresult &lt;- aggregate(.~DIL_1$Mittelwert, FUN=fx, data=df)
+agresult &lt;- do.call(data.frame, agresult)
+agresult[1:14, 1:8]</code></pre>
+<pre><code>   DIL_1.Mittelwert DIL_1.Mittelwert.n DIL_1.Mittelwert.mean
+1          76.41442                  1              76.41442
+2          76.54315                  1              76.54315
+3          76.69017                  1              76.69017
+4          76.70229                  1              76.70229
+5          76.70290                  1              76.70290
+6          76.74186                  1              76.74186
+7          76.78767                  1              76.78767
+8          76.94086                  1              76.94086
+9          76.95852                  1              76.95852
+10         77.03381                  1              77.03381
+11         77.16465                  1              77.16465
+12         77.16960                  1              77.16960
+13         77.24228                  1              77.24228
+14         77.25280                  1              77.25280
+   DIL_1.Mittelwert.median.50. DIL_1.Mittelwert.std DIL_1.Mittelwert.var
+1                     76.41442                   NA                   NA
+2                     76.54315                   NA                   NA
+3                     76.69017                   NA                   NA
+4                     76.70229                   NA                   NA
+5                     76.70290                   NA                   NA
+6                     76.74186                   NA                   NA
+7                     76.78767                   NA                   NA
+8                     76.94086                   NA                   NA
+9                     76.95852                   NA                   NA
+10                    77.03381                   NA                   NA
+11                    77.16465                   NA                   NA
+12                    77.16960                   NA                   NA
+13                    77.24228                   NA                   NA
+14                    77.25280                   NA                   NA
+   DIL_1.Mittelwert.max DIL_1.Mittelwert.min
+1              76.41442             76.41442
+2              76.54315             76.54315
+3              76.69017             76.69017
+4              76.70229             76.70229
+5              76.70290             76.70290
+6              76.74186             76.74186
+7              76.78767             76.78767
+8              76.94086             76.94086
+9              76.95852             76.95852
+10             77.03381             77.03381
+11             77.16465             77.16465
+12             77.16960             77.16960
+13             77.24228             77.24228
+14             77.25280             77.25280</code></pre>
+<pre class="r"><code>df &lt;- data.frame(DIL_1$Mittelwert)
+df</code></pre>
+<pre><code>   DIL_1.Mittelwert
+1          77.16960
+2          76.74186
+3          76.78767
+4          76.54315
+5          76.70229
+6          76.69017
+7          76.41442
+8          77.03381
+9          76.70290
+10         77.16465
+11         76.94086
+12         77.24228
+13         76.95852
+14         77.25280</code></pre>
+<pre class="r"><code>aggregate(DIL_1$Mittelwert, df, mean)</code></pre>
+<pre><code>   DIL_1.Mittelwert        x
+1          76.41442 76.41442
+2          76.54315 76.54315
+3          76.69017 76.69017
+4          76.70229 76.70229
+5          76.70290 76.70290
+6          76.74186 76.74186
+7          76.78767 76.78767
+8          76.94086 76.94086
+9          76.95852 76.95852
+10         77.03381 77.03381
+11         77.16465 77.16465
+12         77.16960 77.16960
+13         77.24228 77.24228
+14         77.25280 77.25280</code></pre>
+<pre class="r"><code>df &lt;- data.frame(DIL_1$Mittelwert)
+df</code></pre>
+<pre><code>   DIL_1.Mittelwert
+1          77.16960
+2          76.74186
+3          76.78767
+4          76.54315
+5          76.70229
+6          76.69017
+7          76.41442
+8          77.03381
+9          76.70290
+10         77.16465
+11         76.94086
+12         77.24228
+13         76.95852
+14         77.25280</code></pre>
+<pre class="r"><code>sum(df &gt; 76.23 &amp; df &lt; 76.23*1.01)</code></pre>
+<pre><code>[1] 9</code></pre>
+<pre class="r"><code>sum(df &gt; 76.23*1.01 &amp; df &lt; 76.23*1.02)</code></pre>
+<pre><code>[1] 5</code></pre>
+<pre class="r"><code>sum(df &gt; 76.23*1.02 &amp; df &lt; 76.23*1.03)</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>sum(df &gt; 76.23*1.03 &amp; df &lt; 76.23*1.04)</code></pre>
+<pre><code>[1] 0</code></pre>
+<pre class="r"><code>sum(df &gt; 76.23*1.04 &amp; df &lt; 76.23*1.05)</code></pre>
+<pre><code>[1] 0</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">vars</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">median</th>
+<th align="right">trimmed</th>
+<th align="right">mad</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">range</th>
+<th align="right">skew</th>
+<th align="right">kurtosis</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mittelwert</td>
+<td align="right">1</td>
+<td align="right">14</td>
+<td align="right">76.8817838</td>
+<td align="right">0.2668088</td>
+<td align="right">76.8642633</td>
+<td align="right">76.8898126</td>
+<td align="right">0.2547405</td>
+<td align="right">76.4144178</td>
+<td align="right">77.2528043</td>
+<td align="right">0.8383865</td>
+<td align="right">-0.0544055</td>
+<td align="right">-1.3872692</td>
+<td align="right">0.0713077</td>
+</tr>
+<tr class="even">
+<td>sigma</td>
+<td align="right">2</td>
+<td align="right">14</td>
+<td align="right">0.8114514</td>
+<td align="right">0.0296603</td>
+<td align="right">0.8184305</td>
+<td align="right">0.8148443</td>
+<td align="right">0.0202502</td>
+<td align="right">0.7344189</td>
+<td align="right">0.8477693</td>
+<td align="right">0.1133504</td>
+<td align="right">-1.1562734</td>
+<td align="right">0.7522331</td>
+<td align="right">0.0079270</td>
+</tr>
+<tr class="odd">
+<td>d_Mittelwert</td>
+<td align="right">3</td>
+<td align="right">14</td>
+<td align="right">0.0811451</td>
+<td align="right">0.0029660</td>
+<td align="right">0.0818431</td>
+<td align="right">0.0814844</td>
+<td align="right">0.0020250</td>
+<td align="right">0.0734419</td>
+<td align="right">0.0847769</td>
+<td align="right">0.0113350</td>
+<td align="right">-1.1562734</td>
+<td align="right">0.7522331</td>
+<td align="right">0.0007927</td>
+</tr>
+<tr class="even">
+<td>D_max</td>
+<td align="right">4</td>
+<td align="right">14</td>
+<td align="right">78.7074071</td>
+<td align="right">0.2941635</td>
+<td align="right">78.6621400</td>
+<td align="right">78.7273417</td>
+<td align="right">0.2922575</td>
+<td align="right">78.0474500</td>
+<td align="right">79.1281500</td>
+<td align="right">1.0807000</td>
+<td align="right">-0.3984589</td>
+<td align="right">-0.4622922</td>
+<td align="right">0.0786185</td>
+</tr>
+<tr class="odd">
+<td>D_min</td>
+<td align="right">5</td>
+<td align="right">14</td>
+<td align="right">74.7503686</td>
+<td align="right">0.2818438</td>
+<td align="right">74.7797250</td>
+<td align="right">74.7243000</td>
+<td align="right">0.2698184</td>
+<td align="right">74.3722800</td>
+<td align="right">75.4412800</td>
+<td align="right">1.0690000</td>
+<td align="right">0.7180948</td>
+<td align="right">0.1036438</td>
+<td align="right">0.0753259</td>
+</tr>
+<tr class="even">
+<td>D_1</td>
+<td align="right">6</td>
+<td align="right">14</td>
+<td align="right">78.6650436</td>
+<td align="right">0.2889673</td>
+<td align="right">78.6317300</td>
+<td align="right">78.6833342</td>
+<td align="right">0.3196634</td>
+<td align="right">78.0366000</td>
+<td align="right">79.0740000</td>
+<td align="right">1.0374000</td>
+<td align="right">-0.3451096</td>
+<td align="right">-0.6353321</td>
+<td align="right">0.0772298</td>
+</tr>
+<tr class="odd">
+<td>D_5</td>
+<td align="right">7</td>
+<td align="right">14</td>
+<td align="right">78.2722371</td>
+<td align="right">0.2791597</td>
+<td align="right">78.2238600</td>
+<td align="right">78.2804375</td>
+<td align="right">0.2628131</td>
+<td align="right">77.7747400</td>
+<td align="right">78.6713300</td>
+<td align="right">0.8965900</td>
+<td align="right">-0.0655562</td>
+<td align="right">-1.2471834</td>
+<td align="right">0.0746086</td>
+</tr>
+<tr class="even">
+<td>D_10</td>
+<td align="right">8</td>
+<td align="right">14</td>
+<td align="right">77.9883021</td>
+<td align="right">0.3016011</td>
+<td align="right">77.9468050</td>
+<td align="right">78.0004967</td>
+<td align="right">0.2382612</td>
+<td align="right">77.3837800</td>
+<td align="right">78.4464900</td>
+<td align="right">1.0627100</td>
+<td align="right">-0.1469554</td>
+<td align="right">-0.9621683</td>
+<td align="right">0.0806063</td>
+</tr>
+<tr class="odd">
+<td>D_60</td>
+<td align="right">9</td>
+<td align="right">14</td>
+<td align="right">76.7116864</td>
+<td align="right">0.2592915</td>
+<td align="right">76.6876800</td>
+<td align="right">76.7229425</td>
+<td align="right">0.2275124</td>
+<td align="right">76.2127900</td>
+<td align="right">77.0755100</td>
+<td align="right">0.8627200</td>
+<td align="right">-0.1526476</td>
+<td align="right">-1.1381715</td>
+<td align="right">0.0692986</td>
+</tr>
+<tr class="even">
+<td>D_95</td>
+<td align="right">10</td>
+<td align="right">14</td>
+<td align="right">75.6002143</td>
+<td align="right">0.2546465</td>
+<td align="right">75.5863750</td>
+<td align="right">75.6087700</td>
+<td align="right">0.3361054</td>
+<td align="right">75.1671700</td>
+<td align="right">75.9305900</td>
+<td align="right">0.7634200</td>
+<td align="right">-0.0320031</td>
+<td align="right">-1.5263561</td>
+<td align="right">0.0680571</td>
+</tr>
+<tr class="odd">
+<td>D_99</td>
+<td align="right">11</td>
+<td align="right">14</td>
+<td align="right">75.3987907</td>
+<td align="right">0.2432632</td>
+<td align="right">75.3523400</td>
+<td align="right">75.4012417</td>
+<td align="right">0.2927468</td>
+<td align="right">75.0045900</td>
+<td align="right">75.7635800</td>
+<td align="right">0.7589900</td>
+<td align="right">0.1500549</td>
+<td align="right">-1.4319763</td>
+<td align="right">0.0650148</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">vars</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">median</th>
+<th align="right">trimmed</th>
+<th align="right">mad</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">range</th>
+<th align="right">skew</th>
+<th align="right">kurtosis</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mittelwert</td>
+<td align="right">1</td>
+<td align="right">14</td>
+<td align="right">76.8817838</td>
+<td align="right">0.2668088</td>
+<td align="right">76.8642633</td>
+<td align="right">76.8898126</td>
+<td align="right">0.2547405</td>
+<td align="right">76.4144178</td>
+<td align="right">77.2528043</td>
+<td align="right">0.8383865</td>
+<td align="right">-0.0544055</td>
+<td align="right">-1.3872692</td>
+<td align="right">0.0713077</td>
+</tr>
+<tr class="even">
+<td>sigma</td>
+<td align="right">2</td>
+<td align="right">14</td>
+<td align="right">0.8114514</td>
+<td align="right">0.0296603</td>
+<td align="right">0.8184305</td>
+<td align="right">0.8148443</td>
+<td align="right">0.0202502</td>
+<td align="right">0.7344189</td>
+<td align="right">0.8477693</td>
+<td align="right">0.1133504</td>
+<td align="right">-1.1562734</td>
+<td align="right">0.7522331</td>
+<td align="right">0.0079270</td>
+</tr>
+<tr class="odd">
+<td>d_Mittelwert</td>
+<td align="right">3</td>
+<td align="right">14</td>
+<td align="right">0.0811451</td>
+<td align="right">0.0029660</td>
+<td align="right">0.0818431</td>
+<td align="right">0.0814844</td>
+<td align="right">0.0020250</td>
+<td align="right">0.0734419</td>
+<td align="right">0.0847769</td>
+<td align="right">0.0113350</td>
+<td align="right">-1.1562734</td>
+<td align="right">0.7522331</td>
+<td align="right">0.0007927</td>
+</tr>
+<tr class="even">
+<td>D_max</td>
+<td align="right">4</td>
+<td align="right">14</td>
+<td align="right">78.7074071</td>
+<td align="right">0.2941635</td>
+<td align="right">78.6621400</td>
+<td align="right">78.7273417</td>
+<td align="right">0.2922575</td>
+<td align="right">78.0474500</td>
+<td align="right">79.1281500</td>
+<td align="right">1.0807000</td>
+<td align="right">-0.3984589</td>
+<td align="right">-0.4622922</td>
+<td align="right">0.0786185</td>
+</tr>
+<tr class="odd">
+<td>D_min</td>
+<td align="right">5</td>
+<td align="right">14</td>
+<td align="right">74.7503686</td>
+<td align="right">0.2818438</td>
+<td align="right">74.7797250</td>
+<td align="right">74.7243000</td>
+<td align="right">0.2698184</td>
+<td align="right">74.3722800</td>
+<td align="right">75.4412800</td>
+<td align="right">1.0690000</td>
+<td align="right">0.7180948</td>
+<td align="right">0.1036438</td>
+<td align="right">0.0753259</td>
+</tr>
+<tr class="even">
+<td>D_1</td>
+<td align="right">6</td>
+<td align="right">14</td>
+<td align="right">78.6650436</td>
+<td align="right">0.2889673</td>
+<td align="right">78.6317300</td>
+<td align="right">78.6833342</td>
+<td align="right">0.3196634</td>
+<td align="right">78.0366000</td>
+<td align="right">79.0740000</td>
+<td align="right">1.0374000</td>
+<td align="right">-0.3451096</td>
+<td align="right">-0.6353321</td>
+<td align="right">0.0772298</td>
+</tr>
+<tr class="odd">
+<td>D_5</td>
+<td align="right">7</td>
+<td align="right">14</td>
+<td align="right">78.2722371</td>
+<td align="right">0.2791597</td>
+<td align="right">78.2238600</td>
+<td align="right">78.2804375</td>
+<td align="right">0.2628131</td>
+<td align="right">77.7747400</td>
+<td align="right">78.6713300</td>
+<td align="right">0.8965900</td>
+<td align="right">-0.0655562</td>
+<td align="right">-1.2471834</td>
+<td align="right">0.0746086</td>
+</tr>
+<tr class="even">
+<td>D_10</td>
+<td align="right">8</td>
+<td align="right">14</td>
+<td align="right">77.9883021</td>
+<td align="right">0.3016011</td>
+<td align="right">77.9468050</td>
+<td align="right">78.0004967</td>
+<td align="right">0.2382612</td>
+<td align="right">77.3837800</td>
+<td align="right">78.4464900</td>
+<td align="right">1.0627100</td>
+<td align="right">-0.1469554</td>
+<td align="right">-0.9621683</td>
+<td align="right">0.0806063</td>
+</tr>
+<tr class="odd">
+<td>D_60</td>
+<td align="right">9</td>
+<td align="right">14</td>
+<td align="right">76.7116864</td>
+<td align="right">0.2592915</td>
+<td align="right">76.6876800</td>
+<td align="right">76.7229425</td>
+<td align="right">0.2275124</td>
+<td align="right">76.2127900</td>
+<td align="right">77.0755100</td>
+<td align="right">0.8627200</td>
+<td align="right">-0.1526476</td>
+<td align="right">-1.1381715</td>
+<td align="right">0.0692986</td>
+</tr>
+<tr class="even">
+<td>D_95</td>
+<td align="right">10</td>
+<td align="right">14</td>
+<td align="right">75.6002143</td>
+<td align="right">0.2546465</td>
+<td align="right">75.5863750</td>
+<td align="right">75.6087700</td>
+<td align="right">0.3361054</td>
+<td align="right">75.1671700</td>
+<td align="right">75.9305900</td>
+<td align="right">0.7634200</td>
+<td align="right">-0.0320031</td>
+<td align="right">-1.5263561</td>
+<td align="right">0.0680571</td>
+</tr>
+<tr class="odd">
+<td>D_99</td>
+<td align="right">11</td>
+<td align="right">14</td>
+<td align="right">75.3987907</td>
+<td align="right">0.2432632</td>
+<td align="right">75.3523400</td>
+<td align="right">75.4012417</td>
+<td align="right">0.2927468</td>
+<td align="right">75.0045900</td>
+<td align="right">75.7635800</td>
+<td align="right">0.7589900</td>
+<td align="right">0.1500549</td>
+<td align="right">-1.4319763</td>
+<td align="right">0.0650148</td>
+</tr>
+</tbody>
+</table>
+<pre><code>           X2014 X2015</code></pre>
+<p>mobile login 30 25 computer login 20 40 errors 4 6 total login 50 65</p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.1 (2020-06-06)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=de_DE.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=de_DE.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=de_DE.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=de_DE.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] psych_1.9.12.31 knitr_1.28      workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.4.6    whisker_0.4     magrittr_1.5    mnormt_2.0.0   
+ [5] lattice_0.20-41 R6_2.4.1        rlang_0.4.6     highr_0.8      
+ [9] stringr_1.4.0   tools_4.0.1     grid_4.0.1      parallel_4.0.1 
+[13] nlme_3.1-147    tmvnsim_1.0-2   xfun_0.14       git2r_0.27.1   
+[17] htmltools_0.5.0 yaml_2.2.1      digest_0.6.25   rprojroot_1.3-2
+[21] later_1.1.0.1   promises_1.1.1  fs_1.4.1        glue_1.4.1     
+[25] evaluate_0.14   rmarkdown_2.3   stringi_1.4.6   compiler_4.0.1 
+[29] backports_1.1.8 httpuv_1.5.4   </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
