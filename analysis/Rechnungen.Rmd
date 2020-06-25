@@ -82,17 +82,35 @@ sum(df > 76.23*1.04 & df < 76.23*1.05)
 
 ```{r echo=FALSE, results='asis'}
 library(knitr)
+#options(kableExtra.latex.load_packages = FALSE)
+#library(kableExtra)
 library(psych)
+knitr::kable
+library(tidyr)
+
 
 df <- data.frame(DIL_1)
 
 
 dg <- describe(df)
- dh <-  subset(dg, select = -c(DIL_1$D_10, DIL_1$D_60) )
+# dh <-  subset(dg, select = -c(DIL_1$D_10, DIL_1$D_60) )
 kable(dg)
-kable(dh)
 
 
+#kable(dh) #"latex", booktabs = T)
 
+
+di <- dg[row.names(dg) != list("D_5", "D_60", "D_10"), , drop = FALSE]
+kable(di)
+
+#kable(cbind(dh, dh), "latex", booktabs = T)%>%kable_styling(latex_options =c("striped", "scale_down"))
+
+
+dj <- dg[c(1,4,5,6,10,11),]
+kable(dj)
 
 ```
+
+### dfsdfsdfs
+jokooko
+  
