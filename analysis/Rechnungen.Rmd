@@ -1,0 +1,99 @@
+---
+title: "Rechnungen"
+author: "Mein Vorname"
+date: "2020-06-25"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+
+
+
+DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+(share = mean(DIL_1$Mittelwert >= 76.23 & 76.23*1.01))
+(share = mean(DIL_1$Mittelwert >= 76.23*1.01))
+(share = mean(DIL_1$Mittelwert >= 76.23*1.02))
+(share = mean(DIL_1$Mittelwert >= 76.23*1.03))
+(share = mean(DIL_1$Mittelwert >= 76.23*1.04))
+(share = mean(DIL_1$Mittelwert >= 76.23*1.05))
+
+
+length(DIL_1$Mittelwert)
+length( which( DIL_1$Mittelwert > 76.23))
+length( which( DIL_1$Mittelwert > 76.23*1.01))
+length( which( DIL_1$Mittelwert > 76.23*1.02))
+length( which( DIL_1$Mittelwert > 76.23*1.03))
+length( which( DIL_1$Mittelwert > 76.23*1.04))
+length( which( DIL_1$Mittelwert > 76.23*1.05))
+
+
+#subset(DIL_1$Mittelwert>76.23 & DIL_1$Mittelwert<78)
+
+
+```
+
+
+```{r}
+
+df <- data.frame(DIL_1$Mittelwert)
+df
+
+
+fx <- function(x) {
+  c(n=length(x), mean=mean(x), median=quantile(x, .5),
+    std=sd(x), var=var(x), max=max(x), min=min(x))
+}
+
+agresult <- aggregate(.~DIL_1$Mittelwert, FUN=fx, data=df)
+agresult <- do.call(data.frame, agresult)
+agresult[1:14, 1:8]
+
+```
+
+
+
+```{r}
+
+df <- data.frame(DIL_1$Mittelwert)
+df
+
+aggregate(DIL_1$Mittelwert, df, mean)
+
+```
+
+
+```{r}
+
+df <- data.frame(DIL_1$Mittelwert)
+df
+
+sum(df > 76.23 & df < 76.23*1.01)
+sum(df > 76.23*1.01 & df < 76.23*1.02)
+sum(df > 76.23*1.02 & df < 76.23*1.03)
+sum(df > 76.23*1.03 & df < 76.23*1.04)
+sum(df > 76.23*1.04 & df < 76.23*1.05)
+
+```
+
+```{r echo=FALSE, results='asis'}
+library(knitr)
+library(psych)
+
+df <- data.frame(DIL_1)
+
+
+dg <- describe(df)
+ dh <-  subset(dg, select = -c(DIL_1$D_10, DIL_1$D_60) )
+kable(dg)
+kable(dh)
+
+DF<- data.frame('2014' = c(30,20,4, 50), '2015' = c(25,40,6, 65), row.names = c("mobile login", "computer login","errors", "total login"))
+DF
+
+
+```
