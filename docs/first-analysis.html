@@ -412,7 +412,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-24
+<strong>Last updated:</strong> 2020-06-27
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -503,16 +503,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreec3c9e3df1afa3cf4c116084fc9ca23b720ef2a1atargetblankc3c9e3da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/c3c9e3df1afa3cf4c116084fc9ca23b720ef2a1a" target="_blank">c3c9e3d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0352b91366ca80008f20c6ddcf1528bee8db2979targetblank0352b91a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/0352b91366ca80008f20c6ddcf1528bee8db2979" target="_blank">0352b91</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreec3c9e3df1afa3cf4c116084fc9ca23b720ef2a1atargetblankc3c9e3da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0352b91366ca80008f20c6ddcf1528bee8db2979targetblank0352b91a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/c3c9e3df1afa3cf4c116084fc9ca23b720ef2a1a" target="_blank">c3c9e3d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/0352b91366ca80008f20c6ddcf1528bee8db2979" target="_blank">0352b91</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -527,11 +527,12 @@ Ignored files:
 Untracked files:
     Untracked:  README.html
     Untracked:  analysis/ggpubr.Rmd
-    Untracked:  data/.~lock.DIL_1.csv#
     Untracked:  data/DIL_1.csv
 
 Unstaged changes:
+    Modified:   analysis/Rechnungen.Rmd
     Modified:   analysis/ggplot2.Rmd
+    Modified:   analysis/pipe.Rmd
 
 </code></pre>
 <p>
@@ -570,6 +571,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/0352b91366ca80008f20c6ddcf1528bee8db2979/analysis/first-analysis.Rmd" target="_blank">0352b91</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-27
+</td>
+<td>
+etwas aufgeräumt, graphen belassen
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/d4bf5db32b34b572bbc7ebc74cfbccc1fee050ea/docs/first-analysis.html" target="_blank">d4bf5db</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1400,85 +1435,107 @@ weiterer Versuch
 <h5>Zweite Analyse</h5>
 <p>This is an <del>R Markdown</del> document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>When you click the <strong>Knit</strong> button a <em>document will be generated</em> that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<pre class="r"><code>DIL_1 &lt;- read.table(&#39;data/DIL_1.csv&#39;, header=TRUE, stringsAsFactors=FALSE, sep=&quot;;&quot;, dec=&quot;,&quot;, row.names=&quot;Dosisname&quot;)
-
-summary(DIL_1)</code></pre>
-<pre><code>   Mittelwert        sigma         d_Mittelwert         D_max      
- Min.   :76.41   Min.   :0.7344   Min.   :0.07344   Min.   :78.05  
- 1st Qu.:76.70   1st Qu.:0.8031   1st Qu.:0.08031   1st Qu.:78.58  
- Median :76.86   Median :0.8184   Median :0.08184   Median :78.66  
- Mean   :76.88   Mean   :0.8115   Mean   :0.08115   Mean   :78.71  
- 3rd Qu.:77.13   3rd Qu.:0.8269   3rd Qu.:0.08269   3rd Qu.:78.92  
- Max.   :77.25   Max.   :0.8478   Max.   :0.08478   Max.   :79.13  
-     D_min            D_1             D_5             D_10      
- Min.   :74.37   Min.   :78.04   Min.   :77.77   Min.   :77.38  
- 1st Qu.:74.55   1st Qu.:78.54   1st Qu.:78.12   1st Qu.:77.80  
- Median :74.78   Median :78.63   Median :78.22   Median :77.95  
- Mean   :74.75   Mean   :78.67   Mean   :78.27   Mean   :77.99  
- 3rd Qu.:74.88   3rd Qu.:78.86   3rd Qu.:78.52   3rd Qu.:78.23  
- Max.   :75.44   Max.   :79.07   Max.   :78.67   Max.   :78.45  
-      D_60            D_95            D_99      
- Min.   :76.21   Min.   :75.17   Min.   :75.00  
- 1st Qu.:76.55   1st Qu.:75.42   1st Qu.:75.21  
- Median :76.69   Median :75.59   Median :75.35  
- Mean   :76.71   Mean   :75.60   Mean   :75.40  
- 3rd Qu.:76.93   3rd Qu.:75.86   3rd Qu.:75.61  
- Max.   :77.08   Max.   :75.93   Max.   :75.76  </code></pre>
-<pre class="r"><code>str(DIL_1)</code></pre>
-<pre><code>&#39;data.frame&#39;:   14 obs. of  11 variables:
- $ Mittelwert  : num  77.2 76.7 76.8 76.5 76.7 ...
- $ sigma       : num  0.815 0.818 0.791 0.819 0.828 ...
- $ d_Mittelwert: num  0.0815 0.0818 0.0791 0.0819 0.0828 ...
- $ D_max       : num  78.9 78.6 78.6 78.5 78.6 ...
- $ D_min       : num  74.9 74.4 74.6 74.5 74.8 ...
- $ D_1         : num  78.9 78.5 78.6 78.4 78.6 ...
- $ D_5         : num  78.6 78.1 78.2 77.9 78.2 ...
- $ D_10        : num  78.3 77.9 77.9 77.7 77.8 ...
- $ D_60        : num  77 76.6 76.6 76.4 76.6 ...
- $ D_95        : num  75.9 75.4 75.6 75.2 75.3 ...
- $ D_99        : num  75.7 75.3 75.4 75 75.2 ...</code></pre>
-<pre class="r"><code>x &lt;- (1:14)
-y &lt;- DIL_1$Mittelwert
-
-y.sd &lt;- DIL_1$sigma
-
-
-var(DIL_1$Mittelwert)</code></pre>
-<pre><code>[1] 0.07118696</code></pre>
 </div>
 </div>
-<div id="anteil-der-personen-die-mehr-als-den-boost-constraint-haben" class="section level2">
-<h2>Anteil der Personen, die mehr als den Boost constraint haben</h2>
-<pre class="r"><code>#If you have a data frame named DF and a column named age: mean(DF$age &gt; 65). The comparison DF$age &gt; 65 returns TRUE or FALSE. TRUE equals 1 and FALSE equals 0. The mean of the comparison is thus the fraction that are TRUE.
-
-
-mean(DIL_1$Mittelwert &gt; 76.23)</code></pre>
-<pre><code>[1] 1</code></pre>
+<div id="versuch-tufte-like-in-r-base" class="section level2">
+<h2>1. Versuch Tufte-like in r base</h2>
+<p><img src="figure/first-analysis.Rmd/unnamed-chunk-2-1.png" width="1056" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/3a83b3e3b12f42eeb27d54f198e67ae5f80321c4/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">3a83b3e</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/d623971d439722188a6711f854a249dc08c3cc2f/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">d623971</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/12ca773255d976ea7d62540596156cd951ce09fc/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">12ca773</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4f85132494fb6304bde3ddf1a972d336197d79c8/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">4f85132</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-23
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/9e76f4caecb86881347bf3a7bc8fd9f0ccf18767/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">9e76f4c</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-22
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/86794dabd86eb6324c542c6c29c84c1d9696ad9c/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">86794da</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-22
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<pre class="r"><code>par(family=&quot;serif&quot;) # Schriftart
-par(lwd = 2)
-par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
-par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
-plot(x, y, ylim=c(74, 80.2), xlab=&quot;Fraction&quot;, ylab=&quot;Dose in Gray&quot;, family=&quot;serif&quot;, cex = 1, # Größe der Punkte im plot
-    cex.lab=2.5, # Größe der Erläuterungen der Achsen
-    cex.axis = 1.5, # Größe Tickbezeichnungen
-    axes = FALSE , 
-    pch=16, #main=&quot;Dosisverteilung DIL Mittelwert 1&quot;
-     type=&quot;b&quot;)
-text(x=13.3, y = 75.8, labels=&quot;Boost constraint&quot;
-       #&quot;Dosisvorgabe Boost&quot;
-       , family=&quot;serif&quot;, cex = 1.4) 
-text(x=11.9, y = 80.2, labels=&quot;+5% deviation from boost constraint&quot;
-       #&quot;+5% Abweichung von Dosisvorgabe&quot;
-     , family=&quot;serif&quot;, cex = 1.4)
-axis(1, at=x, label=x, tick=F, cex.axis=2, family=&quot;serif&quot;)
-arrows(x0=x, y0=y-y.sd, x1=x, y1=y+y.sd, code=3, angle=90, length=0.05)
-abline(a=76,23, b=0, lty=2)
-abline(a=80.04, b=0, lty=2)
-axis(2, at=seq(74,81,0.5), tick=F, las=2, cex.lab=8, cex.axis=2, family=&quot;serif&quot;)</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-3-1.png" width="1056" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="boxplot-in-r-base" class="section level2">
+<h2>Boxplot in r base</h2>
+<p><img src="figure/first-analysis.Rmd/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
 Past versions of unnamed-chunk-3-1.png
@@ -1571,10 +1628,9 @@ Mein Vorname
 </table>
 </div>
 </div>
-</div>
-<div id="kleinerer-line-plot" class="section level2">
-<h2>Kleinerer line plot</h2>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-4-1.png" width="1056" style="display: block; margin: auto;" /></p>
+<div id="histogramm-in-r-base" class="section level3">
+<h3>Histogramm in r base</h3>
+<p><img src="figure/first-analysis.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
 Past versions of unnamed-chunk-4-1.png
@@ -1656,660 +1712,7 @@ Mein Vorname
 </table>
 </div>
 </div>
-<pre class="r"><code>par(bty=&quot;n&quot;) # keinen Rahmen
-par(family=&quot;serif&quot;) # Schriftart
-par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
-par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
-boxplot(DIL_1$Mittelwert, 
-        ylab= &quot;Dosis in Gray&quot;, #y-Achse-Beschriftung  
-        #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
-        col=&quot;transparent&quot;, #Farbe des Boxplots
-        las = 2, # horizontale Markierung der Tick-Beschriftungen
-        ylim=c(min(DIL_1$Mittelwert), max(DIL_1$Mittelwert)), # y-Achse range
-        cex.lab = 2, # Größe Label-Beschriftung
-        cex.axis = 1.5 # Größe Achsenbeschriftungen
-        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
-     # , xpd = TRUE
-      #labels = FALSE
-        )</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-5-1">
-Past versions of unnamed-chunk-5-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-5-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/3a83b3e3b12f42eeb27d54f198e67ae5f80321c4/docs/figure/first-analysis.Rmd/unnamed-chunk-5-1.png" target="_blank">3a83b3e</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/f09baf4fefa96f29b76b7dcd8f30e2a93c3262ff/docs/figure/first-analysis.Rmd/unnamed-chunk-5-1.png" target="_blank">f09baf4</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="ein-weiterer-unterpunkt" class="section level3">
-<h3>Ein weiterer Unterpunkt</h3>
-</div>
-<div id="noch-einer" class="section level3">
-<h3>Noch einer</h3>
-<pre class="r"><code>par(family=&quot;serif&quot;) # Schriftart
-par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
-par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
-hist(DIL_1$Mittelwert, 
-    main=&quot;&quot;,
-    #DIL Mittelwert&quot; 
-     ylab=&quot;Dichte der Dosiswerte&quot;, xlab=&quot;Dosis in Gray&quot;, mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(76.2, 77.6), cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
-rug(jitter(DIL_1$Mittelwert))
-lines(density(DIL_1$Mittelwert), col=&quot;black&quot;, lwd=2)</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
-Past versions of unnamed-chunk-6-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-6-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/3a83b3e3b12f42eeb27d54f198e67ae5f80321c4/docs/figure/first-analysis.Rmd/unnamed-chunk-6-1.png" target="_blank">3a83b3e</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/f1f151cc6272ae091c51f007fb0b6568f8cd5078/docs/figure/first-analysis.Rmd/unnamed-chunk-6-1.png" target="_blank">f1f151c</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/e7f228ee1256fba2336f9a4017e0c22ad6650d65/docs/figure/first-analysis.Rmd/unnamed-chunk-6-1.png" target="_blank">e7f228e</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code>#cex.lab=1.5, cex.axis=1.5</code></pre>
 <p>Lorem ipsum</p>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-7-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
-Past versions of unnamed-chunk-7-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-7-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/3a83b3e3b12f42eeb27d54f198e67ae5f80321c4/docs/figure/first-analysis.Rmd/unnamed-chunk-7-1.png" target="_blank">3a83b3e</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code>76.23*1.01</code></pre>
-<pre><code>[1] 76.9923</code></pre>
-<pre class="r"><code>76.23*1.02</code></pre>
-<pre><code>[1] 77.7546</code></pre>
-<pre class="r"><code>76.23*1.03</code></pre>
-<pre><code>[1] 78.5169</code></pre>
-<pre class="r"><code>76.23*1.04</code></pre>
-<pre><code>[1] 79.2792</code></pre>
-<pre class="r"><code>76.23*1.05</code></pre>
-<pre><code>[1] 80.0415</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-9-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-9-1">
-Past versions of unnamed-chunk-9-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-9-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/5b7c4955cc68d8aed26a4431f13f13672ae3d28f/docs/figure/first-analysis.Rmd/unnamed-chunk-9-1.png" target="_blank">5b7c495</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre><code>Warning: Ignoring unknown aesthetics: show.legend</code></pre>
-<pre><code>Warning: Removed 14 rows containing missing values (geom_point).</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-10-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
-Past versions of unnamed-chunk-10-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/figure/first-analysis.Rmd/unnamed-chunk-10-1.png" target="_blank">34d32f0</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/5b7c4955cc68d8aed26a4431f13f13672ae3d28f/docs/figure/first-analysis.Rmd/unnamed-chunk-10-1.png" target="_blank">5b7c495</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code># library
-library(plotrix)
- 
-#create color palette
-library(RColorBrewer)
-my_colors = brewer.pal(8, &quot;Set2&quot;) 
- 
-# Create data
-x &lt;- seq(1:14)
-y &lt;- y &lt;- DIL_1$Mittelwert
- 
-# Plot x and y
-par(mar=c(4,4,2,2))
-clplot(x, y, main=&quot;&quot;, lwd=5, levels=c(76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05), col=my_colors, showcuts=T , bty=&quot;n&quot;)</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
-Past versions of unnamed-chunk-11-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-11-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/5b7c4955cc68d8aed26a4431f13f13672ae3d28f/docs/figure/first-analysis.Rmd/unnamed-chunk-11-1.png" target="_blank">5b7c495</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code>library(ggplot2)
-data &lt;- data.frame(
-x &lt;- (1:14),
-y &lt;- DIL_1$Mittelwert
-)
-ggplot(data, aes(x, y)) +
-  geom_line() + #linetype = 0) + um Linie zu entfernen
-  geom_point(
-    aes(colour = cut(DIL_1$Mittelwert, c(-Inf, summary(DIL_1$Mittelwert)[[2]], summary(DIL_1$Mittelwert)[[5]], Inf))),
-    size = 3, show.legend = FALSE ) +
-  scale_color_manual(values = c(&#39;green&#39;, &#39;orange&#39;, &#39;red&#39;)) +
-  labs(title = &#39;DIL_1$Mittelwert (hrs)&#39;, x = NULL, y = NULL) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 8, face = &#39;bold&#39;),
-    panel.grid = element_blank() )</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
-Past versions of unnamed-chunk-12-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-12-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/figure/first-analysis.Rmd/unnamed-chunk-12-1.png" target="_blank">34d32f0</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code>library(ggplot2)
-library(ggthemes)
-data &lt;- data.frame(
-x &lt;- (1:14),
-y &lt;- DIL_1$Mittelwert
-)
-ggplot(data, aes(x, y)) +
-  geom_line() + #linetype = 0) + um Linie zu entfernen
-  geom_point(
-    aes(colour = cut(DIL_1$Mittelwert, c(-Inf, 76.23, 76.23*1.01,  76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf))),
-    size = 3, show.legend = FALSE ) +
-  expand_limits(y = c(75.0, 80.5)) +
-  scale_color_manual(values = c(&#39;green&#39;, &#39;yellow&#39;, &#39;blue&#39;, &#39;orange&#39;, &#39;red&#39;)) +
-  labs(title = &#39;DIL Mittelwert constraints&#39;, x = NULL, y = NULL) +
-  theme_light() +
-geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
- scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
-  scale_y_continuous(breaks = seq(75.0,80.5,0.5)) + 
-   theme_bw() + # remove grid lines, background color ...
-   theme(
-   panel.border = element_blank(), 
-   panel.grid.major = element_blank(),
-   panel.grid.minor = element_blank(), 
-   axis.line = element_line(colour = &quot;black&quot;)) +
-   annotate(&quot;text&quot;, x = c(14.5), y = c(76.0), adj=1,  #family=&quot;serif&quot;,
-           label = c(&quot;Boost constraint&quot;)) +
-  xlab(&quot;Fraction&quot;) +
-  ylab(&quot;Dose in Gray&quot;)</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-1">
-Past versions of unnamed-chunk-13-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-13-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/figure/first-analysis.Rmd/unnamed-chunk-13-1.png" target="_blank">9f71cb5</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/34d32f08bd98ec09c513ac3b64461d94701e6e9e/docs/figure/first-analysis.Rmd/unnamed-chunk-13-1.png" target="_blank">34d32f0</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code>library(ggplot2)
-library(ggthemes)
-DIL_1_MW &lt;- data.frame(
-x &lt;- (1:14),
-y &lt;- DIL_1$Mittelwert
-)
-
-#par(family=&quot;serif&quot;) # Schriftart
-#par(lwd = 2)
-#par(mar = c(6, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
-
-par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
-par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
-ggplot(DIL_1_MW, aes(x,y)) +
-  geom_line() + 
-  geom_point(size=3) + 
-  labs(title=&quot;Mittelwert&quot;, #subtitle=&quot;From midwest dataset&quot;, 
-      y=&quot;Dose in Grey&quot;, x=&quot;Fraction&quot;) +
-      #, caption=&quot;Midwest Demographics&quot;)
- expand_limits(y = c(75.0, 80.2)) +
-   theme_bw() + # remove grid lines, background color ...
-  theme(#axis.title.x = element_text(size = rel(2)) +
-   panel.border = element_blank(), 
-   panel.grid.major = element_blank(),
-   panel.grid.minor = element_blank(), 
-   axis.line = element_line(colour = &quot;black&quot;)) +
-       #  axis.title.x = element_text(size = rel(2)) 
-  #  axis.text=element_text(size=rel(1.5))
- #theme(#axis.title=element_blank(), # lässt keine Achsenbeschreibung zu
-  #  axis.text=element_text(size=rel(1.5)) +
-   #   axis.title.x = element_text(size = rel(6)) +
-        # expand_limits(y = c(75.0, 80.2))) +
-  # axis.title.x=element_text(color = &quot;grey20&quot;, size = 12, angle = 0, hjust = .5, vjust = 0, face = &quot;plain&quot;) +
-   # axis.title.y=element_text(color = &quot;grey20&quot;, size = 12, angle = 90, hjust = .5, vjust = .5, face = &quot;plain&quot;)) + 
-#  axis.title.x = element_text(size = rel(6)) +
-geom_hline(yintercept = c(76.23, 80.04), lty=2) +
- scale_y_continuous(breaks=seq(74, 81, 0.5)) + #label=seq((74 81))) + 
-  scale_x_continuous(breaks=x,label=x) +
- annotate(&quot;text&quot;, x = 13.4, y = 76.0, cex =rel(6), label = &quot;Boost constraint&quot;) +
- annotate(&quot;text&quot;, x = 12, y = 79.8, cex =rel(6), label = &quot;+5% deviation from boost constraint&quot;)</code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-14-1.png" width="1056" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-14-1">
-Past versions of unnamed-chunk-14-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-14-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/2074ed0f3ec6017f5faca7b78a3963ace2ac6b8a/docs/figure/first-analysis.Rmd/unnamed-chunk-14-1.png" target="_blank">2074ed0</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-24
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/figure/first-analysis.Rmd/unnamed-chunk-14-1.png" target="_blank">9f71cb5</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="tufte" class="section level3">
-<h3>Tufte</h3>
-<p>library(ggplot2) library(ggthemes) x &lt;- 1967:1977 y &lt;- c(0.5,1.8,4.6,5.3,5.3,5.7,5.4,5,5.5,6,5) d &lt;- data.frame(x, y) ggplot(d, aes(x,y)) + geom_line() + geom_point(size=3) + theme_tufte(base_size = 15) + theme(axis.title=element_blank()) + geom_hline(yintercept = c(6), lty=2) + scale_y_continuous(breaks=seq(1, 6, 1), label=sprintf(“$%s”,seq(300,400,20))) + scale_x_continuous(breaks=x,label=x) + annotate(“text”, x = c(1977,1977.2), y = c(1.5,5.5), adj=1, family=“serif”, label = c(“Per capitaexpanduresconstant dollars”, “5%”))</p>
-<pre class="r"><code>library(ggplot2)
-
-DIL_1 &lt;- read.table(&#39;data/DIL_1.csv&#39;, header=TRUE, stringsAsFactors=FALSE, sep=&quot;;&quot;, dec=&quot;,&quot;, row.names=&quot;Dosisname&quot;)
-
-data &lt;- data.frame(
-x &lt;- (1:14),
-y &lt;- DIL_1$Mittelwert
-)
-
-x</code></pre>
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14</code></pre>
-<pre class="r"><code>y</code></pre>
-<pre><code> [1] 77.16960 76.74186 76.78767 76.54315 76.70229 76.69017 76.41442 77.03381
- [9] 76.70290 77.16465 76.94086 77.24228 76.95852 77.25280</code></pre>
-<pre class="r"><code>data</code></pre>
-<pre><code>   x.....1.14. y....DIL_1.Mittelwert
-1            1              77.16960
-2            2              76.74186
-3            3              76.78767
-4            4              76.54315
-5            5              76.70229
-6            6              76.69017
-7            7              76.41442
-8            8              77.03381
-9            9              76.70290
-10          10              77.16465
-11          11              76.94086
-12          12              77.24228
-13          13              76.95852
-14          14              77.25280</code></pre>
-<pre class="r"><code>ggplot(data, aes(x, y)) + 
-  geom_point() +
-  geom_line() +
-  expand_limits(y = c(75.0, 78)) +
-scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
-scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
-   annotate(&quot;text&quot;, x = 13.2, y = 76.1, cex =rel(4), label = &quot;Boost constraint&quot;) +
-  theme_classic() +
-  theme(
-  plot.title = element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
-  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
-  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
-  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Beschriftungs-(groß)-Parameter
-  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
-  plot.margin = margin(0, 0, 0, 1, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
-  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
-  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
-   ) +
- xlab(&quot;Fraction&quot;) +
-  ylab(&quot;Dose in Gray&quot;) </code></pre>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-15-1">
-Past versions of unnamed-chunk-15-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-15-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/aa454e280810927d73adb43f222a7b2311d3d387/docs/figure/first-analysis.Rmd/unnamed-chunk-15-1.png" target="_blank">aa454e2</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-24
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/9f71cb55fc60433e6fe9711ee0b70985c860bd8b/docs/figure/first-analysis.Rmd/unnamed-chunk-15-1.png" target="_blank">9f71cb5</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -2338,21 +1741,15 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ggthemes_4.2.0     RColorBrewer_1.1-2 plotrix_3.7-8      ggplot2_3.3.2     
-[5] workflowr_1.6.2   
+[1] workflowr_1.6.2
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.4.6     compiler_4.0.1   pillar_1.4.4     later_1.1.0.1   
- [5] git2r_0.27.1     tools_4.0.1      digest_0.6.25    evaluate_0.14   
- [9] lifecycle_0.2.0  tibble_3.0.1     gtable_0.3.0     pkgconfig_2.0.3 
-[13] rlang_0.4.6      yaml_2.2.1       xfun_0.14        withr_2.2.0     
-[17] stringr_1.4.0    dplyr_1.0.0      knitr_1.28       generics_0.0.2  
-[21] fs_1.4.1         vctrs_0.3.1      rprojroot_1.3-2  grid_4.0.1      
-[25] tidyselect_1.1.0 glue_1.4.1       R6_2.4.1         rmarkdown_2.3   
-[29] farver_2.0.3     purrr_0.3.4      magrittr_1.5     whisker_0.4     
-[33] backports_1.1.8  scales_1.1.1     promises_1.1.1   htmltools_0.5.0 
-[37] ellipsis_0.3.1   colorspace_1.4-1 httpuv_1.5.4     labeling_0.3    
-[41] stringi_1.4.6    munsell_0.5.0    crayon_1.3.4    </code></pre>
+ [1] Rcpp_1.0.4.6    rprojroot_1.3-2 digest_0.6.25   later_1.1.0.1  
+ [5] R6_2.4.1        backports_1.1.8 git2r_0.27.1    magrittr_1.5   
+ [9] evaluate_0.14   stringi_1.4.6   rlang_0.4.6     fs_1.4.1       
+[13] promises_1.1.1  whisker_0.4     rmarkdown_2.3   tools_4.0.1    
+[17] stringr_1.4.0   glue_1.4.1      httpuv_1.5.4    xfun_0.14      
+[21] yaml_2.2.1      compiler_4.0.1  htmltools_0.5.0 knitr_1.28     </code></pre>
 </div>
 </div>
 </div>
