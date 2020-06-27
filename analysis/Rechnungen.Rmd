@@ -71,7 +71,7 @@ aggregate(DIL_1$Mittelwert, df, mean)
 
 df <- data.frame(DIL_1$Mittelwert)
 df
-
+sum(df < 76.23)
 sum(df > 76.23 & df < 76.23*1.01)
 sum(df > 76.23*1.01 & df < 76.23*1.02)
 sum(df > 76.23*1.02 & df < 76.23*1.03)
@@ -86,28 +86,30 @@ library(knitr)
 #library(kableExtra)
 library(psych)
 knitr::kable
-library(tidyr)
-
+library(tidyverse)
+library(dplyr)
+library(magrittr)
 
 df <- data.frame(DIL_1)
 
 
-dg <- describe(df)
-# dh <-  subset(dg, select = -c(DIL_1$D_10, DIL_1$D_60) )
+dg <- describe(df) # psych-package: Standard
 kable(dg)
 
-
-#kable(dh) #"latex", booktabs = T)
-
-
-di <- dg[row.names(dg) != list("D_5", "D_60", "D_10"), , drop = FALSE]
-kable(di)
-
-#kable(cbind(dh, dh), "latex", booktabs = T)%>%kable_styling(latex_options =c("striped", "scale_down"))
-
-
-dj <- dg[c(1,4,5,6,10,11),]
+dj <- dg[c(1,4,5,6,10,11),] # tidyverse: wähle die Zeilen 1,4,5,6,10,11 aus und überführe sie in ein das Objekt dj
 kable(dj)
+
+dk <- dj[,c(2,3,4,5,8,9,10,13)] # tidyverse:wähle die Spalten 2,3,4,5,8,9,10,13 aus und überführe sie in das Objekt dk
+kable(dk)
+
+#dk <- dk %>% rename(Numbers = n, Mean = mean, Standard deviation = sd, Median = median, Standard errors = se, Minimum = min, Maximum = max, Range = range)
+
+# skew und kurtosis
+#skewundkurtosis <- dj[,c(11,12)] # tidyverse:wähle die Spalten 11 und 12 aus und überführe sie in das Objekt dl
+#kable(skewundkurtosis)
+
+#colnames(dk) 
+
 
 ```
 
