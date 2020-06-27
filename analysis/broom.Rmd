@@ -38,6 +38,17 @@ DIL_tidy %>% summarize(
  max = max(Mittelwert)
  )
 
+table(DIL_tidy$Mittelwert)
+
+glimpse(DIL_tidy)
+
+ggplot(data = DIL_tidy, # add the data
+       aes(y = Mittelwert) 
+       ) +  #, # set x, y coordinates
+         #  color = drug_treatment)) +    # color by treatment
+  geom_boxplot() 
+
+
 #tidy(DIL_tidy)
 
 
