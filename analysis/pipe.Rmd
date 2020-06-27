@@ -13,12 +13,13 @@ editor_options:
 library(knitr)
 #options(kableExtra.latex.load_packages = FALSE)
 #library(kableExtra)
-library(psych)
+library(psych) # common descriptive statistics in a dataframe
 knitr::kable
-library(tidyverse)
-library(dplyr)
-library(magrittr)
-
+library(tidyverse) 
+library(dplyr) # work with data 
+#library(magrittr)
+library(purrr)
+library(broom) # convert output of r base in dataframes
 
 DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
@@ -45,4 +46,17 @@ df <- df %>% rename(Numbers = n, Mean = mean,  Median = median, Minimum = min, M
 
 kable(df)
 
+dg <- data.frame(DIL_1)
+dg %>% map_dbl(mean)
+#dg
+
 ```
+
+```{r}
+DIL_tidy <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+summary(DIL_tidy)
+
+tidy(DIL_tidy)
+
+``` 
