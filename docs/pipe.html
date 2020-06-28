@@ -416,7 +416,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-27
+<strong>Last updated:</strong> 2020-06-28
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreef32a688fce06082d0f76b9d47cf96a3afd8a8016targetblankf32a688a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/f32a688fce06082d0f76b9d47cf96a3afd8a8016" target="_blank">f32a688</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree624def4b16a0269034ab36722e9232bc9919b5ebtargetblank624def4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/624def4b16a0269034ab36722e9232bc9919b5eb" target="_blank">624def4</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreef32a688fce06082d0f76b9d47cf96a3afd8a8016targetblankf32a688a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree624def4b16a0269034ab36722e9232bc9919b5ebtargetblank624def4a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/f32a688fce06082d0f76b9d47cf96a3afd8a8016" target="_blank">f32a688</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/624def4b16a0269034ab36722e9232bc9919b5eb" target="_blank">624def4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -531,8 +531,11 @@ Ignored files:
 Untracked files:
     Untracked:  README.html
     Untracked:  analysis/ggpubr.Rmd
-    Untracked:  data/.~lock.DIL_1.csv#
+    Untracked:  analysis/relativ.Rmd
     Untracked:  data/DIL_1.csv
+
+Unstaged changes:
+    Modified:   analysis/Rechnungen.Rmd
 
 </code></pre>
 <p>
@@ -571,6 +574,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/624def4b16a0269034ab36722e9232bc9919b5eb/analysis/pipe.Rmd" target="_blank">624def4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-28
+</td>
+<td>
+zwischendrin
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/c82c7663c16f95855c5202635a87ad856a166bc2/docs/pipe.html" target="_blank">c82c766</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-27
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -631,7 +668,7 @@ zwei woerter müssen mit ’’ umschlossen werden vor Umnennung
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>function (x, format, digits = getOption(“digits”), row.names = NA, col.names = NA, align, caption = NULL, label = NULL, format.args = list(), escape = TRUE, …) { if (missing(format) || is.null(format)) format = getOption(“knitr.table.format”) if (is.null(format)) format = if (is.null(pandoc_to())) switch(out_format() %n% “markdown”, latex = “latex”, listings = “latex”, sweave = “latex”, html = “html”, markdown = “markdown”, rst = “rst”, stop(“table format not implemented yet!”)) else if (isTRUE(opts_knit<span class="math inline">\(get(&quot;kable.force.latex&quot;)) &amp;&amp;  is_latex_output()) {  &quot;latex&quot;  }  else &quot;pandoc&quot;  if (is.function(format))  format = format()  if (!missing(align) &amp;&amp; length(align) == 1L &amp;&amp; !grepl(&quot;[^lcr]&quot;,  align))  align = strsplit(align, &quot;&quot;)[[1]]  if (is.null(label))  label = opts_current\)</span>get(“label”) if (!is.null(caption) &amp;&amp; !is.na(caption)) caption = paste0(create_label(“tab:”, label, latex = (format == “latex”)), caption) if (inherits(x, “list”)) { if (format == “pandoc” &amp;&amp; is_latex_output()) format = “latex” res = lapply(x, kable, format = format, digits = digits, row.names = row.names, col.names = col.names, align = align, caption = NA, format.args = format.args, escape = escape, …) res = unlist(lapply(res, one_string)) res = if (format == “latex”) { kable_latex_caption(res, caption) } else if (format == “html” || (format == “pandoc” &amp;&amp; is_html_output())) kable_html(matrix(paste0(“”, res, “”), 1), caption = caption, escape = FALSE, table.attr = “class="kable_wrapper"”) else { res = paste(res, collapse = “”) if (format == “pandoc”) kable_pandoc_caption(res, caption) else res } return(structure(res, format = format, class = “knitr_kable”)) } if (!is.matrix(x)) x = as.data.frame(x) if (identical(col.names, NA)) col.names = colnames(x) m = ncol(x) isn = if (is.matrix(x)) rep(is.numeric(x), m) else sapply(x, is.numeric) if (missing(align) || (format == “latex” &amp;&amp; is.null(align))) align = ifelse(isn, “r”, “l”) digits = rep(digits, length.out = m) for (j in seq_len(m)) { if (is_numeric(x[, j])) x[, j] = round(x[, j], digits[j]) } if (any(isn)) { if (is.matrix(x)) { if (is.table(x) &amp;&amp; length(dim(x)) == 2) class(x) = “matrix” x = format_matrix(x, format.args) } else x[, isn] = format_args(x[, isn], format.args) } if (is.na(row.names)) row.names = has_rownames(x) if (!is.null(align)) align = rep(align, length.out = m) if (row.names) { x = cbind(<code></code> = rownames(x), x) if (!is.null(col.names)) col.names = c(" “, col.names) if (!is.null(align)) align = c(”l“, align) } n = nrow(x) x = replace_na(to_character(as.matrix(x)), is.na(x)) if (!is.matrix(x)) x = matrix(x, nrow = n) x = trimws(x) colnames(x) = col.names if (format !=”latex" &amp;&amp; length(align) &amp;&amp; !all(align %in% c(“l”, “r”, “c”))) stop(“‘align’ must be a character vector of possible values ‘l’, ‘r’, and ‘c’”) attr(x, “align”) = align res = do.call(paste(“kable”, format, sep = "_“), list(x = x, caption = caption, escape = escape, …)) structure(res, format = format, class =”knitr_kable") } &lt;bytecode: 0x55c1c4925d88&gt; &lt;environment: namespace:knitr&gt;</p>
+<p>function (x, format, digits = getOption(“digits”), row.names = NA, col.names = NA, align, caption = NULL, label = NULL, format.args = list(), escape = TRUE, …) { if (missing(format) || is.null(format)) format = getOption(“knitr.table.format”) if (is.null(format)) format = if (is.null(pandoc_to())) switch(out_format() %n% “markdown”, latex = “latex”, listings = “latex”, sweave = “latex”, html = “html”, markdown = “markdown”, rst = “rst”, stop(“table format not implemented yet!”)) else if (isTRUE(opts_knit<span class="math inline">\(get(&quot;kable.force.latex&quot;)) &amp;&amp;  is_latex_output()) {  &quot;latex&quot;  }  else &quot;pandoc&quot;  if (is.function(format))  format = format()  if (!missing(align) &amp;&amp; length(align) == 1L &amp;&amp; !grepl(&quot;[^lcr]&quot;,  align))  align = strsplit(align, &quot;&quot;)[[1]]  if (is.null(label))  label = opts_current\)</span>get(“label”) if (!is.null(caption) &amp;&amp; !is.na(caption)) caption = paste0(create_label(“tab:”, label, latex = (format == “latex”)), caption) if (inherits(x, “list”)) { if (format == “pandoc” &amp;&amp; is_latex_output()) format = “latex” res = lapply(x, kable, format = format, digits = digits, row.names = row.names, col.names = col.names, align = align, caption = NA, format.args = format.args, escape = escape, …) res = unlist(lapply(res, one_string)) res = if (format == “latex”) { kable_latex_caption(res, caption) } else if (format == “html” || (format == “pandoc” &amp;&amp; is_html_output())) kable_html(matrix(paste0(“”, res, “”), 1), caption = caption, escape = FALSE, table.attr = “class="kable_wrapper"”) else { res = paste(res, collapse = “”) if (format == “pandoc”) kable_pandoc_caption(res, caption) else res } return(structure(res, format = format, class = “knitr_kable”)) } if (!is.matrix(x)) x = as.data.frame(x) if (identical(col.names, NA)) col.names = colnames(x) m = ncol(x) isn = if (is.matrix(x)) rep(is.numeric(x), m) else sapply(x, is.numeric) if (missing(align) || (format == “latex” &amp;&amp; is.null(align))) align = ifelse(isn, “r”, “l”) digits = rep(digits, length.out = m) for (j in seq_len(m)) { if (is_numeric(x[, j])) x[, j] = round(x[, j], digits[j]) } if (any(isn)) { if (is.matrix(x)) { if (is.table(x) &amp;&amp; length(dim(x)) == 2) class(x) = “matrix” x = format_matrix(x, format.args) } else x[, isn] = format_args(x[, isn], format.args) } if (is.na(row.names)) row.names = has_rownames(x) if (!is.null(align)) align = rep(align, length.out = m) if (row.names) { x = cbind(<code></code> = rownames(x), x) if (!is.null(col.names)) col.names = c(" “, col.names) if (!is.null(align)) align = c(”l“, align) } n = nrow(x) x = replace_na(to_character(as.matrix(x)), is.na(x)) if (!is.matrix(x)) x = matrix(x, nrow = n) x = trimws(x) colnames(x) = col.names if (format !=”latex" &amp;&amp; length(align) &amp;&amp; !all(align %in% c(“l”, “r”, “c”))) stop(“‘align’ must be a character vector of possible values ‘l’, ‘r’, and ‘c’”) attr(x, “align”) = align res = do.call(paste(“kable”, format, sep = "_“), list(x = x, caption = caption, escape = escape, …)) structure(res, format = format, class =”knitr_kable") } &lt;bytecode: 0x55c850962610&gt; &lt;environment: namespace:knitr&gt;</p>
 <pre><code>── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
 <pre><code>✓ ggplot2 3.3.2     ✓ purrr   0.3.4
 ✓ tibble  3.0.1     ✓ dplyr   1.0.0
@@ -970,6 +1007,172 @@ Call `lifecycle::last_warnings()` to see where this warning was generated.</code
 10 D_95      14 75.6    0.255   75.6    75.6    0.227   75.2    75.9    0.763 
 11 D_99      14 75.4    0.243   75.4    75.4    0.197   75.0    75.8    0.759 
 # … with 3 more variables: skew &lt;dbl&gt;, kurtosis &lt;dbl&gt;, se &lt;dbl&gt;</code></pre>
+<pre class="r"><code>filter(DIL_tidy, between(Mittelwert, 76, 78))</code></pre>
+<pre><code>                                                                                         Mittelwert
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1     77.16960
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2     76.74186
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3     76.78767
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4     76.54315
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5     76.70229
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6     76.69017
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7     76.41442
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8     77.03381
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9     76.70290
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10   77.16465
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11   76.94086
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12   77.24228
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13   76.95852
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14   77.25280
+                                                                                             sigma
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   0.8151375
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   0.8180256
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   0.7912805
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   0.8190075
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   0.8277908
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   0.8188354
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   0.7344189
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   0.7731615
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   0.8004736
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 0.8407008
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 0.8108240
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 0.8244101
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 0.8384843
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 0.8477693
+                                                                                         d_Mittelwert
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1     0.08151375
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2     0.08180256
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3     0.07912805
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4     0.08190075
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5     0.08277908
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6     0.08188354
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7     0.07344189
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8     0.07731615
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9     0.08004736
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10   0.08407008
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11   0.08108240
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12   0.08244101
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13   0.08384843
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14   0.08477693
+                                                                                            D_max
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   78.94169
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   78.58136
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   78.59119
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   78.47141
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   78.60139
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   78.44304
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   78.04745
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   78.70284
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   78.62144
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 79.03497
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 78.86566
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 79.08899
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 78.78412
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 79.12815
+                                                                                            D_min
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   74.89302
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   74.43580
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   74.59212
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   74.45202
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   74.83030
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   74.37228
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   74.78693
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   75.44128
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   74.77252
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 74.97198
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 74.85843
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 74.95610
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 74.52960
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 74.61278
+                                                                                              D_1
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   78.87512
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   78.53906
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   78.56869
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   78.40312
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   78.57361
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   78.39411
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   78.03660
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   78.68985
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   78.54498
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 78.99216
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 78.83434
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 79.04985
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 78.73512
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 79.07400
+                                                                                              D_5
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   78.55186
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   78.10558
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   78.16170
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   77.89452
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   78.16239
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   78.05175
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   77.77474
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   78.40628
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   78.15496
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 78.58406
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 78.28533
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 78.67133
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 78.34725
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 78.65957
+                                                                                             D_10
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   78.27434
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   77.89777
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   77.88319
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   77.66948
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   77.80514
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   77.79737
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   77.38378
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   78.10222
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   77.78081
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 78.32181
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 77.99584
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 78.38290
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 78.09509
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 78.44649
+                                                                                             D_60
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   76.97716
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   76.60249
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   76.60603
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   76.39747
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   76.58867
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   76.53729
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   76.21279
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   76.80826
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   76.53116
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 76.99864
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 76.76933
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 77.07551
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 76.80188
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 77.05693
+                                                                                             D_95
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   75.89296
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   75.43656
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   75.56756
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   75.16717
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   75.34757
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   75.40940
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   75.31831
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   75.88297
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   75.45212
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 75.80097
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 75.60519
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 75.93059
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 75.66482
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 75.92681
+                                                                                             D_99
+Evaluation dose: SC_20200427 (CBCT1_20190710) deformed to: BPL-CT using: HybridDefReg1   75.66564
+Evaluation dose: SC_20200427 (CBCT2_20190711) deformed to: BPL-CT using: HybridDefReg2   75.25595
+Evaluation dose: SC_20200427 (CBCT3_20190712) deformed to: BPL-CT using: HybridDefReg3   75.35934
+Evaluation dose: SC_20200427 (CBCT4_20190715) deformed to: BPL-CT using: HybridDefReg4   75.00459
+Evaluation dose: SC_20200427 (CBCT5_20190716) deformed to: BPL-CT using: HybridDefReg5   75.16311
+Evaluation dose: SC_20200427 (CBCT6_20190717) deformed to: BPL-CT using: HybridDefReg6   75.14666
+Evaluation dose: SC_20200427 (CBCT7_20190718) deformed to: BPL-CT using: HybridDefReg7   75.19584
+Evaluation dose: SC_20200427 (CBCT8_20190723) deformed to: BPL-CT using: HybridDefReg8   75.75842
+Evaluation dose: SC_20200427 (CBCT9_20190726) deformed to: BPL-CT using: HybridDefReg9   75.31644
+Evaluation dose: SC_20200427 (CBCT10_20190731) deformed to: BPL-CT using: HybridDefReg10 75.61731
+Evaluation dose: SC_20200427 (CBCT11_20190805) deformed to: BPL-CT using: HybridDefReg11 75.34534
+Evaluation dose: SC_20200427 (CBCT12_20190812) deformed to: BPL-CT using: HybridDefReg12 75.76358
+Evaluation dose: SC_20200427 (CBCT13_20190819) deformed to: BPL-CT using: HybridDefReg13 75.39063
+Evaluation dose: SC_20200427 (CBCT14_20190822) deformed to: BPL-CT using: HybridDefReg14 75.60022</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
