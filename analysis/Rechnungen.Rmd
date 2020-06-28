@@ -9,13 +9,48 @@ editor_options:
 
 ## Introduction
 
-```{r}
+```{r echo = FALSE}
+library(dplyr)
+
+DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+#DIL_tidy %>% #mutate(cuts = 
+ # (cut(DIL_tidy$Mittelwert, c(Inf, 77.23, Inf))) %>% 
+  #group_by(cuts) %>% 
+  #summarize(n=n())
+
+interval <- cut(DIL_tidy$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=1:7)
+#table(interval)
+
+interval<-as.data.frame(interval)
 
 
 
-DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+interval%>% group_by(interval, .drop = FALSE) %>% 
+  summarise(n=n())
 
-(share = mean(DIL_1$Mittelwert >= 76.23 & 76.23*1.01))
+
+#count_interval<-interval %>%
+ # group_by(interval) %>% 
+  #summarise(n=n())
+
+#group_by(labels) %>% 
+ #   summarize(n=n())
+  
+#x <- 1:10
+#x %in% 5:8
+
+
+DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+
+#df <- DIL_tidy[DIL_tidy$Mittelwert >= 76.23 & DIL_tidy$Mittelwert <= 77,23]
+#df 
+
+#subset(DIL_tidy,DIL_tidy$Mittelwert <= 77.23 & DIL_tidy$Mittelwert >= 76.23)
+
+(share = mean(DIL_1$Mittelwert >= 76.23))
 (share = mean(DIL_1$Mittelwert >= 76.23*1.01))
 (share = mean(DIL_1$Mittelwert >= 76.23*1.02))
 (share = mean(DIL_1$Mittelwert >= 76.23*1.03))
@@ -24,7 +59,7 @@ DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep="
 
 
 length(DIL_1$Mittelwert)
-length( which( DIL_1$Mittelwert > 76.23))
+length( which( DIL_1$Mittelwert > 76.23))#, DIL_1$Mittelwert < 76.23*1.01))
 length( which( DIL_1$Mittelwert > 76.23*1.01))
 length( which( DIL_1$Mittelwert > 76.23*1.02))
 length( which( DIL_1$Mittelwert > 76.23*1.03))
@@ -34,6 +69,8 @@ length( which( DIL_1$Mittelwert > 76.23*1.05))
 
 #subset(DIL_1$Mittelwert>76.23 & DIL_1$Mittelwert<78)
 
+#a <- DIL_1$Mittelwert
+#subset(DIL_1$Mittelwert, a %in% 76.23:77.93)#*1.01)
 
 ```
 
@@ -41,7 +78,6 @@ length( which( DIL_1$Mittelwert > 76.23*1.05))
 ```{r}
 
 df <- data.frame(DIL_1$Mittelwert)
-df
 
 
 fx <- function(x) {
@@ -67,16 +103,23 @@ aggregate(DIL_1$Mittelwert, df, mean)
 ```
 
 
+
+## Summe
 ```{r}
 
 df <- data.frame(DIL_1$Mittelwert)
 df
-sum(df < 76.23)
-sum(df > 76.23 & df < 76.23*1.01)
-sum(df > 76.23*1.01 & df < 76.23*1.02)
-sum(df > 76.23*1.02 & df < 76.23*1.03)
-sum(df > 76.23*1.03 & df < 76.23*1.04)
-sum(df > 76.23*1.04 & df < 76.23*1.05)
+sum1 <- sum(df < 76.23)
+sum2 <- sum(df > 76.23 & df < 76.23*1.01)
+sum3 <- sum(df > 76.23*1.01 & df < 76.23*1.02)
+sum4 <- sum(df > 76.23*1.02 & df < 76.23*1.03)
+sum5 <- sum(df > 76.23*1.03 & df < 76.23*1.04)
+sum6 <- sum(df > 76.23*1.04 & df < 76.23*1.05)
+sum7 <- sum(df > 76.23*1.05)
+
+sum1
+sum2
+sum3
 
 ```
 
