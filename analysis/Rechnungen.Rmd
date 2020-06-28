@@ -7,10 +7,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
+## Tibble - Dosisbereiche 
+
 
 ```{r echo = FALSE}
 library(dplyr)
+library(tidyverse)
 
 DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
@@ -19,16 +21,75 @@ DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep
   #group_by(cuts) %>% 
   #summarize(n=n())
 
-interval <- cut(DIL_tidy$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=1:7)
-#table(interval)
 
-interval<-as.data.frame(interval)
+Range <- cut(DIL_tidy$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=1:7) # benutzt dplyr, 7 Intervalle 
+ #mutate_each(funs(if(is.integer(.)) as.numeric(.) else .))
+ class(Range)
+
+
+Range <- as.data.frame(Range)
+class(Range)
+Range
+Range %>% group_by(Range, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung
+# dplyr::count(n=n())
+
+
+  
+ dplyr::summarise(n=n())
+
+  
+  # mutate(tt = rowSums(.[-1]))
+#  mutate(ttl = rowSums(.[, 2:ncol(.)])) 
+#  mutate(tt1 = rowSums(select_if(., is.numeric)))
+#Range %>% mutate_if(is.factor, as.numeric)
+
+#Range
+    
+    colnames(Range)
+#Range <- Range %>% rename(Numbers = n)
+
+table(Range)
+
+```
+
+## PSych package für deskriptive Statistik.
+
+```{r echo=FALSE, results='asis'}
+library(knitr)
+#options(kableExtra.latex.load_packages = FALSE)
+#library(kableExtra)
+library(psych)
+knitr::kable
+library(tidyverse)
+library(dplyr)
+library(magrittr)
+
+DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+df <- data.frame(DIL_1)
+
+
+dg <- describe(df) # psych-package: Standard
+#kable(dg)
+
+dj <- dg[c(1,4,5,6,10,11),] # tidyverse: wähle die Zeilen 1,4,5,6,10,11 aus und überführe sie in ein das Objekt dj
+#kable(dj)
+
+dk <- dj[,c(2,3,4,5,8,9,10,13)] # tidyverse:wähle die Spalten 2,3,4,5,8,9,10,13 aus und überführe sie in das Objekt dk
+kable(dk)
+
+#dk <- dk %>% rename(Numbers = n, Mean = mean, Standard deviation = sd, Median = median, Standard errors = se, Minimum = min, Maximum = max, Range = range)
+
+# skew und kurtosis
+#skewundkurtosis <- dj[,c(11,12)] # tidyverse:wähle die Spalten 11 und 12 aus und überführe sie in das Objekt dl
+#kable(skewundkurtosis)
+
+#colnames(dk) 
+```
 
 
 
-interval%>% group_by(interval, .drop = FALSE) %>% 
-  summarise(n=n())
 
+```{r}
 
 #count_interval<-interval %>%
  # group_by(interval) %>% 
@@ -66,11 +127,10 @@ length( which( DIL_1$Mittelwert > 76.23*1.03))
 length( which( DIL_1$Mittelwert > 76.23*1.04))
 length( which( DIL_1$Mittelwert > 76.23*1.05))
 
-
 #subset(DIL_1$Mittelwert>76.23 & DIL_1$Mittelwert<78)
-
 #a <- DIL_1$Mittelwert
 #subset(DIL_1$Mittelwert, a %in% 76.23:77.93)#*1.01)
+
 
 ```
 
@@ -123,38 +183,6 @@ sum3
 
 ```
 
-```{r echo=FALSE, results='asis'}
-library(knitr)
-#options(kableExtra.latex.load_packages = FALSE)
-#library(kableExtra)
-library(psych)
-knitr::kable
-library(tidyverse)
-library(dplyr)
-library(magrittr)
-
-df <- data.frame(DIL_1)
-
-
-dg <- describe(df) # psych-package: Standard
-kable(dg)
-
-dj <- dg[c(1,4,5,6,10,11),] # tidyverse: wähle die Zeilen 1,4,5,6,10,11 aus und überführe sie in ein das Objekt dj
-kable(dj)
-
-dk <- dj[,c(2,3,4,5,8,9,10,13)] # tidyverse:wähle die Spalten 2,3,4,5,8,9,10,13 aus und überführe sie in das Objekt dk
-kable(dk)
-
-#dk <- dk %>% rename(Numbers = n, Mean = mean, Standard deviation = sd, Median = median, Standard errors = se, Minimum = min, Maximum = max, Range = range)
-
-# skew und kurtosis
-#skewundkurtosis <- dj[,c(11,12)] # tidyverse:wähle die Spalten 11 und 12 aus und überführe sie in das Objekt dl
-#kable(skewundkurtosis)
-
-#colnames(dk) 
-
-
-```
 
 ### dfsdfsdfs
 jokooko
