@@ -49,7 +49,16 @@ ggplot(data = DIL_tidy, # add the data
   geom_boxplot() 
 
 
-#tidy(DIL_tidy)
+#filter(DIL_tidy, between(Mittelwert, 74, 75))  
+
+
+#summarise(hits = sum(between(DIL_tidy, 75, 77)))
+
+
+
+#dplyr::filter(DIL_tidy, between(Mittelwert, 75, 77))
+
+#tidy(DIL_tidy) 
 
 
 ```
