@@ -13,6 +13,8 @@ editor_options:
 ```{r echo = FALSE}
 library(dplyr)
 library(tidyverse)
+library(knitr)
+library(kableExtra)
 
 DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
@@ -22,18 +24,20 @@ DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep
   #summarize(n=n())
 
 
-Range <- cut(DIL_tidy$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=1:7) # benutzt dplyr, 7 Intervalle 
- #mutate_each(funs(if(is.integer(.)) as.numeric(.) else .))
- class(Range)
+Range <- cut(DIL_tidy$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=c('< 76.23', 'within + 1% of constraint', 'within + 2% of constraint', 'within + 3% of constraint', 'within + 4% of constraint', 'within + 5% of constraint', '> + 5% of constraint'   )) # set_label(c(9, 10, 11, 12, 13, 14, 15)) # benutzt dplyr, 7 Intervalle 
 
-
+                                                                                                                                          #mutate_each(funs(if(is.integer(.)) as.numeric(.) else .))
+                                                                                                                                         
+                                                                                                                                         
+  #class(Range)
 Range <- as.data.frame(Range)
 class(Range)
 Range
-Range %>% group_by(Range, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung
+Range %>% group_by(Range, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+  
 # dplyr::count(n=n())
 
-
+#dplyr::add_count(n=n())
   
  dplyr::summarise(n=n())
 
@@ -44,8 +48,12 @@ Range %>% group_by(Range, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeld
 #Range %>% mutate_if(is.factor, as.numeric)
 
 #Range
+
+str(Range)
     
     colnames(Range)
+
+kable(Range)    
 #Range <- Range %>% rename(Numbers = n)
 
 table(Range)
