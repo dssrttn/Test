@@ -11,15 +11,21 @@ editor_options:
 
 ```{r}
 library(pastecs)
+library(tidyverse)
+options(scipen=100)
+options(digits=2)
+
 DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+as_tibble(DIL_1)
+
+DIL_1 <- DIL_1 %>% 
+  select(Mittelwert, D_99, D_95, D_1, D_max, D_min)
+
 df <- data.frame(DIL_1)
 
-my.dataset <- c(1,2,3,4,5,6,7,8,9,10)
-pastecs::stat.desc(my.dataset)
 
-#options(scipen=100)
-#options(digits=2)
-#stat.desc(df)
+stat.desc(df)
 
 
 ```
