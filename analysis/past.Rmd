@@ -1,0 +1,26 @@
+---
+title: "past"
+author: "Mein Vorname"
+date: "2020-06-30"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+library(pastecs)
+DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+df <- data.frame(DIL_1)
+
+my.dataset <- c(1,2,3,4,5,6,7,8,9,10)
+pastecs::stat.desc(my.dataset)
+
+#options(scipen=100)
+#options(digits=2)
+#stat.desc(df)
+
+
+```
+
