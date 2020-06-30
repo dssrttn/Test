@@ -18,8 +18,11 @@ DIL_tidy <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf
 
 DIL_Mittelwert <- distinct(DIL_tidy, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
-DIL_Mittelwert <-DIL_Mittelwert %>% add_column(change = 1:14) # add column, ausgefüllt mit 1:14, Differenzen werden erst im naechsten Schritt kalkuliert 
-ddply(DIL_Mittelwert, .(), transform, change = ((100 / Mittelwert[1]) * Mittelwert) - 100) # Differenzen zum Ausgangswert in der 1. Reihe 
+#DIL_Mittelwert <-DIL_Mittelwert %>% add_column(change = 1:14) # add column, ausgefüllt mit 1:14, Differenzen werden erst im naechsten Schritt kalkuliert 
+DIL_absolut <- ddply(DIL_Mittelwert, .(), transform, change = (Mittelwert[1] - Mittelwert)) # absolute Differenzen zum Ausgangswert in der 1. Reihe 
+
+
+ddply(DIL_absolut, .(), transform, change2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # Differenzen zum Ausgangswert in der 1. Reihe 
 
 
 
