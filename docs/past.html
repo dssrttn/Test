@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreedcf17e5e0a1fc1cce8d20075581267234cfe9368targetblankdcf17e5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/dcf17e5e0a1fc1cce8d20075581267234cfe9368" target="_blank">dcf17e5</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed99e707b535e72df9429ae765bdb96f21302bb15targetblankd99e707a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/d99e707b535e72df9429ae765bdb96f21302bb15" target="_blank">d99e707</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreedcf17e5e0a1fc1cce8d20075581267234cfe9368targetblankdcf17e5a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed99e707b535e72df9429ae765bdb96f21302bb15targetblankd99e707a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/dcf17e5e0a1fc1cce8d20075581267234cfe9368" target="_blank">dcf17e5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/d99e707b535e72df9429ae765bdb96f21302bb15" target="_blank">d99e707</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -531,8 +531,12 @@ Ignored files:
 Untracked files:
     Untracked:  README.html
     Untracked:  analysis/ggpubr.Rmd
-    Untracked:  data/.~lock.DIL_1.csv#
+    Untracked:  data/Bladder_1.csv
+    Untracked:  data/Boost A1n_1.csv
     Untracked:  data/DIL_1.csv
+    Untracked:  data/External_1.csv
+    Untracked:  data/PenisBulb_1.csv
+    Untracked:  data/Rectum_1.csv
 
 </code></pre>
 <p>
@@ -571,6 +575,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/d99e707b535e72df9429ae765bdb96f21302bb15/analysis/past.Rmd" target="_blank">d99e707</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+<td>
+erfolgloser Versuch die 1. Spalte hinzuzufügen
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/28f83753dfdfa81864499f75787b0add1919402c/docs/past.html" target="_blank">28f8375</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -678,10 +716,18 @@ x dplyr::filter()  masks stats::filter()
 x dplyr::first()   masks pastecs::first()
 x dplyr::lag()     masks stats::lag()
 x dplyr::last()    masks pastecs::last()</code></pre>
+<pre class="r"><code>library(kableExtra)</code></pre>
+<pre><code>
+Attaching package: &#39;kableExtra&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:dplyr&#39;:
+
+    group_rows</code></pre>
 <pre class="r"><code>options(scipen=100)
-options(digits=2)
+options(digits=3)
 
 DIL_1 &lt;- read.csv2(&#39;data/DIL_1.csv&#39;, header=TRUE, stringsAsFactors=FALSE, sep=&quot;;&quot;, dec=&quot;,&quot;, row.names=&quot;Dosisname&quot;)
+
+
 
 as_tibble(DIL_1)</code></pre>
 <pre><code># A tibble: 14 x 11
@@ -702,27 +748,476 @@ as_tibble(DIL_1)</code></pre>
 13       77.0 0.838       0.0838  78.8  74.5  78.7  78.3  78.1  76.8  75.7  75.4
 14       77.3 0.848       0.0848  79.1  74.6  79.1  78.7  78.4  77.1  75.9  75.6</code></pre>
 <pre class="r"><code>DIL_1 &lt;- DIL_1 %&gt;% 
-  select(Mittelwert, D_99, D_95, D_1, D_max, D_min)
+  select(D_60, Mittelwert, D_99, D_95, D_1, D_max, D_min)
 
 df &lt;- data.frame(DIL_1)
 
+as_tibble(stat.desc(df))</code></pre>
+<pre><code># A tibble: 14 x 7
+         D_60 Mittelwert       D_99       D_95        D_1      D_max      D_min
+        &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1   14         14         14         14         14         14         14      
+ 2    0          0          0          0          0          0          0      
+ 3    0          0          0          0          0          0          0      
+ 4   76.2       76.4       75.0       75.2       78.0       78.0       74.4    
+ 5   77.1       77.3       75.8       75.9       79.1       79.1       75.4    
+ 6    0.863      0.838      0.759      0.763      1.04       1.08       1.07   
+ 7 1074.      1076.      1056.      1058.      1101.      1102.      1047.     
+ 8   76.7       76.9       75.4       75.6       78.6       78.7       74.8    
+ 9   76.7       76.9       75.4       75.6       78.7       78.7       74.8    
+10    0.0693     0.0713     0.0650     0.0681     0.0772     0.0786     0.0753 
+11    0.150      0.154      0.140      0.147      0.167      0.170      0.163  
+12    0.0672     0.0712     0.0592     0.0648     0.0835     0.0865     0.0794 
+13    0.259      0.267      0.243      0.255      0.289      0.294      0.282  
+14    0.00338    0.00347    0.00323    0.00337    0.00367    0.00374    0.00377</code></pre>
+<pre class="r"><code>#df %&gt;% add_column(&#39;Descriptive statistics&#39; = 1:14)
 
 stat.desc(df)</code></pre>
-<pre><code>             Mittelwert      D_99      D_95       D_1     D_max     D_min
-nbr.val         14.0000   14.0000   14.0000   14.0000   14.0000   14.0000
-nbr.null         0.0000    0.0000    0.0000    0.0000    0.0000    0.0000
-nbr.na           0.0000    0.0000    0.0000    0.0000    0.0000    0.0000
-min             76.4144   75.0046   75.1672   78.0366   78.0474   74.3723
-max             77.2528   75.7636   75.9306   79.0740   79.1281   75.4413
-range            0.8384    0.7590    0.7634    1.0374    1.0807    1.0690
-sum           1076.3450 1055.5831 1058.4030 1101.3106 1101.9037 1046.5052
-median          76.8643   75.3523   75.5864   78.6317   78.6621   74.7797
-mean            76.8818   75.3988   75.6002   78.6650   78.7074   74.7504
-SE.mean          0.0713    0.0650    0.0681    0.0772    0.0786    0.0753
-CI.mean.0.95     0.1541    0.1405    0.1470    0.1668    0.1698    0.1627
-var              0.0712    0.0592    0.0648    0.0835    0.0865    0.0794
-std.dev          0.2668    0.2433    0.2546    0.2890    0.2942    0.2818
-coef.var         0.0035    0.0032    0.0034    0.0037    0.0037    0.0038</code></pre>
+<pre><code>                   D_60 Mittelwert       D_99       D_95        D_1      D_max
+nbr.val        14.00000   14.00000   14.00000   14.00000   14.00000   14.00000
+nbr.null        0.00000    0.00000    0.00000    0.00000    0.00000    0.00000
+nbr.na          0.00000    0.00000    0.00000    0.00000    0.00000    0.00000
+min            76.21279   76.41442   75.00459   75.16717   78.03660   78.04745
+max            77.07551   77.25280   75.76358   75.93059   79.07400   79.12815
+range           0.86272    0.83839    0.75899    0.76342    1.03740    1.08070
+sum          1073.96361 1076.34497 1055.58307 1058.40300 1101.31061 1101.90370
+median         76.68768   76.86426   75.35234   75.58638   78.63173   78.66214
+mean           76.71169   76.88178   75.39879   75.60021   78.66504   78.70741
+SE.mean         0.06930    0.07131    0.06501    0.06806    0.07723    0.07862
+CI.mean.0.95    0.14971    0.15405    0.14046    0.14703    0.16684    0.16984
+var             0.06723    0.07119    0.05918    0.06484    0.08350    0.08653
+std.dev         0.25929    0.26681    0.24326    0.25465    0.28897    0.29416
+coef.var        0.00338    0.00347    0.00323    0.00337    0.00367    0.00374
+                  D_min
+nbr.val        14.00000
+nbr.null        0.00000
+nbr.na          0.00000
+min            74.37228
+max            75.44128
+range           1.06900
+sum          1046.50516
+median         74.77972
+mean           74.75037
+SE.mean         0.07533
+CI.mean.0.95    0.16273
+var             0.07944
+std.dev         0.28184
+coef.var        0.00377</code></pre>
+<pre class="r"><code>as_tibble(stat.desc(df))</code></pre>
+<pre><code># A tibble: 14 x 7
+         D_60 Mittelwert       D_99       D_95        D_1      D_max      D_min
+        &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1   14         14         14         14         14         14         14      
+ 2    0          0          0          0          0          0          0      
+ 3    0          0          0          0          0          0          0      
+ 4   76.2       76.4       75.0       75.2       78.0       78.0       74.4    
+ 5   77.1       77.3       75.8       75.9       79.1       79.1       75.4    
+ 6    0.863      0.838      0.759      0.763      1.04       1.08       1.07   
+ 7 1074.      1076.      1056.      1058.      1101.      1102.      1047.     
+ 8   76.7       76.9       75.4       75.6       78.6       78.7       74.8    
+ 9   76.7       76.9       75.4       75.6       78.7       78.7       74.8    
+10    0.0693     0.0713     0.0650     0.0681     0.0772     0.0786     0.0753 
+11    0.150      0.154      0.140      0.147      0.167      0.170      0.163  
+12    0.0672     0.0712     0.0592     0.0648     0.0835     0.0865     0.0794 
+13    0.259      0.267      0.243      0.255      0.289      0.294      0.282  
+14    0.00338    0.00347    0.00323    0.00337    0.00367    0.00374    0.00377</code></pre>
+<pre class="r"><code>#rownames_to_column(DIL_1, var = &quot;var_name&quot;) Versuch die 1. Spalte zu benennen
+kable(stat.desc(df))</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+D_60
+</th>
+<th style="text-align:right;">
+Mittelwert
+</th>
+<th style="text-align:right;">
+D_99
+</th>
+<th style="text-align:right;">
+D_95
+</th>
+<th style="text-align:right;">
+D_1
+</th>
+<th style="text-align:right;">
+D_max
+</th>
+<th style="text-align:right;">
+D_min
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+nbr.val
+</td>
+<td style="text-align:right;">
+14.000
+</td>
+<td style="text-align:right;">
+14.000
+</td>
+<td style="text-align:right;">
+14.000
+</td>
+<td style="text-align:right;">
+14.000
+</td>
+<td style="text-align:right;">
+14.000
+</td>
+<td style="text-align:right;">
+14.000
+</td>
+<td style="text-align:right;">
+14.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nbr.null
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nbr.na
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+min
+</td>
+<td style="text-align:right;">
+76.213
+</td>
+<td style="text-align:right;">
+76.414
+</td>
+<td style="text-align:right;">
+75.005
+</td>
+<td style="text-align:right;">
+75.167
+</td>
+<td style="text-align:right;">
+78.037
+</td>
+<td style="text-align:right;">
+78.047
+</td>
+<td style="text-align:right;">
+74.372
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+max
+</td>
+<td style="text-align:right;">
+77.076
+</td>
+<td style="text-align:right;">
+77.253
+</td>
+<td style="text-align:right;">
+75.764
+</td>
+<td style="text-align:right;">
+75.931
+</td>
+<td style="text-align:right;">
+79.074
+</td>
+<td style="text-align:right;">
+79.128
+</td>
+<td style="text-align:right;">
+75.441
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+range
+</td>
+<td style="text-align:right;">
+0.863
+</td>
+<td style="text-align:right;">
+0.838
+</td>
+<td style="text-align:right;">
+0.759
+</td>
+<td style="text-align:right;">
+0.763
+</td>
+<td style="text-align:right;">
+1.037
+</td>
+<td style="text-align:right;">
+1.081
+</td>
+<td style="text-align:right;">
+1.069
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sum
+</td>
+<td style="text-align:right;">
+1073.964
+</td>
+<td style="text-align:right;">
+1076.345
+</td>
+<td style="text-align:right;">
+1055.583
+</td>
+<td style="text-align:right;">
+1058.403
+</td>
+<td style="text-align:right;">
+1101.311
+</td>
+<td style="text-align:right;">
+1101.904
+</td>
+<td style="text-align:right;">
+1046.505
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+median
+</td>
+<td style="text-align:right;">
+76.688
+</td>
+<td style="text-align:right;">
+76.864
+</td>
+<td style="text-align:right;">
+75.352
+</td>
+<td style="text-align:right;">
+75.586
+</td>
+<td style="text-align:right;">
+78.632
+</td>
+<td style="text-align:right;">
+78.662
+</td>
+<td style="text-align:right;">
+74.780
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mean
+</td>
+<td style="text-align:right;">
+76.712
+</td>
+<td style="text-align:right;">
+76.882
+</td>
+<td style="text-align:right;">
+75.399
+</td>
+<td style="text-align:right;">
+75.600
+</td>
+<td style="text-align:right;">
+78.665
+</td>
+<td style="text-align:right;">
+78.707
+</td>
+<td style="text-align:right;">
+74.750
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SE.mean
+</td>
+<td style="text-align:right;">
+0.069
+</td>
+<td style="text-align:right;">
+0.071
+</td>
+<td style="text-align:right;">
+0.065
+</td>
+<td style="text-align:right;">
+0.068
+</td>
+<td style="text-align:right;">
+0.077
+</td>
+<td style="text-align:right;">
+0.079
+</td>
+<td style="text-align:right;">
+0.075
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CI.mean.0.95
+</td>
+<td style="text-align:right;">
+0.150
+</td>
+<td style="text-align:right;">
+0.154
+</td>
+<td style="text-align:right;">
+0.140
+</td>
+<td style="text-align:right;">
+0.147
+</td>
+<td style="text-align:right;">
+0.167
+</td>
+<td style="text-align:right;">
+0.170
+</td>
+<td style="text-align:right;">
+0.163
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var
+</td>
+<td style="text-align:right;">
+0.067
+</td>
+<td style="text-align:right;">
+0.071
+</td>
+<td style="text-align:right;">
+0.059
+</td>
+<td style="text-align:right;">
+0.065
+</td>
+<td style="text-align:right;">
+0.084
+</td>
+<td style="text-align:right;">
+0.087
+</td>
+<td style="text-align:right;">
+0.079
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+std.dev
+</td>
+<td style="text-align:right;">
+0.259
+</td>
+<td style="text-align:right;">
+0.267
+</td>
+<td style="text-align:right;">
+0.243
+</td>
+<td style="text-align:right;">
+0.255
+</td>
+<td style="text-align:right;">
+0.289
+</td>
+<td style="text-align:right;">
+0.294
+</td>
+<td style="text-align:right;">
+0.282
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+coef.var
+</td>
+<td style="text-align:right;">
+0.003
+</td>
+<td style="text-align:right;">
+0.003
+</td>
+<td style="text-align:right;">
+0.003
+</td>
+<td style="text-align:right;">
+0.003
+</td>
+<td style="text-align:right;">
+0.004
+</td>
+<td style="text-align:right;">
+0.004
+</td>
+<td style="text-align:right;">
+0.004
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -751,26 +1246,27 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] forcats_0.5.0   stringr_1.4.0   dplyr_1.0.0     purrr_0.3.4    
- [5] readr_1.3.1     tidyr_1.1.0     tibble_3.0.1    ggplot2_3.3.2  
- [9] tidyverse_1.3.0 pastecs_1.3.21  workflowr_1.6.2
+ [1] kableExtra_1.1.0 forcats_0.5.0    stringr_1.4.0    dplyr_1.0.0     
+ [5] purrr_0.3.4      readr_1.3.1      tidyr_1.1.0      tibble_3.0.1    
+ [9] ggplot2_3.3.2    tidyverse_1.3.0  pastecs_1.3.21   workflowr_1.6.2 
 
 loaded via a namespace (and not attached):
- [1] tidyselect_1.1.0 xfun_0.15        haven_2.3.1      lattice_0.20-41 
- [5] colorspace_1.4-1 vctrs_0.3.1      generics_0.0.2   htmltools_0.5.0 
- [9] yaml_2.2.1       utf8_1.1.4       blob_1.2.1       rlang_0.4.6     
-[13] later_1.1.0.1    pillar_1.4.4     withr_2.2.0      glue_1.4.1      
-[17] DBI_1.1.0        dbplyr_1.4.4     modelr_0.1.8     readxl_1.3.1    
-[21] lifecycle_0.2.0  munsell_0.5.0    gtable_0.3.0     cellranger_1.1.0
-[25] rvest_0.3.5      evaluate_0.14    knitr_1.29       httpuv_1.5.4    
-[29] fansi_0.4.1      broom_0.5.6      Rcpp_1.0.4.6     promises_1.1.1  
-[33] backports_1.1.8  scales_1.1.1     jsonlite_1.6.1   fs_1.4.1        
-[37] hms_0.5.3        digest_0.6.25    stringi_1.4.6    grid_4.0.1      
-[41] rprojroot_1.3-2  cli_2.0.2        tools_4.0.1      magrittr_1.5    
-[45] crayon_1.3.4     whisker_0.4      pkgconfig_2.0.3  ellipsis_0.3.1  
-[49] xml2_1.3.2       reprex_0.3.0     lubridate_1.7.9  rstudioapi_0.11 
-[53] assertthat_0.2.1 rmarkdown_2.3    httr_1.4.1       R6_2.4.1        
-[57] boot_1.3-25      nlme_3.1-147     git2r_0.27.1     compiler_4.0.1  </code></pre>
+ [1] Rcpp_1.0.4.6      lubridate_1.7.9   lattice_0.20-41   assertthat_0.2.1 
+ [5] rprojroot_1.3-2   digest_0.6.25     utf8_1.1.4        R6_2.4.1         
+ [9] cellranger_1.1.0  backports_1.1.8   reprex_0.3.0      evaluate_0.14    
+[13] httr_1.4.1        highr_0.8         pillar_1.4.4      rlang_0.4.6      
+[17] readxl_1.3.1      rstudioapi_0.11   whisker_0.4       blob_1.2.1       
+[21] rmarkdown_2.3     webshot_0.5.2     munsell_0.5.0     broom_0.5.6      
+[25] compiler_4.0.1    httpuv_1.5.4      modelr_0.1.8      xfun_0.15        
+[29] pkgconfig_2.0.3   htmltools_0.5.0   tidyselect_1.1.0  fansi_0.4.1      
+[33] viridisLite_0.3.0 crayon_1.3.4      dbplyr_1.4.4      withr_2.2.0      
+[37] later_1.1.0.1     grid_4.0.1        nlme_3.1-147      jsonlite_1.6.1   
+[41] gtable_0.3.0      lifecycle_0.2.0   DBI_1.1.0         git2r_0.27.1     
+[45] magrittr_1.5      scales_1.1.1      cli_2.0.2         stringi_1.4.6    
+[49] fs_1.4.1          promises_1.1.1    xml2_1.3.2        ellipsis_0.3.1   
+[53] generics_0.0.2    vctrs_0.3.1       boot_1.3-25       tools_4.0.1      
+[57] glue_1.4.1        hms_0.5.3         yaml_2.2.1        colorspace_1.4-1 
+[61] rvest_0.3.5       knitr_1.29        haven_2.3.1      </code></pre>
 </div>
 </div>
 
