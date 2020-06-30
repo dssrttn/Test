@@ -115,6 +115,8 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
 
 ```{r DIL D99, dev=c('png', 'pdf'), echo = FALSE}
 library(ggplot2)
+library(cowplot)
+
 
 DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
@@ -151,11 +153,11 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
   # scale_y_continuous(n.breaks = 10) # setzt eine bestimmte Anzahl von Achsenteilstrichen
 
 
+
+
+
+
 ```
-
-
-
-
 
 
 
