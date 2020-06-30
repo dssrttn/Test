@@ -16,6 +16,8 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 
+options(pillar.sigfig=5) # how many decimals represented on the display
+
 DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
 #DIL_tidy %>% #mutate(cuts = 
