@@ -1,0 +1,140 @@
+---
+title: "Rechnungen"
+author: "Mein Vorname"
+date: "2020-06-25"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+
+
+```{r}
+library(plyr)
+library(tidyverse)
+
+
+DIL_tidy <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+
+DIL_Mittelwert <- distinct(DIL_tidy, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+
+DIL_Mittelwert <-DIL_Mittelwert %>% add_column(change = 1:14) # add column, ausgefüllt mit 1:14, Differenzen werden erst im naechsten Schritt kalkuliert 
+ddply(DIL_Mittelwert, .(), transform, change = ((100 / Mittelwert[1]) * Mittelwert) - 100) # Differenzen zum Ausgangswert in der 1. Reihe 
+
+
+
+
+```
+`
+
+
+
+``` {r echo = FALSE, fig.width=10, fig.height=7, dev=c('png', 'pdf')}
+library(ggplot2)
+DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+data <- data.frame(
+x <- (1:14),
+y <- DIL_1$Mittelwert
+)
+
+ggplot(data, aes(x=x, y=y, label = y)) +
+  geom_segment( aes(x=x, xend=x, y=76.23, yend=y), color="grey") +
+  geom_point( color="orange", size=4) +
+  #geom_text(nudge_x = 1.5) +
+   expand_limits(y = c(75.0, 80.5)) +
+  theme_light() +
+  geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
+  geom_abline(intercept = 76.23*1.01, slope = 0) +  
+  geom_abline(intercept = 76.23*1.02, slope = 0) +
+  geom_abline(intercept = 76.23*1.03, slope = 0) +
+  geom_abline(intercept = 76.23*1.04, slope = 0) +
+  geom_abline(intercept = 76.23*1.05, slope = 0) +
+ scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
+  scale_y_continuous(breaks = seq(75.0,80.5,0.5)) + 
+  theme_bw() + # remove grid lines, background color ...
+    theme(
+      panel.border = element_blank(), 
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(), 
+      axis.line = element_line(colour = "black")) +
+
+
+  xlab("") +
+  ylab("Dose in Gray")
+```
+
+
+
+``` {r echo = FALSE, fig.width=10, fig.height=7, dev=c('png', 'pdf')}
+library(ggplot2)
+
+DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+
+
+data <- data.frame(
+x <- (1:14),
+y <- DIL_1$Mittelwert
+)
+
+
+#colour = cut(SLEEP, c(-Inf, summary(SLEEP)[[2]], summary(SLEEP)[[5]], Inf))),
+ #   size = 3, show.legend = FALSE ) +
+  #scale_color_manual(values = c('green', 'orange', 'red')
+
+ggplot(data, aes(x=x, y=y, label = y)) +
+  geom_point(
+    aes(colour = cut(DIL_1$Mittelwert, c(-Inf, 76.23, 76.5, Inf)),
+             size = 3, show.legend = FALSE) + 
+    scale_color_manual(values = c('green', 'orange', 'red'))) +
+  #values = c("(-Inf,76.23]" = "black",(76.23, 77.0]" = "yellow","(77.0, Inf]" = "red")), +
+     # labels = c("<= 76.23", "76.23 < DIL_1$Mittelwert <= 77.0", "> 77.0")) +
+  geom_segment(aes(x=x, xend=x, y=76.23, yend=y), color="grey") +
+  #geom_point( color="orange", size=4) +
+  #geom_text(nudge_x = 1.5) +
+   expand_limits(y = c(75.0, 80.5)) +
+  theme_light() +
+  geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
+  #geom_abline(intercept = 76.23*1.01, slope = 0) +  
+  #geom_abline(intercept = 76.23*1.02, slope = 0) +
+  #geom_abline(intercept = 76.23*1.03, slope = 0) +
+  #geom_abline(intercept = 76.23*1.04, slope = 0) +
+  #geom_abline(intercept = 76.23*1.05, slope = 0) +
+ scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
+  scale_y_continuous(breaks = seq(75.0,80.5,0.5)) + 
+  theme_bw() + # remove grid lines, background color ...
+    theme(
+      panel.border = element_blank(), 
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(), 
+      axis.line = element_line(colour = "black")) +
+  xlab("") +
+  ylab("Dose in Gray")
+
+```
+
+
+
+```{r}
+# library
+library(plotrix)
+
+#create color palette
+library(RColorBrewer)
+my_colors = brewer.pal(8, "Set2") 
+
+# Create data
+x <- seq(1:14)
+y <- y <- DIL_1$Mittelwert
+
+# Plot x and y
+par(mar=c(4,4,2,2))
+clplot(x, y, main="", lwd=5, levels=c(76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05), col=my_colors, showcuts=T , bty="n")
+
+
+```
+
+
+
+
+`
