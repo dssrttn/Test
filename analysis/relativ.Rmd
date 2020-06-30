@@ -145,7 +145,7 @@ ggplot(data, aes(x, y)) +
 # scale_y_discrete(breaks = c(T,F)) +
 
   scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+geom_abline(intercept = 76.23, slope = 0, lty=1) + # horizontale Linie ohne Steigung, da slope = 0 
    annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
   theme_classic() +
   theme(
