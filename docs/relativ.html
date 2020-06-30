@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree8b05dcf2b8afa72043f6a551e2f35eb407fbdf3ftargetblank8b05dcfa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/8b05dcf2b8afa72043f6a551e2f35eb407fbdf3f" target="_blank">8b05dcf</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree546ee7a32b564e39cea456b9f4648e3129b2a1c5targetblank546ee7aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/546ee7a32b564e39cea456b9f4648e3129b2a1c5" target="_blank">546ee7a</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree8b05dcf2b8afa72043f6a551e2f35eb407fbdf3ftargetblank8b05dcfa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree546ee7a32b564e39cea456b9f4648e3129b2a1c5targetblank546ee7aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/8b05dcf2b8afa72043f6a551e2f35eb407fbdf3f" target="_blank">8b05dcf</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/546ee7a32b564e39cea456b9f4648e3129b2a1c5" target="_blank">546ee7a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -531,6 +531,7 @@ Ignored files:
 Untracked files:
     Untracked:  README.html
     Untracked:  analysis/ggpubr.Rmd
+    Untracked:  data/.~lock.DIL_1.csv#
     Untracked:  data/DIL_1.csv
 
 Unstaged changes:
@@ -573,6 +574,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/546ee7a32b564e39cea456b9f4648e3129b2a1c5/analysis/relativ.Rmd" target="_blank">546ee7a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+<td>
+relative und absolute Kalkulationen zur baseline, kein Graph bislang
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/de58e84bd0bb16b7eca50a4230ee08c791600a7f/docs/relativ.html" target="_blank">de58e84</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -635,26 +670,103 @@ cols(
 )</code></pre>
 <pre class="r"><code>DIL_Mittelwert &lt;- distinct(DIL_tidy, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
-DIL_Mittelwert &lt;-DIL_Mittelwert %&gt;% add_column(change = 1:14) # add column, ausgefüllt mit 1:14, Differenzen werden erst im naechsten Schritt kalkuliert 
-ddply(DIL_Mittelwert, .(), transform, change = ((100 / Mittelwert[1]) * Mittelwert) - 100) # Differenzen zum Ausgangswert in der 1. Reihe </code></pre>
-<pre><code>    .id Mittelwert       change
-1  &lt;NA&gt;   77.16960  0.000000000
-2  &lt;NA&gt;   76.74186 -0.554287574
-3  &lt;NA&gt;   76.78767 -0.494925727
-4  &lt;NA&gt;   76.54315 -0.811783404
-5  &lt;NA&gt;   76.70229 -0.605564243
-6  &lt;NA&gt;   76.69017 -0.621262653
-7  &lt;NA&gt;   76.41442 -0.978599742
-8  &lt;NA&gt;   77.03381 -0.175957503
-9  &lt;NA&gt;   76.70290 -0.604775850
-10 &lt;NA&gt;   77.16465 -0.006413018
-11 &lt;NA&gt;   76.94086 -0.296411802
-12 &lt;NA&gt;   77.24228  0.094180481
-13 &lt;NA&gt;   76.95852 -0.273528050
-14 &lt;NA&gt;   77.25280  0.107820956</code></pre>
+#DIL_Mittelwert &lt;-DIL_Mittelwert %&gt;% add_column(change = 1:14) # add column, ausgefüllt mit 1:14, Differenzen werden erst im naechsten Schritt kalkuliert 
+DIL_absolut &lt;- ddply(DIL_Mittelwert, .(), transform, change = (Mittelwert[1] - Mittelwert)) # absolute Differenzen zum Ausgangswert in der 1. Reihe 
+
+
+ddply(DIL_absolut, .(), transform, change2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # Differenzen zum Ausgangswert in der 1. Reihe </code></pre>
+<pre><code>    .id Mittelwert     change      change2
+1  &lt;NA&gt;   77.16960  0.0000000  0.000000000
+2  &lt;NA&gt;   76.74186  0.4277415 -0.554287574
+3  &lt;NA&gt;   76.78767  0.3819322 -0.494925727
+4  &lt;NA&gt;   76.54315  0.6264500 -0.811783404
+5  &lt;NA&gt;   76.70229  0.4673115 -0.605564243
+6  &lt;NA&gt;   76.69017  0.4794259 -0.621262653
+7  &lt;NA&gt;   76.41442  0.7551815 -0.978599742
+8  &lt;NA&gt;   77.03381  0.1357857 -0.175957503
+9  &lt;NA&gt;   76.70290  0.4667031 -0.604775850
+10 &lt;NA&gt;   77.16465  0.0049489 -0.006413018
+11 &lt;NA&gt;   76.94086  0.2287398 -0.296411802
+12 &lt;NA&gt;   77.24228 -0.0726787  0.094180481
+13 &lt;NA&gt;   76.95852  0.2110805 -0.273528050
+14 &lt;NA&gt;   77.25280 -0.0832050  0.107820956</code></pre>
 <p>`</p>
 <p><img src="figure/relativ.Rmd/unnamed-chunk-2-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/de58e84bd0bb16b7eca50a4230ee08c791600a7f/docs/figure/relativ.Rmd/unnamed-chunk-2-1.png" target="_blank">de58e84</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p><img src="figure/relativ.Rmd/unnamed-chunk-3-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
+Past versions of unnamed-chunk-3-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-3-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/de58e84bd0bb16b7eca50a4230ee08c791600a7f/docs/figure/relativ.Rmd/unnamed-chunk-3-1.png" target="_blank">de58e84</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code># library
 library(plotrix)
 
@@ -670,6 +782,43 @@ y &lt;- y &lt;- DIL_1$Mittelwert
 par(mar=c(4,4,2,2))
 clplot(x, y, main=&quot;&quot;, lwd=5, levels=c(76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05), col=my_colors, showcuts=T , bty=&quot;n&quot;)</code></pre>
 <p><img src="figure/relativ.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
+Past versions of unnamed-chunk-4-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-4-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/de58e84bd0bb16b7eca50a4230ee08c791600a7f/docs/figure/relativ.Rmd/unnamed-chunk-4-1.png" target="_blank">de58e84</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>`</p>
 <br>
 <p>
