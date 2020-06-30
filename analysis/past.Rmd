@@ -12,22 +12,34 @@ editor_options:
 ```{r}
 library(pastecs)
 library(tidyverse)
+library(kableExtra)
+
 options(scipen=100)
-options(digits=2)
+options(digits=3)
 
 DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
+
+
 as_tibble(DIL_1)
 
+
 DIL_1 <- DIL_1 %>% 
-  select(Mittelwert, D_99, D_95, D_1, D_max, D_min)
+  select(D_60, Mittelwert, D_99, D_95, D_1, D_max, D_min)
 
 df <- data.frame(DIL_1)
 
+as_tibble(stat.desc(df))
+
+#df %>% add_column('Descriptive statistics' = 1:14)
 
 stat.desc(df)
 
 
+as_tibble(stat.desc(df))
+
+#rownames_to_column(DIL_1, var = "var_name") Versuch die 1. Spalte zu benennen
+kable(stat.desc(df))
 
 ```
 
