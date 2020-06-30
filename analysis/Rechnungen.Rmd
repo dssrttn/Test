@@ -38,9 +38,9 @@ kable(Range)
 #class(Range)
 Range <- as.data.frame(Range) %>%  
 group_by(Range, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
-dplyr::summarise(Numbers = n())  #%>% # %>% #=n())   
-#mutate(Nummers = rowSums(.[-1]))
-
+dplyr::summarise(Numbers = n())  %>% # %>% #=n())   
+mutate(Nummers = rowSums(.[-1]))
+print(as_tibble(Range))
 ```
 
 
@@ -69,6 +69,7 @@ knitr::kable
 library(tidyverse)
 library(dplyr)
 library(magrittr)
+library(kableExtra)
 
 DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 df <- data.frame(DIL_1)
@@ -81,115 +82,17 @@ dj <- dg[c(1,4,5,6,10,11),] # tidyverse: wähle die Zeilen 1,4,5,6,10,11 aus und
 #kable(dj)
 
 dk <- dj[,c(2,3,4,5,8,9,10,13)] # tidyverse:wähle die Spalten 2,3,4,5,8,9,10,13 aus und überführe sie in das Objekt dk
+#kable(dk)
+
+dk <- dk %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, Range = range)
+
 kable(dk)
 
-#dk <- dk %>% rename(Numbers = n, Mean = mean, Standard deviation = sd, Median = median, Standard errors = se, Minimum = min, Maximum = max, Range = range)
-
-# skew und kurtosis
-#skewundkurtosis <- dj[,c(11,12)] # tidyverse:wähle die Spalten 11 und 12 aus und überführe sie in das Objekt dl
-#kable(skewundkurtosis)
-
-#colnames(dk) 
 ```
 
 
 
 
-```{r}
-
-#count_interval<-interval %>%
- # group_by(interval) %>% 
-  #summarise(n=n())
-
-#group_by(labels) %>% 
- #   summarize(n=n())
-  
-#x <- 1:10
-#x %in% 5:8
-
-
-DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
-DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
-
-
-#df <- DIL_tidy[DIL_tidy$Mittelwert >= 76.23 & DIL_tidy$Mittelwert <= 77,23]
-#df 
-
-#subset(DIL_tidy,DIL_tidy$Mittelwert <= 77.23 & DIL_tidy$Mittelwert >= 76.23)
-
-(share = mean(DIL_1$Mittelwert >= 76.23))
-(share = mean(DIL_1$Mittelwert >= 76.23*1.01))
-(share = mean(DIL_1$Mittelwert >= 76.23*1.02))
-(share = mean(DIL_1$Mittelwert >= 76.23*1.03))
-(share = mean(DIL_1$Mittelwert >= 76.23*1.04))
-(share = mean(DIL_1$Mittelwert >= 76.23*1.05))
-
-
-length(DIL_1$Mittelwert)
-length( which( DIL_1$Mittelwert > 76.23))#, DIL_1$Mittelwert < 76.23*1.01))
-length( which( DIL_1$Mittelwert > 76.23*1.01))
-length( which( DIL_1$Mittelwert > 76.23*1.02))
-length( which( DIL_1$Mittelwert > 76.23*1.03))
-length( which( DIL_1$Mittelwert > 76.23*1.04))
-length( which( DIL_1$Mittelwert > 76.23*1.05))
-
-#subset(DIL_1$Mittelwert>76.23 & DIL_1$Mittelwert<78)
-#a <- DIL_1$Mittelwert
-#subset(DIL_1$Mittelwert, a %in% 76.23:77.93)#*1.01)
-
-
-```
-
-
-```{r}
-
-df <- data.frame(DIL_1$Mittelwert)
-
-
-fx <- function(x) {
-  c(n=length(x), mean=mean(x), median=quantile(x, .5),
-    std=sd(x), var=var(x), max=max(x), min=min(x))
-}
-
-agresult <- aggregate(.~DIL_1$Mittelwert, FUN=fx, data=df)
-agresult <- do.call(data.frame, agresult)
-agresult[1:14, 1:8]
-
-```
 
 
 
-```{r}
-
-df <- data.frame(DIL_1$Mittelwert)
-df
-
-aggregate(DIL_1$Mittelwert, df, mean)
-
-```
-
-
-
-## Summe
-```{r}
-
-df <- data.frame(DIL_1$Mittelwert)
-df
-sum1 <- sum(df < 76.23)
-sum2 <- sum(df > 76.23 & df < 76.23*1.01)
-sum3 <- sum(df > 76.23*1.01 & df < 76.23*1.02)
-sum4 <- sum(df > 76.23*1.02 & df < 76.23*1.03)
-sum5 <- sum(df > 76.23*1.03 & df < 76.23*1.04)
-sum6 <- sum(df > 76.23*1.04 & df < 76.23*1.05)
-sum7 <- sum(df > 76.23*1.05)
-
-sum1
-sum2
-sum3
-
-```
-
-
-### dfsdfsdfs
-jokooko
-  
