@@ -23,15 +23,15 @@ DIL_1 <- read_csv2('data/DIL_1.csv')# header=TRUE, stringsAsFactors=FALSE, sep="
 df <- data.frame(DIL_1)
 
 
+
 DIL_1 <- DIL_1 %>% 
   select(Mittelwert, D_99, D_95, D_1, D_max, D_min)
 
-MAD_DIL_1 <- DIL_1$Mittelwert
-MAD_DIL_1 <- MeanAD(DIL_1$Mittelwert, center = 76.23) 
+MAD_DIL_1 <- DIL_1 %>%
+  select(Mittelwert)
+MAD_DIL_1 <- MeanAD(DIL_1$Mittelwert, center = 76.23) # muss an dieser Stelle stehen, ansonsten Fehlermeldung
 
-MAD_DIL_1 %>%
-  kable(align = c("c"),'html', caption = "Patient 1 - MAD", col.names = c("MAD")) %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
 
 DIL_1<- describe(DIL_1)
 
@@ -41,17 +41,32 @@ DIL_1 <- DIL_1 %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd, M
 DIL_1 <- DIL_1 %>% 
   select(Numbers,	Mean,	'Standard deviation',	Median,	Minimum,	Maximum, Range, 'Standard errors')
 
-#kable(DIL_1)
-#var_DIL_1 <-  var(DIL_1)
-#kable(var_DIL_1)
+
+DIL_1 <- DIL_1 %>% add_column(MAD_DIL_1, .after = 'Standard errors')
+DIL_1 <- DIL_1 %>% rename(MAD = MAD_DIL_1)
+
+DIL_1[2, 9] = NA #Befehl um in einem dataframe, hier 2. Zeile und 9. Reihe einen neuen Wert (hier 0) eibnzusetzen
+DIL_1[3, 9] = NA
+DIL_1[4, 9] = NA
+DIL_1[5, 9] = NA
+DIL_1[6, 9] = NA
 
 
+#DIL_1 %>% add_column(MAD_DIL_1, .after = 'Standard errors')
 
 DIL_1 %>%
-  kable(align = c("cccccccc"),'html') %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+  kable(align = c("ccccccccc"), format ='html', caption = "Patient 1 - DIL constraint") %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) 
 
-# knitr::kable(align = c("lr"), format ='html', caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
+# knitr::kable(align = c("lr"), caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
+
+
+
+
+#MAD_DIL_1 %>%
+ # kable(align = c("c"),'html', caption = "Patient 1 - Mean absolute deviation from the Boost constraint", col.names = c("MAD - Boost constraint")) %>%
+#kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE)
+
 
 
 #print(DIL_1)
