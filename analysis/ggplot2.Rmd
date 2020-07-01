@@ -71,7 +71,7 @@ library(ggplot2)
 
 
 
-DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
 data <- data.frame(
 x <- (1:14),
@@ -88,13 +88,12 @@ ggplot(data, aes(x, y)) +
   expand_limits(y = c(74.0, 77.0)) +
 scale_y_continuous(breaks = seq(74.0,77.0,0.5)) +
 scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
-   
-  
-  # WICHTIG: constraint Linie aendern!
-  
-  annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "D_99 constraint") +
-theme_classic() +
+
+  # WICHTIG: constraint Linie aendern! bei 69.9 Gy!
+  #geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   # annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "D_99 constraint") +
+
+  theme_classic() +
   theme(
   plot.title = element_text(color="black", size=14, face="bold.italic", family ="serif"), # Titel des Graphen
   axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
@@ -139,7 +138,7 @@ ggplot(data, aes(x, y)) +
   geom_point() +
   geom_line() +
  expand_limits(y = c(75.0, 78)) +
-  scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
+  scale_y_continuous(breaks = seq(75.0,78.0,1.0)) +
   scale_x_continuous(breaks = c(1, 5,10, 14)) +  # für jedes x ein tick
 geom_abline(intercept = 75.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
    annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
@@ -150,7 +149,7 @@ geom_abline(intercept = 75.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
   axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
   axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), "mm"), family = "serif", size=rel(2)), 
   # X-Achsen-Beschriftungs-(groß)-Parameter
-  axis.title.y = element_text(margin = unit(c(0, 1.5, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
   plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), # Abstände um den Graphen in top-right-bottom-left Orientierung
   axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.13, "cm"), # Teilstriche
  # line = element_blank() # keine Achsenlinien
