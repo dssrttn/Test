@@ -16,9 +16,7 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 
-options(pillar.sigfig=3) # how many decimals represented on the display
-
-DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+DIL_1_constraint<- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
 #DIL_tidy %>% #mutate(cuts = 
  # (cut(DIL_tidy$Mittelwert, c(Inf, 77.23, Inf))) %>% 
@@ -26,85 +24,21 @@ DIL_tidy <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep
   #summarize(n=n())
 
 
-Range <- cut(DIL_tidy$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=c('< 76.23 Gy', 'within + 1% of constraint', 'within + 2% of constraint', 'within + 3% of constraint', 'within + 4% of constraint', 'within + 5% of constraint', '> + 5% of constraint'))  # benutzt dplyr, 7 Intervalle 
+DIL_1_constraint <- cut(DIL_1_constraint$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=c('< 76.23 Gy', 'within + 1% of constraint', 'within + 2% of constraint', 'within + 3% of constraint', 'within + 4% of constraint', 'within + 5% of constraint', '> + 5% of constraint'))  # benutzt dplyr, 7 Intervalle 
 
 
-table(Range)
-kable(Range)
-
-#mutate_each(funs(if(is.integer(.)) as.numeric(.) else .))
-                                                                                                                                         
-                                                                                                                                         
-  class(Range)
-
-#class(Range)
-Range <- as.data.frame(Range) %>%  
-group_by(Range, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+DIL_1_constraint <- as.data.frame(DIL_1_constraint) %>%  
+group_by(DIL_1_constraint, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
 dplyr::summarise(Numbers = n())  #%>% # %>% #=n())   
 #mutate(Nummers = rowSums(.[-1]))
-print(as_tibble(Range))
-```
 
-
-```{r}
-library(knitr)
-library(kableExtra)
-Range %>%
-  kable() %>%
-  kable_styling()
-
-
-#kable(Range, format = "html") #%>%
-  #kable_styling(full_width=F) %>%
- # column_spec(4, width = "4em")
-```
-
-
-## PSych package für deskriptive Statistik.
-
-```{r echo=FALSE, results='asis'}
-library(knitr)
-#options(kableExtra.latex.load_packages = FALSE)
-library(kableExtra)
-library(psych)
-knitr::kable
-library(tidyverse)
-library(dplyr)
-library(magrittr)
-library(kableExtra)
-library(pastecs)
-
-#options(pillar.sigfig=5) # how many decimals represented on the display
-
-DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
-df <- data.frame(DIL_1)
-
-
-
-
-dg <- describe(df) # psych-package: Standard
-#kable(dg)
-
-dj <- dg[c(1,4,5,6,10,11),] # tidyverse: wähle die Zeilen 1,4,5,6,10,11 aus und überführe sie in ein das Objekt dj
-#kable(dj)
-
-dk <- dj[,c(2,3,4,5,8,9,10,13)] # tidyverse:wähle die Spalten 2,3,4,5,8,9,10,13 aus und überführe sie in das Objekt dk
-#kable(dk)
-
-dk <- dk %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, Range = range)
-
-dk %>%
-  kable() %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
- 
-
-
+DIL_1_constraint %>%
+  kable(align = c("lr"),'html') %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
 
 
 
 ```
-
-
 
 
 
