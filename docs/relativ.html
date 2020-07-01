@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9a80aa2582388c98b0ab7877655630ade9cb74c2targetblank9a80aa2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/9a80aa2582388c98b0ab7877655630ade9cb74c2" target="_blank">9a80aa2</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7ce89b93e15e64a18d480c7921ce10297a7a698ftargetblank7ce89b9a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/7ce89b93e15e64a18d480c7921ce10297a7a698f" target="_blank">7ce89b9</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9a80aa2582388c98b0ab7877655630ade9cb74c2targetblank9a80aa2a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7ce89b93e15e64a18d480c7921ce10297a7a698ftargetblank7ce89b9a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/9a80aa2582388c98b0ab7877655630ade9cb74c2" target="_blank">9a80aa2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/7ce89b93e15e64a18d480c7921ce10297a7a698f" target="_blank">7ce89b9</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -578,6 +578,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/7ce89b93e15e64a18d480c7921ce10297a7a698f/analysis/relativ.Rmd" target="_blank">7ce89b9</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+<td>
+plotrix und lollipop raaus, Prozentzeichen und Lollipop-Striche in relativ Graphen
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/ca7488f163b25dc1d0bab1d4071c13132af09743/docs/relativ.html" target="_blank">ca7488f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -755,6 +789,14 @@ x dplyr::mutate()    masks plyr::mutate()
 x dplyr::rename()    masks plyr::rename()
 x dplyr::summarise() masks plyr::summarise()
 x dplyr::summarize() masks plyr::summarize()</code></pre>
+<pre><code>
+Attaching package: &#39;scales&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:purrr&#39;:
+
+    discard</code></pre>
+<pre><code>The following object is masked from &#39;package:readr&#39;:
+
+    col_factor</code></pre>
 <pre><code>Using &#39;,&#39; as decimal and &#39;.&#39; as grouping mark. Use read_delim() for more control.</code></pre>
 <pre><code>Parsed with column specification:
 cols(
@@ -771,21 +813,21 @@ cols(
   D_95 = col_double(),
   D_99 = col_double()
 )</code></pre>
-<pre><code>    .id Mittelwert  abschange    relchange  x
-1  &lt;NA&gt;   77.16960  0.0000000  0.000000000  1
-2  &lt;NA&gt;   76.74186  0.4277415 -0.554287574  2
-3  &lt;NA&gt;   76.78767  0.3819322 -0.494925727  3
-4  &lt;NA&gt;   76.54315  0.6264500 -0.811783404  4
-5  &lt;NA&gt;   76.70229  0.4673115 -0.605564243  5
-6  &lt;NA&gt;   76.69017  0.4794259 -0.621262653  6
-7  &lt;NA&gt;   76.41442  0.7551815 -0.978599742  7
-8  &lt;NA&gt;   77.03381  0.1357857 -0.175957503  8
-9  &lt;NA&gt;   76.70290  0.4667031 -0.604775850  9
-10 &lt;NA&gt;   77.16465  0.0049489 -0.006413018 10
-11 &lt;NA&gt;   76.94086  0.2287398 -0.296411802 11
-12 &lt;NA&gt;   77.24228 -0.0726787  0.094180481 12
-13 &lt;NA&gt;   76.95852  0.2110805 -0.273528050 13
-14 &lt;NA&gt;   77.25280 -0.0832050  0.107820956 14</code></pre>
+<pre><code>    .id Mittelwert    relchange  x
+1  &lt;NA&gt;   77.16960  0.000000000  1
+2  &lt;NA&gt;   76.74186 -0.554287574  2
+3  &lt;NA&gt;   76.78767 -0.494925727  3
+4  &lt;NA&gt;   76.54315 -0.811783404  4
+5  &lt;NA&gt;   76.70229 -0.605564243  5
+6  &lt;NA&gt;   76.69017 -0.621262653  6
+7  &lt;NA&gt;   76.41442 -0.978599742  7
+8  &lt;NA&gt;   77.03381 -0.175957503  8
+9  &lt;NA&gt;   76.70290 -0.604775850  9
+10 &lt;NA&gt;   77.16465 -0.006413018 10
+11 &lt;NA&gt;   76.94086 -0.296411802 11
+12 &lt;NA&gt;   77.24228  0.094180481 12
+13 &lt;NA&gt;   76.95852 -0.273528050 13
+14 &lt;NA&gt;   77.25280  0.107820956 14</code></pre>
 <p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-1">
@@ -811,6 +853,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/ca7488f163b25dc1d0bab1d4071c13132af09743/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ca7488f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ca83425</a>
 </td>
 <td>
@@ -824,196 +877,6 @@ Mein Vorname
 </table>
 </div>
 </div>
-<p>`</p>
-<p><img src="figure/relativ.Rmd/DIL%20Mittelwert-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Mittelwert-1">
-Past versions of “DIL Mittelwert-1.png”
-</button>
-</p>
-<div id="fig-no-spaces-DIL-Mittelwert-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/a7d5ebcc6d4d8355662eb5d51baf9aa9f4b84a30/docs/figure/relativ.Rmd/DIL Mittelwert-1.png" target="_blank">a7d5ebc</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-30
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/DIL Mittelwert-1.png" target="_blank">ca83425</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-30
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/relativ.Rmd/unnamed-chunk-1-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-1">
-Past versions of unnamed-chunk-1-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-1-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/unnamed-chunk-1-1.png" target="_blank">ca83425</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-30
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/relativ.Rmd/unnamed-chunk-2-1.png" width="960" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
-Past versions of unnamed-chunk-2-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-2-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/unnamed-chunk-2-1.png" target="_blank">ca83425</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-30
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/de58e84bd0bb16b7eca50a4230ee08c791600a7f/docs/figure/relativ.Rmd/unnamed-chunk-2-1.png" target="_blank">de58e84</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-30
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code># library
-library(plotrix)
-
-#create color palette
-library(RColorBrewer)
-my_colors = brewer.pal(8, &quot;Set2&quot;) 
-
-# Create data
-x &lt;- seq(1:14)
-y &lt;- y &lt;- DIL_1$Mittelwert
-
-# Plot x and y
-par(mar=c(4,4,2,2))
-clplot(x, y, main=&quot;&quot;, lwd=5, levels=c(76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05), col=my_colors, showcuts=T , bty=&quot;n&quot;)</code></pre>
-<p><img src="figure/relativ.Rmd/Plotrix-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-Plotrix-1">
-Past versions of Plotrix-1.png
-</button>
-</p>
-<div id="fig-Plotrix-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/Plotrix-1.png" target="_blank">ca83425</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-30
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>`</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1042,10 +905,9 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] RColorBrewer_1.1-2 plotrix_3.7-8      forcats_0.5.0      stringr_1.4.0     
- [5] dplyr_1.0.0        purrr_0.3.4        readr_1.3.1        tidyr_1.1.0       
- [9] tibble_3.0.1       ggplot2_3.3.2      tidyverse_1.3.0    plyr_1.8.6        
-[13] workflowr_1.6.2   
+ [1] scales_1.1.1    forcats_0.5.0   stringr_1.4.0   dplyr_1.0.0    
+ [5] purrr_0.3.4     readr_1.3.1     tidyr_1.1.0     tibble_3.0.1   
+ [9] ggplot2_3.3.2   tidyverse_1.3.0 plyr_1.8.6      workflowr_1.6.2
 
 loaded via a namespace (and not attached):
  [1] tidyselect_1.1.0 xfun_0.15        haven_2.3.1      lattice_0.20-41 
@@ -1056,13 +918,13 @@ loaded via a namespace (and not attached):
 [21] munsell_0.5.0    gtable_0.3.0     cellranger_1.1.0 rvest_0.3.5     
 [25] evaluate_0.14    knitr_1.29       httpuv_1.5.4     fansi_0.4.1     
 [29] broom_0.5.6      Rcpp_1.0.4.6     promises_1.1.1   backports_1.1.8 
-[33] scales_1.1.1     jsonlite_1.6.1   farver_2.0.3     fs_1.4.1        
-[37] hms_0.5.3        digest_0.6.25    stringi_1.4.6    grid_4.0.1      
-[41] rprojroot_1.3-2  cli_2.0.2        tools_4.0.1      magrittr_1.5    
-[45] crayon_1.3.4     whisker_0.4      pkgconfig_2.0.3  ellipsis_0.3.1  
-[49] xml2_1.3.2       reprex_0.3.0     lubridate_1.7.9  rstudioapi_0.11 
-[53] assertthat_0.2.1 rmarkdown_2.3    httr_1.4.1       R6_2.4.1        
-[57] nlme_3.1-147     git2r_0.27.1     compiler_4.0.1  </code></pre>
+[33] jsonlite_1.6.1   farver_2.0.3     fs_1.4.1         hms_0.5.3       
+[37] digest_0.6.25    stringi_1.4.6    grid_4.0.1       rprojroot_1.3-2 
+[41] cli_2.0.2        tools_4.0.1      magrittr_1.5     crayon_1.3.4    
+[45] whisker_0.4      pkgconfig_2.0.3  ellipsis_0.3.1   xml2_1.3.2      
+[49] reprex_0.3.0     lubridate_1.7.9  rstudioapi_0.11  assertthat_0.2.1
+[53] rmarkdown_2.3    httr_1.4.1       R6_2.4.1         nlme_3.1-147    
+[57] git2r_0.27.1     compiler_4.0.1  </code></pre>
 </div>
 
 
