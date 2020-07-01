@@ -13,12 +13,11 @@ editor_options:
 library(plyr)
 library(tidyverse)
 library(ggplot2)
+library(scales)
 
 DIL_1_rel<- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 DIL_1_rel <- distinct(DIL_1_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
-  
-DIL_1_rel <- ddply(DIL_1_rel, .(), transform, abschange = (Mittelwert[1] - Mittelwert)) # absolute Differenzen zum Ausgangswert in der 1. Reihe 
 
 
 #ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe 
@@ -34,12 +33,12 @@ y <- DIL_1_rel$relchange
 
 ggplot(DIL_1_rel,aes(x=x #DIL_relabs$x
                       ,y=y )) + #DIL_relabs$abschange)) +
-   #geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+   geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
     geom_point() +
-  geom_line() +
+  #geom_line() +
  expand_limits(y = c(-2, 2)) +
-  scale_y_continuous(breaks = seq(-2, 2, 1.0)) +
-    scale_x_continuous(breaks = c(1,5,10,14))  + # für jedes x ein tick
+  scale_y_continuous(breaks = seq(-2, 2, 1.0), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
   geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
     theme_classic() +
   theme(
@@ -55,180 +54,5 @@ ggplot(DIL_1_rel,aes(x=x #DIL_relabs$x
    ) +
   ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
   xlab("Fraction") + # X-Achsen-Beschriftung
-  ylab("Relative dose changes in percent")  #+ # Y-Achsen-Beschriftung
-  
-  
-  
+  ylab("Relative dose changes")   #+ # Y-Achsen-Beschriftung
 ```
-`
-
-
-
-
-
-
-
-```{r DIL Mittelwert, dev=c('png', 'pdf'), echo = FALSE}
-library(ggplot2)
-#library(scales)
-
-DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
-
-data <- data.frame(
-x <- (1:14),
-y <- DIL_1$Mittelwert
-)
-
-#x
-#y
-#data
-
-ggplot(data, aes(x, y)) + 
-   geom_segment( aes(x=x, xend=x, y=76.23, yend=y), color="grey") +
-  geom_point() +
-  geom_line() +
- expand_limits(y = c(75.0, 78)) +
-  scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
-#scale_y_continuous(label_number(accuracy = 0.1), breaks = seq(75.0,78.0,0.25), labels = c(75.0, "", 75.5, "", 76.0, "", 76.5, "", 77.0, "" ,77.5, "" ,
- # 78.0)) + # Labels und Ticks ungleich, jedoch jedes 2. Label soll nicht angezeigt werden
-#label_number(accuracy = 0.1),
-    # , labels = c(75.0, 75.5, 76.0, 76.5, 77.0, 77.5, 78.0)) +
-  #scale_y_continuous(expand = expand_scale(mult = c(0, .1)), b
-  # scale_x_discrete(limits=NULL, breaks=NULL, 0.5) + https://stackoverflow.com/questions/55033695/x-axis-labels-illegible-display-every-other-label-on-x-axis-ggplot2
-# scale_y_discrete(breaks = c(T,F)) +
-
-  scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=1) + # horizontale Linie ohne Steigung, da slope = 0 
-   annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
-  theme_classic() +
-  theme(
-  plot.title = element_text(color="black", size=14, face="bold.italic", family ="serif"), # Titel des Graphen
-  axis.text.x = element_text(margin = unit(c(2, 0, 0, 0), "mm"), family = "serif", size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
-  axis.text.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
-  axis.title.x = element_text(margin = unit(c(3, 0, 0, 0), "mm"), family = "serif", size=rel(2)), 
-  # X-Achsen-Beschriftungs-(groß)-Parameter
-  axis.title.y = element_text(margin = unit(c(0, 4, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
-  plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), # Abstände um den Graphen in top-right-bottom-left Orientierung
-  axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"), # Teilstriche
-  axis.line = element_line(color = 'black', size = 0.3, linetype = 1) # Achsenlinie
-   ) +
- xlab("Fraction") + # X-Achsen-Beschriftung
-  ylab("Dose in Gray")  #+ # Y-Achsen-Beschriftung
- #  scale_y_continuous(n.breaks = 10) # setzt eine bestimmte Anzahl von Achsenteilstrichen
-
-
-```
-
-
-
-
-
-``` {r echo = FALSE, fig.width=10, fig.height=7, dev=c('png', 'pdf')}
-library(ggplot2)
-DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
-
-data <- data.frame(
-x <- (1:14),
-y <- DIL_1$Mittelwert
-)
-
-ggplot(data, aes(x=x, y=y, label = y)) +
-  geom_segment( aes(x=x, xend=x, y=76.23, yend=y), color="grey") +
-  geom_point( color="orange", size=4) +
-  #geom_text(nudge_x = 1.5) +
-   expand_limits(y = c(75.0, 80.5)) +
-  theme_light() +
- # geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
-  #geom_abline(intercept = 76.23*1.01, slope = 0) +  
-  #geom_abline(intercept = 76.23*1.02, slope = 0) +
-  #geom_abline(intercept = 76.23*1.03, slope = 0) +
-  #geom_abline(intercept = 76.23*1.04, slope = 0) +
-  #geom_abline(intercept = 76.23*1.05, slope = 0) +
- scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
-  scale_y_continuous(breaks = seq(75.0,80.5,0.5)) + 
-  theme_bw() + # remove grid lines, background color ...
-    theme(
-      panel.border = element_blank(), 
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank(), 
-      axis.line = element_line(colour = "black")) +
-
-
-  xlab("") +
-  ylab("Dose in Gray")
-```
-
-
-
-``` {r echo = FALSE, fig.width=10, fig.height=7, dev=c('png', 'pdf')}
-library(ggplot2)
-
-DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
-
-
-data <- data.frame(
-x <- (1:14),
-y <- DIL_1$Mittelwert
-)
-
-
-#colour = cut(SLEEP, c(-Inf, summary(SLEEP)[[2]], summary(SLEEP)[[5]], Inf))),
- #   size = 3, show.legend = FALSE ) +
-  #scale_color_manual(values = c('green', 'orange', 'red')
-
-ggplot(data, aes(x=x, y=y, label = y)) +
-  geom_point(
-    aes(colour = cut(DIL_1$Mittelwert, c(-Inf, 76.23, 76.5, Inf)),
-             size = 3, show.legend = FALSE) + 
-    scale_color_manual(values = c('green', 'orange', 'red'))) +
-  #values = c("(-Inf,76.23]" = "black",(76.23, 77.0]" = "yellow","(77.0, Inf]" = "red")), +
-     # labels = c("<= 76.23", "76.23 < DIL_1$Mittelwert <= 77.0", "> 77.0")) +
-  geom_segment(aes(x=x, xend=x, y=76.23, yend=y), color="grey") +
-  #geom_point( color="orange", size=4) +
-  #geom_text(nudge_x = 1.5) +
-   expand_limits(y = c(75.0, 80.5)) +
-  theme_light() +
-  geom_abline(intercept = 76.23, slope = 0) + # horizontale Linie ohne Steigung, da slope = 0
-  #geom_abline(intercept = 76.23*1.01, slope = 0) +  
-  #geom_abline(intercept = 76.23*1.02, slope = 0) +
-  #geom_abline(intercept = 76.23*1.03, slope = 0) +
-  #geom_abline(intercept = 76.23*1.04, slope = 0) +
-  #geom_abline(intercept = 76.23*1.05, slope = 0) +
- scale_x_continuous(breaks = 0:14) + # für jedes x ein tick
-  scale_y_continuous(breaks = seq(75.0,80.5,0.5)) + 
-  theme_bw() + # remove grid lines, background color ...
-    theme(
-      panel.border = element_blank(), 
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank(), 
-      axis.line = element_line(colour = "black")) +
-  xlab("") +
-  ylab("Dose in Gray")
-
-```
-
-
-
-```{r Plotrix}
-# library
-library(plotrix)
-
-#create color palette
-library(RColorBrewer)
-my_colors = brewer.pal(8, "Set2") 
-
-# Create data
-x <- seq(1:14)
-y <- y <- DIL_1$Mittelwert
-
-# Plot x and y
-par(mar=c(4,4,2,2))
-clplot(x, y, main="", lwd=5, levels=c(76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05), col=my_colors, showcuts=T , bty="n")
-
-
-```
-
-
-
-
-`
