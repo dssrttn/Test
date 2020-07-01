@@ -416,7 +416,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-06-30
+<strong>Last updated:</strong> 2020-07-01
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -507,16 +507,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9752452e5e574dc14747291317b8be82fdd5a69atargetblank9752452a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/9752452e5e574dc14747291317b8be82fdd5a69a" target="_blank">9752452</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9a80aa2582388c98b0ab7877655630ade9cb74c2targetblank9a80aa2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/9a80aa2582388c98b0ab7877655630ade9cb74c2" target="_blank">9a80aa2</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9752452e5e574dc14747291317b8be82fdd5a69atargetblank9752452a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9a80aa2582388c98b0ab7877655630ade9cb74c2targetblank9a80aa2a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/9752452e5e574dc14747291317b8be82fdd5a69a" target="_blank">9752452</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/9a80aa2582388c98b0ab7877655630ade9cb74c2" target="_blank">9a80aa2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -531,10 +531,15 @@ Ignored files:
 Untracked files:
     Untracked:  README.html
     Untracked:  analysis/ggpubr.Rmd
+    Untracked:  data/Bladder_1.csv
+    Untracked:  data/Boost A1n_1.csv
     Untracked:  data/DIL_1.csv
+    Untracked:  data/External_1.csv
+    Untracked:  data/PenisBulb_1.csv
+    Untracked:  data/Rectum_1.csv
 
 Unstaged changes:
-    Modified:   analysis/ggplot2.Rmd
+    Modified:   analysis/kable.Rmd
 
 </code></pre>
 <p>
@@ -573,6 +578,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/9a80aa2582388c98b0ab7877655630ade9cb74c2/analysis/relativ.Rmd" target="_blank">9a80aa2</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+<td>
+absolute change graph removed wegen Unklarheit
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/a7d5ebcc6d4d8355662eb5d51baf9aa9f4b84a30/docs/relativ.html" target="_blank">a7d5ebc</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -732,7 +771,7 @@ cols(
   D_95 = col_double(),
   D_99 = col_double()
 )</code></pre>
-<pre><code>    .id Mittelwert  abschange   relchange2  x
+<pre><code>    .id Mittelwert  abschange    relchange  x
 1  &lt;NA&gt;   77.16960  0.0000000  0.000000000  1
 2  &lt;NA&gt;   76.74186  0.4277415 -0.554287574  2
 3  &lt;NA&gt;   76.78767  0.3819322 -0.494925727  3
@@ -786,75 +825,6 @@ Mein Vorname
 </div>
 </div>
 <p>`</p>
-<pre><code>Using &#39;,&#39; as decimal and &#39;.&#39; as grouping mark. Use read_delim() for more control.</code></pre>
-<pre><code>Parsed with column specification:
-cols(
-  Dosisname = col_character(),
-  Mittelwert = col_double(),
-  sigma = col_double(),
-  d_Mittelwert = col_double(),
-  D_max = col_double(),
-  D_min = col_double(),
-  D_1 = col_double(),
-  D_5 = col_double(),
-  D_10 = col_double(),
-  D_60 = col_double(),
-  D_95 = col_double(),
-  D_99 = col_double()
-)</code></pre>
-<pre><code>    .id Mittelwert  abschange   relchange2  x
-1  &lt;NA&gt;   77.16960  0.0000000  0.000000000  1
-2  &lt;NA&gt;   76.74186  0.4277415 -0.554287574  2
-3  &lt;NA&gt;   76.78767  0.3819322 -0.494925727  3
-4  &lt;NA&gt;   76.54315  0.6264500 -0.811783404  4
-5  &lt;NA&gt;   76.70229  0.4673115 -0.605564243  5
-6  &lt;NA&gt;   76.69017  0.4794259 -0.621262653  6
-7  &lt;NA&gt;   76.41442  0.7551815 -0.978599742  7
-8  &lt;NA&gt;   77.03381  0.1357857 -0.175957503  8
-9  &lt;NA&gt;   76.70290  0.4667031 -0.604775850  9
-10 &lt;NA&gt;   77.16465  0.0049489 -0.006413018 10
-11 &lt;NA&gt;   76.94086  0.2287398 -0.296411802 11
-12 &lt;NA&gt;   77.24228 -0.0726787  0.094180481 12
-13 &lt;NA&gt;   76.95852  0.2110805 -0.273528050 13
-14 &lt;NA&gt;   77.25280 -0.0832050  0.107820956 14</code></pre>
-<p><img src="figure/relativ.Rmd/DIL%20-%20Absolute%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL---Absolute-dose-changes-in-Grey-from-the-1st-fraction-1">
-Past versions of “DIL - Absolute dose changes in Grey from the 1st fraction-1.png”
-</button>
-</p>
-<div id="fig-no-spaces-DIL---Absolute-dose-changes-in-Grey-from-the-1st-fraction-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/DIL - Absolute dose changes in Grey from the 1st fraction-1.png" target="_blank">ca83425</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-30
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <p><img src="figure/relativ.Rmd/DIL%20Mittelwert-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Mittelwert-1">
@@ -878,6 +848,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/a7d5ebcc6d4d8355662eb5d51baf9aa9f4b84a30/docs/figure/relativ.Rmd/DIL Mittelwert-1.png" target="_blank">a7d5ebc</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/DIL Mittelwert-1.png" target="_blank">ca83425</a>
