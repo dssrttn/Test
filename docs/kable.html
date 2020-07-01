@@ -508,16 +508,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree4c558335ff8c6bc2e84821bbc5ffc15dedf23752targetblank4c55833a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/4c558335ff8c6bc2e84821bbc5ffc15dedf23752" target="_blank">4c55833</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree818622e8b58d8175777055b66886490a0c77985ctargetblank818622ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/818622e8b58d8175777055b66886490a0c77985c" target="_blank">818622e</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree4c558335ff8c6bc2e84821bbc5ffc15dedf23752targetblank4c55833a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree818622e8b58d8175777055b66886490a0c77985ctargetblank818622ea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/4c558335ff8c6bc2e84821bbc5ffc15dedf23752" target="_blank">4c55833</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/818622e8b58d8175777055b66886490a0c77985c" target="_blank">818622e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -540,6 +540,7 @@ Untracked files:
 
 Unstaged changes:
     Modified:   analysis/Rechnungen.Rmd
+    Modified:   analysis/ggplot2.Rmd
     Modified:   analysis/relativ.Rmd
 
 </code></pre>
@@ -579,6 +580,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/818622e8b58d8175777055b66886490a0c77985c/analysis/kable.Rmd" target="_blank">818622e</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+<td>
+MAD in Tabelle inkludiert
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/b049c2c77e0fd8974d7f2aa0f87283e31dad61a7/docs/kable.html" target="_blank">b049c2c</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -671,26 +706,10 @@ cols(
   D_95 = col_double(),
   D_99 = col_double()
 )</code></pre>
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
-Patient 1 - MAD
+Patient 1 - DIL constraint
 </caption>
-<thead>
-<tr>
-<th style="text-align:center;">
-MAD
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;">
-0.652
-</td>
-</tr>
-</tbody>
-</table>
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -718,6 +737,9 @@ Range
 </th>
 <th style="text-align:center;">
 Standard errors
+</th>
+<th style="text-align:center;">
+MAD
 </th>
 </tr>
 </thead>
@@ -750,6 +772,9 @@ Mittelwert
 <td style="text-align:center;">
 0.071
 </td>
+<td style="text-align:center;">
+0.652
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -778,6 +803,9 @@ D_99
 </td>
 <td style="text-align:center;">
 0.065
+</td>
+<td style="text-align:center;">
+NA
 </td>
 </tr>
 <tr>
@@ -808,6 +836,9 @@ D_95
 <td style="text-align:center;">
 0.068
 </td>
+<td style="text-align:center;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -836,6 +867,9 @@ D_1
 </td>
 <td style="text-align:center;">
 0.077
+</td>
+<td style="text-align:center;">
+NA
 </td>
 </tr>
 <tr>
@@ -866,6 +900,9 @@ D_max
 <td style="text-align:center;">
 0.079
 </td>
+<td style="text-align:center;">
+NA
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -894,6 +931,9 @@ D_min
 </td>
 <td style="text-align:center;">
 0.075
+</td>
+<td style="text-align:center;">
+NA
 </td>
 </tr>
 </tbody>
