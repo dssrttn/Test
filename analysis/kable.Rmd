@@ -16,17 +16,24 @@ library(kableExtra)
 library(psych)
 library(tidyverse)
 library(dplyr)
-
+library(DescTools)
+options(digits=3) # zeigt nur drei Zahlenwerte an
 
 DIL_1 <- read_csv2('data/DIL_1.csv')# header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 df <- data.frame(DIL_1)
 
 
 DIL_1 <- DIL_1 %>% 
-  select(D_60, Mittelwert, D_99, D_95, D_1, D_max, D_min)
+  select(Mittelwert, D_99, D_95, D_1, D_max, D_min)
+
+MAD_DIL_1 <- DIL_1$Mittelwert
+MAD_DIL_1 <- MeanAD(DIL_1$Mittelwert, center = 76.23) 
+
+MAD_DIL_1 %>%
+  kable(align = c("c"),'html', caption = "Patient 1 - MAD", col.names = c("MAD")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 DIL_1<- describe(DIL_1)
-
 
 
 DIL_1 <- DIL_1 %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, Range = range)
@@ -35,13 +42,16 @@ DIL_1 <- DIL_1 %>%
   select(Numbers,	Mean,	'Standard deviation',	Median,	Minimum,	Maximum, Range, 'Standard errors')
 
 #kable(DIL_1)
+#var_DIL_1 <-  var(DIL_1)
+#kable(var_DIL_1)
 
 
- 
+
 DIL_1 %>%
   kable(align = c("cccccccc"),'html') %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
+# knitr::kable(align = c("lr"), format ='html', caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
 
 
 #print(DIL_1)
