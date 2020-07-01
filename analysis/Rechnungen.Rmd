@@ -16,13 +16,7 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 
-DIL_1_constraint<- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
-
-#DIL_tidy %>% #mutate(cuts = 
- # (cut(DIL_tidy$Mittelwert, c(Inf, 77.23, Inf))) %>% 
-  #group_by(cuts) %>% 
-  #summarize(n=n())
-
+DIL_1_constraint<- read_csv2('data/DIL_1.csv')
 
 DIL_1_constraint <- cut(DIL_1_constraint$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=c('< 76.23 Gy', 'within + 1% of constraint', 'within + 2% of constraint', 'within + 3% of constraint', 'within + 4% of constraint', 'within + 5% of constraint', '> + 5% of constraint'))  # benutzt dplyr, 7 Intervalle 
 
@@ -33,8 +27,8 @@ dplyr::summarise(Numbers = n())  #%>% # %>% #=n())
 #mutate(Nummers = rowSums(.[-1]))
 
 DIL_1_constraint %>%
-  kable(align = c("lr"),'html') %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
+ knitr::kable(align = c("lr"), format ='html', caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
 
 
