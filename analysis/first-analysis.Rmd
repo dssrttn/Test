@@ -5,35 +5,12 @@ output:
     code_folding: hide
 ---
 
+## Boxplot in r base
 
 ```{r echo = FALSE, message=FALSE}
 library(tidyverse)
 
-
 DIL_1 <- read_csv2('data/DIL_1.csv')
-
-# summary(DIL_1)
-# str(DIL_1)
-
-
-x <- (1:14)
-y <- DIL_1$Mittelwert
-
-y.sd <- DIL_1$sigma
-
-
-
-
-
-```
-
-
-
-
-## Boxplot in r base
-
-```{r echo = FALSE}
-
 
 
 
