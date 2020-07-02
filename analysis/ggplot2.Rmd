@@ -2,10 +2,17 @@
 title: "ggplot2"
 author: "Mein Vorname"
 date: "2020-06-24"
-output: workflowr::wflow_html
-editor_options:
-  chunk_output_type: console
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
 ---
+
+
+```{r setup, message=FALSE}
+
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+
+```
 
 ## Introduction
 
@@ -18,15 +25,18 @@ Aufgaben für 25.06.2020
 * Konfidenzintervall? 
 
 
-```{r DIL Mittelwert, dev=c('png', 'pdf'), echo = FALSE}
+#### DIL boost mean - line plot
+
+```{r DIL Mittelwert, message=FALSE}
 library(ggplot2)
 #library(scales)
+library(tidyverse)
 
-DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+DIL_mean_lineplot <- read_csv2('data/DIL_1.csv')
 
 data <- data.frame(
 x <- (1:14),
-y <- DIL_1$Mittelwert
+y <- DIL_mean_lineplot$Mittelwert
 )
 
 #x
@@ -69,19 +79,18 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
 ```
 
 
+#### DIL boost D99 - line plot
 
-
-```{r DIL D99, dev=c('png', 'pdf'), echo = FALSE, message=FALSE}
+```{r DIL D99, message=FALSE}
 library(ggplot2)
 
 
 
-DIL_1 <- read.table('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+DIL_D99_lineplot <- read_csv2('data/DIL_1.csv')
 
 data <- data.frame(
 x <- (1:14),
-y <- DIL_1$D_99
-)
+y <- DIL_D99_lineplot$D_99)
 
 #x
 #y
@@ -116,6 +125,5 @@ geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Stei
 
 
 ```
-
 
 
