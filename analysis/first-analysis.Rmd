@@ -26,7 +26,7 @@ min <-min(DIL_mean_boxplot$Mittelwert)
 
 par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
-par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
 boxplot(DIL_mean_boxplot$Mittelwert, 
         ylab= "Dose in Gray", #y-Achse-Beschriftung  
@@ -35,8 +35,8 @@ boxplot(DIL_mean_boxplot$Mittelwert,
         las = 2, # horizontale Markierung der Tick-Beschriftungen
          ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
         cex.lab = 2, # Größe Label-Beschriftung
-        cex.axis = 1.5 # Größe Achsenbeschriftungen
-        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
      # , xpd = TRUE
       #labels = FALSE
         )
