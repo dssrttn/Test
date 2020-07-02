@@ -11,7 +11,7 @@ editor_options:
 ## Introduction
 
 
-The following table shows some characteristic descriptive statistics regarding the dominant intraprostatic lesion. The mean absolute deviation is calculated from the boost constraint.
+The following table shows some characteristic descriptive statistics regarding the dominant intraprostatic lesion. The mean absolute deviation is calculated regarding the boost constraint.
 
 ```{r echo=FALSE, results='asis', message=FALSE}
 library(knitr)
