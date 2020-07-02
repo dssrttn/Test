@@ -7,8 +7,6 @@ navbar:
     href: index.html
   - text: About
     href: about.html
-  - text: Patienten
-    href: Patienten.html
   - text: License
     href: license.html
   right:
