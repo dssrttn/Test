@@ -69,6 +69,10 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 Bladder_constraint <- read.csv2('data/Bladder_1.csv') # need to be here for ylim!
 
+max <-max(Bladder_constraint$D_10)
+min <-min(Bladder_constraint$D_10)
+
+
 par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
 par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
@@ -78,7 +82,8 @@ boxplot(Bladder_constraint$D_10,
         #yaxt="n", #suppresses y-axis. Brauch ich das? 
         col="transparent", #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
-        ylim=c(min(Bladder_constraint$D_10), max(Bladder_constraint$D_10)), # y-Achse range
+       ylim=c(min(0.995*min), max(1.005*max)), 
+        # ylim=c(min(Bladder_constraint$D_10), max(Bladder_constraint$D_10)), # y-Achse range
         cex.lab = 2, # Größe Label-Beschriftung
         cex.axis = 1.5 # Größe Achsenbeschriftungen
         #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
@@ -119,22 +124,33 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 ``` {r echo = FALSE, message=FALSE}
 Rectum_D5_constraint<- read.csv2('data/Rectum_1.csv')
 
+max <-max(Rectum_D5_constraint$D_5)
+#max
+min <-min(Rectum_D5_constraint$D_5)
+#min
+
+
 par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
 par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
-boxplot(Rectum_D5_constraint$D_10, 
+boxplot(Rectum_D5_constraint$D_5, 
         ylab= "Dosis in Gray", #y-Achse-Beschriftung  
         #yaxt="n", #suppresses y-axis. Brauch ich das? 
         col="transparent", #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
-        ylim=c(min(Rectum_D5_constraint$D_10), max(Rectum_D5_constraint$D_10)), # y-Achse range
-        cex.lab = 2, # Größe Label-Beschriftung
+        ylim=c(min(0.995*min), max(1.005*max)), 
+         #ylim=range(pretty(c(0, dat)))
+       #  ylim=range(pretty(c(60, Rectum_D5_constraint))),
+      #  ylim=c(min(Rectum_D5_constraint$D_5), max(Rectum_D5_constraint$D_5)), # y-Achse range
+      #ylim=c(min(Rectum_D5_constraint$D_5[[i]]),max(Rectum_D5_constraint$D_5[[i]])),
+       cex.lab = 2, # Größe Label-Beschriftung
         cex.axis = 1.5 # Größe Achsenbeschriftungen
         #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
      # , xpd = TRUE
       #labels = FALSE
         )
+
 
 
 ```
