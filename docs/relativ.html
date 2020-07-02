@@ -17,7 +17,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -366,9 +366,6 @@ div.tocify {
   <a href="about.html">About</a>
 </li>
 <li>
-  <a href="Patienten.html">Patienten</a>
-</li>
-<li>
   <a href="license.html">License</a>
 </li>
       </ul>
@@ -416,7 +413,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-07-01
+<strong>Last updated:</strong> 2020-07-02
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -507,16 +504,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7ce89b93e15e64a18d480c7921ce10297a7a698ftargetblank7ce89b9a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/7ce89b93e15e64a18d480c7921ce10297a7a698f" target="_blank">7ce89b9</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree5bc42de84176dd4e3f77eb392c9200bf44782ce0targetblank5bc42dea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/5bc42de84176dd4e3f77eb392c9200bf44782ce0" target="_blank">5bc42de</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7ce89b93e15e64a18d480c7921ce10297a7a698ftargetblank7ce89b9a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree5bc42de84176dd4e3f77eb392c9200bf44782ce0targetblank5bc42dea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/7ce89b93e15e64a18d480c7921ce10297a7a698f" target="_blank">7ce89b9</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/5bc42de84176dd4e3f77eb392c9200bf44782ce0" target="_blank">5bc42de</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -530,7 +527,6 @@ Ignored files:
 
 Untracked files:
     Untracked:  README.html
-    Untracked:  analysis/ggpubr.Rmd
     Untracked:  data/Bladder_1.csv
     Untracked:  data/Boost A1n_1.csv
     Untracked:  data/DIL_1.csv
@@ -539,7 +535,8 @@ Untracked files:
     Untracked:  data/Rectum_1.csv
 
 Unstaged changes:
-    Modified:   analysis/kable.Rmd
+    Modified:   _workflowr.yml
+    Modified:   analysis/ggplot2.Rmd
 
 </code></pre>
 <p>
@@ -578,6 +575,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5bc42de84176dd4e3f77eb392c9200bf44782ce0/analysis/relativ.Rmd" target="_blank">5bc42de</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+relative Veraenderungen in einem graph in Prozent
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/ef09e13778a46fbd270e1764f5a286e3a078876c/docs/relativ.html" target="_blank">ef09e13</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -772,62 +803,6 @@ relative Kalkulationen zur baseline, kein Graph bislang
 </div>
 </div>
 </div>
-<pre><code>── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-✓ tibble  3.0.1     ✓ dplyr   1.0.0
-✓ tidyr   1.1.0     ✓ stringr 1.4.0
-✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-x dplyr::arrange()   masks plyr::arrange()
-x purrr::compact()   masks plyr::compact()
-x dplyr::count()     masks plyr::count()
-x dplyr::failwith()  masks plyr::failwith()
-x dplyr::filter()    masks stats::filter()
-x dplyr::id()        masks plyr::id()
-x dplyr::lag()       masks stats::lag()
-x dplyr::mutate()    masks plyr::mutate()
-x dplyr::rename()    masks plyr::rename()
-x dplyr::summarise() masks plyr::summarise()
-x dplyr::summarize() masks plyr::summarize()</code></pre>
-<pre><code>
-Attaching package: &#39;scales&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:purrr&#39;:
-
-    discard</code></pre>
-<pre><code>The following object is masked from &#39;package:readr&#39;:
-
-    col_factor</code></pre>
-<pre><code>Using &#39;,&#39; as decimal and &#39;.&#39; as grouping mark. Use read_delim() for more control.</code></pre>
-<pre><code>Parsed with column specification:
-cols(
-  Dosisname = col_character(),
-  Mittelwert = col_double(),
-  sigma = col_double(),
-  d_Mittelwert = col_double(),
-  D_max = col_double(),
-  D_min = col_double(),
-  D_1 = col_double(),
-  D_5 = col_double(),
-  D_10 = col_double(),
-  D_60 = col_double(),
-  D_95 = col_double(),
-  D_99 = col_double()
-)</code></pre>
-<pre><code>    .id Mittelwert    relchange  x
-1  &lt;NA&gt;   77.16960  0.000000000  1
-2  &lt;NA&gt;   76.74186 -0.554287574  2
-3  &lt;NA&gt;   76.78767 -0.494925727  3
-4  &lt;NA&gt;   76.54315 -0.811783404  4
-5  &lt;NA&gt;   76.70229 -0.605564243  5
-6  &lt;NA&gt;   76.69017 -0.621262653  6
-7  &lt;NA&gt;   76.41442 -0.978599742  7
-8  &lt;NA&gt;   77.03381 -0.175957503  8
-9  &lt;NA&gt;   76.70290 -0.604775850  9
-10 &lt;NA&gt;   77.16465 -0.006413018 10
-11 &lt;NA&gt;   76.94086 -0.296411802 11
-12 &lt;NA&gt;   77.24228  0.094180481 12
-13 &lt;NA&gt;   76.95852 -0.273528050 13
-14 &lt;NA&gt;   77.25280  0.107820956 14</code></pre>
 <p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-1">
@@ -851,6 +826,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ef09e13778a46fbd270e1764f5a286e3a078876c/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ef09e13</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/ca7488f163b25dc1d0bab1d4071c13132af09743/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ca7488f</a>
@@ -884,47 +870,106 @@ Mein Vorname
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.1 (2020-06-06)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04 LTS
+<pre class="r"><code>devtools::session_info()</code></pre>
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value                       
+ version  R version 4.0.1 (2020-06-06)
+ os       Ubuntu 20.04 LTS            
+ system   x86_64, linux-gnu           
+ ui       X11                         
+ language (EN)                        
+ collate  en_US.UTF-8                 
+ ctype    en_US.UTF-8                 
+ tz       Europe/Berlin               
+ date     2020-07-02                  
 
-Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
-LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+─ Packages ───────────────────────────────────────────────────────────────────
+ package     * version date       lib source        
+ assertthat    0.2.1   2019-03-21 [1] CRAN (R 4.0.1)
+ backports     1.1.8   2020-06-17 [1] CRAN (R 4.0.1)
+ blob          1.2.1   2020-01-20 [1] CRAN (R 4.0.1)
+ broom         0.5.6   2020-04-20 [1] CRAN (R 4.0.1)
+ callr         3.4.3   2020-03-28 [1] CRAN (R 4.0.1)
+ cellranger    1.1.0   2016-07-27 [1] CRAN (R 4.0.1)
+ cli           2.0.2   2020-02-28 [1] CRAN (R 4.0.1)
+ colorspace    1.4-1   2019-03-18 [1] CRAN (R 4.0.1)
+ crayon        1.3.4   2017-09-16 [1] CRAN (R 4.0.1)
+ DBI           1.1.0   2019-12-15 [1] CRAN (R 4.0.1)
+ dbplyr        1.4.4   2020-05-27 [1] CRAN (R 4.0.1)
+ desc          1.2.0   2018-05-01 [1] CRAN (R 4.0.1)
+ devtools      2.3.0   2020-04-10 [1] CRAN (R 4.0.1)
+ digest        0.6.25  2020-02-23 [1] CRAN (R 4.0.1)
+ dplyr       * 1.0.0   2020-05-29 [1] CRAN (R 4.0.1)
+ ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.1)
+ evaluate      0.14    2019-05-28 [1] CRAN (R 4.0.1)
+ fansi         0.4.1   2020-01-08 [1] CRAN (R 4.0.1)
+ farver        2.0.3   2020-01-16 [1] CRAN (R 4.0.1)
+ forcats     * 0.5.0   2020-03-01 [1] CRAN (R 4.0.1)
+ fs            1.4.1   2020-04-04 [1] CRAN (R 4.0.1)
+ generics      0.0.2   2018-11-29 [1] CRAN (R 4.0.1)
+ ggplot2     * 3.3.2   2020-06-19 [1] CRAN (R 4.0.1)
+ git2r         0.27.1  2020-05-03 [1] CRAN (R 4.0.1)
+ glue          1.4.1   2020-05-13 [1] CRAN (R 4.0.1)
+ gtable        0.3.0   2019-03-25 [1] CRAN (R 4.0.1)
+ haven         2.3.1   2020-06-01 [1] CRAN (R 4.0.1)
+ hms           0.5.3   2020-01-08 [1] CRAN (R 4.0.1)
+ htmltools     0.5.0   2020-06-16 [1] CRAN (R 4.0.1)
+ httpuv        1.5.4   2020-06-06 [1] CRAN (R 4.0.1)
+ httr          1.4.1   2019-08-05 [1] CRAN (R 4.0.1)
+ jsonlite      1.6.1   2020-02-02 [1] CRAN (R 4.0.1)
+ knitr         1.29    2020-06-23 [1] CRAN (R 4.0.1)
+ later         1.1.0.1 2020-06-05 [1] CRAN (R 4.0.1)
+ lattice       0.20-41 2020-04-02 [4] CRAN (R 4.0.0)
+ lifecycle     0.2.0   2020-03-06 [1] CRAN (R 4.0.1)
+ lubridate     1.7.9   2020-06-08 [1] CRAN (R 4.0.1)
+ magrittr      1.5     2014-11-22 [1] CRAN (R 4.0.1)
+ memoise       1.1.0   2017-04-21 [1] CRAN (R 4.0.1)
+ modelr        0.1.8   2020-05-19 [1] CRAN (R 4.0.1)
+ munsell       0.5.0   2018-06-12 [1] CRAN (R 4.0.1)
+ nlme          3.1-147 2020-04-13 [4] CRAN (R 4.0.0)
+ pillar        1.4.4   2020-05-05 [1] CRAN (R 4.0.1)
+ pkgbuild      1.0.8   2020-05-07 [1] CRAN (R 4.0.1)
+ pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.0.1)
+ pkgload       1.1.0   2020-05-29 [1] CRAN (R 4.0.1)
+ plyr        * 1.8.6   2020-03-03 [1] CRAN (R 4.0.1)
+ prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.0.1)
+ processx      3.4.2   2020-02-09 [1] CRAN (R 4.0.1)
+ promises      1.1.1   2020-06-09 [1] CRAN (R 4.0.1)
+ ps            1.3.3   2020-05-08 [1] CRAN (R 4.0.1)
+ purrr       * 0.3.4   2020-04-17 [1] CRAN (R 4.0.1)
+ R6            2.4.1   2019-11-12 [1] CRAN (R 4.0.1)
+ Rcpp          1.0.4.6 2020-04-09 [1] CRAN (R 4.0.1)
+ readr       * 1.3.1   2018-12-21 [1] CRAN (R 4.0.1)
+ readxl        1.3.1   2019-03-13 [1] CRAN (R 4.0.1)
+ remotes       2.1.1   2020-02-15 [1] CRAN (R 4.0.1)
+ reprex        0.3.0   2019-05-16 [1] CRAN (R 4.0.1)
+ rlang         0.4.6   2020-05-02 [1] CRAN (R 4.0.1)
+ rmarkdown     2.3     2020-06-18 [1] CRAN (R 4.0.1)
+ rprojroot     1.3-2   2018-01-03 [1] CRAN (R 4.0.1)
+ rstudioapi    0.11    2020-02-07 [1] CRAN (R 4.0.1)
+ rvest         0.3.5   2019-11-08 [1] CRAN (R 4.0.1)
+ scales      * 1.1.1   2020-05-11 [1] CRAN (R 4.0.1)
+ sessioninfo   1.1.1   2018-11-05 [1] CRAN (R 4.0.1)
+ stringi       1.4.6   2020-02-17 [1] CRAN (R 4.0.1)
+ stringr     * 1.4.0   2019-02-10 [1] CRAN (R 4.0.1)
+ testthat      2.3.2   2020-03-02 [1] CRAN (R 4.0.1)
+ tibble      * 3.0.1   2020-04-20 [1] CRAN (R 4.0.1)
+ tidyr       * 1.1.0   2020-05-20 [1] CRAN (R 4.0.1)
+ tidyselect    1.1.0   2020-05-11 [1] CRAN (R 4.0.1)
+ tidyverse   * 1.3.0   2019-11-21 [1] CRAN (R 4.0.1)
+ usethis       1.6.1   2020-04-29 [1] CRAN (R 4.0.1)
+ vctrs         0.3.1   2020-06-05 [1] CRAN (R 4.0.1)
+ whisker       0.4     2019-08-28 [1] CRAN (R 4.0.1)
+ withr         2.2.0   2020-04-20 [1] CRAN (R 4.0.1)
+ workflowr   * 1.6.2   2020-04-30 [1] CRAN (R 4.0.1)
+ xfun          0.15    2020-06-21 [1] CRAN (R 4.0.1)
+ xml2          1.3.2   2020-04-23 [1] CRAN (R 4.0.1)
+ yaml          2.2.1   2020-02-01 [1] CRAN (R 4.0.1)
 
-locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=de_DE.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=de_DE.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=de_DE.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=de_DE.UTF-8 LC_IDENTIFICATION=C       
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-other attached packages:
- [1] scales_1.1.1    forcats_0.5.0   stringr_1.4.0   dplyr_1.0.0    
- [5] purrr_0.3.4     readr_1.3.1     tidyr_1.1.0     tibble_3.0.1   
- [9] ggplot2_3.3.2   tidyverse_1.3.0 plyr_1.8.6      workflowr_1.6.2
-
-loaded via a namespace (and not attached):
- [1] tidyselect_1.1.0 xfun_0.15        haven_2.3.1      lattice_0.20-41 
- [5] colorspace_1.4-1 vctrs_0.3.1      generics_0.0.2   htmltools_0.5.0 
- [9] yaml_2.2.1       blob_1.2.1       rlang_0.4.6      later_1.1.0.1   
-[13] pillar_1.4.4     withr_2.2.0      glue_1.4.1       DBI_1.1.0       
-[17] dbplyr_1.4.4     modelr_0.1.8     readxl_1.3.1     lifecycle_0.2.0 
-[21] munsell_0.5.0    gtable_0.3.0     cellranger_1.1.0 rvest_0.3.5     
-[25] evaluate_0.14    knitr_1.29       httpuv_1.5.4     fansi_0.4.1     
-[29] broom_0.5.6      Rcpp_1.0.4.6     promises_1.1.1   backports_1.1.8 
-[33] jsonlite_1.6.1   farver_2.0.3     fs_1.4.1         hms_0.5.3       
-[37] digest_0.6.25    stringi_1.4.6    grid_4.0.1       rprojroot_1.3-2 
-[41] cli_2.0.2        tools_4.0.1      magrittr_1.5     crayon_1.3.4    
-[45] whisker_0.4      pkgconfig_2.0.3  ellipsis_0.3.1   xml2_1.3.2      
-[49] reprex_0.3.0     lubridate_1.7.9  rstudioapi_0.11  assertthat_0.2.1
-[53] rmarkdown_2.3    httr_1.4.1       R6_2.4.1         nlme_3.1-147    
-[57] git2r_0.27.1     compiler_4.0.1  </code></pre>
+[1] /home/diss/R/x86_64-pc-linux-gnu-library/4.0
+[2] /usr/local/lib/R/site-library
+[3] /usr/lib/R/site-library
+[4] /usr/lib/R/library</code></pre>
 </div>
 
 
