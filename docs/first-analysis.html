@@ -512,16 +512,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree75b38c5793b16aa13979b76a3fd9af41ebf679fatargetblank75b38c5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/75b38c5793b16aa13979b76a3fd9af41ebf679fa" target="_blank">75b38c5</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree30f7f9ae721809290130aa07cc5013e197a1fc56targetblank30f7f9aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/30f7f9ae721809290130aa07cc5013e197a1fc56" target="_blank">30f7f9a</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree75b38c5793b16aa13979b76a3fd9af41ebf679fatargetblank75b38c5a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree30f7f9ae721809290130aa07cc5013e197a1fc56targetblank30f7f9aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/75b38c5793b16aa13979b76a3fd9af41ebf679fa" target="_blank">75b38c5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/30f7f9ae721809290130aa07cc5013e197a1fc56" target="_blank">30f7f9a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -585,6 +585,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/30f7f9ae721809290130aa07cc5013e197a1fc56/analysis/first-analysis.Rmd" target="_blank">30f7f9a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+aufgeraeumt, show code
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/dfb048a5bf42bb20b6b62c1df98adb698af07e7b/docs/first-analysis.html" target="_blank">dfb048a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1711,7 +1745,7 @@ min &lt;-min(DIL_mean_boxplot$Mittelwert)
 
 par(bty=&quot;n&quot;) # keinen Rahmen
 par(family=&quot;serif&quot;) # Schriftart
-par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
 boxplot(DIL_mean_boxplot$Mittelwert, 
         ylab= &quot;Dose in Gray&quot;, #y-Achse-Beschriftung  
@@ -1720,12 +1754,49 @@ boxplot(DIL_mean_boxplot$Mittelwert,
         las = 2, # horizontale Markierung der Tick-Beschriftungen
          ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
         cex.lab = 2, # Größe Label-Beschriftung
-        cex.axis = 1.5 # Größe Achsenbeschriftungen
-        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
      # , xpd = TRUE
       #labels = FALSE
         )</code></pre>
 <p><img src="figure/first-analysis.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Boxplot-1">
+Past versions of “DIL Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/dfb048a5bf42bb20b6b62c1df98adb698af07e7b/docs/figure/first-analysis.Rmd/DIL Boxplot-1.png" target="_blank">dfb048a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dil-boost-mean---histogram-with-density-curve" class="section level3">
 <h3>DIL boost mean - histogram with density curve</h3>
@@ -1739,6 +1810,43 @@ hist(DIL_mean_boxplot$Mittelwert,
 rug(jitter(DIL_mean_boxplot$Mittelwert))
 lines(density(DIL_mean_boxplot$Mittelwert), col=&quot;black&quot;, lwd=2)</code></pre>
 <p><img src="figure/first-analysis.Rmd/DIL%20Histogram-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Histogram-1">
+Past versions of “DIL Histogram-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-Histogram-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/dfb048a5bf42bb20b6b62c1df98adb698af07e7b/docs/figure/first-analysis.Rmd/DIL Histogram-1.png" target="_blank">dfb048a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>#cex.lab=1.5, cex.axis=1.5</code></pre>
 <br>
 <p>
