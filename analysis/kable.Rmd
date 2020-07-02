@@ -3,13 +3,17 @@ title: "kable"
 author: "Mein Vorname"
 date: "2020-07-01"
 output: workflowr::wflow_html
+tables: true
 editor_options:
   chunk_output_type: console
 ---
 
 ## Introduction
 
-```{r echo=FALSE, results='asis'}
+
+The following table shows some characteristic descriptive statistics regarding the dominant intraprostatic lesion. The mean absolute deviation is calculated from the boost constraint.
+
+```{r echo=FALSE, results='asis', message=FALSE}
 library(knitr)
 #options(kableExtra.latex.load_packages = FALSE)
 library(kableExtra)
@@ -43,25 +47,32 @@ DIL_1 <- DIL_1 %>%
 
 
 DIL_1 <- DIL_1 %>% add_column(MAD_DIL_1, .after = 'Standard errors')
-DIL_1 <- DIL_1 %>% rename(MAD = MAD_DIL_1)
+DIL_1 <- DIL_1 %>% rename('Mean absolute deviation' = MAD_DIL_1)
 
-DIL_1[2, 9] = NA #Befehl um in einem dataframe, hier 2. Zeile und 9. Reihe einen neuen Wert (hier 0) eibnzusetzen
-DIL_1[3, 9] = NA
-DIL_1[4, 9] = NA
-DIL_1[5, 9] = NA
-DIL_1[6, 9] = NA
+DIL_1[2:6, 9] = NA #Befehl um in einem dataframe, hier 2.-6. Zeile und 9. Reihe einen neuen Wert (hier NA) eibnzusetzen
 
 
-#DIL_1 %>% add_column(MAD_DIL_1, .after = 'Standard errors')
+
+
 
 DIL_1 %>%
-  kable(align = c("ccccccccc"), format ='html', caption = "Patient 1 - DIL constraint") %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) 
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Patient 1 - DIL constraint") %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+    full_width = TRUE) 
 
 # knitr::kable(align = c("lr"), caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
 
+ 
 
+#DIL_1_footnote <- DIL_1
+#names(DIL_1_footnote) <- paste0(names(DIL_1_footnote)[9], footnote_marker_symbol(1))
 
+#DIL_1_footnote %>%
+ # kable(DIL_1_footnote, align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Patient 1 - DIL constraint") %>%
+#kable_styling(bootstrap_options = c("striped"), #, "hover", "condensed"), 
+ #   full_width = TRUE) %>%
+  #  footnote(symbol = "Mean absolute deviation from boost constraint", symbol_title = "", footnote_as_chunk = T)
+# knitr::kable(align = c("lr"), caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
 
 #MAD_DIL_1 %>%
  # kable(align = c("c"),'html', caption = "Patient 1 - Mean absolute deviation from the Boost constraint", col.names = c("MAD - Boost constraint")) %>%
