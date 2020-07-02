@@ -9,6 +9,8 @@ editor_options:
 
 ## Tibble - Dosisbereiche 
 
+### DIL boost constraint 
+#### DIL boost constraint - table
 
 ```{r echo = FALSE, message=FALSE}
 library(dplyr)
@@ -27,14 +29,64 @@ dplyr::summarise(Numbers = n())  #%>% # %>% #=n())
 #mutate(Nummers = rowSums(.[-1]))
 
 DIL_1_constraint %>%
- knitr::kable(format ='html', caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL boost constraint", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
 
 
 ```
 
+### Bladder D_10 constraint 
+#### Bladder D_10 constraint - table
 
 
+``` {r echo = FALSE, message=FALSE}
+library(tidyverse)
+
+Bladder_1_constraint <- read.csv2('data/Bladder_1.csv')
+
+Bladder_1_constraint<- cut(Bladder_1_constraint$D_10, c(-Inf, 60, Inf), labels=c('< 60 Gy', '> 60 Gy'))  # benutzt dplyr, 2 Intervalle 
+
+
+Bladder_1_constraint <- as.data.frame(Bladder_1_constraint) %>%  
+group_by(Bladder_1_constraint, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+dplyr::summarise(Numbers = n())  #%>% # %>% #=n())   
+#mutate(Nummers = rowSums(.[-1]))
+
+Bladder_1_constraint %>%
+ knitr::kable(format ='html', caption = "", col.names = c("Bladder D_10 constraint", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+
+```
+
+
+
+##### Bladder D_10 constraint - boxplot
+
+``` {r echo = FALSE, message=FALSE}
+Bladder_1_constraint <- read.csv2('data/Bladder_1.csv')
+
+Bladder_1_constraint <- read.csv2('data/Bladder_1.csv')
+
+par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+boxplot(Bladder_1_constraint$D_10, 
+        ylab= "Dosis in Gray", #y-Achse-Beschriftung  
+        #yaxt="n", #suppresses y-axis. Brauch ich das? 
+        col="transparent", #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        ylim=c(min(Bladder_1_constraint$D_10), max(Bladder_1_constraint$D_10)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5 # Größe Achsenbeschriftungen
+        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
+     # , xpd = TRUE
+      #labels = FALSE
+        )
+
+
+```
 
 
