@@ -23,6 +23,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -258,6 +259,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -382,6 +386,14 @@ div.tocify {
 
 <div class="fluid-row" id="header">
 
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">First-Analysis</h1>
@@ -500,16 +512,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb7d6e2a3344fb141658b3902a5dfa9cbe50df9c2targetblankb7d6e2aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/b7d6e2a3344fb141658b3902a5dfa9cbe50df9c2" target="_blank">b7d6e2a</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree75b38c5793b16aa13979b76a3fd9af41ebf679fatargetblank75b38c5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/75b38c5793b16aa13979b76a3fd9af41ebf679fa" target="_blank">75b38c5</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb7d6e2a3344fb141658b3902a5dfa9cbe50df9c2targetblankb7d6e2aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree75b38c5793b16aa13979b76a3fd9af41ebf679fatargetblank75b38c5a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/b7d6e2a3344fb141658b3902a5dfa9cbe50df9c2" target="_blank">b7d6e2a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/75b38c5793b16aa13979b76a3fd9af41ebf679fa" target="_blank">75b38c5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -523,6 +535,8 @@ Ignored files:
 
 Untracked files:
     Untracked:  README.html
+    Untracked:  data/.~lock.Bladder_1.csv#
+    Untracked:  data/.~lock.PenisBulb_1.csv#
     Untracked:  data/Bladder_1.csv
     Untracked:  data/Boost A1n_1.csv
     Untracked:  data/DIL_1.csv
@@ -532,6 +546,7 @@ Untracked files:
 
 Unstaged changes:
     Modified:   _workflowr.yml
+    Modified:   analysis/Rechnungen.Rmd
 
 </code></pre>
 <p>
@@ -570,6 +585,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/75b38c5793b16aa13979b76a3fd9af41ebf679fa/analysis/first-analysis.Rmd" target="_blank">75b38c5</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+aufgeraeumt, show code
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/60a229b90402407c616f998d7e2ae0ec990060aa/docs/first-analysis.html" target="_blank">60a229b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1648,127 +1697,49 @@ weiterer Versuch
 </div>
 </div>
 </div>
-<div id="boxplot-in-r-base" class="section level2">
-<h2>Boxplot in r base</h2>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>knitr::opts_chunk$set(dev=c(&#39;png&#39;, &#39;pdf&#39;), width=7, height=5)</code></pre>
+<div id="dil-boost-mean---boxplot" class="section level3">
+<h3>DIL boost mean - boxplot</h3>
+<pre class="r"><code>library(tidyverse)
+
+DIL_mean_boxplot &lt;- read_csv2(&#39;data/DIL_1.csv&#39;)
+
+max &lt;-max(DIL_mean_boxplot$Mittelwert)
+min &lt;-min(DIL_mean_boxplot$Mittelwert)
+
+
+
+par(bty=&quot;n&quot;) # keinen Rahmen
+par(family=&quot;serif&quot;) # Schriftart
+par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+boxplot(DIL_mean_boxplot$Mittelwert, 
+        ylab= &quot;Dose in Gray&quot;, #y-Achse-Beschriftung  
+        #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
+        col=&quot;transparent&quot;, #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+         ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5 # Größe Achsenbeschriftungen
+        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
+     # , xpd = TRUE
+      #labels = FALSE
+        )</code></pre>
+<p><img src="figure/first-analysis.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="histogramm-in-r-base" class="section level2">
-<h2>Histogramm in r base</h2>
-<p><img src="figure/first-analysis.Rmd/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
-Past versions of unnamed-chunk-2-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-2-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/1b1c4177015af0d734aedb5711fdb259f11accec/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">1b1c417</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-07-01
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/ba9fad7f38bbe040a5fa83787ab77a87bbde0036/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">ba9fad7</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-27
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/3a83b3e3b12f42eeb27d54f198e67ae5f80321c4/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">3a83b3e</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/d623971d439722188a6711f854a249dc08c3cc2f/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">d623971</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/12ca773255d976ea7d62540596156cd951ce09fc/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">12ca773</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/4f85132494fb6304bde3ddf1a972d336197d79c8/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">4f85132</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-23
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/9e76f4caecb86881347bf3a7bc8fd9f0ccf18767/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">9e76f4c</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-22
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/86794dabd86eb6324c542c6c29c84c1d9696ad9c/docs/figure/first-analysis.Rmd/unnamed-chunk-2-1.png" target="_blank">86794da</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-06-22
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<div id="dil-boost-mean---histogram-with-density-curve" class="section level3">
+<h3>DIL boost mean - histogram with density curve</h3>
+<pre class="r"><code>par(family=&quot;serif&quot;) # Schriftart
+par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
+hist(DIL_mean_boxplot$Mittelwert, 
+    main=&quot;&quot;,
+    #DIL Mittelwert&quot; 
+     ylab=&quot;Density&quot;, xlab=&quot;Dosis in Gray&quot;, mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(76.2, 77.6), cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
+rug(jitter(DIL_mean_boxplot$Mittelwert))
+lines(density(DIL_mean_boxplot$Mittelwert), col=&quot;black&quot;, lwd=2)</code></pre>
+<p><img src="figure/first-analysis.Rmd/DIL%20Histogram-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#cex.lab=1.5, cex.axis=1.5</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1924,6 +1895,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
