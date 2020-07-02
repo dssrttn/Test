@@ -2,10 +2,10 @@
 title: "kable"
 author: "Mein Vorname"
 date: "2020-07-01"
-output: workflowr::wflow_html
 tables: true
-editor_options:
-  chunk_output_type: console
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
 ---
 
 ## Introduction
@@ -13,7 +13,7 @@ editor_options:
 
 The following table shows some characteristic descriptive statistics regarding the dominant intraprostatic lesion. The mean absolute deviation is calculated regarding the boost constraint.
 
-```{r echo=FALSE, results='asis', message=FALSE}
+```{r DIL descriptive statistics, results='asis', message=FALSE}
 library(knitr)
 #options(kableExtra.latex.load_packages = FALSE)
 library(kableExtra)
@@ -29,7 +29,7 @@ df <- data.frame(DIL_1)
 
 
 DIL_1 <- DIL_1 %>% 
-  select(Mittelwert, D_99, D_95, D_1, D_max, D_min)
+  select(Mittelwert, D_95, sigma, D_99, D_1)
 
 MAD_DIL_1 <- DIL_1 %>%
   select(Mittelwert)
@@ -49,38 +49,65 @@ DIL_1 <- DIL_1 %>%
 DIL_1 <- DIL_1 %>% add_column(MAD_DIL_1, .after = 'Standard errors')
 DIL_1 <- DIL_1 %>% rename('Mean absolute deviation' = MAD_DIL_1)
 
-DIL_1[2:6, 9] = NA #Befehl um in einem dataframe, hier 2.-6. Zeile und 9. Reihe einen neuen Wert (hier NA) eibnzusetzen
+DIL_1[2:5, 9] = NA #Befehl um in einem dataframe, hier 2.-6. Zeile und 9. Reihe einen neuen Wert (hier NA) eibnzusetzen
 
 
 
 
 
 DIL_1 %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Patient 1 - DIL constraint") %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
     full_width = TRUE) 
-
-# knitr::kable(align = c("lr"), caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
-
- 
-
-#DIL_1_footnote <- DIL_1
-#names(DIL_1_footnote) <- paste0(names(DIL_1_footnote)[9], footnote_marker_symbol(1))
-
-#DIL_1_footnote %>%
- # kable(DIL_1_footnote, align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Patient 1 - DIL constraint") %>%
-#kable_styling(bootstrap_options = c("striped"), #, "hover", "condensed"), 
- #   full_width = TRUE) %>%
-  #  footnote(symbol = "Mean absolute deviation from boost constraint", symbol_title = "", footnote_as_chunk = T)
-# knitr::kable(align = c("lr"), caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
-
-#MAD_DIL_1 %>%
- # kable(align = c("c"),'html', caption = "Patient 1 - Mean absolute deviation from the Boost constraint", col.names = c("MAD - Boost constraint")) %>%
-#kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE)
-
-
-
-#print(DIL_1)
-
 ```
 
+
+
+
+```{r Boost descriptive statistics, results='asis', message=FALSE}
+library(knitr)
+#options(kableExtra.latex.load_packages = FALSE)
+library(kableExtra)
+library(psych)
+library(tidyverse)
+library(dplyr)
+library(DescTools)
+options(digits=3) # zeigt nur drei Zahlenwerte an
+
+Boost_descsta <- read_csv2('data/BoostA1n_1.csv')
+Boost_descsta <- data.frame(Boost_descsta)
+
+
+
+Boost_descsta <- Boost_descsta %>% 
+  select(Mittelwert, D_95, sigma, D_99, D_1)
+
+MAD_Boost <- Boost_descsta %>%
+  select(Mittelwert)
+MAD_Boost <- MeanAD(Boost_descsta$Mittelwert, center = 76.23) # muss an dieser Stelle stehen, ansonsten Fehlermeldung
+
+
+
+Boost_descsta<- describe(Boost_descsta)
+
+
+Boost_descsta <- Boost_descsta %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, Range = range)
+
+Boost_descsta <- Boost_descsta %>% 
+  select(Numbers,	Mean,	'Standard deviation',	Median,	Minimum,	Maximum, Range, 'Standard errors')
+
+
+Boost_descsta <- Boost_descsta %>% add_column(MAD_Boost, .after = 'Standard errors')
+Boost_descsta <- Boost_descsta %>% rename('Mean absolute deviation' = MAD_Boost)
+
+Boost_descsta[2:5, 9] = NA #Befehl um in einem dataframe, hier 2.-6. Zeile und 9. Reihe einen neuen Wert (hier NA) eibnzusetzen
+
+
+
+
+
+Boost_descsta %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Boost descriptive statistics") %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+    full_width = TRUE) 
+```
