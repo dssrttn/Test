@@ -18,17 +18,17 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 
-DIL_1_constraint<- read_csv2('data/DIL_1.csv')
+DIL_constraint<- read_csv2('data/DIL_1.csv')
 
-DIL_1_constraint <- cut(DIL_1_constraint$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=c('< 76.23 Gy', 'within + 1% of constraint', 'within + 2% of constraint', 'within + 3% of constraint', 'within + 4% of constraint', 'within + 5% of constraint', '> + 5% of constraint'))  # benutzt dplyr, 7 Intervalle 
+DIL_constraint <- cut(DIL_constraint$Mittelwert, c(-Inf, 76.23, 76.23*1.01, 76.23*1.02, 76.23*1.03, 76.23*1.04, 76.23*1.05, Inf), labels=c('< 76.23 Gy', 'within + 1% of constraint', 'within + 2% of constraint', 'within + 3% of constraint', 'within + 4% of constraint', 'within + 5% of constraint', '> + 5% of constraint'))  # benutzt dplyr, 7 Intervalle 
 
 
-DIL_1_constraint <- as.data.frame(DIL_1_constraint) %>%  
-group_by(DIL_1_constraint, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+DIL_constraint <- as.data.frame(DIL_constraint) %>%  
+group_by(DIL_constraint, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
 dplyr::summarise(Numbers = n())  #%>% # %>% #=n())   
 #mutate(Nummers = rowSums(.[-1]))
 
-DIL_1_constraint %>%
+DIL_constraint %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL boost constraint", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
@@ -43,17 +43,17 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 ``` {r echo = FALSE, message=FALSE}
 library(tidyverse)
 
-Bladder_1_constraint <- read.csv2('data/Bladder_1.csv')
+Bladder_constraint <- read.csv2('data/Bladder_1.csv')
 
-Bladder_1_constraint<- cut(Bladder_1_constraint$D_10, c(-Inf, 60, Inf), labels=c('< 60 Gy', '> 60 Gy'))  # benutzt dplyr, 2 Intervalle 
+Bladder_constraint<- cut(Bladder_constraint$D_10, c(-Inf, 60, Inf), labels=c('< 60 Gy', '> 60 Gy'))  # benutzt dplyr, 2 Intervalle 
 
 
-Bladder_1_constraint <- as.data.frame(Bladder_1_constraint) %>%  
-group_by(Bladder_1_constraint, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+Bladder_constraint <- as.data.frame(Bladder_constraint) %>%  
+group_by(Bladder_constraint, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
 dplyr::summarise(Numbers = n())  #%>% # %>% #=n())   
 #mutate(Nummers = rowSums(.[-1]))
 
-Bladder_1_constraint %>%
+Bladder_constraint %>%
  knitr::kable(format ='html', caption = "", col.names = c("Bladder D_10 constraint", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
@@ -65,20 +65,20 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 ##### Bladder D_10 constraint - boxplot
 
 ``` {r echo = FALSE, message=FALSE}
-Bladder_1_constraint <- read.csv2('data/Bladder_1.csv')
 
-Bladder_1_constraint <- read.csv2('data/Bladder_1.csv')
+
+Bladder_constraint <- read.csv2('data/Bladder_1.csv') # need to be here for ylim!
 
 par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
 par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
-boxplot(Bladder_1_constraint$D_10, 
+boxplot(Bladder_constraint$D_10, 
         ylab= "Dosis in Gray", #y-Achse-Beschriftung  
         #yaxt="n", #suppresses y-axis. Brauch ich das? 
         col="transparent", #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
-        ylim=c(min(Bladder_1_constraint$D_10), max(Bladder_1_constraint$D_10)), # y-Achse range
+        ylim=c(min(Bladder_constraint$D_10), max(Bladder_constraint$D_10)), # y-Achse range
         cex.lab = 2, # Größe Label-Beschriftung
         cex.axis = 1.5 # Größe Achsenbeschriftungen
         #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
@@ -89,4 +89,53 @@ boxplot(Bladder_1_constraint$D_10,
 
 ```
 
+
+
+### Rectum RV cum PTV D_5 constraint - 
+#### Rectum RV cum PTV D_5 constraint - table
+
+``` {r echo = FALSE, message=FALSE}
+
+
+Rectum_D5_constraint <- read.csv2('data/Rectum_1.csv')
+
+Rectum_D5_constraint<- cut(Rectum_D5_constraint$D_5, c(-Inf, 72.4, Inf), labels=c('< 72.4 Gy', '> 72.4 Gy'))  # benutzt dplyr, 2 Intervalle 
+
+Rectum_D5_constraint <- as.data.frame(Rectum_D5_constraint) %>%  
+group_by(Rectum_D5_constraint, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+dplyr::summarise(Numbers = n())  #%>% # %>% #=n())   
+#mutate(Nummers = rowSums(.[-1]))
+
+Rectum_D5_constraint %>%
+ knitr::kable(format ='html', caption = "", col.names = c("Rectum D_5 constraint", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+
+```
+
+
+#### Rectum RV cum PTV D_5 constraint - boxplot
+
+``` {r echo = FALSE, message=FALSE}
+Rectum_D5_constraint<- read.csv2('data/Rectum_1.csv')
+
+par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(2, 8, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+boxplot(Rectum_D5_constraint$D_10, 
+        ylab= "Dosis in Gray", #y-Achse-Beschriftung  
+        #yaxt="n", #suppresses y-axis. Brauch ich das? 
+        col="transparent", #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        ylim=c(min(Rectum_D5_constraint$D_10), max(Rectum_D5_constraint$D_10)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5 # Größe Achsenbeschriftungen
+        #mgp=c(3,1,0) # mpg: Abstand Label zu Achse
+     # , xpd = TRUE
+      #labels = FALSE
+        )
+
+
+```
 
