@@ -10,7 +10,7 @@ editor_options:
 ## Tibble - Dosisbereiche 
 
 
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE}
 library(dplyr)
 library(tidyverse)
 library(knitr)
@@ -27,7 +27,7 @@ dplyr::summarise(Numbers = n())  #%>% # %>% #=n())
 #mutate(Nummers = rowSums(.[-1]))
 
 DIL_1_constraint %>%
- knitr::kable(align = c("lr"), format ='html', caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
+ knitr::kable(format ='html', caption = "Patient 1 - DIL constraint", col.names = c("DIL boost constraint", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
 
