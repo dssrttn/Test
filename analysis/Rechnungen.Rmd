@@ -8,15 +8,18 @@ output:
 ---   
 
 
-knitr::opts_chunk$set
- chunk_output_type: console
- editor_options:
+```{r setup, message=FALSE}
+
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+
+```
+ 
 ## Tibble - Dosisbereiche 
 
 ### DIL boost constraint 
 #### DIL boost constraint - table
 
-```{r echo = FALSE, message=FALSE}
+```{r DIL boost constraint - table, message=FALSE}
 library(dplyr)
 library(tidyverse)
 library(knitr)
@@ -44,7 +47,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 #### Bladder D_10 constraint - table
 
 
-``` {r echo = FALSE, message=FALSE}
+``` {r Bladder D_10 constraint - table, message=FALSE}
 library(tidyverse)
 
 Bladder_constraint <- read.csv2('data/Bladder_1.csv')
@@ -68,7 +71,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 ##### Bladder D_10 constraint - boxplot
 
-``` {r echo = FALSE, message=FALSE}
+``` {r Bladder D_10 constraint - boxplot, message=FALSE}
 
 
 Bladder_constraint <- read.csv2('data/Bladder_1.csv') # need to be here for ylim!
@@ -103,7 +106,7 @@ boxplot(Bladder_constraint$D_10,
 ### Rectum D_5 (72.4 Gy) constraint
 #### Rectum RV cum PTV D_5 constraint - table
 
-``` {r echo = FALSE, message=FALSE}
+``` {r Rectum RV cum PTV D_5 constraint - table, message=FALSE}
   
 
 Rectum_D5_constraint <- read.csv2('data/Rectum_1.csv')
@@ -125,7 +128,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 #### Rectum RV cum PTV D_5 constraint - boxplot
 
-``` {r echo = FALSE, message=FALSE}
+``` {r Rectum RV cum PTV D_5 constraint - boxplot, message=FALSE}
 Rectum_D5_constraint<- read.csv2('data/Rectum_1.csv')
 
 max <-max(Rectum_D5_constraint$D_5)
@@ -165,7 +168,7 @@ boxplot(Rectum_D5_constraint$D_5,
 ### Penile bulb D_60 (70,0 Gy) constraint
 #### Penile bulb D_60 constraint- table
 
-``` {r, message=FALSE}
+``` {r Penile bulb D_60 constraint- table, message=FALSE}
 library(tidyverse)
 
 PenileBulb_D60_constraint <- read.csv2('data/PenisBulb_1.csv')
@@ -186,7 +189,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 ##### Penile bulb D_60 constraint - boxplot
 
-```{r echo = FALSE, message=FALSE}
+```{r Penile bulb D_60 constraint - boxplot, message=FALSE}
 
 PenileBulb_D60_constraint <- read.csv2('data/PenisBulb_1.csv')
 
