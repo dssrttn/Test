@@ -11,7 +11,7 @@ output:
 ## Introduction
 
 
-The following table shows some characteristic descriptive statistics regarding the dominant intraprostatic lesion. The mean absolute deviation is calculated regarding the boost constraint.
+### DIL descriptive statistics
 
 ```{r DIL descriptive statistics, results='asis', message=FALSE}
 library(knitr)
@@ -62,7 +62,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
 ```
 
 
-
+### Boost descriptive statistics
 
 ```{r Boost descriptive statistics, results='asis', message=FALSE}
 library(knitr)
@@ -103,11 +103,11 @@ Boost_descsta <- Boost_descsta %>% rename('Mean absolute deviation' = MAD_Boost)
 Boost_descsta[2:5, 9] = NA #Befehl um in einem dataframe, hier 2.-6. Zeile und 9. Reihe einen neuen Wert (hier NA) eibnzusetzen
 
 
-
-
-
 Boost_descsta %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Boost descriptive statistics") %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
     full_width = TRUE) 
 ```
+
+
+
