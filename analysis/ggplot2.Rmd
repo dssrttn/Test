@@ -47,17 +47,10 @@ ggplot(data, aes(x, y)) +
   geom_point() +
   geom_line() +
  expand_limits(y = c(75.0, 78)) +
-  scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
-#scale_y_continuous(label_number(accuracy = 0.1), breaks = seq(75.0,78.0,0.25), labels = c(75.0, "", 75.5, "", 76.0, "", 76.5, "", 77.0, "" ,77.5, "" ,
- # 78.0)) + # Labels und Ticks ungleich, jedoch jedes 2. Label soll nicht angezeigt werden
-#label_number(accuracy = 0.1),
-    # , labels = c(75.0, 75.5, 76.0, 76.5, 77.0, 77.5, 78.0)) +
-  #scale_y_continuous(expand = expand_scale(mult = c(0, .1)), b
-  # scale_x_discrete(limits=NULL, breaks=NULL, 0.5) + https://stackoverflow.com/questions/55033695/x-axis-labels-illegible-display-every-other-label-on-x-axis-ggplot2
-# scale_y_discrete(breaks = c(T,F)) +
+  scale_y_continuous(breaks = seq(75.0,78.0,1)) +
+scale_x_continuous(breaks = c(1, 5, 10, 14)) +  # für jedes x ein tick
 
-  scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+  geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
    annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
   theme_classic() +
   theme(
@@ -100,9 +93,10 @@ ggplot(data, aes(x, y)) +
   geom_point() +
   geom_line() +
   expand_limits(y = c(75.0, 78)) +
-scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
-scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+scale_y_continuous(breaks = seq(75.0,78.0,1)) +
+scale_x_continuous(breaks = c(1, 5, 10, 14)) +  # für jedes x ein tick
+
+  geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
    annotate("text", x = 13.2, y = 76.1, cex =rel(4), label = "Boost constraint") +
   theme_classic() +
   theme(
