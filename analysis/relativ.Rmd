@@ -14,21 +14,38 @@ library(plyr)
 library(tidyverse)
 library(ggplot2)
 library(scales)
+library(knitr)
+library(kableExtra)
+options(digits=3) # zeigt nur drei Zahlenwerte an
 
-DIL_1_rel<- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+DIL_rel <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
-DIL_1_rel <- distinct(DIL_1_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+DIL_rel <- distinct(DIL_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
 
 #ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe 
 
-DIL_1_rel <- ddply(DIL_1_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) # relative Differenzen zum Ausgangswert in der 1. Reihe werden berechnet
+DIL_rel <- ddply(DIL_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) # relative Differenzen zum Ausgangswert in der 1. Reihe werden berechnet
+
+DIL_rel_table <- ddply(DIL_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
+
+
+
+DIL_rel_table <- DIL_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
+
+DIL_rel_table[1:14, 1] = (1:14) 
+
+DIL_rel_table %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+    full_width = TRUE) 
+
 
 
 x <- (1:14)
-y <- DIL_1_rel$relchange
+y <- DIL_rel$relchange
 
-ggplot(DIL_1_rel,aes(x=x #DIL_relabs$x
+ggplot(DIL_rel,aes(x=x #DIL_relabs$x
                       ,y=y )) + #DIL_relabs$abschange)) +
    geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
     geom_point() +
