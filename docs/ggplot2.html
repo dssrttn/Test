@@ -425,7 +425,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-07-02
+<strong>Last updated:</strong> 2020-07-03
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -516,16 +516,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9b75c3fe025d22b987d443f06a2a115d0f78081atargetblank9b75c3fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/9b75c3fe025d22b987d443f06a2a115d0f78081a" target="_blank">9b75c3f</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreef3c2cb0d2744b43ab364b70f4263776fa6a46861targetblankf3c2cb0a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/f3c2cb0d2744b43ab364b70f4263776fa6a46861" target="_blank">f3c2cb0</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9b75c3fe025d22b987d443f06a2a115d0f78081atargetblank9b75c3fa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreef3c2cb0d2744b43ab364b70f4263776fa6a46861targetblankf3c2cb0a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/9b75c3fe025d22b987d443f06a2a115d0f78081a" target="_blank">9b75c3f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/f3c2cb0d2744b43ab364b70f4263776fa6a46861" target="_blank">f3c2cb0</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -588,6 +588,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/f3c2cb0d2744b43ab364b70f4263776fa6a46861/analysis/ggplot2.Rmd" target="_blank">f3c2cb0</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-03
+</td>
+<td>
+x- und y-axis thinned
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/a80fcf5d3922730d700967ca424d36f61f71ad62/docs/ggplot2.html" target="_blank">a80fcf5</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1086,17 +1120,10 @@ ggplot(data, aes(x, y)) +
   geom_point() +
   geom_line() +
  expand_limits(y = c(75.0, 78)) +
-  scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
-#scale_y_continuous(label_number(accuracy = 0.1), breaks = seq(75.0,78.0,0.25), labels = c(75.0, &quot;&quot;, 75.5, &quot;&quot;, 76.0, &quot;&quot;, 76.5, &quot;&quot;, 77.0, &quot;&quot; ,77.5, &quot;&quot; ,
- # 78.0)) + # Labels und Ticks ungleich, jedoch jedes 2. Label soll nicht angezeigt werden
-#label_number(accuracy = 0.1),
-    # , labels = c(75.0, 75.5, 76.0, 76.5, 77.0, 77.5, 78.0)) +
-  #scale_y_continuous(expand = expand_scale(mult = c(0, .1)), b
-  # scale_x_discrete(limits=NULL, breaks=NULL, 0.5) + https://stackoverflow.com/questions/55033695/x-axis-labels-illegible-display-every-other-label-on-x-axis-ggplot2
-# scale_y_discrete(breaks = c(T,F)) +
+  scale_y_continuous(breaks = seq(75.0,78.0,1)) +
+scale_x_continuous(breaks = c(1, 5, 10, 14)) +  # für jedes x ein tick
 
-  scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+  geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
    annotate(&quot;text&quot;, x = 13.2, y = 76.1, cex =rel(4), label = &quot;Boost constraint&quot;) +
   theme_classic() +
   theme(
@@ -1227,9 +1254,10 @@ ggplot(data, aes(x, y)) +
   geom_point() +
   geom_line() +
   expand_limits(y = c(75.0, 78)) +
-scale_y_continuous(breaks = seq(75.0,78.0,0.5)) +
-scale_x_continuous(breaks = 0:14) +  # für jedes x ein tick
-geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+scale_y_continuous(breaks = seq(75.0,78.0,1)) +
+scale_x_continuous(breaks = c(1, 5, 10, 14)) +  # für jedes x ein tick
+
+  geom_abline(intercept = 76.23, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
    annotate(&quot;text&quot;, x = 13.2, y = 76.1, cex =rel(4), label = &quot;Boost constraint&quot;) +
   theme_classic() +
   theme(
@@ -1356,7 +1384,7 @@ Mein Vorname
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       Europe/Berlin               
- date     2020-07-02                  
+ date     2020-07-03                  
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version date       lib source        
