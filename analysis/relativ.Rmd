@@ -9,11 +9,11 @@ output:
 
 
 
-```{r setup, message=FALSE}
-
-knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
-
-```
+#```{r setup, message=FALSE}
+#
+#knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+#
+#```
 
 
 
@@ -419,14 +419,20 @@ print(p)
 
 ```
 
+
+
 ```{r linear regression Rectum DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+
+
 
 plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)
 
+x_Rectum_mean_rel <- Rectum_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
 
-fm <- lm(y ~ x)
 
-lm(formula = y ~ x)
+fm <- lm(y_DIL_mean_rel ~ x_Rectum_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
 
 fitted.values(fm)
 residuals(fm)
@@ -434,7 +440,7 @@ residuals(fm)
 summary(fm)
 
 
-plot(x, y)
+plot(x_Rectum_mean_rel, y_DIL_mean_rel)
 abline(fm, col = "red")
 
 
@@ -443,12 +449,16 @@ abline(fm, col = "red")
 
 ```{r linear regression Bladder DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
+
 plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)
 
+x_Bladder_mean_rel <- Bladder_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
 
-fn <- lm(y ~ x)
 
-lm(formula = y ~ x)
+
+fn <- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
 
 fitted.values(fn)
 residuals(fn)
@@ -456,7 +466,7 @@ residuals(fn)
 summary(fn)
 
 
-plot(x, y)
+plot(x_Bladder_mean_rel, y_DIL_mean_rel)
 abline(fn, col = "red")
 
 
@@ -466,11 +476,12 @@ abline(fn, col = "red")
 ```{r linear regression Boost DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
 plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)
+x_Boost_mean_rel <- Boost_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
 
+fo <- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
 
-fo <- lm(y ~ x)
-
-lm(formula = y ~ x)
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
 
 fitted.values(fo)
 residuals(fo)
@@ -478,12 +489,9 @@ residuals(fo)
 summary(fo)
 
 
-plot(x, y)
+plot(x_Boost_mean_rel, y_DIL_mean_rel)
 abline(fo, col = "red")
 
 
 ```
-
-DIL_mean_rel$relchange
-Rectum_mean_rel$relchange
 
