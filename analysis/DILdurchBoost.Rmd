@@ -1,0 +1,120 @@
+---
+title: "DILdurchBoost"
+author: "Mein Vorname"
+date: "2020-07-10"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+
+```
+
+
+---
+title: "Rechnungen"
+author: "Mein Vorname"
+date: "2020-06-25"
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+---
+
+
+
+#```{r setup, message=FALSE}
+#
+#knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+#
+#```
+
+
+```{r DIL Boxplot, message=FALSE}
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+#options(digits=3) # zeigt nur drei Zahlenwerte an
+
+DIL_mean_boxplot <- read_csv2('data/DIL_1.csv')
+
+#max <-max(DIL_mean_boxplot$Mittelwert)
+#min <-min(DIL_mean_boxplot$Mittelwert)
+
+Boost_mean_boxplot <- read_csv2('data/BoostA1n_1.csv')
+Boost_mean_boxplot 
+
+DIL_mean_boxplot <- distinct(DIL_mean_boxplot, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+DIL_mean_boxplot <- DIL_mean_boxplot %>% select(Mittelwert_DIL = Mittelwert)
+DIL_mean_boxplot
+
+
+#Boost_mean_boxplot <- distinct(Boost_mean_boxplot, Mittelwert)
+#Boost_mean_boxplot <-  Boost_mean_boxplot %>% select(Mittelwert_Boost = Mittelwert)
+#Boost_mean_boxplot
+
+
+DIL_Boost_mean_boxplot <- DIL_mean_boxplot %>% add_column(Mittelwert_Boost = Boost_mean_boxplot$Mittelwert)
+DIL_Boost_mean_boxplot
+
+#DIL_Boost_mean_rel_boxplot <- ddply(DIL_Boost_mean_boxplot,(), transform, Mittelwert.1 = (DIL_mean_boxplot / Boost_mean_boxplot[1]))
+
+#DIL_mean_rel_table <- ddply(DIL_Boost_mean_boxplot, .(), transform, Fraction = 1:14) # adding column with fraction
+#´DIL_mean_rel_table                            
+                            #relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
+
+DIL_mean_rel_table <- ddply(DIL_Boost_mean_boxplot, .(), transform, dilboost = (Mittelwert_DIL/ Mittelwert_Boost[1])) 
+DIL_mean_rel_table
+
+DIL_mean_rel_table <- DIL_mean_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
+DIL_mean_rel_table[1:14, 1] = (1:14) 
+DIL_mean_rel_table
+```
+
+#all_rows2 <- full_join(DIL_mean_boxplot, Boost_mean_boxplot)
+#all_rows2
+
+#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe
+
+
+DIL_Boost_mean_rel_boxplot <- ddply(DIL_mean_boxplot, .(), transform, Mittelwert.1 = (DIL_mean_boxplot / Boost_mean_boxplot[1]))
+DIL_Boost_mean_rel_boxplot
+#DIL_Boost_mean_rel_boxplot_table <<- ddply(DIL_mean_boxplot, .(), transform, Mittelwert.1  = (DIL_mean_boxplot / Boost_mean_boxplot[1]))
+
+
+
+DIL_Boost_mean_rel_boxplot_table <- DIL_Boost_mean_rel_boxplot %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
+DIL_Boost_mean_rel_boxplot_table 
+
+#DIL_Boost_mean_rel_boxplot_table[1:14, 1] = (1:14) 
+
+DIL_Boost_mean_rel_boxplot_table %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+   full_width = TRUE) 
+
+
+
+
+par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+boxplot(DIL_Boost_mean_rel_boxplot_table$Mittelwert.1, 
+      ylab= "Dose in Gray", #y-Achse-Beschriftung  
+ yaxt="n", #suppresses y-axis. Brauch ich das? 
+      col="transparent", #Farbe des Boxplots
+     las = 2, # horizontale Markierung der Tick-Beschriftungen
+ ylim=c(0, 100),
+   # ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0), # mpg: Abstand Label zu Achse
+    #  , xpd = TRUE
+      labels = FALSE
+      )
