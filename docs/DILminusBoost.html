@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0936524a4ae21b00a030d1471027996c2acf8399targetblank0936524a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/0936524a4ae21b00a030d1471027996c2acf8399" target="_blank">0936524</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee5ae7ce3b6cbb8fd5ed41ba4edf52a2210cef7fctargetblanke5ae7cea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/e5ae7ce3b6cbb8fd5ed41ba4edf52a2210cef7fc" target="_blank">e5ae7ce</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0936524a4ae21b00a030d1471027996c2acf8399targetblank0936524a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee5ae7ce3b6cbb8fd5ed41ba4edf52a2210cef7fctargetblanke5ae7cea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/0936524a4ae21b00a030d1471027996c2acf8399" target="_blank">0936524</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/e5ae7ce3b6cbb8fd5ed41ba4edf52a2210cef7fc" target="_blank">e5ae7ce</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -554,6 +554,7 @@ Untracked files:
 
 Unstaged changes:
     Modified:   _workflowr.yml
+    Modified:   analysis/DILdurchBoost.Rmd
     Modified:   analysis/first-analysis.Rmd
     Modified:   analysis/relativ.Rmd
 
@@ -594,6 +595,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/e5ae7ce3b6cbb8fd5ed41ba4edf52a2210cef7fc/analysis/DILminusBoost.Rmd" target="_blank">e5ae7ce</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+VErbesserungen boxplot
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/69683214950ec0f98eadaf0b5319414d5cc55fdb/docs/DILminusBoost.html" target="_blank">6968321</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -742,10 +777,10 @@ min &lt;-min(DIL_mean_rel_table$dilminusboost)
 
 par(bty=&quot;n&quot;) # keinen Rahmen
 par(family=&quot;serif&quot;) # Schriftart
-par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
-par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+par(mar = c(5, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
 boxplot(DIL_mean_rel_table$dilminusboost, 
-        ylab= &quot;Dose in Gray&quot;, #y-Achse-Beschriftung  
+        ylab= &quot;Relation Dil minus Boost&quot;, #y-Achse-Beschriftung  
         #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
         col=&quot;transparent&quot;, #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
@@ -758,6 +793,43 @@ boxplot(DIL_mean_rel_table$dilminusboost,
       #labels = FALSE
         )</code></pre>
 <p><img src="figure/DILminusBoost.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Boxplot-1">
+Past versions of “DIL Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/69683214950ec0f98eadaf0b5319414d5cc55fdb/docs/figure/DILminusBoost.Rmd/DIL Boxplot-1.png" target="_blank">6968321</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>DIL_mean_rel_table %&gt;%
   kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;DIL durch Boost[1&quot;) %&gt;%
 kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
