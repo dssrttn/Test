@@ -64,10 +64,10 @@ min <-min(DIL_mean_rel_table$dilboost)
 
 par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
-par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
-par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+par(mar = c(5, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
 boxplot(DIL_mean_rel_table$dilboost, 
-        ylab= "Dose in Gray", #y-Achse-Beschriftung  
+        ylab= "Relation Dil to Boost[1]", #y-Achse-Beschriftung  
         #yaxt="n", #suppresses y-axis. Brauch ich das? 
         col="transparent", #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
