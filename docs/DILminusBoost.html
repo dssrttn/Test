@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Mein Vorname" />
+
+<meta name="date" content="2020-07-10" />
+
+<title>DILdurchBoost</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Test</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Einstieg</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/dssrttn/Test">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">DILdurchBoost</h1>
+<h4 class="author">Mein Vorname</h4>
+<h4 class="date">2020-07-10</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2020-07-10
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>Test/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20200620code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20200620)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20200620code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20200620)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0936524a4ae21b00a030d1471027996c2acf8399targetblank0936524a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/0936524a4ae21b00a030d1471027996c2acf8399" target="_blank">0936524</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0936524a4ae21b00a030d1471027996c2acf8399targetblank0936524a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/0936524a4ae21b00a030d1471027996c2acf8399" target="_blank">0936524</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    analysis/.Rhistory
+    Ignored:    data/.Rhistory
+
+Untracked files:
+    Untracked:  README.html
+    Untracked:  analysis/allesineinem.Rmd
+    Untracked:  data/1/
+    Untracked:  data/16/
+    Untracked:  data/8/
+    Untracked:  data/Bladder_1.csv
+    Untracked:  data/BoostA1n_1.csv
+    Untracked:  data/DIL_1.csv
+    Untracked:  data/External_1.csv
+    Untracked:  data/PTVA0.csv
+    Untracked:  data/PenisBulb_1.csv
+    Untracked:  data/Rectum_1.csv
+
+Unstaged changes:
+    Modified:   _workflowr.yml
+    Modified:   analysis/first-analysis.Rmd
+    Modified:   analysis/relativ.Rmd
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/DILminusBoost.Rmd</code>) and HTML (<code>docs/DILminusBoost.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/0936524a4ae21b00a030d1471027996c2acf8399/analysis/DILminusBoost.Rmd" target="_blank">0936524</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+nehrere eenen der
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<pre class="r"><code>knitr::opts_chunk$set(dev=c(&#39;png&#39;, &#39;pdf&#39;), width=7, height=5)</code></pre>
+<pre class="r"><code>library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+#options(digits=3) # zeigt nur drei Zahlenwerte an
+
+DIL_mean_boxplot &lt;- read_csv2(&#39;data/DIL_1.csv&#39;)
+
+#max &lt;-max(DIL_mean_boxplot$Mittelwert)
+#min &lt;-min(DIL_mean_boxplot$Mittelwert)
+
+Boost_mean_boxplot &lt;- read_csv2(&#39;data/BoostA1n_1.csv&#39;)
+Boost_mean_boxplot </code></pre>
+<pre><code># A tibble: 14 x 12
+   Dosisname Mittelwert sigma d_Mittelwert D_max D_min   D_1   D_5  D_10  D_60
+   &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Evaluati…       76.2  2.29        0.229  80.4  63.5  79.5  78.8  78.4  76.4
+ 2 Evaluati…       75.9  2.32        0.232  80.1  62.5  79.2  78.5  78.1  76.0
+ 3 Evaluati…       76.0  2.29        0.229  80.0  63    79.2  78.5  78.1  76.2
+ 4 Evaluati…       75.5  2.59        0.259  79.7  59.1  78.9  78.2  77.8  75.7
+ 5 Evaluati…       75.8  2.24        0.224  80.4  64.2  79.3  78.6  78.1  75.9
+ 6 Evaluati…       75.9  2.14        0.214  79.6  64    78.9  78.2  77.8  76.0
+ 7 Evaluati…       75.6  2.43        0.243  79.8  62    79.0  78.2  77.8  75.8
+ 8 Evaluati…       76.1  2.43        0.243  80.3  62.5  79.5  78.7  78.3  76.3
+ 9 Evaluati…       75.7  2.48        0.248  80.4  61.5  79.3  78.5  78.0  75.9
+10 Evaluati…       76.3  2.26        0.226  80.7  63.5  79.7  78.9  78.5  76.4
+11 Evaluati…       75.6  3.01        0.301  80.2  57.4  79.3  78.6  78.2  75.9
+12 Evaluati…       76.3  2.35        0.235  80.5  63    79.7  79.0  78.5  76.5
+13 Evaluati…       76.1  2.18        0.218  80.2  63.5  79.2  78.5  78.1  76.2
+14 Evaluati…       76.4  2.34        0.234  80.7  62    79.6  78.9  78.5  76.5
+# … with 2 more variables: D_95 &lt;dbl&gt;, D_99 &lt;dbl&gt;</code></pre>
+<pre class="r"><code>DIL_mean_boxplot &lt;- distinct(DIL_mean_boxplot, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+DIL_mean_boxplot &lt;- DIL_mean_boxplot %&gt;% select(Mittelwert_DIL = Mittelwert)
+DIL_mean_boxplot</code></pre>
+<pre><code># A tibble: 14 x 1
+   Mittelwert_DIL
+            &lt;dbl&gt;
+ 1           77.2
+ 2           76.7
+ 3           76.8
+ 4           76.5
+ 5           76.7
+ 6           76.7
+ 7           76.4
+ 8           77.0
+ 9           76.7
+10           77.2
+11           76.9
+12           77.2
+13           77.0
+14           77.3</code></pre>
+<pre class="r"><code>#Boost_mean_boxplot &lt;- distinct(Boost_mean_boxplot, Mittelwert)
+#Boost_mean_boxplot &lt;-  Boost_mean_boxplot %&gt;% select(Mittelwert_Boost = Mittelwert)
+#Boost_mean_boxplot
+
+
+DIL_Boost_mean_boxplot &lt;- DIL_mean_boxplot %&gt;% add_column(Mittelwert_Boost = Boost_mean_boxplot$Mittelwert)
+DIL_Boost_mean_boxplot</code></pre>
+<pre><code># A tibble: 14 x 2
+   Mittelwert_DIL Mittelwert_Boost
+            &lt;dbl&gt;            &lt;dbl&gt;
+ 1           77.2             76.2
+ 2           76.7             75.9
+ 3           76.8             76.0
+ 4           76.5             75.5
+ 5           76.7             75.8
+ 6           76.7             75.9
+ 7           76.4             75.6
+ 8           77.0             76.1
+ 9           76.7             75.7
+10           77.2             76.3
+11           76.9             75.6
+12           77.2             76.3
+13           77.0             76.1
+14           77.3             76.4</code></pre>
+<pre class="r"><code>#DIL_Boost_mean_rel_boxplot &lt;- ddply(DIL_Boost_mean_boxplot,(), transform, Mittelwert.1 = (DIL_mean_boxplot / Boost_mean_boxplot[1]))
+
+#DIL_mean_rel_table &lt;- ddply(DIL_Boost_mean_boxplot, .(), transform, Fraction = 1:14) # adding column with fraction
+#´DIL_mean_rel_table                            
+                            #relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
+
+DIL_mean_rel_table &lt;- ddply(DIL_Boost_mean_boxplot, .(), transform, dilminusboost = (Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1])) 
+DIL_mean_rel_table</code></pre>
+<pre><code>    .id Mittelwert_DIL Mittelwert_Boost dilminusboost
+1  &lt;NA&gt;       77.16960         76.23840     1.0000000
+2  &lt;NA&gt;       76.74186         75.87749     0.9282291
+3  &lt;NA&gt;       76.78767         75.98327     0.8638269
+4  &lt;NA&gt;       76.54315         75.52104     1.0976343
+5  &lt;NA&gt;       76.70229         75.79867     0.9703807
+6  &lt;NA&gt;       76.69017         75.86910     0.8817384
+7  &lt;NA&gt;       76.41442         75.60024     0.8743361
+8  &lt;NA&gt;       77.03381         76.10271     0.9999034
+9  &lt;NA&gt;       76.70290         75.73337     1.0411619
+10 &lt;NA&gt;       77.16465         76.28986     0.9394290
+11 &lt;NA&gt;       76.94086         75.57449     1.4673321
+12 &lt;NA&gt;       77.24228         76.32857     0.9812168
+13 &lt;NA&gt;       76.95852         76.10653     0.9149366
+14 &lt;NA&gt;       77.25280         76.37261     0.9452327</code></pre>
+<pre class="r"><code>DIL_mean_rel_table &lt;- DIL_mean_rel_table %&gt;% rename(&#39;Fraction&#39; = &#39;.id&#39;) #renmae column &#39;.id&#39; with &#39;Fraction&#39;
+DIL_mean_rel_table[1:14, 1] = (1:14) 
+DIL_mean_rel_table</code></pre>
+<pre><code>   Fraction Mittelwert_DIL Mittelwert_Boost dilminusboost
+1         1       77.16960         76.23840     1.0000000
+2         2       76.74186         75.87749     0.9282291
+3         3       76.78767         75.98327     0.8638269
+4         4       76.54315         75.52104     1.0976343
+5         5       76.70229         75.79867     0.9703807
+6         6       76.69017         75.86910     0.8817384
+7         7       76.41442         75.60024     0.8743361
+8         8       77.03381         76.10271     0.9999034
+9         9       76.70290         75.73337     1.0411619
+10       10       77.16465         76.28986     0.9394290
+11       11       76.94086         75.57449     1.4673321
+12       12       77.24228         76.32857     0.9812168
+13       13       76.95852         76.10653     0.9149366
+14       14       77.25280         76.37261     0.9452327</code></pre>
+<pre class="r"><code>max &lt;-max(DIL_mean_rel_table$dilminusboost)
+min &lt;-min(DIL_mean_rel_table$dilminusboost)
+
+par(bty=&quot;n&quot;) # keinen Rahmen
+par(family=&quot;serif&quot;) # Schriftart
+par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+boxplot(DIL_mean_rel_table$dilminusboost, 
+        ylab= &quot;Dose in Gray&quot;, #y-Achse-Beschriftung  
+        #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
+        col=&quot;transparent&quot;, #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+      #ylim = c(0, 1),
+         ylim=c(min(0.85), max(1.15)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
+     # , xpd = TRUE
+      #labels = FALSE
+        )</code></pre>
+<p><img src="figure/DILminusBoost.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>DIL_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;DIL durch Boost[1&quot;) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
+   full_width = TRUE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+DIL durch Boost[1
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mittelwert_DIL
+</th>
+<th style="text-align:center;">
+Mittelwert_Boost
+</th>
+<th style="text-align:center;">
+dilminusboost
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+77.16960
+</td>
+<td style="text-align:center;">
+76.23840
+</td>
+<td style="text-align:center;">
+1.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+76.74186
+</td>
+<td style="text-align:center;">
+75.87749
+</td>
+<td style="text-align:center;">
+0.9282291
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+76.78767
+</td>
+<td style="text-align:center;">
+75.98327
+</td>
+<td style="text-align:center;">
+0.8638269
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+76.54315
+</td>
+<td style="text-align:center;">
+75.52104
+</td>
+<td style="text-align:center;">
+1.0976343
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+76.70229
+</td>
+<td style="text-align:center;">
+75.79867
+</td>
+<td style="text-align:center;">
+0.9703807
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+76.69017
+</td>
+<td style="text-align:center;">
+75.86910
+</td>
+<td style="text-align:center;">
+0.8817384
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+76.41442
+</td>
+<td style="text-align:center;">
+75.60024
+</td>
+<td style="text-align:center;">
+0.8743361
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+77.03381
+</td>
+<td style="text-align:center;">
+76.10271
+</td>
+<td style="text-align:center;">
+0.9999034
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+76.70290
+</td>
+<td style="text-align:center;">
+75.73337
+</td>
+<td style="text-align:center;">
+1.0411619
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+77.16465
+</td>
+<td style="text-align:center;">
+76.28986
+</td>
+<td style="text-align:center;">
+0.9394290
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+76.94086
+</td>
+<td style="text-align:center;">
+75.57449
+</td>
+<td style="text-align:center;">
+1.4673321
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+77.24228
+</td>
+<td style="text-align:center;">
+76.32857
+</td>
+<td style="text-align:center;">
+0.9812168
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+76.95852
+</td>
+<td style="text-align:center;">
+76.10653
+</td>
+<td style="text-align:center;">
+0.9149366
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+77.25280
+</td>
+<td style="text-align:center;">
+76.37261
+</td>
+<td style="text-align:center;">
+0.9452327
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>DIL_mean_rel_table &lt;- cut(DIL_mean_rel_table$dilminusboost, c(-Inf, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, 1.04, 1.05, Inf), labels=c(&#39;&lt;0.95%&#39;, &#39;95-96%&#39;, &#39;96-97%&#39;, &#39;97-98%&#39;, &#39;98-99%&#39;, &#39;99-100%&#39;, &#39;100-101%&#39;, &#39;101-102%&#39;, &#39;102-103%&#39;, &#39;103-104%&#39;, &#39;104-105%&#39;, &#39;&gt;105%&#39;))  # benutzt dplyr, 7 Intervalle 
+
+
+DIL_mean_rel_table &lt;- as.data.frame(DIL_mean_rel_table) %&gt;%  
+group_by(DIL_mean_rel_table, .drop = FALSE) %&gt;% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+dplyr::summarise(Numbers = n())  #%&gt;% # %&gt;% #=n())   
+#mutate(Nummers = rowSums(.[-1]))
+
+
+DIL_mean_rel_table %&gt;%
+ knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL minus boost&quot;, &quot;Numbers&quot;)) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+DIL minus boost
+</th>
+<th style="text-align:right;">
+Numbers
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt;0.95%
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+95-96%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+96-97%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97-98%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98-99%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+99-100%
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100-101%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+101-102%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+102-103%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+103-104%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+104-105%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&gt;105%
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>devtools::session_info()</code></pre>
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value                       
+ version  R version 4.0.2 (2020-06-22)
+ os       Ubuntu 20.04 LTS            
+ system   x86_64, linux-gnu           
+ ui       X11                         
+ language (EN)                        
+ collate  en_US.UTF-8                 
+ ctype    en_US.UTF-8                 
+ tz       Europe/Berlin               
+ date     2020-07-10                  
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package     * version date       lib source        
+ assertthat    0.2.1   2019-03-21 [1] CRAN (R 4.0.1)
+ backports     1.1.8   2020-06-17 [1] CRAN (R 4.0.1)
+ blob          1.2.1   2020-01-20 [1] CRAN (R 4.0.1)
+ broom         0.5.6   2020-04-20 [1] CRAN (R 4.0.1)
+ callr         3.4.3   2020-03-28 [1] CRAN (R 4.0.1)
+ cellranger    1.1.0   2016-07-27 [1] CRAN (R 4.0.1)
+ cli           2.0.2   2020-02-28 [1] CRAN (R 4.0.1)
+ colorspace    1.4-1   2019-03-18 [1] CRAN (R 4.0.1)
+ crayon        1.3.4   2017-09-16 [1] CRAN (R 4.0.1)
+ DBI           1.1.0   2019-12-15 [1] CRAN (R 4.0.1)
+ dbplyr        1.4.4   2020-05-27 [1] CRAN (R 4.0.1)
+ desc          1.2.0   2018-05-01 [1] CRAN (R 4.0.1)
+ devtools      2.3.0   2020-04-10 [1] CRAN (R 4.0.1)
+ digest        0.6.25  2020-02-23 [1] CRAN (R 4.0.1)
+ dplyr       * 1.0.0   2020-05-29 [1] CRAN (R 4.0.1)
+ ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.1)
+ evaluate      0.14    2019-05-28 [1] CRAN (R 4.0.1)
+ fansi         0.4.1   2020-01-08 [1] CRAN (R 4.0.1)
+ forcats     * 0.5.0   2020-03-01 [1] CRAN (R 4.0.1)
+ fs            1.4.1   2020-04-04 [1] CRAN (R 4.0.1)
+ generics      0.0.2   2018-11-29 [1] CRAN (R 4.0.1)
+ ggplot2     * 3.3.2   2020-06-19 [1] CRAN (R 4.0.1)
+ git2r         0.27.1  2020-05-03 [1] CRAN (R 4.0.1)
+ glue          1.4.1   2020-05-13 [1] CRAN (R 4.0.1)
+ gtable        0.3.0   2019-03-25 [1] CRAN (R 4.0.1)
+ haven         2.3.1   2020-06-01 [1] CRAN (R 4.0.1)
+ highr         0.8     2019-03-20 [1] CRAN (R 4.0.1)
+ hms           0.5.3   2020-01-08 [1] CRAN (R 4.0.1)
+ htmltools     0.5.0   2020-06-16 [1] CRAN (R 4.0.1)
+ httpuv        1.5.4   2020-06-06 [1] CRAN (R 4.0.1)
+ httr          1.4.1   2019-08-05 [1] CRAN (R 4.0.1)
+ jsonlite      1.6.1   2020-02-02 [1] CRAN (R 4.0.1)
+ kableExtra  * 1.1.0   2019-03-16 [1] CRAN (R 4.0.1)
+ knitr       * 1.29    2020-06-23 [1] CRAN (R 4.0.1)
+ later         1.1.0.1 2020-06-05 [1] CRAN (R 4.0.1)
+ lattice       0.20-41 2020-04-02 [4] CRAN (R 4.0.0)
+ lifecycle     0.2.0   2020-03-06 [1] CRAN (R 4.0.1)
+ lubridate     1.7.9   2020-06-08 [1] CRAN (R 4.0.1)
+ magrittr      1.5     2014-11-22 [1] CRAN (R 4.0.1)
+ memoise       1.1.0   2017-04-21 [1] CRAN (R 4.0.1)
+ modelr        0.1.8   2020-05-19 [1] CRAN (R 4.0.1)
+ munsell       0.5.0   2018-06-12 [1] CRAN (R 4.0.1)
+ nlme          3.1-147 2020-04-13 [4] CRAN (R 4.0.0)
+ pillar        1.4.4   2020-05-05 [1] CRAN (R 4.0.1)
+ pkgbuild      1.0.8   2020-05-07 [1] CRAN (R 4.0.1)
+ pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.0.1)
+ pkgload       1.1.0   2020-05-29 [1] CRAN (R 4.0.1)
+ plyr        * 1.8.6   2020-03-03 [1] CRAN (R 4.0.1)
+ prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.0.1)
+ processx      3.4.2   2020-02-09 [1] CRAN (R 4.0.1)
+ promises      1.1.1   2020-06-09 [1] CRAN (R 4.0.1)
+ ps            1.3.3   2020-05-08 [1] CRAN (R 4.0.1)
+ purrr       * 0.3.4   2020-04-17 [1] CRAN (R 4.0.1)
+ R6            2.4.1   2019-11-12 [1] CRAN (R 4.0.1)
+ Rcpp          1.0.4.6 2020-04-09 [1] CRAN (R 4.0.1)
+ readr       * 1.3.1   2018-12-21 [1] CRAN (R 4.0.1)
+ readxl        1.3.1   2019-03-13 [1] CRAN (R 4.0.1)
+ remotes       2.1.1   2020-02-15 [1] CRAN (R 4.0.1)
+ reprex        0.3.0   2019-05-16 [1] CRAN (R 4.0.1)
+ rlang         0.4.6   2020-05-02 [1] CRAN (R 4.0.1)
+ rmarkdown     2.3     2020-06-18 [1] CRAN (R 4.0.1)
+ rprojroot     1.3-2   2018-01-03 [1] CRAN (R 4.0.1)
+ rstudioapi    0.11    2020-02-07 [1] CRAN (R 4.0.1)
+ rvest         0.3.5   2019-11-08 [1] CRAN (R 4.0.1)
+ scales      * 1.1.1   2020-05-11 [1] CRAN (R 4.0.1)
+ sessioninfo   1.1.1   2018-11-05 [1] CRAN (R 4.0.1)
+ stringi       1.4.6   2020-02-17 [1] CRAN (R 4.0.1)
+ stringr     * 1.4.0   2019-02-10 [1] CRAN (R 4.0.1)
+ testthat      2.3.2   2020-03-02 [1] CRAN (R 4.0.1)
+ tibble      * 3.0.1   2020-04-20 [1] CRAN (R 4.0.1)
+ tidyr       * 1.1.0   2020-05-20 [1] CRAN (R 4.0.1)
+ tidyselect    1.1.0   2020-05-11 [1] CRAN (R 4.0.1)
+ tidyverse   * 1.3.0   2019-11-21 [1] CRAN (R 4.0.1)
+ usethis       1.6.1   2020-04-29 [1] CRAN (R 4.0.1)
+ utf8          1.1.4   2018-05-24 [1] CRAN (R 4.0.1)
+ vctrs         0.3.1   2020-06-05 [1] CRAN (R 4.0.1)
+ viridisLite   0.3.0   2018-02-01 [1] CRAN (R 4.0.1)
+ webshot       0.5.2   2019-11-22 [1] CRAN (R 4.0.1)
+ whisker       0.4     2019-08-28 [1] CRAN (R 4.0.1)
+ withr         2.2.0   2020-04-20 [1] CRAN (R 4.0.1)
+ workflowr   * 1.6.2   2020-04-30 [1] CRAN (R 4.0.1)
+ xfun          0.15    2020-06-21 [1] CRAN (R 4.0.1)
+ xml2          1.3.2   2020-04-23 [1] CRAN (R 4.0.1)
+ yaml          2.2.1   2020-02-01 [1] CRAN (R 4.0.1)
+
+[1] /home/diss/R/x86_64-pc-linux-gnu-library/4.0
+[2] /usr/local/lib/R/site-library
+[3] /usr/lib/R/site-library
+[4] /usr/lib/R/library</code></pre>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
