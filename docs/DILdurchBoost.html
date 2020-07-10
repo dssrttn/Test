@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree07b5012a78bb77bc1f606ac2a82827b1ff56a187targetblank07b5012a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/07b5012a78bb77bc1f606ac2a82827b1ff56a187" target="_blank">07b5012</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree5e608571faa34b7aae3c488c8373582a73e73362targetblank5e60857a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/5e608571faa34b7aae3c488c8373582a73e73362" target="_blank">5e60857</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree07b5012a78bb77bc1f606ac2a82827b1ff56a187targetblank07b5012a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree5e608571faa34b7aae3c488c8373582a73e73362targetblank5e60857a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/07b5012a78bb77bc1f606ac2a82827b1ff56a187" target="_blank">07b5012</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/5e608571faa34b7aae3c488c8373582a73e73362" target="_blank">5e60857</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -594,6 +594,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5e608571faa34b7aae3c488c8373582a73e73362/analysis/DILdurchBoost.Rmd" target="_blank">5e60857</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+ebenfalls mehrere Ebenen
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/abf95c893f2fe34477b80103f9abb483e776f19f/docs/DILdurchBoost.html" target="_blank">abf95c8</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1131,7 +1165,7 @@ dilboost
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>DIL_mean_rel_table &lt;- cut(DIL_mean_rel_table$dilboost, c(-Inf, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, Inf), labels=c(&#39;&lt;97%&#39;, &#39;97-98%&#39;, &#39;98-99%&#39;, &#39;99-100%&#39;, &#39;100-101%&#39;, &#39;101-102%&#39;, &#39;102-103%&#39;, &#39;&gt;103%&#39;))  # benutzt dplyr, 7 Intervalle 
+<pre class="r"><code>DIL_mean_rel_table &lt;- cut(DIL_mean_rel_table$dilboost, c(-Inf, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, 1.04, 1.05, Inf), labels=c(&#39;&lt;0.95%&#39;, &#39;95-96%&#39;, &#39;96-97%&#39;, &#39;97-98%&#39;, &#39;98-99%&#39;, &#39;99-100%&#39;, &#39;100-101%&#39;, &#39;101-102%&#39;, &#39;102-103%&#39;, &#39;103-104%&#39;, &#39;104-105%&#39;, &#39;&gt;105%&#39;))  # benutzt dplyr, 7 Intervalle 
 
 
 DIL_mean_rel_table &lt;- as.data.frame(DIL_mean_rel_table) %&gt;%  
@@ -1159,7 +1193,23 @@ Numbers
 <tbody>
 <tr>
 <td style="text-align:left;">
-&lt;97%
+&lt;0.95%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+95-96%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+96-97%
 </td>
 <td style="text-align:right;">
 0
@@ -1215,7 +1265,23 @@ Numbers
 </tr>
 <tr>
 <td style="text-align:left;">
-&gt;103%
+103-104%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+104-105%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&gt;105%
 </td>
 <td style="text-align:right;">
 0
