@@ -87,7 +87,7 @@ DIL_mean_rel_table %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
    full_width = TRUE) 
 
-DIL_mean_rel_table <- cut(DIL_mean_rel_table$dilboost, c(-Inf, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, Inf), labels=c('<97%', '97-98%', '98-99%', '99-100%', '100-101%', '101-102%', '102-103%', '>103%'))  # benutzt dplyr, 7 Intervalle 
+DIL_mean_rel_table <- cut(DIL_mean_rel_table$dilboost, c(-Inf, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, 1.04, 1.05, Inf), labels=c('<0.95%', '95-96%', '96-97%', '97-98%', '98-99%', '99-100%', '100-101%', '101-102%', '102-103%', '103-104%', '104-105%', '>105%'))  # benutzt dplyr, 7 Intervalle 
 
 
 DIL_mean_rel_table <- as.data.frame(DIL_mean_rel_table) %>%  
