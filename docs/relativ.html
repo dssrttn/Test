@@ -9,11 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Mein Vorname" />
 
-<meta name="date" content="2020-06-25" />
 
-<title>Rechnungen</title>
+<title>relativ.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +23,6 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
@@ -262,9 +259,6 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
 
 
 
@@ -389,19 +383,8 @@ div.tocify {
 
 <div class="fluid-row" id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-</ul>
-</div>
 
 
-
-<h1 class="title toc-ignore">Rechnungen</h1>
-<h4 class="author">Mein Vorname</h4>
-<h4 class="date">2020-06-25</h4>
 
 </div>
 
@@ -426,7 +409,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-07-09
+<strong>Last updated:</strong> 2020-07-10
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -517,16 +500,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree92e4b445d1e4c19b228bbd11de8aea8a23822030targetblank92e4b44a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/92e4b445d1e4c19b228bbd11de8aea8a23822030" target="_blank">92e4b44</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7b8473e87d13993f50c9383556f17de02db67c3ctargetblank7b8473ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/7b8473e87d13993f50c9383556f17de02db67c3c" target="_blank">7b8473e</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree92e4b445d1e4c19b228bbd11de8aea8a23822030targetblank92e4b44a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7b8473e87d13993f50c9383556f17de02db67c3ctargetblank7b8473ea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/92e4b445d1e4c19b228bbd11de8aea8a23822030" target="_blank">92e4b44</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/7b8473e87d13993f50c9383556f17de02db67c3c" target="_blank">7b8473e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -540,6 +523,7 @@ Ignored files:
 
 Untracked files:
     Untracked:  README.html
+    Untracked:  analysis/DILdurchBoost.Rmd
     Untracked:  analysis/allesineinem.Rmd
     Untracked:  data/1/
     Untracked:  data/16/
@@ -592,6 +576,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/7b8473e87d13993f50c9383556f17de02db67c3c/analysis/relativ.Rmd" target="_blank">7b8473e</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+Wiederherstellung ohne boxplot relativ
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/relativ.html" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1024,107 +1042,35 @@ relative Kalkulationen zur baseline, kein Graph bislang
 </div>
 </div>
 </div>
-<p>#<code>{r setup, message=FALSE} # #knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5) # #</code></p>
 <pre class="r"><code>library(plyr)
 library(tidyverse)
 library(ggplot2)
 library(scales)
 library(knitr)
 library(kableExtra)
-#options(digits=3) # zeigt nur drei Zahlenwerte an
+options(digits=3) # zeigt nur drei Zahlenwerte an
 
-DIL_mean_boxplot &lt;- read_csv2(&#39;data/DIL_1.csv&#39;)
+DIL_mean_rel &lt;- read_csv2(&quot;data/DIL_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
-#max &lt;-max(DIL_mean_boxplot$Mittelwert)
-#min &lt;-min(DIL_mean_boxplot$Mittelwert)
-
-Boost_mean_boxplot &lt;- read_csv2(&#39;data/BoostA1n_1.csv&#39;)
+DIL_mean_rel &lt;- distinct(DIL_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
 
-DIL_mean_boxplot &lt;- distinct(DIL_mean_boxplot, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
-DIL_mean_boxplot</code></pre>
-<pre><code># A tibble: 14 x 1
-   Mittelwert
-        &lt;dbl&gt;
- 1       77.2
- 2       76.7
- 3       76.8
- 4       76.5
- 5       76.7
- 6       76.7
- 7       76.4
- 8       77.0
- 9       76.7
-10       77.2
-11       76.9
-12       77.2
-13       77.0
-14       77.3</code></pre>
-<pre class="r"><code>Boost_mean_boxplot &lt;- distinct(Boost_mean_boxplot, Mittelwert)
-Boost_mean_boxplot</code></pre>
-<pre><code># A tibble: 14 x 1
-   Mittelwert
-        &lt;dbl&gt;
- 1       76.2
- 2       75.9
- 3       76.0
- 4       75.5
- 5       75.8
- 6       75.9
- 7       75.6
- 8       76.1
- 9       75.7
-10       76.3
-11       75.6
-12       76.3
-13       76.1
-14       76.4</code></pre>
-<pre class="r"><code>#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe  
+#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe 
 
-DIL_Boost_mean_rel_boxplot &lt;- ddply(DIL_mean_boxplot, .(), transform, Mittelwert.1 = (DIL_mean_boxplot / Boost_mean_boxplot[1]))
-DIL_Boost_mean_rel_boxplot</code></pre>
-<pre><code>    .id Mittelwert Mittelwert.1
-1  &lt;NA&gt;   77.16960     1.012214
-2  &lt;NA&gt;   76.74186     1.011392
-3  &lt;NA&gt;   76.78767     1.010586
-4  &lt;NA&gt;   76.54315     1.013534
-5  &lt;NA&gt;   76.70229     1.011921
-6  &lt;NA&gt;   76.69017     1.010822
-7  &lt;NA&gt;   76.41442     1.010770
-8  &lt;NA&gt;   77.03381     1.012235
-9  &lt;NA&gt;   76.70290     1.012802
-10 &lt;NA&gt;   77.16465     1.011467
-11 &lt;NA&gt;   76.94086     1.018080
-12 &lt;NA&gt;   77.24228     1.011971
-13 &lt;NA&gt;   76.95852     1.011195
-14 &lt;NA&gt;   77.25280     1.011525</code></pre>
-<pre class="r"><code>#DIL_Boost_mean_rel_boxplot_table &lt;&lt;- ddply(DIL_mean_boxplot, .(), transform, Mittelwert.1  = (DIL_mean_boxplot / Boost_mean_boxplot[1]))
+DIL_mean_rel &lt;- ddply(DIL_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) # relative Differenzen zum Ausgangswert in der 1. Reihe werden berechnet
+
+DIL_mean_rel_table &lt;- ddply(DIL_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
 
 
 
-DIL_Boost_mean_rel_boxplot_table &lt;- DIL_Boost_mean_rel_boxplot %&gt;% rename(&#39;Fraction&#39; = &#39;.id&#39;) #renmae column &#39;.id&#39; with &#39;Fraction&#39;
-DIL_Boost_mean_rel_boxplot_table </code></pre>
-<pre><code>   Fraction Mittelwert Mittelwert.1
-1      &lt;NA&gt;   77.16960     1.012214
-2      &lt;NA&gt;   76.74186     1.011392
-3      &lt;NA&gt;   76.78767     1.010586
-4      &lt;NA&gt;   76.54315     1.013534
-5      &lt;NA&gt;   76.70229     1.011921
-6      &lt;NA&gt;   76.69017     1.010822
-7      &lt;NA&gt;   76.41442     1.010770
-8      &lt;NA&gt;   77.03381     1.012235
-9      &lt;NA&gt;   76.70290     1.012802
-10     &lt;NA&gt;   77.16465     1.011467
-11     &lt;NA&gt;   76.94086     1.018080
-12     &lt;NA&gt;   77.24228     1.011971
-13     &lt;NA&gt;   76.95852     1.011195
-14     &lt;NA&gt;   77.25280     1.011525</code></pre>
-<pre class="r"><code>#DIL_Boost_mean_rel_boxplot_table[1:14, 1] = (1:14) 
+DIL_mean_rel_table &lt;- DIL_mean_rel_table %&gt;% rename(&#39;Fraction&#39; = &#39;.id&#39;) #renmae column &#39;.id&#39; with &#39;Fraction&#39;
 
-DIL_Boost_mean_rel_boxplot_table %&gt;%
+DIL_mean_rel_table[1:14, 1] = (1:14) 
+
+DIL_mean_rel_table %&gt;%
   kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;DIL descriptive statistics&quot;) %&gt;%
 kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
-   full_width = TRUE) </code></pre>
+    full_width = TRUE) </code></pre>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
 DIL descriptive statistics
@@ -1138,190 +1084,201 @@ Fraction
 Mittelwert
 </th>
 <th style="text-align:center;">
-Mittelwert.1
+relchange
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center;">
-NA
+1
 </td>
 <td style="text-align:center;">
-77.16960
+77.2
 </td>
 <td style="text-align:center;">
-1.012214
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-NA
-</td>
-<td style="text-align:center;">
-76.74186
-</td>
-<td style="text-align:center;">
-1.011392
+0.000
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-NA
+2
 </td>
 <td style="text-align:center;">
-76.78767
+76.7
 </td>
 <td style="text-align:center;">
-1.010586
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-NA
-</td>
-<td style="text-align:center;">
-76.54315
-</td>
-<td style="text-align:center;">
-1.013534
+-0.554
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-NA
+3
 </td>
 <td style="text-align:center;">
-76.70229
+76.8
 </td>
 <td style="text-align:center;">
-1.011921
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-NA
-</td>
-<td style="text-align:center;">
-76.69017
-</td>
-<td style="text-align:center;">
-1.010822
+-0.495
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-NA
+4
 </td>
 <td style="text-align:center;">
-76.41442
+76.5
 </td>
 <td style="text-align:center;">
-1.010770
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-NA
-</td>
-<td style="text-align:center;">
-77.03381
-</td>
-<td style="text-align:center;">
-1.012235
+-0.812
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-NA
+5
 </td>
 <td style="text-align:center;">
-76.70290
+76.7
 </td>
 <td style="text-align:center;">
-1.012802
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-NA
-</td>
-<td style="text-align:center;">
-77.16465
-</td>
-<td style="text-align:center;">
-1.011467
+-0.606
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-NA
+6
 </td>
 <td style="text-align:center;">
-76.94086
+76.7
 </td>
 <td style="text-align:center;">
-1.018080
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-NA
-</td>
-<td style="text-align:center;">
-77.24228
-</td>
-<td style="text-align:center;">
-1.011971
+-0.621
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-NA
+7
 </td>
 <td style="text-align:center;">
-76.95852
+76.4
 </td>
 <td style="text-align:center;">
-1.011195
+-0.979
 </td>
 </tr>
 <tr>
 <td style="text-align:center;">
-NA
+8
 </td>
 <td style="text-align:center;">
-77.25280
+77.0
 </td>
 <td style="text-align:center;">
-1.011525
+-0.176
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+76.7
+</td>
+<td style="text-align:center;">
+-0.605
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+77.2
+</td>
+<td style="text-align:center;">
+-0.006
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+76.9
+</td>
+<td style="text-align:center;">
+-0.296
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+77.2
+</td>
+<td style="text-align:center;">
+0.094
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+77.0
+</td>
+<td style="text-align:center;">
+-0.274
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+77.3
+</td>
+<td style="text-align:center;">
+0.108
 </td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>par(bty=&quot;n&quot;) # keinen Rahmen
-par(family=&quot;serif&quot;) # Schriftart
-par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
-par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
-boxplot(DIL_Boost_mean_rel_boxplot_table$Mittelwert.1, 
-      ylab= &quot;Dose in Gray&quot;, #y-Achse-Beschriftung  
- yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
-      col=&quot;transparent&quot;, #Farbe des Boxplots
-     las = 2, # horizontale Markierung der Tick-Beschriftungen
-   # ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
-        cex.lab = 2, # Größe Label-Beschriftung
-        cex.axis = 1.5, # Größe Achsenbeschriftungen
-        mgp=c(2.5,0.2,0), # mpg: Abstand Label zu Achse
-    #  , xpd = TRUE
-      labels = FALSE
-        )</code></pre>
-<p><img src="figure/relativ.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>x &lt;- (1:14)
+y &lt;- DIL_mean_rel$relchange
+
+ggplot(DIL_mean_rel,aes(x=x #DIL_relabs$x
+                      ,y=y )) + #DIL_relabs$abschange)) +
+   geom_segment( aes(x=x, xend=x, y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+    geom_point() +
+  #geom_line() +
+ expand_limits(y = c(-2, 2)) +
+  scale_y_continuous(breaks = seq(-2, 2, 1.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+    theme_classic() +
+  theme(
+  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Boxplot-1">
-Past versions of “DIL Boxplot-1.png”
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-1">
+Past versions of “Relative dose changes in Grey from the 1st fraction with DIL-1.png”
 </button>
 </p>
-<div id="fig-no-spaces-DIL-Boxplot-1" class="collapse">
+<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -1340,7 +1297,1212 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/dssrttn/Test/blob/792cc91dd13f841d5f14d8ee8e8e82b0b7df24c6/docs/figure/relativ.Rmd/DIL Boxplot-1.png" target="_blank">792cc91</a>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4cd0e841c8812f64b14c1c2a177c3234a44f7bc0/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">4cd0e84</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ef09e13778a46fbd270e1764f5a286e3a078876c/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ef09e13</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ca7488f163b25dc1d0bab1d4071c13132af09743/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ca7488f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-01
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ca83425268b67e8e2361907673b55eaf064023e6/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ca83425</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-06-30
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+options(digits=3) # zeigt nur drei Zahlenwerte an
+
+Boost_mean_rel &lt;- read_csv2(&quot;data/BoostA1n_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+
+Boost_mean_rel &lt;- distinct(Boost_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+
+
+#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe 
+
+Boost_mean_rel &lt;- ddply(Boost_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) # relative Differenzen zum Ausgangswert in der 1. Reihe werden berechnet
+
+Boost_mean_rel_table &lt;- ddply(Boost_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
+
+
+
+Boost_mean_rel_table &lt;- Boost_mean_rel_table %&gt;% rename(&#39;Fraction&#39; = &#39;.id&#39;) #renmae column &#39;.id&#39; with &#39;Fraction&#39;
+
+Boost_mean_rel_table[1:14, 1] = (1:14) 
+
+Boost_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;Boost descriptive statistics&quot;) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
+    full_width = TRUE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+Boost descriptive statistics
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mittelwert
+</th>
+<th style="text-align:center;">
+relchange
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+76.2
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+75.9
+</td>
+<td style="text-align:center;">
+-0.473
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+76.0
+</td>
+<td style="text-align:center;">
+-0.335
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+75.5
+</td>
+<td style="text-align:center;">
+-0.941
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+75.8
+</td>
+<td style="text-align:center;">
+-0.577
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+75.9
+</td>
+<td style="text-align:center;">
+-0.484
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+75.6
+</td>
+<td style="text-align:center;">
+-0.837
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+76.1
+</td>
+<td style="text-align:center;">
+-0.178
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+75.7
+</td>
+<td style="text-align:center;">
+-0.662
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+76.3
+</td>
+<td style="text-align:center;">
+0.067
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+75.6
+</td>
+<td style="text-align:center;">
+-0.871
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+76.3
+</td>
+<td style="text-align:center;">
+0.118
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+76.1
+</td>
+<td style="text-align:center;">
+-0.173
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+76.4
+</td>
+<td style="text-align:center;">
+0.176
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>x &lt;- (1:14)
+y &lt;- Boost_mean_rel$relchange
+
+ggplot(Boost_mean_rel,aes(x=x #DIL_relabs$x
+                      ,y=y )) + #DIL_relabs$abschange)) +
+   geom_segment( aes(x=x, xend=x, y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+    geom_point() +
+  #geom_line() +
+ expand_limits(y = c(-2, 2)) +
+  scale_y_continuous(breaks = seq(-2, 2, 1.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+    theme_classic() +
+  theme(
+  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL%20d%2095-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-d-95-1">
+Past versions of “Relative dose changes in Grey from the 1st fraction with DIL d 95-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-d-95-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL d 95-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/e5dabbb505c4d97bcb9318930ed8b73ef0ace6b5/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL d 95-1.png" target="_blank">e5dabbb</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+options(digits=3) # zeigt nur drei Zahlenwerte an
+
+Rectum_mean_rel &lt;- read_csv2(&quot;data/Rectum_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+
+Rectum_mean_rel &lt;- distinct(Rectum_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+
+
+#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe 
+
+Rectum_mean_rel &lt;- ddply(Rectum_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) # relative Differenzen zum Ausgangswert in der 1. Reihe werden berechnet
+
+Rectum_mean_rel_table &lt;- ddply(Rectum_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
+
+
+
+Rectum_mean_rel_table &lt;- Rectum_mean_rel_table %&gt;% rename(&#39;Fraction&#39; = &#39;.id&#39;) #renmae column &#39;.id&#39; with &#39;Fraction&#39;
+
+Rectum_mean_rel_table[1:14, 1] = (1:14) 
+
+Rectum_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;Rectum mean descriptive statistics&quot;) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
+    full_width = TRUE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+Rectum mean descriptive statistics
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mittelwert
+</th>
+<th style="text-align:center;">
+relchange
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+21.5
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+21.4
+</td>
+<td style="text-align:center;">
+-0.440
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+22.0
+</td>
+<td style="text-align:center;">
+2.311
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+22.2
+</td>
+<td style="text-align:center;">
+3.334
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+22.3
+</td>
+<td style="text-align:center;">
+3.849
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+22.0
+</td>
+<td style="text-align:center;">
+2.381
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+21.0
+</td>
+<td style="text-align:center;">
+-2.011
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+23.0
+</td>
+<td style="text-align:center;">
+7.119
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+21.7
+</td>
+<td style="text-align:center;">
+0.826
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+21.6
+</td>
+<td style="text-align:center;">
+0.797
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+23.1
+</td>
+<td style="text-align:center;">
+7.439
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+21.4
+</td>
+<td style="text-align:center;">
+-0.264
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+21.5
+</td>
+<td style="text-align:center;">
+-0.105
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+21.6
+</td>
+<td style="text-align:center;">
+0.519
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>x &lt;- (1:14)
+y &lt;- Rectum_mean_rel$relchange
+
+ggplot(Rectum_mean_rel,aes(x=x #DIL_relabs$x
+                      ,y=y )) + #DIL_relabs$abschange)) +
+   geom_segment( aes(x=x, xend=x, y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+    geom_point() +
+  #geom_line() +
+ expand_limits(y = c(-5, 10)) +
+  scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+    theme_classic() +
+  theme(
+  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20Rectum%20mean-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-Rectum-mean-1">
+Past versions of “Relative dose changes in Grey from the 1st fraction with Rectum mean-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-Rectum-mean-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Rectum mean-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/21a655a156ffed89fe94459e60f8464f01230b16/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Rectum mean-1.png" target="_blank">21a655a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>p = ggplot() + 
+#  geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = &quot;blue&quot;) +
+ # geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = &quot;red&quot;) +
+  #geom_line(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = &quot;green&quot;) +
+     # geom_point() +
+ geom_point(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = &quot;blue&quot;) +
+  geom_point(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = &quot;red&quot;) +
+  geom_point(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = &quot;green&quot;) +
+  
+  
+  expand_limits(y = c(-5, 10)) +
+  scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+  
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+    theme_classic() +
+  theme(
+  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung
+
+
+print(p)</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL%20and%20boost%20mean%20POINTS-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-POINTS-1">
+Past versions of “Relative dose changes in Grey from the 1st fraction with DIL and boost mean POINTS-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-POINTS-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean POINTS-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean POINTS-1.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>#df3 &lt;- DIL_rel %&gt;%  mutate(Type = &#39;Amocycillin&#39;) %&gt;%
+ #      bind_rows(Boost_mean_rel %&gt;%
+  #         mutate(Type = &#39;Penicillin&#39;))
+
+
+#ggplot(df3,aes(y = Mittelwert,x = (1:28),color = Type)) + 
+#  geom_line() +
+ # ggtitle(&quot;Merged datasets&quot;)</code></pre>
+<pre class="r"><code>library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+options(digits=3) # zeigt nur drei Zahlenwerte an
+
+Bladder_mean_rel &lt;- read_csv2(&quot;data/Bladder_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+
+Bladder_mean_rel &lt;- distinct(Bladder_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+
+
+#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe 
+
+Bladder_mean_rel &lt;- ddply(Bladder_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) # relative Differenzen zum Ausgangswert in der 1. Reihe werden berechnet
+
+Bladder_mean_rel_table &lt;- ddply(Bladder_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
+
+
+
+Bladder_mean_rel_table &lt;- Bladder_mean_rel_table %&gt;% rename(&#39;Fraction&#39; = &#39;.id&#39;) #renmae column &#39;.id&#39; with &#39;Fraction&#39;
+
+Bladder_mean_rel_table[1:14, 1] = (1:14) 
+
+Bladder_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;Bladder mean descriptive statistics&quot;) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
+    full_width = TRUE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+Bladder mean descriptive statistics
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mittelwert
+</th>
+<th style="text-align:center;">
+relchange
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+25.2
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+25.1
+</td>
+<td style="text-align:center;">
+-0.509
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+25.1
+</td>
+<td style="text-align:center;">
+-0.378
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+24.5
+</td>
+<td style="text-align:center;">
+-2.759
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+24.7
+</td>
+<td style="text-align:center;">
+-2.058
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+25.1
+</td>
+<td style="text-align:center;">
+-0.267
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+25.3
+</td>
+<td style="text-align:center;">
+0.439
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+25.3
+</td>
+<td style="text-align:center;">
+0.338
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+24.8
+</td>
+<td style="text-align:center;">
+-1.432
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+25.1
+</td>
+<td style="text-align:center;">
+-0.399
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+24.4
+</td>
+<td style="text-align:center;">
+-2.996
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+24.7
+</td>
+<td style="text-align:center;">
+-2.084
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+25.2
+</td>
+<td style="text-align:center;">
+-0.047
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+25.4
+</td>
+<td style="text-align:center;">
+0.919
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>x &lt;- (1:14)
+y &lt;- Bladder_mean_rel$relchange
+
+ggplot(Bladder_mean_rel,aes(x=x #DIL_relabs$x
+                      ,y=y )) + #DIL_relabs$abschange)) +
+   geom_segment( aes(x=x, xend=x, y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+    geom_point() +
+  #geom_line() +
+ expand_limits(y = c(-5, 10)) +
+  scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+    theme_classic() +
+  theme(
+  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20Bladder%20mean-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-Bladder-mean-1">
+Past versions of “Relative dose changes in Grey from the 1st fraction with Bladder mean-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-Bladder-mean-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Bladder mean-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Bladder mean-1.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>p = ggplot() + 
+  geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = &quot;blue&quot;) +
+  geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = &quot;red&quot;) +
+  geom_line(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = &quot;green&quot;) +
+    geom_line(data = Bladder_mean_rel_table, aes(x = 1:14, y = Bladder_mean_rel$relchange), color = &quot;orange&quot;) +
+     # geom_point() +
+ geom_point(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = &quot;blue&quot;) +
+  geom_point(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = &quot;red&quot;) +
+ geom_point(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = &quot;green&quot;) +
+   geom_point(data = Bladder_mean_rel_table, aes(x = 1:14, y = Bladder_mean_rel$relchange), color = &quot;orange&quot;) +
+  
+  expand_limits(y = c(-5, 10)) +
+  scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+  
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+    theme_classic() +
+  theme(
+  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   ) +
+  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung
+
+
+print(p)</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL%20and%20boost%20mean%20lines-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-lines-1">
+Past versions of “Relative dose changes in Grey from the 1st fraction with DIL and boost mean lines-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-lines-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean lines-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean lines-1.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>#df3 &lt;- DIL_rel %&gt;%  mutate(Type = &#39;Amocycillin&#39;) %&gt;%
+ #      bind_rows(Boost_mean_rel %&gt;%
+  #         mutate(Type = &#39;Penicillin&#39;))
+
+
+#ggplot(df3,aes(y = Mittelwert,x = (1:28),color = Type)) + 
+#  geom_line() +
+ # ggtitle(&quot;Merged datasets&quot;)</code></pre>
+<pre class="r"><code>plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/relativ.Rmd/linear%20regression%20Rectum%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Rectum-DIL-means-1">
+Past versions of “linear regression Rectum DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Rectum-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Rectum DIL means-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/linear regression Rectum DIL means-1.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>x_Rectum_mean_rel &lt;- Rectum_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+
+fm &lt;- lm(y_DIL_mean_rel ~ x_Rectum_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
+
+Coefficients:
+      (Intercept)  x_Rectum_mean_rel  
+         -0.37758            0.00251  </code></pre>
+<pre class="r"><code>fitted.values(fm)</code></pre>
+<pre><code>     1      2      3      4      5      6      7      8      9     10     11 
+-0.378 -0.379 -0.372 -0.369 -0.368 -0.372 -0.383 -0.360 -0.376 -0.376 -0.359 
+    12     13     14 
+-0.378 -0.378 -0.376 </code></pre>
+<pre class="r"><code>residuals(fm)</code></pre>
+<pre><code>      1       2       3       4       5       6       7       8       9      10 
+ 0.3776 -0.1756 -0.1231 -0.4426 -0.2376 -0.2497 -0.5960  0.1838 -0.2293  0.3692 
+     11      12      13      14 
+ 0.0625  0.4724  0.1043  0.4841 </code></pre>
+<pre class="r"><code>summary(fm)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.5960 -0.2355 -0.0303  0.3228  0.4841 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)       -0.37758    0.11646   -3.24   0.0071 **
+x_Rectum_mean_rel  0.00251    0.03571    0.07   0.9452   
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.36 on 12 degrees of freedom
+Multiple R-squared:  0.000411,  Adjusted R-squared:  -0.0829 
+F-statistic: 0.00494 on 1 and 12 DF,  p-value: 0.945</code></pre>
+<pre class="r"><code>plot(x_Rectum_mean_rel, y_DIL_mean_rel)
+abline(fm, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/relativ.Rmd/linear%20regression%20Rectum%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Rectum-DIL-means-2">
+Past versions of “linear regression Rectum DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Rectum-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Rectum DIL means-2.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/792cc91dd13f841d5f14d8ee8e8e82b0b7df24c6/docs/figure/relativ.Rmd/linear regression Rectum DIL means-2.png" target="_blank">792cc91</a>
 </td>
 <td>
 Mein Vorname
@@ -1351,7 +2513,316 @@ Mein Vorname
 </tr>
 <tr>
 <td>
-<a href="https://github.com/dssrttn/Test/blob/e5dabbb505c4d97bcb9318930ed8b73ef0ace6b5/docs/figure/relativ.Rmd/DIL Boxplot-1.png" target="_blank">e5dabbb</a>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/linear regression Rectum DIL means-2.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/relativ.Rmd/linear%20regression%20Bladder%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-1">
+Past versions of “linear regression Bladder DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Bladder DIL means-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/linear regression Bladder DIL means-1.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>x_Bladder_mean_rel &lt;- Bladder_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+
+
+fn &lt;- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+
+Coefficients:
+       (Intercept)  x_Bladder_mean_rel  
+           -0.3282              0.0558  </code></pre>
+<pre class="r"><code>fitted.values(fn)</code></pre>
+<pre><code>     1      2      3      4      5      6      7      8      9     10     11 
+-0.328 -0.357 -0.349 -0.482 -0.443 -0.343 -0.304 -0.309 -0.408 -0.350 -0.495 
+    12     13     14 
+-0.444 -0.331 -0.277 </code></pre>
+<pre class="r"><code>residuals(fn)</code></pre>
+<pre><code>      1       2       3       4       5       6       7       8       9      10 
+ 0.3282 -0.1977 -0.1456 -0.3297 -0.1626 -0.2781 -0.6749  0.1334 -0.1967  0.3440 
+     11      12      13      14 
+ 0.1989  0.5387  0.0573  0.3848 </code></pre>
+<pre class="r"><code>summary(fn)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.6749 -0.1974 -0.0442  0.2959  0.5387 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept)         -0.3282     0.1135   -2.89    0.014 *
+x_Bladder_mean_rel   0.0558     0.0789    0.71    0.493  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.353 on 12 degrees of freedom
+Multiple R-squared:  0.04,  Adjusted R-squared:  -0.04 
+F-statistic:  0.5 on 1 and 12 DF,  p-value: 0.493</code></pre>
+<pre class="r"><code>plot(x_Bladder_mean_rel, y_DIL_mean_rel)
+abline(fn, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/relativ.Rmd/linear%20regression%20Bladder%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-2">
+Past versions of “linear regression Bladder DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Bladder DIL means-2.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/792cc91dd13f841d5f14d8ee8e8e82b0b7df24c6/docs/figure/relativ.Rmd/linear regression Bladder DIL means-2.png" target="_blank">792cc91</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-08
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/linear regression Bladder DIL means-2.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/relativ.Rmd/linear%20regression%20Boost%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-1">
+Past versions of “linear regression Boost DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Boost DIL means-1.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/linear regression Boost DIL means-1.png" target="_blank">32b4700</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>x_Boost_mean_rel &lt;- Boost_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+fo &lt;- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+Coefficients:
+     (Intercept)  x_Boost_mean_rel  
+         -0.0797            0.7942  </code></pre>
+<pre class="r"><code>fitted.values(fo)</code></pre>
+<pre><code>      1       2       3       4       5       6       7       8       9      10 
+-0.0797 -0.4557 -0.3455 -0.8270 -0.5378 -0.4644 -0.7445 -0.2210 -0.6058 -0.0261 
+     11      12      13      14 
+-0.7713  0.0143 -0.2171  0.0601 </code></pre>
+<pre class="r"><code>residuals(fo)</code></pre>
+<pre><code>       1        2        3        4        5        6        7        8 
+ 0.07968 -0.09862 -0.14946  0.01524 -0.06778 -0.15685 -0.23408  0.04509 
+       9       10       11       12       13       14 
+ 0.00104  0.01966  0.47493  0.07992 -0.05647  0.04769 </code></pre>
+<pre class="r"><code>summary(fo)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.2341 -0.0909  0.0081  0.0470  0.4749 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       -0.0797     0.0659   -1.21     0.25    
+x_Boost_mean_rel   0.7942     0.1265    6.28  4.1e-05 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.174 on 12 degrees of freedom
+Multiple R-squared:  0.767, Adjusted R-squared:  0.747 
+F-statistic: 39.4 on 1 and 12 DF,  p-value: 4.06e-05</code></pre>
+<pre class="r"><code>plot(x_Boost_mean_rel, y_DIL_mean_rel)
+abline(fo, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/relativ.Rmd/linear%20regression%20Boost%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-2">
+Past versions of “linear regression Boost DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Boost DIL means-2.png" target="_blank">5591c1b</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-09
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/792cc91dd13f841d5f14d8ee8e8e82b0b7df24c6/docs/figure/relativ.Rmd/linear regression Boost DIL means-2.png" target="_blank">792cc91</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-08
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/linear regression Boost DIL means-2.png" target="_blank">32b4700</a>
 </td>
 <td>
 Mein Vorname
@@ -1382,7 +2853,7 @@ Mein Vorname
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       Europe/Berlin               
- date     2020-07-09                  
+ date     2020-07-10                  
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version date       lib source        
@@ -1404,6 +2875,7 @@ Mein Vorname
  ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.1)
  evaluate      0.14    2019-05-28 [1] CRAN (R 4.0.1)
  fansi         0.4.1   2020-01-08 [1] CRAN (R 4.0.1)
+ farver        2.0.3   2020-01-16 [1] CRAN (R 4.0.1)
  forcats     * 0.5.0   2020-03-01 [1] CRAN (R 4.0.1)
  fs            1.4.1   2020-04-04 [1] CRAN (R 4.0.1)
  generics      0.0.2   2018-11-29 [1] CRAN (R 4.0.1)
@@ -1459,7 +2931,6 @@ Mein Vorname
  tidyselect    1.1.0   2020-05-11 [1] CRAN (R 4.0.1)
  tidyverse   * 1.3.0   2019-11-21 [1] CRAN (R 4.0.1)
  usethis       1.6.1   2020-04-29 [1] CRAN (R 4.0.1)
- utf8          1.1.4   2018-05-24 [1] CRAN (R 4.0.1)
  vctrs         0.3.1   2020-06-05 [1] CRAN (R 4.0.1)
  viridisLite   0.3.0   2018-02-01 [1] CRAN (R 4.0.1)
  webshot       0.5.2   2019-11-22 [1] CRAN (R 4.0.1)
@@ -1523,11 +2994,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("hide" === "show");
-});
-</script>
 
 <script>
 $(document).ready(function ()  {
