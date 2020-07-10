@@ -27,6 +27,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -504,16 +505,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree855d04fac0182c189fffe8e45138a29e7b2bd3f0targetblank855d04fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/855d04fac0182c189fffe8e45138a29e7b2bd3f0" target="_blank">855d04f</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb74b4ea558607e2518164ad539c7eed083c2b448targetblankb74b4eaa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/b74b4ea558607e2518164ad539c7eed083c2b448" target="_blank">b74b4ea</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree855d04fac0182c189fffe8e45138a29e7b2bd3f0targetblank855d04fa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb74b4ea558607e2518164ad539c7eed083c2b448targetblankb74b4eaa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/855d04fac0182c189fffe8e45138a29e7b2bd3f0" target="_blank">855d04f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/b74b4ea558607e2518164ad539c7eed083c2b448" target="_blank">b74b4ea</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -541,6 +542,7 @@ Untracked files:
 
 Unstaged changes:
     Modified:   _workflowr.yml
+    Modified:   analysis/first-analysis.Rmd
 
 </code></pre>
 <p>
@@ -584,6 +586,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/b74b4ea558607e2518164ad539c7eed083c2b448/analysis/DILdurchBoost.Rmd" target="_blank">b74b4ea</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+boxplot vollendet mit relativen (DIL durch Boost) Werten
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/b28c3abf41035d5aafd18df755c9f4ea319c8bdf/docs/DILdurchBoost.html" target="_blank">b28c3ab</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/855d04fac0182c189fffe8e45138a29e7b2bd3f0/analysis/DILdurchBoost.Rmd" target="_blank">855d04f</a>
 </td>
 <td>
@@ -605,7 +641,7 @@ Tabelle mit DIL_n duch Boost_1 fertig
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>#<code>{r setup, message=FALSE} # #knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5) # #</code></p>
+<pre class="r"><code>#knitr::opts_chunk$set(dev=c(&#39;png&#39;, &#39;pdf&#39;), width=7, height=5)</code></pre>
 <pre class="r"><code>library(plyr)
 library(tidyverse)
 library(ggplot2)
@@ -724,14 +760,342 @@ DIL_mean_rel_table</code></pre>
 12       12       77.24228         76.32857 1.013168
 13       13       76.95852         76.10653 1.009446
 14       14       77.25280         76.37261 1.013306</code></pre>
-<p>#all_rows2 &lt;- full_join(DIL_mean_boxplot, Boost_mean_boxplot) #all_rows2</p>
-<p>#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe</p>
-<p>DIL_Boost_mean_rel_boxplot &lt;- ddply(DIL_mean_boxplot, .(), transform, Mittelwert.1 = (DIL_mean_boxplot / Boost_mean_boxplot[1])) DIL_Boost_mean_rel_boxplot #DIL_Boost_mean_rel_boxplot_table &lt;&lt;- ddply(DIL_mean_boxplot, .(), transform, Mittelwert.1 = (DIL_mean_boxplot / Boost_mean_boxplot[1]))</p>
-<p>DIL_Boost_mean_rel_boxplot_table &lt;- DIL_Boost_mean_rel_boxplot %&gt;% rename(‘Fraction’ = ‘.id’) #renmae column ‘.id’ with ‘Fraction’ DIL_Boost_mean_rel_boxplot_table</p>
-<p>#DIL_Boost_mean_rel_boxplot_table[1:14, 1] = (1:14)</p>
-<p>DIL_Boost_mean_rel_boxplot_table %&gt;% kable(align = c(“ccccccccc”), escape = FALSE, format =‘html’, caption = “DIL descriptive statistics”) %&gt;% kable_styling(bootstrap_options = c(“striped”, “hover”, “condensed”), full_width = TRUE)</p>
-<p>par(bty=“n”) # keinen Rahmen par(family=“serif”) # Schriftart par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse boxplot(DIL_Boost_mean_rel_boxplot_table$Mittelwert.1, ylab= “Dose in Gray”, #y-Achse-Beschriftung<br />
-yaxt=“n”, #suppresses y-axis. Brauch ich das? col=“transparent”, #Farbe des Boxplots las = 2, # horizontale Markierung der Tick-Beschriftungen ylim=c(0, 100), # ylim=c(min(0.995<em>min), max(1.005</em>max)), # y-Achse range cex.lab = 2, # Größe Label-Beschriftung cex.axis = 1.5, # Größe Achsenbeschriftungen mgp=c(2.5,0.2,0), # mpg: Abstand Label zu Achse # , xpd = TRUE labels = FALSE )</p>
+<pre class="r"><code>max &lt;-max(DIL_mean_rel_table$dilboost)
+min &lt;-min(DIL_mean_rel_table$dilboost)
+
+par(bty=&quot;n&quot;) # keinen Rahmen
+par(family=&quot;serif&quot;) # Schriftart
+par(mar = c(5, 6, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(4.2,1,0)) # mpg: Abstand Label zu Achse
+boxplot(DIL_mean_rel_table$dilboost, 
+        ylab= &quot;Dose in Gray&quot;, #y-Achse-Beschriftung  
+        #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
+        col=&quot;transparent&quot;, #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+      #ylim = c(0, 1),
+         ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
+     # , xpd = TRUE
+      #labels = FALSE
+        )</code></pre>
+<p><img src="figure/DILdurchBoost.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>DIL_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;DIL durch Boost[1&quot;) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
+   full_width = TRUE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+DIL durch Boost[1
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mittelwert_DIL
+</th>
+<th style="text-align:center;">
+Mittelwert_Boost
+</th>
+<th style="text-align:center;">
+dilboost
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+77.16960
+</td>
+<td style="text-align:center;">
+76.23840
+</td>
+<td style="text-align:center;">
+1.012214
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+76.74186
+</td>
+<td style="text-align:center;">
+75.87749
+</td>
+<td style="text-align:center;">
+1.006604
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+76.78767
+</td>
+<td style="text-align:center;">
+75.98327
+</td>
+<td style="text-align:center;">
+1.007205
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+76.54315
+</td>
+<td style="text-align:center;">
+75.52104
+</td>
+<td style="text-align:center;">
+1.003997
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+76.70229
+</td>
+<td style="text-align:center;">
+75.79867
+</td>
+<td style="text-align:center;">
+1.006085
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+76.69017
+</td>
+<td style="text-align:center;">
+75.86910
+</td>
+<td style="text-align:center;">
+1.005926
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+76.41442
+</td>
+<td style="text-align:center;">
+75.60024
+</td>
+<td style="text-align:center;">
+1.002309
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+77.03381
+</td>
+<td style="text-align:center;">
+76.10271
+</td>
+<td style="text-align:center;">
+1.010433
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+76.70290
+</td>
+<td style="text-align:center;">
+75.73337
+</td>
+<td style="text-align:center;">
+1.006093
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+77.16465
+</td>
+<td style="text-align:center;">
+76.28986
+</td>
+<td style="text-align:center;">
+1.012149
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+76.94086
+</td>
+<td style="text-align:center;">
+75.57449
+</td>
+<td style="text-align:center;">
+1.009214
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+77.24228
+</td>
+<td style="text-align:center;">
+76.32857
+</td>
+<td style="text-align:center;">
+1.013168
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+76.95852
+</td>
+<td style="text-align:center;">
+76.10653
+</td>
+<td style="text-align:center;">
+1.009446
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+77.25280
+</td>
+<td style="text-align:center;">
+76.37261
+</td>
+<td style="text-align:center;">
+1.013306
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>DIL_mean_rel_table &lt;- cut(DIL_mean_rel_table$dilboost, c(-Inf, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, Inf), labels=c(&#39;&lt;97%&#39;, &#39;97-98%&#39;, &#39;98-99%&#39;, &#39;99-100%&#39;, &#39;100-101%&#39;, &#39;101-102%&#39;, &#39;102-103%&#39;, &#39;&gt;103%&#39;))  # benutzt dplyr, 7 Intervalle 
+
+
+DIL_mean_rel_table &lt;- as.data.frame(DIL_mean_rel_table) %&gt;%  
+group_by(DIL_mean_rel_table, .drop = FALSE) %&gt;% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+dplyr::summarise(Numbers = n())  #%&gt;% # %&gt;% #=n())   
+#mutate(Nummers = rowSums(.[-1]))
+
+
+DIL_mean_rel_table %&gt;%
+ knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL durch boost_1&quot;, &quot;Numbers&quot;)) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+DIL durch boost_1
+</th>
+<th style="text-align:right;">
+Numbers
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt;97%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97-98%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98-99%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+99-100%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100-101%
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+101-102%
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+102-103%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&gt;103%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -780,6 +1144,7 @@ yaxt=“n”, #suppresses y-axis. Brauch ich das? col=“transparent”, #Farbe 
  glue          1.4.1   2020-05-13 [1] CRAN (R 4.0.1)
  gtable        0.3.0   2019-03-25 [1] CRAN (R 4.0.1)
  haven         2.3.1   2020-06-01 [1] CRAN (R 4.0.1)
+ highr         0.8     2019-03-20 [1] CRAN (R 4.0.1)
  hms           0.5.3   2020-01-08 [1] CRAN (R 4.0.1)
  htmltools     0.5.0   2020-06-16 [1] CRAN (R 4.0.1)
  httpuv        1.5.4   2020-06-06 [1] CRAN (R 4.0.1)
