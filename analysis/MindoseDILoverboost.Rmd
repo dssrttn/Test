@@ -24,17 +24,18 @@ library(kableExtra)
 #options(digits=3) # zeigt nur drei Zahlenwerte an
 
 DIL_min_boxplot <- read_csv2('data/DIL_1.csv')
-DIL_min_boxplot
+DIL_min_boxplot  # Tibble with all DIL parameters 
 
 #max <-max(DIL_mean_boxplot$Mittelwert)
 #min <-min(DIL_mean_boxplot$Mittelwert)
 
 Boost_mean_boxplot <- read_csv2('data/BoostA1n_1.csv')
-Boost_mean_boxplot 
+Boost_mean_boxplot # Tibble with all Boost parameters 
 
 DIL_min_boxplot <- distinct(DIL_min_boxplot, D_min) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 DIL_min_boxplot <- DIL_min_boxplot %>% select(Minimum_DIL = D_min)
-DIL_min_boxplot
+DIL_min_boxplot # Tibble with DIL_min parameter
+
 
 
 #Boost_mean_boxplot <- distinct(Boost_mean_boxplot, Mittelwert)
@@ -43,7 +44,7 @@ DIL_min_boxplot
 
 
 DIL_min_Boost_mean_boxplot <- DIL_min_boxplot %>% add_column(Mittelwert_Boost = Boost_mean_boxplot$Mittelwert)
-DIL_min_Boost_mean_boxplot
+DIL_min_Boost_mean_boxplot # Tibble with DIL_min and boost_mean parameter
 
 #DIL_Boost_mean_rel_boxplot <- ddply(DIL_Boost_mean_boxplot,(), transform, Mittelwert.1 = (DIL_mean_boxplot / Boost_mean_boxplot[1]))
 
@@ -52,7 +53,7 @@ DIL_min_Boost_mean_boxplot
                             #relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
 
 DIL_min_Boost_mean_rel_table <- ddply(DIL_min_Boost_mean_boxplot, .(), transform, dilminboostmean = (Minimum_DIL/ Mittelwert_Boost[1])) 
-DIL_min_Boost_mean_rel_table
+DIL_min_Boost_mean_rel_table # Tibble with DIL_min and boost_mean parameter and relation of DIL_min[n] to Boost_mean[1]
 
 
 
@@ -65,7 +66,7 @@ par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
 par(mar = c(5, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
-boxplot(DIL_min_Boost_mean_rel_table$dilminboostmean, 
+boxplot(DIL_min_Boost_mean_rel_table$dilminboostmean, # Boxpplot with relation of DIL_min[n] to Boost_mean[1]
         ylab= "Relation Dil_min to Boost[1]", #y-Achse-Beschriftung  
         #yaxt="n", #suppresses y-axis. Brauch ich das? 
         col="transparent", #Farbe des Boxplots
@@ -84,7 +85,8 @@ boxplot(DIL_min_Boost_mean_rel_table$dilminboostmean,
 
 DIL_min_Boost_mean_rel_table <- DIL_min_Boost_mean_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
 DIL_min_Boost_mean_rel_table[1:14, 1] = (1:14) 
-DIL_min_Boost_mean_rel_table
+DIL_min_Boost_mean_rel_table # Tibble with DIL_min and boost_mean parameter and relation of DIL_min[n] to Boost_mean[1] and Fraction
+
 
 DIL_min_Boost_mean_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL durch Boost[1") %>%
@@ -103,11 +105,6 @@ dplyr::summarise(Numbers = n())  #%>% # %>% #=n())
 DIL_min_Boost_mean_rel_table %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL durch boost_1", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
-
-
-
-
-
 
 
 
