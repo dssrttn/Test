@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree57cb63cf74e1d8fdcc60e405811aa7c270c9312btargetblank57cb63ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/57cb63cf74e1d8fdcc60e405811aa7c270c9312b" target="_blank">57cb63c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreedd84208f780c61a0c5517e2a4b875e52c5076dd5targetblankdd84208a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/dd84208f780c61a0c5517e2a4b875e52c5076dd5" target="_blank">dd84208</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree57cb63cf74e1d8fdcc60e405811aa7c270c9312btargetblank57cb63ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreedd84208f780c61a0c5517e2a4b875e52c5076dd5targetblankdd84208a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/57cb63cf74e1d8fdcc60e405811aa7c270c9312b" target="_blank">57cb63c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/dd84208f780c61a0c5517e2a4b875e52c5076dd5" target="_blank">dd84208</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -599,6 +599,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/dd84208f780c61a0c5517e2a4b875e52c5076dd5/analysis/MindoseDILoverboost.Rmd" target="_blank">dd84208</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-12
+</td>
+<td>
+Minimum DIL über Mittelwert Boost. annotations
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/36bc816c1415da51ac0d63a48fbac35cfd4b767f/docs/MindoseDILoverboost.html" target="_blank">36bc816</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/57cb63cf74e1d8fdcc60e405811aa7c270c9312b/analysis/MindoseDILoverboost.Rmd" target="_blank">57cb63c</a>
 </td>
 <td>
@@ -628,7 +662,7 @@ library(kableExtra)
 #options(digits=3) # zeigt nur drei Zahlenwerte an
 
 DIL_min_boxplot &lt;- read_csv2(&#39;data/DIL_1.csv&#39;)
-DIL_min_boxplot</code></pre>
+DIL_min_boxplot  # Tibble with all DIL parameters </code></pre>
 <pre><code># A tibble: 14 x 12
    Dosisname Mittelwert sigma d_Mittelwert D_max D_min   D_1   D_5  D_10  D_60
    &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -651,7 +685,7 @@ DIL_min_boxplot</code></pre>
 #min &lt;-min(DIL_mean_boxplot$Mittelwert)
 
 Boost_mean_boxplot &lt;- read_csv2(&#39;data/BoostA1n_1.csv&#39;)
-Boost_mean_boxplot </code></pre>
+Boost_mean_boxplot # Tibble with all Boost parameters </code></pre>
 <pre><code># A tibble: 14 x 12
    Dosisname Mittelwert sigma d_Mittelwert D_max D_min   D_1   D_5  D_10  D_60
    &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -672,7 +706,7 @@ Boost_mean_boxplot </code></pre>
 # … with 2 more variables: D_95 &lt;dbl&gt;, D_99 &lt;dbl&gt;</code></pre>
 <pre class="r"><code>DIL_min_boxplot &lt;- distinct(DIL_min_boxplot, D_min) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 DIL_min_boxplot &lt;- DIL_min_boxplot %&gt;% select(Minimum_DIL = D_min)
-DIL_min_boxplot</code></pre>
+DIL_min_boxplot # Tibble with DIL_min parameter</code></pre>
 <pre><code># A tibble: 14 x 1
    Minimum_DIL
          &lt;dbl&gt;
@@ -696,7 +730,7 @@ DIL_min_boxplot</code></pre>
 
 
 DIL_min_Boost_mean_boxplot &lt;- DIL_min_boxplot %&gt;% add_column(Mittelwert_Boost = Boost_mean_boxplot$Mittelwert)
-DIL_min_Boost_mean_boxplot</code></pre>
+DIL_min_Boost_mean_boxplot # Tibble with DIL_min and boost_mean parameter</code></pre>
 <pre><code># A tibble: 14 x 2
    Minimum_DIL Mittelwert_Boost
          &lt;dbl&gt;            &lt;dbl&gt;
@@ -721,7 +755,7 @@ DIL_min_Boost_mean_boxplot</code></pre>
                             #relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
 
 DIL_min_Boost_mean_rel_table &lt;- ddply(DIL_min_Boost_mean_boxplot, .(), transform, dilminboostmean = (Minimum_DIL/ Mittelwert_Boost[1])) 
-DIL_min_Boost_mean_rel_table</code></pre>
+DIL_min_Boost_mean_rel_table # Tibble with DIL_min and boost_mean parameter and relation of DIL_min[n] to Boost_mean[1]</code></pre>
 <pre><code>    .id Minimum_DIL Mittelwert_Boost dilminboostmean
 1  &lt;NA&gt;    74.89302         76.23840       0.9823529
 2  &lt;NA&gt;    74.43580         75.87749       0.9763557
@@ -744,7 +778,7 @@ par(bty=&quot;n&quot;) # keinen Rahmen
 par(family=&quot;serif&quot;) # Schriftart
 par(mar = c(5, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
-boxplot(DIL_min_Boost_mean_rel_table$dilminboostmean, 
+boxplot(DIL_min_Boost_mean_rel_table$dilminboostmean, # Boxpplot with relation of DIL_min[n] to Boost_mean[1]
         ylab= &quot;Relation Dil_min to Boost[1]&quot;, #y-Achse-Beschriftung  
         #yaxt=&quot;n&quot;, #suppresses y-axis. Brauch ich das? 
         col=&quot;transparent&quot;, #Farbe des Boxplots
@@ -759,9 +793,46 @@ boxplot(DIL_min_Boost_mean_rel_table$dilminboostmean,
       #labels = FALSE
         )</code></pre>
 <p><img src="figure/MindoseDILoverboost.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Boxplot-1">
+Past versions of “DIL Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/36bc816c1415da51ac0d63a48fbac35cfd4b767f/docs/figure/MindoseDILoverboost.Rmd/DIL Boxplot-1.png" target="_blank">36bc816</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>DIL_min_Boost_mean_rel_table &lt;- DIL_min_Boost_mean_rel_table %&gt;% rename(&#39;Fraction&#39; = &#39;.id&#39;) #renmae column &#39;.id&#39; with &#39;Fraction&#39;
 DIL_min_Boost_mean_rel_table[1:14, 1] = (1:14) 
-DIL_min_Boost_mean_rel_table</code></pre>
+DIL_min_Boost_mean_rel_table # Tibble with DIL_min and boost_mean parameter and relation of DIL_min[n] to Boost_mean[1] and Fraction</code></pre>
 <pre><code>   Fraction Minimum_DIL Mittelwert_Boost dilminboostmean
 1         1    74.89302         76.23840       0.9823529
 2         2    74.43580         75.87749       0.9763557
