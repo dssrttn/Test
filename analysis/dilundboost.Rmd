@@ -26,6 +26,9 @@ options(digits=3) # zeigt nur drei Zahlenwerte an
 source("code/plottheme.R")
 source("code/cbPalette.R")
 
+DIL <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+Boost <- read_csv2("data/BoostA1n_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+
 ```
 
 ## DIL and boost changes during the treatment period
@@ -35,7 +38,7 @@ source("code/cbPalette.R")
 ```{r Relative dose changes in percent for DIL, message=FALSE}
 
 
-DIL <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+
 
 source("code/DILrelchange.R")
 
@@ -50,7 +53,6 @@ DIL_mean_rel_table %>%
 ### Boost changes relative to the first fraction
 
 ```{r Relative dose changes in percent for boost, message=FALSE}
-Boost <- read_csv2("data/BoostA1n_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 source("code/Boostrelchange.R")
  
@@ -62,7 +64,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
 
 ```
 
-### Line plot for DIL and boost changes relative to the first fraction
+### Line plot for DIL and boost mean changes relative to the first fraction
 
 
 ```{r Relative dose changes DIL und boost in percent line plot, message = FALSE}
@@ -85,6 +87,7 @@ ggplot() +
 ```
 
 
+### Histogram for DIL mean changes relative to the first fraction
 
 
 ```{r DIL histogramm relative change, message=FALSE}
@@ -102,6 +105,9 @@ rug(jitter(HistogramDILrelchange$relchange))
 lines(density(HistogramDILrelchange$relchange), col="black", lwd=2)
 
 ```
+
+### Histogram for boost mean changes relative to the first fraction
+
 
 ```{r Boost histogramm relative change, message=FALSE}
 source("code/HistogramBoostrelchange.R")
