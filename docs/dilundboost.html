@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree6b1f8e4198f11fc698e1805cd267a7b7967baff6targetblank6b1f8e4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/6b1f8e4198f11fc698e1805cd267a7b7967baff6" target="_blank">6b1f8e4</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree525965ab8e5285c8f6f3eda028a18a363c2a3699targetblank525965aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/525965ab8e5285c8f6f3eda028a18a363c2a3699" target="_blank">525965a</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree6b1f8e4198f11fc698e1805cd267a7b7967baff6targetblank6b1f8e4a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree525965ab8e5285c8f6f3eda028a18a363c2a3699targetblank525965aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/6b1f8e4198f11fc698e1805cd267a7b7967baff6" target="_blank">6b1f8e4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/525965ab8e5285c8f6f3eda028a18a363c2a3699" target="_blank">525965a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -596,6 +596,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/525965ab8e5285c8f6f3eda028a18a363c2a3699/analysis/dilundboost.Rmd" target="_blank">525965a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+readcsv2 in den zweiten chunk gesetzt
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/daae84ac0e534811bb438343ae74bf92534f1919/docs/dilundboost.html" target="_blank">daae84a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -937,14 +971,15 @@ options(digits=3) # zeigt nur drei Zahlenwerte an
 
 
 source(&quot;code/plottheme.R&quot;)
-source(&quot;code/cbPalette.R&quot;)</code></pre>
+source(&quot;code/cbPalette.R&quot;)
+
+DIL &lt;- read_csv2(&quot;data/DIL_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+Boost &lt;- read_csv2(&quot;data/BoostA1n_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! </code></pre>
 <div id="dil-and-boost-changes-during-the-treatment-period" class="section level2">
 <h2>DIL and boost changes during the treatment period</h2>
 <div id="dil-changes-relative-to-the-first-fraction" class="section level3">
 <h3>DIL changes relative to the first fraction</h3>
-<pre class="r"><code>DIL &lt;- read_csv2(&quot;data/DIL_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
-
-source(&quot;code/DILrelchange.R&quot;)
+<pre class="r"><code>source(&quot;code/DILrelchange.R&quot;)
 
 DIL_mean_rel_table %&gt;%
   kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39; #, caption = &quot;DIL descriptive statistics&quot;
@@ -1125,9 +1160,7 @@ Relative change
 </div>
 <div id="boost-changes-relative-to-the-first-fraction" class="section level3">
 <h3>Boost changes relative to the first fraction</h3>
-<pre class="r"><code>Boost &lt;- read_csv2(&quot;data/BoostA1n_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
-
-source(&quot;code/Boostrelchange.R&quot;)
+<pre class="r"><code>source(&quot;code/Boostrelchange.R&quot;)
  
 Boost_mean_rel_table %&gt;%
   kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39; #, caption = &quot;Boost descriptive statistics&quot;
@@ -1306,8 +1339,8 @@ Relative change
 </tbody>
 </table>
 </div>
-<div id="line-plot-for-dil-and-boost-changes-relative-to-the-first-fraction" class="section level3">
-<h3>Line plot for DIL and boost changes relative to the first fraction</h3>
+<div id="line-plot-for-dil-and-boost-mean-changes-relative-to-the-first-fraction" class="section level3">
+<h3>Line plot for DIL and boost mean changes relative to the first fraction</h3>
 <pre class="r"><code>ggplot() + 
   geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
   geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
@@ -1360,6 +1393,9 @@ Mein Vorname
 </table>
 </div>
 </div>
+</div>
+<div id="histogram-for-dil-mean-changes-relative-to-the-first-fraction" class="section level3">
+<h3>Histogram for DIL mean changes relative to the first fraction</h3>
 <pre class="r"><code>source(&quot;code/HistogramDILrelchange.R&quot;)
 
 par(family=&quot;serif&quot;) # Schriftart
@@ -1410,6 +1446,9 @@ Mein Vorname
 </table>
 </div>
 </div>
+</div>
+<div id="histogram-for-boost-mean-changes-relative-to-the-first-fraction" class="section level3">
+<h3>Histogram for boost mean changes relative to the first fraction</h3>
 <pre class="r"><code>source(&quot;code/HistogramBoostrelchange.R&quot;)
 
 par(family=&quot;serif&quot;) # Schriftart
