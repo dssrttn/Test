@@ -81,5 +81,53 @@ ggplot() +
   xlab("Fraction") + # X-Achsen-Beschriftung
   ylab("Relative dose changes") +   #+ # Y-Achsen-Beschriftung
   plottheme
+
+
+source("code/HistogramDILrelchange.R")
+
+par(family="serif") # Schriftart
+par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
+hist(HistogramDILrelchange$relchange,
+         main="",
+    #DIL Mittelwert" 
+     ylab="Density", xlab="Relative DIL dose change", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
+    cex.lab=2, cex.axis=1.5, col = "transparent")
+rug(jitter(HistogramDILrelchange$relchange))
+lines(density(HistogramDILrelchange$relchange), col="black", lwd=2)
+
+
+
+source("code/HistogramBoostrelchange.R")
+
+par(family="serif") # Schriftart
+par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
+hist(HistogramBoostrelchange$relchange,
+         main="",
+    #DIL Mittelwert" 
+     ylab="Density", xlab="Relative boost dose change", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
+    cex.lab=2, cex.axis=1.5, col = "transparent")
+rug(jitter(HistogramBoostrelchange$relchange))
+lines(density(HistogramBoostrelchange$relchange), col="black", lwd=2)
+
+
+
+
+
   
 ```
+
+
+
+
+par(family="serif") # Schriftart
+par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
+par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
+hist(DIL_mean_rel_table, 
+    main="",
+    #DIL Mittelwert" 
+     ylab="Density", xlab="Dosis in Gray", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(), cex.lab=2, cex.axis=1.5, col = "transparent")
+rug(jitter(DIL_mean_rel_table))
+lines(density(DIL_mean_rel_table), col="black", lwd=2)
+
