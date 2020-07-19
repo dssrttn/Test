@@ -32,7 +32,7 @@ library(ggplot2)
 #library(scales)
 library(tidyverse)
 
-DIL_mean_lineplot <- read_csv2('data/DIL_1.csv')
+DIL_mean_lineplot <- read_csv2('data/1/DIL.csv')
 
 data <- data.frame(
 x <- (1:14),
@@ -79,7 +79,7 @@ library(ggplot2)
 
 
 
-DIL_D99_lineplot <- read_csv2('data/DIL_1.csv')
+DIL_D99_lineplot <- read_csv2('data/1/DIL.csv')
 
 data <- data.frame(
 x <- (1:14),
