@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree1ac28bed5f0d56620971691e99f0d5365291cfa5targetblank1ac28bea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/1ac28bed5f0d56620971691e99f0d5365291cfa5" target="_blank">1ac28be</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree531371fbb9875bd1e1d6cf5dcd071055a8f3b71dtargetblank531371fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/531371fbb9875bd1e1d6cf5dcd071055a8f3b71d" target="_blank">531371f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree1ac28bed5f0d56620971691e99f0d5365291cfa5targetblank1ac28bea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree531371fbb9875bd1e1d6cf5dcd071055a8f3b71dtargetblank531371fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/1ac28bed5f0d56620971691e99f0d5365291cfa5" target="_blank">1ac28be</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/531371fbb9875bd1e1d6cf5dcd071055a8f3b71d" target="_blank">531371f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -543,12 +543,8 @@ Untracked files:
     Untracked:  Code commit to github
     Untracked:  README.html
     Untracked:  analysis/Patient 1.Rmd
-    Untracked:  code/Bladder_mean_rel.R
-    Untracked:  code/Boxplot_DIL_minus_Boost_mean.R
-    Untracked:  code/Boxplot_to_DIL_mean.R
-    Untracked:  code/Lollipopplot_Boost_mean.R
-    Untracked:  code/Lollipopplot_DIL_mean.R
-    Untracked:  code/Rectum_mean_rel.R
+    Untracked:  code/alltogether_14fractions_20200719.Rmd
+    Untracked:  code/linear_regression_rectum_DIL.R
     Untracked:  data/1/
     Untracked:  data/10/
     Untracked:  data/11/
@@ -585,7 +581,7 @@ Unstaged changes:
     Modified:   analysis/Rechnungen.Rmd
     Modified:   analysis/dilundboost.Rmd
     Modified:   analysis/kable.Rmd
-    Deleted:    code/Boxplot_DIL_mean.R
+    Deleted:    code/alltogether_14fractions.Rmd
 
 </code></pre>
 <p>
@@ -624,6 +620,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/531371fbb9875bd1e1d6cf5dcd071055a8f3b71d/analysis/allesineinem.Rmd" target="_blank">531371f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+vor xvi, soweit alles abgeschlossen
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/c48449a28db726a690f6e0ee52d090982b35089d/docs/allesineinem.html" target="_blank">c48449a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -962,6 +992,7 @@ library(scales)
 library(knitr)
 library(kableExtra)
 library(here)
+library(jtools) # for linear regression output. not used so far
 #options(digits=3) # zeigt nur drei Zahlenwerte an
 source(&quot;code/plottheme.R&quot;)
 source(&quot;code/cbPalette.R&quot;)
@@ -1514,7 +1545,7 @@ hist(HistogramDILrelchange$relchange,
          main=&quot;&quot;,
     #DIL Mittelwert&quot; 
      ylab=&quot;Density&quot;, xlab=&quot;Relative DIL dose change&quot;, mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
-    cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
+    cex.lab=rel(1.8), cex.axis=1.5, col = &quot;transparent&quot;)
 rug(jitter(HistogramDILrelchange$relchange))
 lines(density(HistogramDILrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
 <p><img src="figure/allesineinem.Rmd/DIL%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1567,7 +1598,7 @@ hist(HistogramBoostrelchange$relchange,
          main=&quot;&quot;,
     #DIL Mittelwert&quot; 
      ylab=&quot;Density&quot;, xlab=&quot;Relative boost dose change&quot;, mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
-    cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
+    cex.lab=rel(1.8), cex.axis=1.5, col = &quot;transparent&quot;)
 rug(jitter(HistogramBoostrelchange$relchange))
 lines(density(HistogramBoostrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
 <p><img src="figure/allesineinem.Rmd/Boost%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1614,6 +1645,7 @@ Mein Vorname
 <h2>Relation of DIL and boost</h2>
 <div id="diln-to-boost1---boxplot-with-percentage-relation" class="section level3">
 <h3>DIL[n] to boost[1] - boxplot with percentage relation</h3>
+<p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
 <pre class="r"><code>source(here::here(&quot;code/Boxplot_to_DIL_mean.R&quot;))</code></pre>
 <p><img src="figure/allesineinem.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1656,6 +1688,7 @@ Mein Vorname
 </div>
 <div id="diln-to-boost1---table-with-percentage-relation" class="section level3">
 <h3>DIL[n] to boost[1] - table with percentage relation</h3>
+<p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
 <pre class="r"><code># source(here::here(&quot;code/Boxplot_to_DIL_mean.R&quot;))
 DIL_Boost_mean_relation %&gt;%
  knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relation relative to the first fraction&quot;, &quot;Numbers&quot;)) %&gt;%
@@ -1818,6 +1851,7 @@ Mein Vorname
 </div>
 <div id="dil-minus-boost---table-with-percentage-relation" class="section level3">
 <h3>DIL minus boost - table with percentage relation</h3>
+<p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
 <pre class="r"><code># source(here::here(&quot;code/Boxplot_DIL_minus_Boost_mean.R&quot;))
 DIL_minus_Boost_mean_table %&gt;%
   knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL minus boost&quot;, &quot;Numbers&quot;)) %&gt;%
@@ -2309,9 +2343,7 @@ Mein Vorname
 </div>
 <div id="linear-regression-rectum-mean-and-dil-mean" class="section level2">
 <h2>Linear regression rectum mean and DIL mean</h2>
-<pre class="r"><code>#source(here::here(&quot;code/Rectum_mean_rel.R&quot;))
-
-plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<pre class="r"><code>plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/allesineinem.Rmd/linear%20regression%20Rectum%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Rectum-DIL-means-1">
@@ -2618,8 +2650,8 @@ Relative change
 </tbody>
 </table>
 </div>
-<div id="lollipop-plot-for-rectum-mean-changes-relative-to-the-first-fraction-of-rectum-1" class="section level3">
-<h3>Lollipop plot for rectum mean changes relative to the first fraction of rectum</h3>
+<div id="lollipop-plot-for-bladder-mean-changes-relative-to-the-first-fraction-of-bladder" class="section level3">
+<h3>Lollipop plot for bladder mean changes relative to the first fraction of bladder</h3>
 <pre class="r"><code>source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
 
 
@@ -2857,6 +2889,7 @@ Mein Vorname
  httpuv        1.5.4   2020-06-06 [1] CRAN (R 4.0.1)
  httr          1.4.1   2019-08-05 [1] CRAN (R 4.0.1)
  jsonlite      1.6.1   2020-02-02 [1] CRAN (R 4.0.1)
+ jtools      * 2.1.0   2020-06-23 [1] CRAN (R 4.0.2)
  kableExtra  * 1.1.0   2019-03-16 [1] CRAN (R 4.0.1)
  knitr       * 1.29    2020-06-23 [1] CRAN (R 4.0.1)
  later         1.1.0.1 2020-06-05 [1] CRAN (R 4.0.1)
@@ -2868,6 +2901,7 @@ Mein Vorname
  modelr        0.1.8   2020-05-19 [1] CRAN (R 4.0.1)
  munsell       0.5.0   2018-06-12 [1] CRAN (R 4.0.1)
  nlme          3.1-147 2020-04-13 [4] CRAN (R 4.0.0)
+ pander        0.6.3   2018-11-06 [1] CRAN (R 4.0.2)
  pillar        1.4.4   2020-05-05 [1] CRAN (R 4.0.1)
  pkgbuild      1.0.8   2020-05-07 [1] CRAN (R 4.0.1)
  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.0.1)
