@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree740912e3ac732ca10da42205aa6df6541ba4541ctargetblank740912ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/740912e3ac732ca10da42205aa6df6541ba4541c" target="_blank">740912e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee290a13520777104494547fbd5d06f99653526a5targetblanke290a13a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/e290a13520777104494547fbd5d06f99653526a5" target="_blank">e290a13</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree740912e3ac732ca10da42205aa6df6541ba4541ctargetblank740912ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreee290a13520777104494547fbd5d06f99653526a5targetblanke290a13a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/740912e3ac732ca10da42205aa6df6541ba4541c" target="_blank">740912e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/e290a13520777104494547fbd5d06f99653526a5" target="_blank">e290a13</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -593,6 +593,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/e290a13520777104494547fbd5d06f99653526a5/analysis/dilundboost.Rmd" target="_blank">e290a13</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Überschriften gesetzt
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/13a6271473d4e1ad164420c33084de58e32657de/docs/dilundboost.html" target="_blank">13a6271</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -765,6 +799,8 @@ options(digits=3) # zeigt nur drei Zahlenwerte an
 
 source(&quot;code/plottheme.R&quot;)
 source(&quot;code/cbPalette.R&quot;)</code></pre>
+<div id="dil-changes-relative-to-the-first-fraction" class="section level3">
+<h3>DIL changes relative to the first fraction</h3>
 <pre class="r"><code>DIL &lt;- read_csv2(&quot;data/DIL_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 source(&quot;code/DILrelchange.R&quot;)
@@ -947,6 +983,9 @@ relchange
 </tr>
 </tbody>
 </table>
+</div>
+<div id="boost-changes-relative-to-the-first-fraction" class="section level3">
+<h3>Boost changes relative to the first fraction</h3>
 <pre class="r"><code>Boost &lt;- read_csv2(&quot;data/BoostA1n_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 source(&quot;code/Boostrelchange.R&quot;)
@@ -1129,6 +1168,9 @@ relchange
 </tr>
 </tbody>
 </table>
+</div>
+<div id="line-plot-for-dil-and-boost-changes-relative-to-the-first-fraction" class="section level3">
+<h3>Line plot for DIL and Boost changes relative to the first fraction</h3>
 <pre class="r"><code>ggplot() + 
   geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
   geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
@@ -1144,6 +1186,43 @@ relchange
   ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
   plottheme</code></pre>
 <p><img src="figure/dilundboost.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot%60-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot`-1">
+Past versions of “Relative dose changes DIL und boost in percent line plot`-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot`-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/13a6271473d4e1ad164420c33084de58e32657de/docs/figure/dilundboost.Rmd/Relative dose changes DIL und boost in percent line plot`-1.png" target="_blank">13a6271</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1254,6 +1333,7 @@ relchange
 [2] /usr/local/lib/R/site-library
 [3] /usr/lib/R/site-library
 [4] /usr/lib/R/library</code></pre>
+</div>
 </div>
 
 
