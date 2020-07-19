@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7fb629e92a16cd99351dce29dc0ac14184347901targetblank7fb629ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/7fb629e92a16cd99351dce29dc0ac14184347901" target="_blank">7fb629e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreef0745b9103a66790a4661294d631d2aaad93261dtargetblankf0745b9a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/f0745b9103a66790a4661294d631d2aaad93261d" target="_blank">f0745b9</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7fb629e92a16cd99351dce29dc0ac14184347901targetblank7fb629ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreef0745b9103a66790a4661294d631d2aaad93261dtargetblankf0745b9a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/7fb629e92a16cd99351dce29dc0ac14184347901" target="_blank">7fb629e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/f0745b9103a66790a4661294d631d2aaad93261d" target="_blank">f0745b9</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -594,6 +594,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/f0745b9103a66790a4661294d631d2aaad93261d/analysis/dilundboost.Rmd" target="_blank">f0745b9</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+plot theme erstellt
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/7782f0672b38d0d300e36cebae1f0c1dd7b14d72/docs/dilundboost.html" target="_blank">7782f06</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/7fb629e92a16cd99351dce29dc0ac14184347901/analysis/dilundboost.Rmd" target="_blank">7fb629e</a>
 </td>
 <td>
@@ -621,6 +655,30 @@ library(scales)
 library(knitr)
 library(kableExtra)
 options(digits=3) # zeigt nur drei Zahlenwerte an
+
+
+# The Color Universal Design from the University of Tokyo proposes the following palettes:
+# The palette with grey from:
+cbPalette &lt;- c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;, &quot;#009E73&quot;, &quot;#F0E442&quot;, &quot;#0072B2&quot;, &quot;#D55E00&quot;, &quot;#CC79A7&quot;)
+   
+  plottheme &lt;- list(
+     theme_classic() +
+  theme(
+    legend.title = element_blank(),
+     legend.text = element_text(color = &quot;black&quot;, size = rel(1)),
+  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
+  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
+  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
+  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
+  # X-Achsen-Beschriftungs-(groß)-Parameter
+  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
+  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
+  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
+  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
+   )
+  )
+
+
 
 DIL_mean_rel &lt;- read_csv2(&quot;data/DIL_1.csv&quot;) # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
@@ -1012,40 +1070,58 @@ relchange
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># The Color Universal Design from the University of Tokyo proposes the following palettes:
-# The palette with grey from:
-cbPalette &lt;- c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;, &quot;#009E73&quot;, &quot;#F0E442&quot;, &quot;#0072B2&quot;, &quot;#D55E00&quot;, &quot;#CC79A7&quot;)
-
-ggplot() + 
+<pre class="r"><code>ggplot() + 
   geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
-  geom_line(data = Boost_mean_rel_table , linetype = &quot;dashed&quot;, aes(x = 1:14, y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
- 
+  geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
  geom_point(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
   geom_point(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
-
-  scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
-
-  expand_limits(y = c(-5, 10)) +
-  scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  
+      scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
+   expand_limits(y = c(-2, 2)) +
+  scale_y_continuous(breaks = seq(-2, 2, 1.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
     scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
-  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
-    theme_classic() +
-  theme(
-  plot.title =  element_blank(),  #element_text(color=&quot;black&quot;, size=14, face=&quot;bold.italic&quot;, family =&quot;serif&quot;), # Titel des Graphen
-  axis.text.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # X-Achsen-Bezeichnungs-Parameter
-  axis.text.y = element_text(margin = unit(c(0, 1.5, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Bezeichnungs-Parameter
-  axis.title.x = element_text(margin = unit(c(1.5, 0, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), 
-  # X-Achsen-Beschriftungs-(groß)-Parameter
-  axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), &quot;mm&quot;), family = &quot;serif&quot;, size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
-  plot.margin = margin(0.5, 0.5, 0.5, 0.5, &quot;cm&quot;), # Abstände um den Graphen in top-right-bottom-left Orientierung
-  axis.ticks = element_line(color = &#39;black&#39;, size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, &quot;cm&quot;), # Teilstriche
-  axis.line = element_line(color = &#39;black&#39;, size = 0.3, linetype = 1) # Achsenlinie
-   ) +
+      geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
   ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung</code></pre>
+  ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
+  plottheme</code></pre>
 <p><img src="figure/dilundboost.Rmd/Relative%20dose%20changes%20in%20percen%20from%20the%201st%20fraction%20with%20DIL%20and%20boost%20mean%20lines-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-percen-from-the-1st-fraction-with-DIL-and-boost-mean-lines-1">
+Past versions of “Relative dose changes in percen from the 1st fraction with DIL and boost mean lines-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-in-percen-from-the-1st-fraction-with-DIL-and-boost-mean-lines-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/7782f0672b38d0d300e36cebae1f0c1dd7b14d72/docs/figure/dilundboost.Rmd/Relative dose changes in percen from the 1st fraction with DIL and boost mean lines-1.png" target="_blank">7782f06</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
