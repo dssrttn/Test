@@ -413,7 +413,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-07-02
+<strong>Last updated:</strong> 2020-07-19
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -504,16 +504,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree4f671e83bb83823b0f0b52fb0c7edb5ae0212b08targetblank4f671e8a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/4f671e83bb83823b0f0b52fb0c7edb5ae0212b08" target="_blank">4f671e8</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb1b88ccf5ed7f66fe4ce836941482ea7e13e05e9targetblankb1b88cca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/b1b88ccf5ed7f66fe4ce836941482ea7e13e05e9" target="_blank">b1b88cc</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree4f671e83bb83823b0f0b52fb0c7edb5ae0212b08targetblank4f671e8a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeb1b88ccf5ed7f66fe4ce836941482ea7e13e05e9targetblankb1b88cca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/4f671e83bb83823b0f0b52fb0c7edb5ae0212b08" target="_blank">4f671e8</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/b1b88ccf5ed7f66fe4ce836941482ea7e13e05e9" target="_blank">b1b88cc</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -523,23 +523,51 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
     Ignored:    analysis/.Rhistory
+    Ignored:    code/.Rhistory
     Ignored:    data/.Rhistory
 
 Untracked files:
+    Untracked:  Code commit to github
     Untracked:  README.html
-    Untracked:  data/Bladder_1.csv
-    Untracked:  data/Boost A1n_1.csv
-    Untracked:  data/DIL_1.csv
-    Untracked:  data/External_1.csv
-    Untracked:  data/PenisBulb_1.csv
-    Untracked:  data/Rectum_1.csv
+    Untracked:  analysis/Patient 1.Rmd
+    Untracked:  code/Boxplot_DIL_minus_Boost_mean.R
+    Untracked:  data/1/
+    Untracked:  data/10/
+    Untracked:  data/11/
+    Untracked:  data/12/
+    Untracked:  data/13/
+    Untracked:  data/14/
+    Untracked:  data/15/
+    Untracked:  data/16/
+    Untracked:  data/17/
+    Untracked:  data/18/
+    Untracked:  data/19/
+    Untracked:  data/2/
+    Untracked:  data/20/
+    Untracked:  data/21/
+    Untracked:  data/22/
+    Untracked:  data/23/
+    Untracked:  data/24/
+    Untracked:  data/25/
+    Untracked:  data/26/
+    Untracked:  data/3/
+    Untracked:  data/4/
+    Untracked:  data/5/
+    Untracked:  data/6/
+    Untracked:  data/7/
+    Untracked:  data/8/
+    Untracked:  data/9/
+    Untracked:  data/BrowseFiles.py
+    Untracked:  data/DVH_Auswertung.py
+    Untracked:  data/DVH_Auswertung.pyc
 
 Unstaged changes:
     Modified:   _workflowr.yml
-    Modified:   analysis/Rechnungen.Rmd
-    Modified:   analysis/ggplot2.Rmd
-    Modified:   analysis/kable.Rmd
-    Modified:   analysis/relativ.Rmd
+    Modified:   analysis/DILminusBoost.Rmd
+    Modified:   analysis/allesineinem.Rmd
+    Modified:   analysis/dilundboost.Rmd
+    Modified:   analysis/first-analysis.Rmd
+    Modified:   code/Boxplot_DIL_mean.R
 
 </code></pre>
 <p>
@@ -578,6 +606,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1b88ccf5ed7f66fe4ce836941482ea7e13e05e9/analysis/error.Rmd" target="_blank">b1b88cc</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+dateipfade verändert
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/7d4fc2550b3d67ec8940251169d748360db49d0b/docs/error.html" target="_blank">7d4fc25</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -771,7 +833,7 @@ Mein Vorname
 <pre class="r"><code>devtools::session_info()</code></pre>
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value                       
- version  R version 4.0.1 (2020-06-06)
+ version  R version 4.0.2 (2020-06-22)
  os       Ubuntu 20.04 LTS            
  system   x86_64, linux-gnu           
  ui       X11                         
@@ -779,7 +841,7 @@ Mein Vorname
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       Europe/Berlin               
- date     2020-07-02                  
+ date     2020-07-19                  
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version date       lib source        
