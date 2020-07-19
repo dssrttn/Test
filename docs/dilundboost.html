@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree47b0420b5237397303d7f54cc4d4e71211831c16targetblank47b0420a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/47b0420b5237397303d7f54cc4d4e71211831c16" target="_blank">47b0420</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree6b1f8e4198f11fc698e1805cd267a7b7967baff6targetblank6b1f8e4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/6b1f8e4198f11fc698e1805cd267a7b7967baff6" target="_blank">6b1f8e4</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree47b0420b5237397303d7f54cc4d4e71211831c16targetblank47b0420a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree6b1f8e4198f11fc698e1805cd267a7b7967baff6targetblank6b1f8e4a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/47b0420b5237397303d7f54cc4d4e71211831c16" target="_blank">47b0420</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/6b1f8e4198f11fc698e1805cd267a7b7967baff6" target="_blank">6b1f8e4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -596,6 +596,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/6b1f8e4198f11fc698e1805cd267a7b7967baff6/analysis/dilundboost.Rmd" target="_blank">6b1f8e4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+past versions inkludiert durch loeschen der figure parameter
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/ce86220f4ff664dd5e1ad3abc678cb399a5e54ef/docs/dilundboost.html" target="_blank">ce86220</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1289,6 +1323,43 @@ Relative change
   ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
   plottheme</code></pre>
 <p><img src="figure/dilundboost.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot-1">
+Past versions of “Relative dose changes DIL und boost in percent line plot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ce86220f4ff664dd5e1ad3abc678cb399a5e54ef/docs/figure/dilundboost.Rmd/Relative dose changes DIL und boost in percent line plot-1.png" target="_blank">ce86220</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>source(&quot;code/HistogramDILrelchange.R&quot;)
 
 par(family=&quot;serif&quot;) # Schriftart
@@ -1302,6 +1373,43 @@ hist(HistogramDILrelchange$relchange,
 rug(jitter(HistogramDILrelchange$relchange))
 lines(density(HistogramDILrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
 <p><img src="figure/dilundboost.Rmd/DIL%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-histogramm-relative-change-1">
+Past versions of “DIL histogramm relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-histogramm-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ce86220f4ff664dd5e1ad3abc678cb399a5e54ef/docs/figure/dilundboost.Rmd/DIL histogramm relative change-1.png" target="_blank">ce86220</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>source(&quot;code/HistogramBoostrelchange.R&quot;)
 
 par(family=&quot;serif&quot;) # Schriftart
@@ -1315,6 +1423,43 @@ hist(HistogramBoostrelchange$relchange,
 rug(jitter(HistogramBoostrelchange$relchange))
 lines(density(HistogramBoostrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
 <p><img src="figure/dilundboost.Rmd/Boost%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Boost-histogramm-relative-change-1">
+Past versions of “Boost histogramm relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Boost-histogramm-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ce86220f4ff664dd5e1ad3abc678cb399a5e54ef/docs/figure/dilundboost.Rmd/Boost histogramm relative change-1.png" target="_blank">ce86220</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
