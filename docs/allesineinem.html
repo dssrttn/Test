@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree38cd4a3469f896125b372b9bd8508b4526145bcdtargetblank38cd4a3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/38cd4a3469f896125b372b9bd8508b4526145bcd" target="_blank">38cd4a3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree1d93981a6319d62079103405cc84d32c4806c3e8targetblank1d93981a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/1d93981a6319d62079103405cc84d32c4806c3e8" target="_blank">1d93981</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree38cd4a3469f896125b372b9bd8508b4526145bcdtargetblank38cd4a3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree1d93981a6319d62079103405cc84d32c4806c3e8targetblank1d93981a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/38cd4a3469f896125b372b9bd8508b4526145bcd" target="_blank">38cd4a3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/1d93981a6319d62079103405cc84d32c4806c3e8" target="_blank">1d93981</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -624,6 +624,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/1d93981a6319d62079103405cc84d32c4806c3e8/analysis/allesineinem.Rmd" target="_blank">1d93981</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+added rectum linear regression
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/bd0a21a5630d677d08c22ff998acfcfd50bb885f/docs/allesineinem.html" target="_blank">bd0a21a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2030,7 +2064,7 @@ ggplot(Rectum_mean_rel, aes(x=x, y=y)) +
   #geom_line() +
  expand_limits(y = c(-5, 10)) +
   scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
   geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
    ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
@@ -2075,6 +2109,58 @@ Mein Vorname
 </div>
 </div>
 </div>
+</div>
+<div id="relation-rectum-and-dil" class="section level2">
+<h2>Relation rectum and DIL</h2>
+<p>plot(Rectum_mean_rel<span class="math inline">\(relchange, DIL_mean_rel\)</span>relchange)</p>
+<pre class="r"><code>#source(here::here(&quot;code/Rectum_mean_rel.R&quot;))
+
+plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/allesineinem.Rmd/linear%20regression%20Rectum%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>x_Rectum_mean_rel &lt;- Rectum_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+linearregression_rectum_DIL &lt;- lm(y_DIL_mean_rel ~ x_Rectum_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
+
+Coefficients:
+      (Intercept)  x_Rectum_mean_rel  
+        -0.377580           0.002509  </code></pre>
+<pre class="r"><code>fitted.values(linearregression_rectum_DIL)</code></pre>
+<pre><code>         1          2          3          4          5          6          7 
+-0.3775804 -0.3786832 -0.3717815 -0.3692161 -0.3679244 -0.3716057 -0.3826259 
+         8          9         10         11         12         13         14 
+-0.3597194 -0.3755085 -0.3755812 -0.3589160 -0.3782427 -0.3778444 -0.3762787 </code></pre>
+<pre class="r"><code>residuals(linearregression_rectum_DIL)</code></pre>
+<pre><code>         1          2          3          4          5          6          7 
+ 0.3775804 -0.1756043 -0.1231443 -0.4425673 -0.2376398 -0.2496569 -0.5959739 
+         8          9         10         11         12         13         14 
+ 0.1837619 -0.2292674  0.3691682  0.0625042  0.4724232  0.1043164  0.4840996 </code></pre>
+<pre class="r"><code>summary(linearregression_rectum_DIL)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.59597 -0.23555 -0.03032  0.32282  0.48410 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)       -0.377580   0.116460  -3.242  0.00706 **
+x_Rectum_mean_rel  0.002509   0.035715   0.070  0.94515   
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.3598 on 12 degrees of freedom
+Multiple R-squared:  0.0004111, Adjusted R-squared:  -0.08289 
+F-statistic: 0.004935 on 1 and 12 DF,  p-value: 0.9452</code></pre>
+<pre class="r"><code>plot(x_Rectum_mean_rel, y_DIL_mean_rel)
+abline(linearregression_rectum_DIL, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/allesineinem.Rmd/linear%20regression%20Rectum%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="bladder" class="section level2">
 <h2>Bladder</h2>
@@ -2280,6 +2366,43 @@ ggplot(Bladder_mean_rel, aes(x=x, y=y)) +
   ylab(&quot;Relative dose changes&quot;) +
    plottheme</code></pre>
 <p><img src="figure/allesineinem.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20bladder%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-relative-dose-changes-of-bladder-in-percent-1">
+Past versions of “Lollipop plot relative dose changes of bladder in percent-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-relative-dose-changes-of-bladder-in-percent-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/bd0a21a5630d677d08c22ff998acfcfd50bb885f/docs/figure/allesineinem.Rmd/Lollipop plot relative dose changes of bladder in percent-1.png" target="_blank">bd0a21a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
