@@ -32,7 +32,7 @@ source("code/cbPalette.R")
 
 ### DIL changes relative to the first fraction
 
-```{r Relative dose changes in percent for DIL`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+```{r Relative dose changes in percent for DIL, message=FALSE}
 
 
 DIL <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
