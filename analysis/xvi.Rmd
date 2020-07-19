@@ -1,0 +1,50 @@
+---
+title: "XVI"
+author: "Mein Vorname"
+date: "2020-07-10"
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+---
+
+## Introduction
+
+```{r}
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+```
+
+```{r XVI, message=FALSE}
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(here)
+library(psych) # for describe function
+# library(jtools) # for linear regression output. not used so far
+options(digits=3) # zeigt nur drei Zahlenwerte an
+
+source("code/plottheme.R")
+source("code/cbPalette.R")
+
+
+XVI <- read_csv2('data/1/XVI.csv')
+
+
+source(here::here("code/XVI.R"))
+
+
+XVI_tibble_date %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE)
+
+
+
+XVI_tibble %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+    full_width = TRUE) 
+
+```
