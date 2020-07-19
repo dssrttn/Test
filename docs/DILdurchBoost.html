@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed2f9db1a3084272f76da8683d252f2b6ff2db2aetargetblankd2f9db1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/d2f9db1a3084272f76da8683d252f2b6ff2db2ae" target="_blank">d2f9db1</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree64f062d27c741417634ad7adf7117ff0ef90ee23targetblank64f062da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/64f062d27c741417634ad7adf7117ff0ef90ee23" target="_blank">64f062d</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed2f9db1a3084272f76da8683d252f2b6ff2db2aetargetblankd2f9db1a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree64f062d27c741417634ad7adf7117ff0ef90ee23targetblank64f062da" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/d2f9db1a3084272f76da8683d252f2b6ff2db2ae" target="_blank">d2f9db1</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/64f062d27c741417634ad7adf7117ff0ef90ee23" target="_blank">64f062d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -542,13 +542,6 @@ Ignored files:
 Untracked files:
     Untracked:  README.html
     Untracked:  analysis/allesineinem.Rmd
-    Untracked:  code/Boostrelchange.R
-    Untracked:  code/DILmeanboxplot.R
-    Untracked:  code/DILrelchange.R
-    Untracked:  code/HistogramBoostrelchange.R
-    Untracked:  code/HistogramDILrelchange.R
-    Untracked:  code/cbPalette.R
-    Untracked:  code/plottheme.R
     Untracked:  data/1/
     Untracked:  data/16/
     Untracked:  data/8/
@@ -601,6 +594,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/64f062d27c741417634ad7adf7117ff0ef90ee23/analysis/DILdurchBoost.Rmd" target="_blank">64f062d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+csv in zweiten chunk
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/10f7b9064a7582d11c39bdc58e77ae0741085926/docs/DILdurchBoost.html" target="_blank">10f7b90</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -872,14 +899,15 @@ library(knitr)
 library(kableExtra)
 #options(digits=3) # zeigt nur drei Zahlenwerte an
 
-DIL_mean_boxplot &lt;- read_csv2(&#39;data/DIL_1.csv&#39;)</code></pre>
+DIL_mean_boxplot &lt;- read_csv2(&#39;data/DIL_1.csv&#39;)
+Boost_mean_boxplot &lt;- read_csv2(&#39;data/BoostA1n_1.csv&#39;)</code></pre>
 <pre class="r"><code>#max &lt;-max(DIL_mean_boxplot$Mittelwert)
 #min &lt;-min(DIL_mean_boxplot$Mittelwert)
 
-Boost_mean_boxplot &lt;- read_csv2(&#39;data/BoostA1n_1.csv&#39;)
 
 
-source(&quot;code/DILmeanboxplot.R&quot;)</code></pre>
+
+source(&quot;code/Boxplot_DIL_mean.R&quot;)</code></pre>
 <p><img src="figure/DILdurchBoost.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Boxplot-1">
@@ -941,7 +969,7 @@ Mein Vorname
 </div>
 </div>
 <pre class="r"><code>DIL_mean_rel_table %&gt;%
- knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL durch boost_1&quot;, &quot;Numbers&quot;)) %&gt;%
+ knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relation relative to the first fraction&quot;, &quot;Numbers&quot;)) %&gt;%
 kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -949,7 +977,7 @@ kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quo
 <thead>
 <tr>
 <th style="text-align:left;">
-DIL durch boost_1
+DIL to boost relation relative to the first fraction
 </th>
 <th style="text-align:right;">
 Numbers
