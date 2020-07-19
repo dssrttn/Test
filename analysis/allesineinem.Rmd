@@ -238,7 +238,7 @@ ggplot(Rectum_mean_rel, aes(x=x, y=y)) +
   #geom_line() +
  expand_limits(y = c(-5, 10)) +
   scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
   geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
    ggtitle("DIL - Relative dose changes in percent from the 1st fraction") +
   xlab("Fraction") + # X-Achsen-Beschriftung
@@ -246,6 +246,34 @@ ggplot(Rectum_mean_rel, aes(x=x, y=y)) +
    plottheme
 
 ```
+
+## Relation rectum and DIL
+
+plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)
+
+```{r linear regression Rectum DIL means, message=FALSE}
+#source(here::here("code/Rectum_mean_rel.R"))
+
+plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)
+
+x_Rectum_mean_rel <- Rectum_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
+
+linearregression_rectum_DIL <- lm(y_DIL_mean_rel ~ x_Rectum_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
+
+fitted.values(linearregression_rectum_DIL)
+residuals(linearregression_rectum_DIL)
+
+summary(linearregression_rectum_DIL)
+
+
+plot(x_Rectum_mean_rel, y_DIL_mean_rel)
+abline(linearregression_rectum_DIL, col = "red")
+
+
+```
+
 
 
 
