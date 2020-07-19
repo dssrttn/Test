@@ -13,7 +13,6 @@ knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
 ```
 
 
-
 ```{r Relative dose changes in percen from the 1st fraction with DIL and boost mean lines,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 library(plyr)
 library(tidyverse)
@@ -30,46 +29,36 @@ source("code/cbPalette.R")
 ```
 
 
-```{r Relative dose changes in percent line plot`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+
+```{r Relative dose changes in percent for DIL`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
 
 DIL <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 source("code/DILrelchange.R")
 
-
-
 DIL_mean_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 full_width = TRUE)
 
+```
 
+
+```{r Relative dose changes in percent for boost`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 Boost <- read_csv2("data/BoostA1n_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
-Boost_mean <- Boost
-Boost_mean_rel <- Boost_mean
-Boost_mean_rel <- distinct(Boost_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
-
-#ddply(DIL_absolut, .(), transform, relchange2 = ((100 / Mittelwert[1]) * Mittelwert) - 100) # alternative Berechnung fuer relative Differenzen zum Ausgangswert in der 1. Reihe 
-
-Boost_mean_rel <- ddply(Boost_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) # relative Differenzen zum Ausgangswert in der 1. Reihe werden berechnet
-
-Boost_mean_rel_table <- ddply(Boost_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100) 
-
-
-
-Boost_mean_rel_table <- Boost_mean_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
-
-Boost_mean_rel_table[1:14, 1] = (1:14) 
-
+source("code/Boostrelchange.R")
+ 
 Boost_mean_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Boost descriptive statistics") %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
     full_width = TRUE) 
 
+```
 
 
+```{r Relative dose changes DIL und boost in percent line plot`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
 ggplot() + 
   geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange, color = "DIL")) +
@@ -86,9 +75,6 @@ ggplot() +
   ylab("Relative dose changes") +   #+ # Y-Achsen-Beschriftung
   plottheme
   
-   
-
-
 ```
 
 
