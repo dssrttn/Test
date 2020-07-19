@@ -7,14 +7,14 @@ output:
     code_folding: hide
 ---
 
-```{r setup, message=FALSE}
+```{r setup, message=FALSE, warning=FALSE}
 
 knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
 
 ```
 
 
-```{r DIL mean for boxplot, message=FALSE}
+```{r DIL mean for boxplot, message=FALSE, warning=FALSE}
 library(plyr)
 library(tidyverse)
 library(ggplot2)
@@ -375,9 +375,9 @@ abline(linearregression_Bladder_DIL, col = "red")
 ```
 
 
-# XVI
+# Displacement relocation
 
-```{r XVI, message=FALSE}
+```{r XVI, message=FALSE, warning=FALSE}
 
 source(here::here("code/XVI.R"))
 
