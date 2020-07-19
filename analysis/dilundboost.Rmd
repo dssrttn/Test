@@ -28,6 +28,8 @@ source("code/cbPalette.R")
 
 ```
 
+## DIL and boost changes during the treatment period
+
 ### DIL changes relative to the first fraction
 
 ```{r Relative dose changes in percent for DIL`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
@@ -38,7 +40,8 @@ DIL <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das 
 source("code/DILrelchange.R")
 
 DIL_mean_rel_table %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html' #, caption = "DIL descriptive statistics"
+        ) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 full_width = TRUE)
 
@@ -52,13 +55,14 @@ Boost <- read_csv2("data/BoostA1n_1.csv") # read csv mit europaeischer Syntax. A
 source("code/Boostrelchange.R")
  
 Boost_mean_rel_table %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Boost descriptive statistics") %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html' #, caption = "Boost descriptive statistics"
+        ) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
     full_width = TRUE) 
 
 ```
 
-### Line plot for DIL and Boost changes relative to the first fraction
+### Line plot for DIL and boost changes relative to the first fraction
 
 
 ```{r Relative dose changes DIL und boost in percent line plot`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
