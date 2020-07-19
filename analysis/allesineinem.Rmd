@@ -22,6 +22,7 @@ library(scales)
 library(knitr)
 library(kableExtra)
 library(here)
+library(jtools) # for linear regression output. not used so far
 #options(digits=3) # zeigt nur drei Zahlenwerte an
 source("code/plottheme.R")
 source("code/cbPalette.R")
@@ -146,7 +147,7 @@ hist(HistogramDILrelchange$relchange,
          main="",
     #DIL Mittelwert" 
      ylab="Density", xlab="Relative DIL dose change", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
-    cex.lab=2, cex.axis=1.5, col = "transparent")
+    cex.lab=rel(1.8), cex.axis=1.5, col = "transparent")
 rug(jitter(HistogramDILrelchange$relchange))
 lines(density(HistogramDILrelchange$relchange), col="black", lwd=2)
 
@@ -164,7 +165,7 @@ hist(HistogramBoostrelchange$relchange,
          main="",
     #DIL Mittelwert" 
      ylab="Density", xlab="Relative boost dose change", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
-    cex.lab=2, cex.axis=1.5, col = "transparent")
+    cex.lab=rel(1.8), cex.axis=1.5, col = "transparent")
 rug(jitter(HistogramBoostrelchange$relchange))
 lines(density(HistogramBoostrelchange$relchange), col="black", lwd=2)
 
@@ -177,6 +178,8 @@ lines(density(HistogramBoostrelchange$relchange), col="black", lwd=2)
 
 ### DIL[n] to boost[1] - boxplot with percentage relation
 
+(Mittelwert_DIL/ Mittelwert_Boost[1])
+
 ```{r DIL Boxplot, message=FALSE}
 
 source(here::here("code/Boxplot_to_DIL_mean.R"))
@@ -184,6 +187,8 @@ source(here::here("code/Boxplot_to_DIL_mean.R"))
 ```
 
 ### DIL[n] to boost[1] - table with percentage relation
+
+(Mittelwert_DIL/ Mittelwert_Boost[1])
 
 ```{r DIL to Boost table, message=FALSE}
 # source(here::here("code/Boxplot_to_DIL_mean.R"))
@@ -203,6 +208,8 @@ source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
 ```
 
 ### DIL minus boost - table with percentage relation
+
+(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))
 
 ```{r DIL minus Boost table, message=FALSE}
 # source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
@@ -280,8 +287,6 @@ ggplot(Rectum_mean_rel, aes(x=x, y=y)) +
 
 
 ```{r linear regression Rectum DIL means, message=FALSE}
-#source(here::here("code/Rectum_mean_rel.R"))
-
 plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)
 
 x_Rectum_mean_rel <- Rectum_mean_rel$relchange
@@ -291,10 +296,10 @@ linearregression_rectum_DIL <- lm(y_DIL_mean_rel ~ x_Rectum_mean_rel)
 lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
 
 fitted.values(linearregression_rectum_DIL)
+
 residuals(linearregression_rectum_DIL)
 
 summary(linearregression_rectum_DIL)
-
 
 plot(x_Rectum_mean_rel, y_DIL_mean_rel)
 abline(linearregression_rectum_DIL, col = "red")
@@ -321,7 +326,7 @@ Bladder_mean_rel_table %>%
 ```
 
 
-### Lollipop plot for rectum mean changes relative to the first fraction of rectum
+### Lollipop plot for bladder mean changes relative to the first fraction of bladder
 
 ```{r Lollipop plot relative dose changes of bladder in percent, message = FALSE}
 source(here::here("code/Bladder_mean_rel.R"))
