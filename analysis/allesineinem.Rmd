@@ -1,0 +1,66 @@
+---
+title: "Alles in einem"
+author: "Mein Vorname"
+date: "2020-07-10"
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+---
+
+```{r setup, message=FALSE}
+
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+
+```
+
+
+```{r DIL mean for boxplot, message=FALSE}
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(here)
+#options(digits=3) # zeigt nur drei Zahlenwerte an
+
+DIL_mean_boxplot <- read_csv2('data/1/DIL.csv')
+Boost_mean_boxplot <- read_csv2('data/1/Boost.csv')
+```
+
+### DIL[n] to boost[1] - boxplot with percentage relation
+
+
+
+```{r DIL Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_DIL_mean.R"))
+#source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
+```
+
+### DIL[n] to boost[1] - table with percentage relation
+
+```{r DIL to Boost table, message=FALSE}
+DIL_Boost_mean_relation %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+```
+
+
+### DIL minus boost - boxplot with percentage relation
+
+```{r DIL minus boost Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
+```
+
+### DIL minus boost - table with percentage relation
+
+```{r DIL minus Boost table, message=FALSE}
+DIL_minus_Boost_mean_table %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+```
+
