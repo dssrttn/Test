@@ -26,7 +26,7 @@ library(knitr)
 library(kableExtra)
 options(digits=3) # zeigt nur drei Zahlenwerte an
 
-DIL_mean_rel <- read_csv2("data/DIL_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+DIL_mean_rel <- read_csv2("data/1/DIL.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 DIL_mean_rel <- distinct(DIL_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
@@ -95,7 +95,7 @@ library(knitr)
 library(kableExtra)
 options(digits=3) # zeigt nur drei Zahlenwerte an
 
-Boost_mean_rel <- read_csv2("data/BoostA1n_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+Boost_mean_rel <- read_csv2("data/1/Boost.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 Boost_mean_rel <- distinct(Boost_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
@@ -162,7 +162,7 @@ library(knitr)
 library(kableExtra)
 options(digits=3) # zeigt nur drei Zahlenwerte an
 
-Rectum_mean_rel <- read_csv2("data/Rectum_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+Rectum_mean_rel <- read_csv2("data/1/Rectum.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 Rectum_mean_rel <- distinct(Rectum_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
@@ -282,7 +282,7 @@ library(knitr)
 library(kableExtra)
 options(digits=3) # zeigt nur drei Zahlenwerte an
 
-Bladder_mean_rel <- read_csv2("data/Bladder_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
+Bladder_mean_rel <- read_csv2("data/1/Bladder.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 Bladder_mean_rel <- distinct(Bladder_mean_rel, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 
