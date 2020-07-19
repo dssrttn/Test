@@ -513,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeab376f490723b8ae93f1bf7151846359cab2d264targetblankab376f4a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/ab376f490723b8ae93f1bf7151846359cab2d264" target="_blank">ab376f4</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree47b0420b5237397303d7f54cc4d4e71211831c16targetblank47b0420a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/47b0420b5237397303d7f54cc4d4e71211831c16" target="_blank">47b0420</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreeab376f490723b8ae93f1bf7151846359cab2d264targetblankab376f4a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree47b0420b5237397303d7f54cc4d4e71211831c16targetblank47b0420a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/ab376f490723b8ae93f1bf7151846359cab2d264" target="_blank">ab376f4</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/47b0420b5237397303d7f54cc4d4e71211831c16" target="_blank">47b0420</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -596,6 +596,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/47b0420b5237397303d7f54cc4d4e71211831c16/analysis/dilundboost.Rmd" target="_blank">47b0420</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+beide histogramme
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/a7475cd03a030451206a634f623c99f90ce9c579/docs/dilundboost.html" target="_blank">a7475cd</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1254,44 +1288,7 @@ Relative change
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
   ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
   plottheme</code></pre>
-<p><img src="figure/dilundboost.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot%60-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot`-1">
-Past versions of “Relative dose changes DIL und boost in percent line plot`-1.png”
-</button>
-</p>
-<div id="fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot`-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/13a6271473d4e1ad164420c33084de58e32657de/docs/figure/dilundboost.Rmd/Relative dose changes DIL und boost in percent line plot`-1.png" target="_blank">13a6271</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-07-19
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><img src="figure/dilundboost.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>source(&quot;code/HistogramDILrelchange.R&quot;)
 
 par(family=&quot;serif&quot;) # Schriftart
@@ -1304,7 +1301,7 @@ hist(HistogramDILrelchange$relchange,
     cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
 rug(jitter(HistogramDILrelchange$relchange))
 lines(density(HistogramDILrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
-<p><img src="figure/dilundboost.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot%60-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/dilundboost.Rmd/DIL%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>source(&quot;code/HistogramBoostrelchange.R&quot;)
 
 par(family=&quot;serif&quot;) # Schriftart
@@ -1317,8 +1314,7 @@ hist(HistogramBoostrelchange$relchange,
     cex.lab=2, cex.axis=1.5, col = &quot;transparent&quot;)
 rug(jitter(HistogramBoostrelchange$relchange))
 lines(density(HistogramBoostrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
-<p><img src="figure/dilundboost.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot%60-3.png" width="672" style="display: block; margin: auto;" /></p>
-<p>par(family=“serif”) # Schriftart par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse hist(DIL_mean_rel_table, main="“, #DIL Mittelwert” ylab=“Density”, xlab=“Dosis in Gray”, mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(), cex.lab=2, cex.axis=1.5, col = “transparent”) rug(jitter(DIL_mean_rel_table)) lines(density(DIL_mean_rel_table), col=“black”, lwd=2)</p>
+<p><img src="figure/dilundboost.Rmd/Boost%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
