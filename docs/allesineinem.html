@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree8c6d53db415b0c35f71a3860323d495bde72efd2targetblank8c6d53da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/8c6d53db415b0c35f71a3860323d495bde72efd2" target="_blank">8c6d53d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree1ac28bed5f0d56620971691e99f0d5365291cfa5targetblank1ac28bea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/1ac28bed5f0d56620971691e99f0d5365291cfa5" target="_blank">1ac28be</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree8c6d53db415b0c35f71a3860323d495bde72efd2targetblank8c6d53da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree1ac28bed5f0d56620971691e99f0d5365291cfa5targetblank1ac28bea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/8c6d53db415b0c35f71a3860323d495bde72efd2" target="_blank">8c6d53d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/1ac28bed5f0d56620971691e99f0d5365291cfa5" target="_blank">1ac28be</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -624,6 +624,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/1ac28bed5f0d56620971691e99f0d5365291cfa5/analysis/allesineinem.Rmd" target="_blank">1ac28be</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+ort geändert für dil boost linear regressio
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/4c822842182b180cbb61b3cc418ef04c21c954ea/docs/allesineinem.html" target="_blank">4c82284</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1741,6 +1775,7 @@ Numbers
 </div>
 <div id="dil-minus-boost---boxplot-with-percentage-relation" class="section level3">
 <h3>DIL minus boost - boxplot with percentage relation</h3>
+<p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
 <pre class="r"><code>source(here::here(&quot;code/Boxplot_DIL_minus_Boost_mean.R&quot;))</code></pre>
 <p><img src="figure/allesineinem.Rmd/DIL%20minus%20boost%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1899,6 +1934,134 @@ Numbers
 </tr>
 </tbody>
 </table>
+</div>
+<div id="linear-regression-boost-mean-dil-mean" class="section level3">
+<h3>Linear regression Boost mean DIL mean</h3>
+<pre class="r"><code>plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/allesineinem.Rmd/linear%20regression%20Boost%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-1">
+Past versions of “linear regression Boost DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4c822842182b180cbb61b3cc418ef04c21c954ea/docs/figure/allesineinem.Rmd/linear regression Boost DIL means-1.png" target="_blank">4c82284</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>x_Boost_mean_rel &lt;- Boost_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+linearregression_Boost_DIL &lt;- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+Coefficients:
+     (Intercept)  x_Boost_mean_rel  
+        -0.07968           0.79425  </code></pre>
+<pre class="r"><code>fitted.values(linearregression_Boost_DIL)</code></pre>
+<pre><code>          1           2           3           4           5           6 
+-0.07967760 -0.45567132 -0.34546958 -0.82702830 -0.53778724 -0.46441450 
+          7           8           9          10          11          12 
+-0.74451483 -0.22104502 -0.60581952 -0.02607234 -0.77134528  0.01426074 
+         13          14 
+-0.21705921  0.06013587 </code></pre>
+<pre class="r"><code>residuals(linearregression_Boost_DIL)</code></pre>
+<pre><code>           1            2            3            4            5            6 
+ 0.079677604 -0.098616258 -0.149456146  0.015244898 -0.067777004 -0.156848157 
+           7            8            9           10           11           12 
+-0.234084913  0.045087516  0.001043671  0.019659323  0.474933475  0.079919743 
+          13           14 
+-0.056468843  0.047685090 </code></pre>
+<pre class="r"><code>summary(linearregression_Boost_DIL)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.23408 -0.09091  0.00814  0.04704  0.47493 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      -0.07968    0.06586  -1.210     0.25    
+x_Boost_mean_rel  0.79425    0.12646   6.281 4.06e-05 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.1738 on 12 degrees of freedom
+Multiple R-squared:  0.7668,    Adjusted R-squared:  0.7473 
+F-statistic: 39.45 on 1 and 12 DF,  p-value: 4.063e-05</code></pre>
+<pre class="r"><code>plot(x_Boost_mean_rel, y_DIL_mean_rel)
+abline(linearregression_Boost_DIL, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/allesineinem.Rmd/linear%20regression%20Boost%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-2">
+Past versions of “linear regression Boost DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4c822842182b180cbb61b3cc418ef04c21c954ea/docs/figure/allesineinem.Rmd/linear regression Boost DIL means-2.png" target="_blank">4c82284</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="rectum" class="section level2">
@@ -2518,6 +2681,43 @@ Mein Vorname
 
 plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/allesineinem.Rmd/linear%20regression%20Bladder%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-1">
+Past versions of “linear regression Bladder DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4c822842182b180cbb61b3cc418ef04c21c954ea/docs/figure/allesineinem.Rmd/linear regression Bladder DIL means-1.png" target="_blank">4c82284</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>x_Bladder_mean_rel &lt;- Bladder_mean_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
@@ -2564,59 +2764,43 @@ F-statistic: 0.5002 on 1 and 12 DF,  p-value: 0.4929</code></pre>
 <pre class="r"><code>plot(x_Bladder_mean_rel, y_DIL_mean_rel)
 abline(linearregression_Bladder_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/allesineinem.Rmd/linear%20regression%20Bladder%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
-<div id="linear-regression-boost-mean-dil-mean" class="section level3">
-<h3>Linear regression Boost mean DIL mean</h3>
-<pre class="r"><code>plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
-<p><img src="figure/allesineinem.Rmd/linear%20regression%20Boost%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>x_Boost_mean_rel &lt;- Boost_mean_rel$relchange
-y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
-
-linearregression_Boost_DIL &lt;- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
-
-lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)</code></pre>
-<pre><code>
-Call:
-lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
-
-Coefficients:
-     (Intercept)  x_Boost_mean_rel  
-        -0.07968           0.79425  </code></pre>
-<pre class="r"><code>fitted.values(linearregression_Boost_DIL)</code></pre>
-<pre><code>          1           2           3           4           5           6 
--0.07967760 -0.45567132 -0.34546958 -0.82702830 -0.53778724 -0.46441450 
-          7           8           9          10          11          12 
--0.74451483 -0.22104502 -0.60581952 -0.02607234 -0.77134528  0.01426074 
-         13          14 
--0.21705921  0.06013587 </code></pre>
-<pre class="r"><code>residuals(linearregression_Boost_DIL)</code></pre>
-<pre><code>           1            2            3            4            5            6 
- 0.079677604 -0.098616258 -0.149456146  0.015244898 -0.067777004 -0.156848157 
-           7            8            9           10           11           12 
--0.234084913  0.045087516  0.001043671  0.019659323  0.474933475  0.079919743 
-          13           14 
--0.056468843  0.047685090 </code></pre>
-<pre class="r"><code>summary(linearregression_Boost_DIL)</code></pre>
-<pre><code>
-Call:
-lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.23408 -0.09091  0.00814  0.04704  0.47493 
-
-Coefficients:
-                 Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)      -0.07968    0.06586  -1.210     0.25    
-x_Boost_mean_rel  0.79425    0.12646   6.281 4.06e-05 ***
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-Residual standard error: 0.1738 on 12 degrees of freedom
-Multiple R-squared:  0.7668,    Adjusted R-squared:  0.7473 
-F-statistic: 39.45 on 1 and 12 DF,  p-value: 4.063e-05</code></pre>
-<pre class="r"><code>plot(x_Boost_mean_rel, y_DIL_mean_rel)
-abline(linearregression_Boost_DIL, col = &quot;red&quot;)</code></pre>
-<p><img src="figure/allesineinem.Rmd/linear%20regression%20Boost%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-2">
+Past versions of “linear regression Bladder DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4c822842182b180cbb61b3cc418ef04c21c954ea/docs/figure/allesineinem.Rmd/linear regression Bladder DIL means-2.png" target="_blank">4c82284</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -2729,7 +2913,6 @@ abline(linearregression_Boost_DIL, col = &quot;red&quot;)</code></pre>
 [2] /usr/local/lib/R/site-library
 [3] /usr/lib/R/site-library
 [4] /usr/lib/R/library</code></pre>
-</div>
 </div>
 </div>
 
