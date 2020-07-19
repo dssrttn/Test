@@ -13,7 +13,7 @@ knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
 ```
 
 
-```{r Relative dose changes in percen from the 1st fraction with DIL and boost mean lines,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+```{r Relative dose changes in percen from the 1st fraction with DIL and boost mean lines, message=FALSE}
 library(plyr)
 library(tidyverse)
 library(ggplot2)
@@ -49,7 +49,7 @@ DIL_mean_rel_table %>%
 
 ### Boost changes relative to the first fraction
 
-```{r Relative dose changes in percent for boost`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+```{r Relative dose changes in percent for boost, message=FALSE}
 Boost <- read_csv2("data/BoostA1n_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
 
 source("code/Boostrelchange.R")
@@ -65,7 +65,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
 ### Line plot for DIL and boost changes relative to the first fraction
 
 
-```{r Relative dose changes DIL und boost in percent line plot`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+```{r Relative dose changes DIL und boost in percent line plot, message = FALSE}
 
 ggplot() + 
   geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange, color = "DIL")) +
@@ -82,7 +82,12 @@ ggplot() +
   ylab("Relative dose changes") +   #+ # Y-Achsen-Beschriftung
   plottheme
 
+```
 
+
+
+
+```{r DIL histogramm relative change, message=FALSE}
 source("code/HistogramDILrelchange.R")
 
 par(family="serif") # Schriftart
@@ -96,8 +101,9 @@ hist(HistogramDILrelchange$relchange,
 rug(jitter(HistogramDILrelchange$relchange))
 lines(density(HistogramDILrelchange$relchange), col="black", lwd=2)
 
+```
 
-
+```{r Boost histogramm relative change, message=FALSE}
 source("code/HistogramBoostrelchange.R")
 
 par(family="serif") # Schriftart
@@ -118,16 +124,4 @@ lines(density(HistogramBoostrelchange$relchange), col="black", lwd=2)
   
 ```
 
-
-
-
-par(family="serif") # Schriftart
-par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
-par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
-hist(DIL_mean_rel_table, 
-    main="",
-    #DIL Mittelwert" 
-     ylab="Density", xlab="Dosis in Gray", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), xlim=c(), cex.lab=2, cex.axis=1.5, col = "transparent")
-rug(jitter(DIL_mean_rel_table))
-lines(density(DIL_mean_rel_table), col="black", lwd=2)
 
