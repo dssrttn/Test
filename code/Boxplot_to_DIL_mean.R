@@ -1,10 +1,9 @@
-Boost_mean_boxplot
+Boost_mean_boxplot <- Boost
 
+DIL_mean_boxplot <-  DIL
 DIL_mean_boxplot <- distinct(DIL_mean_boxplot, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 DIL_mean_boxplot <- DIL_mean_boxplot %>% select(Mittelwert_DIL = Mittelwert)
 DIL_mean_boxplot
-
-
 
 DIL_Boost_mean_boxplot <- DIL_mean_boxplot %>% add_column(Mittelwert_Boost = Boost_mean_boxplot$Mittelwert)
 DIL_Boost_mean_boxplot
@@ -23,7 +22,7 @@ min <-min(DIL_Boost_mean_relation$DILtoBoost_1)
 
 par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
-par(mar = c(0, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mar = c(0, 6.5, 1, 1)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
 boxplot(DIL_Boost_mean_relation$DILtoBoost_1,
         ylab= "DIL[n] to Boost[1]", #y-Achse-Beschriftung
