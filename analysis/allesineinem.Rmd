@@ -30,6 +30,7 @@ source("code/cbPalette.R")
 
 DIL<- read_csv2('data/1/DIL.csv')
 Boost <- read_csv2('data/1/Boost.csv')
+Rectum <- read_csv2('data/1/Rectum.csv')
 ```
 
 
@@ -38,9 +39,6 @@ Boost <- read_csv2('data/1/Boost.csv')
 ### DIL changes relative to the first fraction of DIL
 
 ```{r Relative dose changes in percent for DIL, message=FALSE}
-
-
-
 
 source(here::here("code/DILrelchange.R"))
 
@@ -208,6 +206,43 @@ source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
 DIL_minus_Boost_mean_table %>%
   knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+```
+
+## Rectum
+### Rectum changes relative to the first fraction of Rectum
+
+```{r Relative dose changes in percent for rectum, message=FALSE}
+
+source(here::here("code/Rectum_mean_rel.R"))
+ 
+
+Rectum_mean_rel_table %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Rectum mean descriptive statistics") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE)
+
+```
+
+
+### Lollipop plot for rectum mean changes relative to the first fraction of rectum
+
+```{r Lollipop plot relative dose changes of rectum in percent, message = FALSE}
+source(here::here("code/Rectum_mean_rel.R"))
+
+
+ggplot(Rectum_mean_rel, aes(x=x, y=y)) + 
+   geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+    geom_point() +
+  #geom_line() +
+ expand_limits(y = c(-5, 10)) +
+  scale_y_continuous(breaks = seq(-5, 10, 2.0), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+    scale_x_continuous(breaks = c(1,5,10,14))  + # adds only specific ticks
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   ggtitle("DIL - Relative dose changes in percent from the 1st fraction") +
+  xlab("Fraction") + # X-Achsen-Beschriftung
+  ylab("Relative dose changes") +
+   plottheme
 
 ```
 
