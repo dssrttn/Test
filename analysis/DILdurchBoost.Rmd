@@ -21,32 +21,28 @@ library(ggplot2)
 library(scales)
 library(knitr)
 library(kableExtra)
+library(here)
 #options(digits=3) # zeigt nur drei Zahlenwerte an
 
 DIL_mean_boxplot <- read_csv2('data/DIL_1.csv')
 Boost_mean_boxplot <- read_csv2('data/BoostA1n_1.csv')
 ```
 
+### DIL[n] to boost[1] - boxplot with percentage relation
+
+
+
 ```{r DIL Boxplot, message=FALSE}
-#max <-max(DIL_mean_boxplot$Mittelwert)
-#min <-min(DIL_mean_boxplot$Mittelwert)
 
+source(here::here("code/Boxplot_DIL_mean.R"))
+```
 
+### DIL[n] to boost[1] - table with percentage relation
 
-
-source("code/Boxplot_DIL_mean.R")
-
-DIL_mean_rel_table %>%
+```{r DIL to Boost table, message=FALSE}
+DIL_Boost_mean_relation %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
-
-
-
-
-
-
-
-
 
 ```
 
