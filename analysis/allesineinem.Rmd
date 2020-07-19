@@ -247,9 +247,8 @@ ggplot(Rectum_mean_rel, aes(x=x, y=y)) +
 
 ```
 
-## Relation rectum and DIL
+## Linear regression rectum mean and DIL mean
 
-plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)
 
 ```{r linear regression Rectum DIL means, message=FALSE}
 #source(here::here("code/Rectum_mean_rel.R"))
@@ -314,5 +313,52 @@ ggplot(Bladder_mean_rel, aes(x=x, y=y)) +
 
 ```
 
+## Relation bladder mean and DIL mean
+
+```{r linear regression Bladder DIL means, message=FALSE}
+#source(here::here("code/Bladder_mean_rel.R"))
+
+plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)
+
+x_Bladder_mean_rel <- Bladder_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
+
+linearregression_Bladder_DIL <- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+
+fitted.values(linearregression_Bladder_DIL)
+residuals(linearregression_Bladder_DIL)
+
+summary(linearregression_Bladder_DIL)
 
 
+plot(x_Bladder_mean_rel, y_DIL_mean_rel)
+abline(linearregression_Bladder_DIL, col = "red")
+
+
+```
+
+
+### Linear regression Boost mean DIL mean
+
+```{r linear regression Boost DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+
+plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)
+x_Boost_mean_rel <- Boost_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
+
+linearregression_Boost_DIL <- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+fitted.values(linearregression_Boost_DIL)
+residuals(linearregression_Boost_DIL)
+
+summary(linearregression_Boost_DIL)
+
+
+plot(x_Boost_mean_rel, y_DIL_mean_rel)
+abline(linearregression_Boost_DIL, col = "red")
+
+
+```
