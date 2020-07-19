@@ -21,6 +21,7 @@ library(ggplot2)
 library(scales)
 library(knitr)
 library(kableExtra)
+library(psych)
 library(here)
 library(jtools) # for linear regression output. not used so far
 #options(digits=3) # zeigt nur drei Zahlenwerte an
@@ -33,6 +34,7 @@ DIL<- read_csv2('data/1/DIL.csv')
 Boost <- read_csv2('data/1/Boost.csv')
 Rectum <- read_csv2('data/1/Rectum.csv')
 Bladder <- read_csv2('data/1/Bladder.csv')
+XVI <- read_csv2('data/1/XVI.csv')
 ```
 
 # Dose
@@ -374,3 +376,22 @@ abline(linearregression_Bladder_DIL, col = "red")
 
 
 # XVI
+
+```{r XVI, message=FALSE}
+
+source(here::here("code/XVI.R"))
+
+
+XVI_tibble_date %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE)
+
+
+
+XVI_tibble %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+    full_width = TRUE) 
+
+```
