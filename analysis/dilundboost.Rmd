@@ -28,7 +28,7 @@ source("code/cbPalette.R")
 
 ```
 
-
+### DIL changes relative to the first fraction
 
 ```{r Relative dose changes in percent for DIL`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
@@ -44,6 +44,7 @@ DIL_mean_rel_table %>%
 
 ```
 
+### Boost changes relative to the first fraction
 
 ```{r Relative dose changes in percent for boost`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 Boost <- read_csv2("data/BoostA1n_1.csv") # read csv mit europaeischer Syntax. Auf das richtige package achten! 
@@ -56,6 +57,8 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
     full_width = TRUE) 
 
 ```
+
+### Line plot for DIL and Boost changes relative to the first fraction
 
 
 ```{r Relative dose changes DIL und boost in percent line plot`,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
@@ -76,5 +79,3 @@ ggplot() +
   plottheme
   
 ```
-
-
