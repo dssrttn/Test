@@ -1,3 +1,20 @@
+---
+title: "relativ"
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+---
+
+```{r setup, message=FALSE}
+
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+
+```
+
+
+
+
+
 
 
 ```{r Relative dose changes in Grey from the 1st fraction with DIL,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
@@ -202,12 +219,12 @@ ggplot(Rectum_mean_rel,aes(x=x #DIL_relabs$x
 
 
 
-```{r Relative dose changes in Grey from the 1st fraction with DIL and boost mean POINTS,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+```{r Relative dose changes in percent from the 1st fraction with DIL and boost mean POINTS,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
 
 
 
-p = ggplot() + 
+ggplot() + 
 #  geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = "blue") +
  # geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = "red") +
   #geom_line(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = "green") +
@@ -239,7 +256,7 @@ p = ggplot() +
   ylab("Relative dose changes")   #+ # Y-Achsen-Beschriftung
 
 
-print(p)
+#print(p)
     
 
 #df3 <- DIL_rel %>%  mutate(Type = 'Amocycillin') %>%
@@ -321,12 +338,12 @@ ggplot(Bladder_mean_rel,aes(x=x #DIL_relabs$x
 
 
 
-```{r Relative dose changes in Grey from the 1st fraction with DIL and boost mean lines,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+```{r Relative dose changes in percen from the 1st fraction with DIL and boost mean lines,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
 
 
 
-p = ggplot() + 
+ggplot() + 
   geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = "blue") +
   geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = "red") +
   geom_line(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = "green") +
@@ -358,18 +375,6 @@ p = ggplot() +
   xlab("Fraction") + # X-Achsen-Beschriftung
   ylab("Relative dose changes")   #+ # Y-Achsen-Beschriftung
 
-
-print(p)
-    
-
-#df3 <- DIL_rel %>%  mutate(Type = 'Amocycillin') %>%
- #      bind_rows(Boost_mean_rel %>%
-  #         mutate(Type = 'Penicillin'))
-
-
-#ggplot(df3,aes(y = Mittelwert,x = (1:28),color = Type)) + 
-#  geom_line() +
- # ggtitle("Merged datasets")
 
 ```
 
@@ -426,6 +431,8 @@ abline(fn, col = "red")
 
 ```
 
+
+### linear regression Boost DIL means
 
 ```{r linear regression Boost DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
 
