@@ -35,7 +35,7 @@ Rectum <- read_csv2('data/1/Rectum.csv')
 Bladder <- read_csv2('data/1/Bladder.csv')
 ```
 
-
+# Dose
 ## DIL and boost changes during the treatment period
 
 ### DIL changes relative to the first fraction of DIL
@@ -373,3 +373,4 @@ abline(linearregression_Bladder_DIL, col = "red")
 ```
 
 
+# XVI
