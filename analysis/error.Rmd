@@ -17,7 +17,7 @@ editor_options:
 library(ggplot2)
 #library(scales)
 
-DIL_1 <- read.csv2('data/DIL_1.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
+DIL_1 <- read.csv2('data/1/DIL.csv', header=TRUE, stringsAsFactors=FALSE, sep=";", dec=",", row.names="Dosisname")
 
 data <- data.frame(
 x <- (1:14),
