@@ -11,7 +11,7 @@
 
 
 
-<title>relativ.utf8.md</title>
+<title>relativ</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,6 +23,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
@@ -259,6 +260,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -383,8 +387,17 @@ div.tocify {
 
 <div class="fluid-row" id="header">
 
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
+
+<h1 class="title toc-ignore">relativ</h1>
 
 </div>
 
@@ -409,7 +422,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-07-10
+<strong>Last updated:</strong> 2020-07-19
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -500,16 +513,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7b8473e87d13993f50c9383556f17de02db67c3ctargetblank7b8473ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/7b8473e87d13993f50c9383556f17de02db67c3c" target="_blank">7b8473e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree818bb4fb8f9efbc712783611d7f66f19ecb0ab3etargetblank818bb4fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/818bb4fb8f9efbc712783611d7f66f19ecb0ab3e" target="_blank">818bb4f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7b8473e87d13993f50c9383556f17de02db67c3ctargetblank7b8473ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree818bb4fb8f9efbc712783611d7f66f19ecb0ab3etargetblank818bb4fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/7b8473e87d13993f50c9383556f17de02db67c3c" target="_blank">7b8473e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/818bb4fb8f9efbc712783611d7f66f19ecb0ab3e" target="_blank">818bb4f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -523,7 +536,6 @@ Ignored files:
 
 Untracked files:
     Untracked:  README.html
-    Untracked:  analysis/DILdurchBoost.Rmd
     Untracked:  analysis/allesineinem.Rmd
     Untracked:  data/1/
     Untracked:  data/16/
@@ -538,6 +550,7 @@ Untracked files:
 
 Unstaged changes:
     Modified:   _workflowr.yml
+    Modified:   analysis/first-analysis.Rmd
 
 </code></pre>
 <p>
@@ -576,6 +589,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/818bb4fb8f9efbc712783611d7f66f19ecb0ab3e/analysis/relativ.Rmd" target="_blank">818bb4f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-19
+</td>
+<td>
+print entfernt
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/relativ.html" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1042,6 +1089,7 @@ relative Kalkulationen zur baseline, kein Graph bislang
 </div>
 </div>
 </div>
+<pre class="r"><code>knitr::opts_chunk$set(dev=c(&#39;png&#39;, &#39;pdf&#39;), width=7, height=5)</code></pre>
 <pre class="r"><code>library(plyr)
 library(tidyverse)
 library(ggplot2)
@@ -1295,6 +1343,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL-1.png" target="_blank">5591c1b</a>
@@ -1609,6 +1668,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL d 95-1.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL d 95-1.png" target="_blank">5591c1b</a>
 </td>
 <td>
@@ -1888,6 +1958,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Rectum mean-1.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Rectum mean-1.png" target="_blank">5591c1b</a>
 </td>
 <td>
@@ -1912,7 +1993,7 @@ Mein Vorname
 </table>
 </div>
 </div>
-<pre class="r"><code>p = ggplot() + 
+<pre class="r"><code>ggplot() + 
 #  geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = &quot;blue&quot;) +
  # geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = &quot;red&quot;) +
   #geom_line(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = &quot;green&quot;) +
@@ -1941,60 +2022,12 @@ Mein Vorname
    ) +
   ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20percent%20from%20the%201st%20fraction%20with%20DIL%20and%20boost%20mean%20POINTS-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#print(p)
+    
 
-
-print(p)</code></pre>
-<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL%20and%20boost%20mean%20POINTS-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-POINTS-1">
-Past versions of “Relative dose changes in Grey from the 1st fraction with DIL and boost mean POINTS-1.png”
-</button>
-</p>
-<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-POINTS-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean POINTS-1.png" target="_blank">5591c1b</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-07-09
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean POINTS-1.png" target="_blank">32b4700</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-07-04
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code>#df3 &lt;- DIL_rel %&gt;%  mutate(Type = &#39;Amocycillin&#39;) %&gt;%
+#df3 &lt;- DIL_rel %&gt;%  mutate(Type = &#39;Amocycillin&#39;) %&gt;%
  #      bind_rows(Boost_mean_rel %&gt;%
   #         mutate(Type = &#39;Penicillin&#39;))
 
@@ -2257,6 +2290,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Bladder mean-1.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with Bladder mean-1.png" target="_blank">5591c1b</a>
 </td>
 <td>
@@ -2281,7 +2325,7 @@ Mein Vorname
 </table>
 </div>
 </div>
-<pre class="r"><code>p = ggplot() + 
+<pre class="r"><code>ggplot() + 
   geom_line(data = DIL_mean_rel_table, aes(x = 1:14, y = DIL_mean_rel$relchange), color = &quot;blue&quot;) +
   geom_line(data = Boost_mean_rel_table , aes(x = 1:14, y = Boost_mean_rel$relchange), color = &quot;red&quot;) +
   geom_line(data = Rectum_mean_rel_table , aes(x = 1:14, y = Rectum_mean_rel$relchange), color = &quot;green&quot;) +
@@ -2311,67 +2355,8 @@ Mein Vorname
    ) +
   ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung
-
-
-print(p)</code></pre>
-<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20Grey%20from%20the%201st%20fraction%20with%20DIL%20and%20boost%20mean%20lines-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-lines-1">
-Past versions of “Relative dose changes in Grey from the 1st fraction with DIL and boost mean lines-1.png”
-</button>
-</p>
-<div id="fig-no-spaces-Relative-dose-changes-in-Grey-from-the-1st-fraction-with-DIL-and-boost-mean-lines-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean lines-1.png" target="_blank">5591c1b</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-07-09
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/dssrttn/Test/blob/32b470071db8181c308c0befb6ad79849a1a0607/docs/figure/relativ.Rmd/Relative dose changes in Grey from the 1st fraction with DIL and boost mean lines-1.png" target="_blank">32b4700</a>
-</td>
-<td>
-Mein Vorname
-</td>
-<td>
-2020-07-04
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<pre class="r"><code>#df3 &lt;- DIL_rel %&gt;%  mutate(Type = &#39;Amocycillin&#39;) %&gt;%
- #      bind_rows(Boost_mean_rel %&gt;%
-  #         mutate(Type = &#39;Penicillin&#39;))
-
-
-#ggplot(df3,aes(y = Mittelwert,x = (1:28),color = Type)) + 
-#  geom_line() +
- # ggtitle(&quot;Merged datasets&quot;)</code></pre>
+  ylab(&quot;Relative dose changes&quot;)   #+ # Y-Achsen-Beschriftung</code></pre>
+<p><img src="figure/relativ.Rmd/Relative%20dose%20changes%20in%20percen%20from%20the%201st%20fraction%20with%20DIL%20and%20boost%20mean%20lines-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/relativ.Rmd/linear%20regression%20Rectum%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2396,6 +2381,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/linear regression Rectum DIL means-1.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Rectum DIL means-1.png" target="_blank">5591c1b</a>
@@ -2491,6 +2487,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/linear regression Rectum DIL means-2.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Rectum DIL means-2.png" target="_blank">5591c1b</a>
 </td>
 <td>
@@ -2550,6 +2557,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/linear regression Bladder DIL means-1.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Bladder DIL means-1.png" target="_blank">5591c1b</a>
@@ -2646,6 +2664,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/linear regression Bladder DIL means-2.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Bladder DIL means-2.png" target="_blank">5591c1b</a>
 </td>
 <td>
@@ -2681,6 +2710,8 @@ Mein Vorname
 </table>
 </div>
 </div>
+<div id="linear-regression-boost-dil-means" class="section level3">
+<h3>linear regression Boost DIL means</h3>
 <pre class="r"><code>plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/relativ.Rmd/linear%20regression%20Boost%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2705,6 +2736,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/linear regression Boost DIL means-1.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Boost DIL means-1.png" target="_blank">5591c1b</a>
@@ -2800,6 +2842,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/ef54e2deed7fec9da91d5a6f0eaf1a76cc40be68/docs/figure/relativ.Rmd/linear regression Boost DIL means-2.png" target="_blank">ef54e2d</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-10
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/5591c1b867c6883a9144bb7a73ed2ab6098e2b58/docs/figure/relativ.Rmd/linear regression Boost DIL means-2.png" target="_blank">5591c1b</a>
 </td>
 <td>
@@ -2853,7 +2906,7 @@ Mein Vorname
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       Europe/Berlin               
- date     2020-07-10                  
+ date     2020-07-19                  
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version date       lib source        
@@ -2946,6 +2999,7 @@ Mein Vorname
 [3] /usr/lib/R/site-library
 [4] /usr/lib/R/library</code></pre>
 </div>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -2994,6 +3048,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
