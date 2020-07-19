@@ -195,6 +195,8 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 ### DIL minus boost - boxplot with percentage relation
 
+(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))
+
 ```{r DIL minus boost Boxplot, message=FALSE}
 
 source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
@@ -209,6 +211,33 @@ DIL_minus_Boost_mean_table %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 ```
+
+
+### Linear regression Boost mean DIL mean
+
+```{r linear regression Boost DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+
+plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)
+x_Boost_mean_rel <- Boost_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
+
+linearregression_Boost_DIL <- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+fitted.values(linearregression_Boost_DIL)
+residuals(linearregression_Boost_DIL)
+
+summary(linearregression_Boost_DIL)
+
+
+plot(x_Boost_mean_rel, y_DIL_mean_rel)
+abline(linearregression_Boost_DIL, col = "red")
+
+
+```
+
+
 
 ## Rectum
 ### Rectum changes relative to the first fraction of Rectum
@@ -339,26 +368,3 @@ abline(linearregression_Bladder_DIL, col = "red")
 ```
 
 
-### Linear regression Boost mean DIL mean
-
-```{r linear regression Boost DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
-
-plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)
-x_Boost_mean_rel <- Boost_mean_rel$relchange
-y_DIL_mean_rel <- DIL_mean_rel$relchange
-
-linearregression_Boost_DIL <- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
-
-lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
-
-fitted.values(linearregression_Boost_DIL)
-residuals(linearregression_Boost_DIL)
-
-summary(linearregression_Boost_DIL)
-
-
-plot(x_Boost_mean_rel, y_DIL_mean_rel)
-abline(linearregression_Boost_DIL, col = "red")
-
-
-```
