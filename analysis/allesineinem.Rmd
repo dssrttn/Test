@@ -32,43 +32,6 @@ DIL<- read_csv2('data/1/DIL.csv')
 Boost <- read_csv2('data/1/Boost.csv')
 ```
 
-## Relation of DIL and boost
-
-### DIL[n] to boost[1] - boxplot with percentage relation
-
-```{r DIL Boxplot, message=FALSE}
-
-source(here::here("code/Boxplot_to_DIL_mean.R"))
-
-```
-
-### DIL[n] to boost[1] - table with percentage relation
-
-```{r DIL to Boost table, message=FALSE}
-# source(here::here("code/Boxplot_to_DIL_mean.R"))
-DIL_Boost_mean_relation %>%
- knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
-
-```
-
-### DIL minus boost - boxplot with percentage relation
-
-```{r DIL minus boost Boxplot, message=FALSE}
-
-source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
-```
-
-### DIL minus boost - table with percentage relation
-
-```{r DIL minus Boost table, message=FALSE}
-# source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
-DIL_minus_Boost_mean_table %>%
-  knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
-
-```
-
 
 ## DIL and boost changes during the treatment period
 
@@ -210,5 +173,42 @@ lines(density(HistogramBoostrelchange$relchange), col="black", lwd=2)
   
 ```
 
+
+## Relation of DIL and boost
+
+### DIL[n] to boost[1] - boxplot with percentage relation
+
+```{r DIL Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_to_DIL_mean.R"))
+
+```
+
+### DIL[n] to boost[1] - table with percentage relation
+
+```{r DIL to Boost table, message=FALSE}
+# source(here::here("code/Boxplot_to_DIL_mean.R"))
+DIL_Boost_mean_relation %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+```
+
+### DIL minus boost - boxplot with percentage relation
+
+```{r DIL minus boost Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
+```
+
+### DIL minus boost - table with percentage relation
+
+```{r DIL minus Boost table, message=FALSE}
+# source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
+DIL_minus_Boost_mean_table %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+```
 
 
