@@ -10,12 +10,12 @@ Rectum_mean_rel <- ddply(Rectum_mean_rel, .(), transform, relchange = ((Mittelwe
 Rectum_mean_rel_table <- ddply(Rectum_mean_rel, .(), transform, relchange = ((Mittelwert - Mittelwert[1]) / Mittelwert[1]) * 100)
 
 
-#Rectum_mean_rel_table <- Rectum_mean_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
 Rectum_mean_rel_table <- Rectum_mean_rel_table %>% rename('Relative change' = 'relchange')  #renmae column 'relchange' with 'Relative change'
 
 
 
 Rectum_mean_rel_table <- Rectum_mean_rel_table %>% mutate(.id = row_number())
+Rectum_mean_rel_table <- Rectum_mean_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
 
 #Rectum_mean_rel_table[1:14, 1] = (1:14)
 
