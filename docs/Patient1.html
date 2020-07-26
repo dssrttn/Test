@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed5276781b2b078df5ffb7e807d3fe1aed3b00d55targetblankd527678a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/d5276781b2b078df5ffb7e807d3fe1aed3b00d55" target="_blank">d527678</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0d74c4f5c022daf37a4d384c3ec82d5d34702746targetblank0d74c4fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/0d74c4f5c022daf37a4d384c3ec82d5d34702746" target="_blank">0d74c4f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreed5276781b2b078df5ffb7e807d3fe1aed3b00d55targetblankd527678a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree0d74c4f5c022daf37a4d384c3ec82d5d34702746targetblank0d74c4fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/d5276781b2b078df5ffb7e807d3fe1aed3b00d55" target="_blank">d527678</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/0d74c4f5c022daf37a4d384c3ec82d5d34702746" target="_blank">0d74c4f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -620,6 +620,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/0d74c4f5c022daf37a4d384c3ec82d5d34702746/analysis/Patient1.Rmd" target="_blank">0d74c4f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+<td>
+auch variable x-Skalierung für lollipop plot boost
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/379d9a4c6966166ab01d54c214364eccc68883fb/docs/Patient1.html" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -870,6 +904,43 @@ ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) #DIL_relabs$x
   ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
     plottheme</code></pre>
 <p><img src="figure/Patient1.Rmd/Lollipop%20plot%20DIL%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-DIL-relative-change-1">
+Past versions of “Lollipop plot DIL relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-DIL-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/Lollipop plot DIL relative change-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="boost-changes-relative-to-the-first-fraction-of-boost" class="section level3">
 <h3>Boost changes relative to the first fraction of boost</h3>
@@ -1056,9 +1127,9 @@ Relative change
 <h3>Lollipop plot for Boost mean changes relative to the first fraction of Boost</h3>
 <pre class="r"><code>source(here::here(&quot;code/Lollipopplot_Boost_mean.R&quot;))
 
-ggplot(Boost_mean_rel,aes(x=x 
+ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
                         ,y=y )) +
-  geom_segment( aes(x=x, xend=x, y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+  geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
   geom_point() +
   #geom_line() +
   expand_limits(y = c(-2, 2)) +
@@ -1070,6 +1141,43 @@ ggplot(Boost_mean_rel,aes(x=x
   ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
   plottheme</code></pre>
 <p><img src="figure/Patient1.Rmd/Lollipop%20plot%20Boost%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-Boost-relative-change-1">
+Past versions of “Lollipop plot Boost relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-Boost-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/Lollipop plot Boost relative change-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="line-plot-for-dil-and-boost-mean-changes-relative-to-their-respective-first-fraction" class="section level3">
 <h3>Line plot for DIL and boost mean changes relative to their respective first fraction</h3>
@@ -1088,6 +1196,43 @@ ggplot(Boost_mean_rel,aes(x=x
   ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
   plottheme</code></pre>
 <p><img src="figure/Patient1.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot-1">
+Past versions of “Relative dose changes DIL und boost in percent line plot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/Relative dose changes DIL und boost in percent line plot-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="histogram-for-dil-mean-changes-relative-to-the-first-fraction-of-dil" class="section level3">
 <h3>Histogram for DIL mean changes relative to the first fraction of DIL</h3>
@@ -1104,6 +1249,43 @@ hist(HistogramDILrelchange$relchange,
 rug(jitter(HistogramDILrelchange$relchange))
 lines(density(HistogramDILrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
 <p><img src="figure/Patient1.Rmd/DIL%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-histogramm-relative-change-1">
+Past versions of “DIL histogramm relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-histogramm-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/DIL histogramm relative change-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="histogram-for-boost-mean-changes-relative-to-the-first-fraction-of-boost" class="section level3">
 <h3>Histogram for boost mean changes relative to the first fraction of boost</h3>
@@ -1120,6 +1302,43 @@ hist(HistogramBoostrelchange$relchange,
 rug(jitter(HistogramBoostrelchange$relchange))
 lines(density(HistogramBoostrelchange$relchange), col=&quot;black&quot;, lwd=2)</code></pre>
 <p><img src="figure/Patient1.Rmd/Boost%20histogramm%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Boost-histogramm-relative-change-1">
+Past versions of “Boost histogramm relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Boost-histogramm-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/Boost histogramm relative change-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="relation-of-dil-and-boost" class="section level2">
@@ -1129,6 +1348,43 @@ lines(density(HistogramBoostrelchange$relchange), col=&quot;black&quot;, lwd=2)<
 <p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
 <pre class="r"><code>source(here::here(&quot;code/Boxplot_to_DIL_mean.R&quot;))</code></pre>
 <p><img src="figure/Patient1.Rmd/DIL%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-Boxplot-1">
+Past versions of “DIL Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/DIL Boxplot-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="diln-to-boost1---table-with-percentage-relation" class="section level3">
 <h3>DIL[n] to boost[1] - table with percentage relation</h3>
@@ -1255,6 +1511,43 @@ Numbers
 <p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
 <pre class="r"><code>source(here::here(&quot;code/Boxplot_DIL_minus_Boost_mean.R&quot;))</code></pre>
 <p><img src="figure/Patient1.Rmd/DIL%20minus%20boost%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-minus-boost-Boxplot-1">
+Past versions of “DIL minus boost Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-minus-boost-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/DIL minus boost Boxplot-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dil-minus-boost---table-with-percentage-relation" class="section level3">
 <h3>DIL minus boost - table with percentage relation</h3>
@@ -1380,6 +1673,43 @@ Numbers
 <h3>Linear regression Boost mean DIL mean</h3>
 <pre class="r"><code>plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/Patient1.Rmd/linear%20regression%20Boost%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-1">
+Past versions of “linear regression Boost DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/linear regression Boost DIL means-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>x_Boost_mean_rel &lt;- Boost_mean_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
@@ -1429,6 +1759,43 @@ F-statistic: 39.45 on 1 and 12 DF,  p-value: 4.063e-05</code></pre>
 <pre class="r"><code>plot(x_Boost_mean_rel, y_DIL_mean_rel)
 abline(linearregression_Boost_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/Patient1.Rmd/linear%20regression%20Boost%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-2">
+Past versions of “linear regression Boost DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/linear regression Boost DIL means-2.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="rectum" class="section level2">
@@ -1636,12 +2003,86 @@ ggplot(Rectum_mean_rel, aes(x=x, y=y)) +
   ylab(&quot;Relative dose changes&quot;) +
    plottheme</code></pre>
 <p><img src="figure/Patient1.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20rectum%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-relative-dose-changes-of-rectum-in-percent-1">
+Past versions of “Lollipop plot relative dose changes of rectum in percent-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-relative-dose-changes-of-rectum-in-percent-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/Lollipop plot relative dose changes of rectum in percent-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="linear-regression-rectum-mean-and-dil-mean" class="section level2">
 <h2>Linear regression rectum mean and DIL mean</h2>
 <pre class="r"><code>plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/Patient1.Rmd/linear%20regression%20Rectum%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Rectum-DIL-means-1">
+Past versions of “linear regression Rectum DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Rectum-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/linear regression Rectum DIL means-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>x_Rectum_mean_rel &lt;- Rectum_mean_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
@@ -1686,6 +2127,43 @@ F-statistic: 0.004935 on 1 and 12 DF,  p-value: 0.9452</code></pre>
 <pre class="r"><code>plot(x_Rectum_mean_rel, y_DIL_mean_rel)
 abline(linearregression_rectum_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/Patient1.Rmd/linear%20regression%20Rectum%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Rectum-DIL-means-2">
+Past versions of “linear regression Rectum DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Rectum-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/linear regression Rectum DIL means-2.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bladder" class="section level2">
 <h2>Bladder</h2>
@@ -1891,6 +2369,43 @@ ggplot(Bladder_mean_rel, aes(x=x, y=y)) +
   ylab(&quot;Relative dose changes&quot;) +
    plottheme</code></pre>
 <p><img src="figure/Patient1.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20bladder%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-relative-dose-changes-of-bladder-in-percent-1">
+Past versions of “Lollipop plot relative dose changes of bladder in percent-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-relative-dose-changes-of-bladder-in-percent-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/Lollipop plot relative dose changes of bladder in percent-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="relation-bladder-mean-and-dil-mean" class="section level2">
@@ -1899,6 +2414,43 @@ ggplot(Bladder_mean_rel, aes(x=x, y=y)) +
 
 plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/Patient1.Rmd/linear%20regression%20Bladder%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-1">
+Past versions of “linear regression Bladder DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/linear regression Bladder DIL means-1.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>x_Bladder_mean_rel &lt;- Bladder_mean_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
@@ -1945,6 +2497,43 @@ F-statistic: 0.5002 on 1 and 12 DF,  p-value: 0.4929</code></pre>
 <pre class="r"><code>plot(x_Bladder_mean_rel, y_DIL_mean_rel)
 abline(linearregression_Bladder_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/Patient1.Rmd/linear%20regression%20Bladder%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-2">
+Past versions of “linear regression Bladder DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/379d9a4c6966166ab01d54c214364eccc68883fb/docs/figure/Patient1.Rmd/linear regression Bladder DIL means-2.png" target="_blank">379d9a4</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-07-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="displacement-relocation-in-cm" class="section level1">
