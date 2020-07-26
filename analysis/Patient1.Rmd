@@ -100,9 +100,9 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
 ```{r Lollipop plot Boost relative change, message=FALSE}
 source(here::here("code/Lollipopplot_Boost_mean.R"))
 
-ggplot(Boost_mean_rel,aes(x=x 
+ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
                         ,y=y )) +
-  geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+  geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
   geom_point() +
   #geom_line() +
   expand_limits(y = c(-2, 2)) +
