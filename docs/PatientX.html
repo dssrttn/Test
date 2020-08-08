@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree2d78656c07a1ce6c9a9fc0f7c3dbdfcde790dd0btargetblank2d78656a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/2d78656c07a1ce6c9a9fc0f7c3dbdfcde790dd0b" target="_blank">2d78656</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173targetblank49f6ddba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173" target="_blank">49f6ddb</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree2d78656c07a1ce6c9a9fc0f7c3dbdfcde790dd0btargetblank2d78656a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173targetblank49f6ddba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/2d78656c07a1ce6c9a9fc0f7c3dbdfcde790dd0b" target="_blank">2d78656</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173" target="_blank">49f6ddb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -620,6 +620,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173/analysis/PatientX.Rmd" target="_blank">49f6ddb</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+<td>
+dynamische yachse mit scale, orangee lollipop abline
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/e1e7f90389289e06ae36d45189dd14710e1f7e9e/docs/PatientX.html" target="_blank">e1e7f90</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1209,11 +1243,9 @@ ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
                         ,y=y )) +
   geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
   geom_point() +
-  #geom_line() +
-  expand_limits(y = c(-2, 2)) +
-   scale_y_continuous(breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+   scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
   scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
-  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+    geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
   ggtitle(&quot;Boost - Relative dose changes in percent from the 1st fraction with Boost&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
   ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
@@ -1242,6 +1274,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/e1e7f90389289e06ae36d45189dd14710e1f7e9e/docs/figure/PatientX.Rmd/Lollipop plot Boost relative change-1.png" target="_blank">e1e7f90</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/a84745c37a5fdf6c6fe29b5db87ad19fc131a8c5/docs/figure/PatientX.Rmd/Lollipop plot Boost relative change-1.png" target="_blank">a84745c</a>
@@ -1278,10 +1321,10 @@ Mein Vorname
  geom_point(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
   geom_point(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
       scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
-   expand_limits(y = c(-2, 2)) +
-  scale_y_continuous(breaks = seq(-2, 2, 1.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+  # expand_limits(y = c(-2, 2)) +
+ scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
     scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel_table)))  + # adds only specific ticks
-      geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;black&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
+      geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
   ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
   ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
@@ -1978,9 +2021,9 @@ ggplot(Rectum_mean_rel, aes(x=1:nrow(Rectum_mean_rel)
                             , y=y)) + 
   geom_segment( aes(x=1:nrow(Rectum_mean_rel), xend=1:nrow(Rectum_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
   geom_point() +
-    scale_y_continuous(breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+   scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
   scale_x_continuous(breaks = c(1,5,10,nrow(Rectum_mean_rel)))  + # adds only specific ticks
-  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
   ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
   ylab(&quot;Relative dose changes&quot;) +
@@ -2353,16 +2396,14 @@ Relative change
 ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
    geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
     geom_point() +
-  #geom_line() +
-# expand_limits(y = c(-5, 10)) +
-  scale_y_continuous(breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
   
   #pretty_breaks()
   
    # scale_y_continuous(breaks = c(min(y), max(y)), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
   #scale_y_continuous(breaks = seq(-5, 10, 1.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
     scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
-  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
+   geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
    ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction in rectum dvh&quot;) +
   xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
   ylab(&quot;Relative dose changes&quot;) +
