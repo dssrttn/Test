@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173targetblank49f6ddba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173" target="_blank">49f6ddb</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7b6fb0702cb3abe7298e8f89124745d7a00106dbtargetblank7b6fb07a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/7b6fb0702cb3abe7298e8f89124745d7a00106db" target="_blank">7b6fb07</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173targetblank49f6ddba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree7b6fb0702cb3abe7298e8f89124745d7a00106dbtargetblank7b6fb07a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/49f6ddb04d06a3d9a90ed3ddb0f578ce5dffc173" target="_blank">49f6ddb</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/7b6fb0702cb3abe7298e8f89124745d7a00106db" target="_blank">7b6fb07</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -544,6 +544,8 @@ Untracked files:
     Untracked:  README.html
     Untracked:  analysis/Patient 1.Rmd
     Untracked:  code/Boxplot_DIL_minus_Boost_mean2.R
+    Untracked:  code/boxplotdilminusboostggplot.Rmd
+    Untracked:  code/boxplotdilminusboostggplot.html
     Untracked:  code/lineplottheme.R
     Untracked:  data/1/
     Untracked:  data/10/
@@ -582,6 +584,7 @@ Unstaged changes:
     Modified:   analysis/dilundboost.Rmd
     Modified:   analysis/kable.Rmd
     Modified:   code/DILrelchange.R
+    Modified:   code/cbPalette.R
 
 </code></pre>
 <p>
@@ -620,6 +623,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/7b6fb0702cb3abe7298e8f89124745d7a00106db/analysis/PatientX.Rmd" target="_blank">7b6fb07</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+<td>
+zwischenspeicherung, beimm ggplot boxplot erstellen
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/c150df1fe7f3bf78fe62b92f59b3cd33cf37381d/docs/PatientX.html" target="_blank">c150df1</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -997,7 +1034,7 @@ ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) #DIL_relabs$x
    geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
     geom_point() +
   scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-#   scale_x_continuous( breaks = pretty_breaks())  + # adds ticks automatically
+  # expand takes two values, a multiplier and an addition. The multiplier expands the axis by that amount in both directions, here 5%. The addition is then added on top.
      scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
   geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
@@ -1276,6 +1313,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/c150df1fe7f3bf78fe62b92f59b3cd33cf37381d/docs/figure/PatientX.Rmd/Lollipop plot Boost relative change-1.png" target="_blank">c150df1</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/e1e7f90389289e06ae36d45189dd14710e1f7e9e/docs/figure/PatientX.Rmd/Lollipop plot Boost relative change-1.png" target="_blank">e1e7f90</a>
 </td>
 <td>
@@ -1352,6 +1400,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/c150df1fe7f3bf78fe62b92f59b3cd33cf37381d/docs/figure/PatientX.Rmd/Relative dose changes DIL und boost in percent line plot-1.png" target="_blank">c150df1</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/167c81160c058188d9a85629b5e765cc2026ed46/docs/figure/PatientX.Rmd/Relative dose changes DIL und boost in percent line plot-1.png" target="_blank">167c811</a>
@@ -2053,6 +2112,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/c150df1fe7f3bf78fe62b92f59b3cd33cf37381d/docs/figure/PatientX.Rmd/Lollipop plot relative dose changes of rectum in percent-1.png" target="_blank">c150df1</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/a84745c37a5fdf6c6fe29b5db87ad19fc131a8c5/docs/figure/PatientX.Rmd/Lollipop plot relative dose changes of rectum in percent-1.png" target="_blank">a84745c</a>
 </td>
 <td>
@@ -2431,6 +2501,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/c150df1fe7f3bf78fe62b92f59b3cd33cf37381d/docs/figure/PatientX.Rmd/Lollipop plot relative dose changes of bladder in percent-1.png" target="_blank">c150df1</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/dssrttn/Test/blob/a84745c37a5fdf6c6fe29b5db87ad19fc131a8c5/docs/figure/PatientX.Rmd/Lollipop plot relative dose changes of bladder in percent-1.png" target="_blank">a84745c</a>
