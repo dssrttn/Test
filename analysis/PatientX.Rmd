@@ -140,45 +140,6 @@ ggplot() +
 ```
 
 
-### Histogram for DIL mean changes relative to the first fraction of DIL
-
-
-```{r DIL histogramm relative change, message=FALSE}
-source("code/HistogramDILrelchange.R")
-
-par(family="serif") # Schriftart
-par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
-par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
-hist(HistogramDILrelchange$relchange,
-         main="",
-    #DIL Mittelwert" 
-     ylab="Density", xlab="Relative DIL dose change", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
-    cex.lab=rel(1.8), cex.axis=1.5, col = "transparent")
-rug(jitter(HistogramDILrelchange$relchange))
-lines(density(HistogramDILrelchange$relchange), col="black", lwd=2)
-
-```
-
-### Histogram for boost mean changes relative to the first fraction of boost
-
-```{r Boost histogramm relative change, message=FALSE}
-source("code/HistogramBoostrelchange.R")
-
-par(family="serif") # Schriftart
-par(mar = c(5, 5, 2, 2)) # Abstände um den Plot. 2. Po´ition y-Achse
-par(mgp=c(3,1,0)) # mpg: Abstand Label zu Achse
-hist(HistogramBoostrelchange$relchange,
-         main="",
-    #DIL Mittelwert" 
-     ylab="Density", xlab="Relative boost dose change", mgp=c(3,1,0), las = 1, freq = FALSE, ylim=c(0, 2), #xlim=c(-1, 0.3),
-    cex.lab=rel(1.8), cex.axis=1.5, col = "transparent")
-rug(jitter(HistogramBoostrelchange$relchange))
-lines(density(HistogramBoostrelchange$relchange), col="black", lwd=2)
-
-
-  
-```
-
 
 ## Relation of DIL and boost
 
