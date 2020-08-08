@@ -11,13 +11,10 @@ DIL_mean_rel_table <- ddply(DIL_mean_rel, .(), transform, relchange = ((Mittelwe
 
 
 DIL_mean_rel_table <- DIL_mean_rel_table %>% rename('Mean' = 'Mittelwert') #renmae column 'Mittelwert' with 'Mean'
-DIL_mean_rel_table <- DIL_mean_rel_table %>% mutate(.id = row_number())
 DIL_mean_rel_table <- DIL_mean_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
-
 DIL_mean_rel_table <- DIL_mean_rel_table %>% rename('Relative change' = 'relchange')  #renmae column 'relchange' with 'Relative change'
 
-
-#DIL_mean_rel_table[1:14, 1] = (1:row_number())
+DIL_mean_rel_table[1:14, 1] = (1:14)
 
 DIL_mean_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%

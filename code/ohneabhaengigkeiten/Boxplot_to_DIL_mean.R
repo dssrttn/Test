@@ -11,13 +11,18 @@ DIL_Boost_mean_boxplot
 DIL_Boost_mean_relation <- ddply(DIL_Boost_mean_boxplot, .(), transform, DILtoBoost_1 = (Mittelwert_DIL/ Mittelwert_Boost[1]))
 DIL_Boost_mean_relation
 
+DIL_Boost_mean_relation <- DIL_Boost_mean_relation %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
+DIL_Boost_mean_relation[1:14, 1] = (1:14)
+DIL_Boost_mean_relation
 
-max <-max(DIL_Boost_mean_relation$DILtoBoost_1) # _1 für 1. Fraktion
+
+
+max <-max(DIL_Boost_mean_relation$DILtoBoost_1)
 min <-min(DIL_Boost_mean_relation$DILtoBoost_1)
 
 par(bty="n") # keinen Rahmen
 par(family="serif") # Schriftart
-par(mar = c(2, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mar = c(0, 6.5, 1, 1)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
 boxplot(DIL_Boost_mean_relation$DILtoBoost_1,
         ylab= "DIL[n] to Boost[1]", #y-Achse-Beschriftung

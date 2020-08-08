@@ -10,7 +10,7 @@ plottheme <- list(
       # X-Achsen-Beschriftungs-(groß)-Parameter
       axis.title.y = element_text(margin = unit(c(0, 2, 0, 0), "mm"), family = "serif", size=rel(2)), # Y-Achsen-Beschriftungs-(groß)-Parameter
       plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"), # Abstände um den Graphen in top-right-bottom-left Orientierung
-      axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.3, "cm"), # Teilstriche
+      axis.ticks = element_line(color = 'black', size = 0.5, linetype = 1), axis.ticks.length = unit(0.2, "cm"), # Teilstriche
       axis.line = element_line(color = 'black', size = 0.3, linetype = 1) # Achsenlinie
     )
 )

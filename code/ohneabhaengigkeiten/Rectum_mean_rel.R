@@ -17,7 +17,7 @@ Rectum_mean_rel_table <- Rectum_mean_rel_table %>% rename('Relative change' = 'r
 Rectum_mean_rel_table <- Rectum_mean_rel_table %>% mutate(.id = row_number())
 Rectum_mean_rel_table <- Rectum_mean_rel_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
 
-
+#Rectum_mean_rel_table[1:14, 1] = (1:14)
 
 Rectum_mean_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Rectum mean descriptive statistics") %>%
@@ -25,4 +25,5 @@ Rectum_mean_rel_table %>%
                 full_width = TRUE)
 
 
+x <- (1:14)
 y <- Rectum_mean_rel$relchange

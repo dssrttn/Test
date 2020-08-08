@@ -11,6 +11,11 @@ DIL_minus_Boost_mean_boxplot
 DIL_minus_Boost_mean_table <- ddply(DIL_minus_Boost_mean_boxplot, .(), transform, dilminusboost = (Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))
 DIL_minus_Boost_mean_table
 
+DIL_minus_Boost_mean_table <- DIL_minus_Boost_mean_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
+DIL_minus_Boost_mean_table[1:14, 1] = (1:14)
+DIL_minus_Boost_mean_table
+
+
 
 max <-max(DIL_minus_Boost_mean_table$dilminusboost)
 min <-min(DIL_minus_Boost_mean_table$dilminusboost)
@@ -25,7 +30,7 @@ boxplot(DIL_minus_Boost_mean_table$dilminusboost,
         col="transparent", #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
         #ylim = c(0, 1),
-        ylim=c(min(0.95*min), max(1.05*max)), # y-Achse range
+        ylim=c(min(0.85), max(1.15)), # y-Achse range
         cex.lab = 2, # Größe Label-Beschriftung
         cex.axis = 1.5, # Größe Achsenbeschriftungen
         mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse

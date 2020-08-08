@@ -1,0 +1,72 @@
+
+---
+title: "Skript X"
+author: "dssrttn"
+date: "2020-07-10"
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+
+```
+
+
+```{r DIL mean for boxplot, message=FALSE, warning=FALSE}
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(psych)
+library(here)
+library(jtools) # for linear regression output. not used so far
+#options(digits=3) # zeigt nur drei Zahlenwerte an
+source("code/plottheme.R")
+source("code/cbPalette.R")
+
+
+
+#DIL<- read_csv2('data/x/DIL.csv')
+#Boost <- read_csv2('data/24/Boost.csv')
+#Rectum <- read_csv2('data/24/Rectum.csv')
+#Bladder <- read_csv2('data/24/Bladder.csv')
+#XVI <- read_csv2('data/24/XVI.csv')
+```
+ 
+
+
+
+
+```{r scripting all files, message=FALSE, warning=FALSE}
+files <- list.files(pattern="*.csv")
+
+for (i in seq_along(files)){
+  assign(files[i], read.csv(files[i]))
+  <do something>
+  write.csv(files[i], paste0("new_", files[i]), sep = ",")
+}
+
+```
+
+
+
+
+
+read.csv expects to read just one file, so you need to loop over files, a R idiomatic way of doing so is to use sapply:
+
+nrows <- sapply( csvfile, function(f) nrow(read.csv(f)) )
+sum(nrows)
+
+For example, here is a rewrite of your complete function:
+
+complete <- function(directory,id = 1:332) {
+    csvfiles <- sprintf("/Users/gcameron/Desktop/%s/%03d.csv", directory, id)
+    nrows <- sapply( csvfiles, function(f) nrow(read.csv(f)) )
+    sum(nrows)
+}
+
