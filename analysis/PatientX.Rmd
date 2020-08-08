@@ -27,7 +27,7 @@ library(jtools) # for linear regression output. not used so far
 #options(digits=3) # zeigt nur drei Zahlenwerte an
 source("code/plottheme.R")
 source("code/cbPalette.R")
-
+source("code/lineplottheme.R")
 
 
 DIL<- read_csv2('data/1/DIL.csv')
@@ -64,19 +64,18 @@ aes(x=1:nrow(speed1)
 ```{r Lollipop plot DIL relative change, message=FALSE}
 source(here::here("code/Lollipopplot_DIL_mean.R"))
 
-
-ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) 
-                      ,y=y )) + 
+ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) #DIL_relabs$x
+                      ,y=y )) + #DIL_relabs$abschange)) +
    geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
     geom_point() +
-scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
+  scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
 #   scale_x_continuous( breaks = pretty_breaks())  + # adds ticks automatically
      scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
- geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
+  geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
  ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
   xlab("Fraction") + # X-Achsen-Beschriftung
   ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
-    plottheme 
+    plottheme
     
 ```
 
@@ -104,13 +103,16 @@ ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
                         ,y=y )) +
   geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
   geom_point() +
-   scale_y_continuous(breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when on e does: scale_y_continuous(labels = scales::percent)
+  #geom_line() +
+  expand_limits(y = c(-2, 2)) +
+   scale_y_continuous(breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
   scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
- geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
+  geom_abline(intercept = 0, slope = 0, lty=2) + # horizontale Linie ohne Steigung, da slope = 0 
   ggtitle("Boost - Relative dose changes in percent from the 1st fraction with Boost") +
   xlab("Fraction") + # X-Achsen-Beschriftung
   ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
-  plottheme
+  plottheme +
+  lineplottheme
 
 ```
 
