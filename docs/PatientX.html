@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree6dc67b19d39219d6f626cce6dda615af79a4b923targetblank6dc67b1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/6dc67b19d39219d6f626cce6dda615af79a4b923" target="_blank">6dc67b1</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree4537f5ecde064ce9a8fbd460138780ca34a732a7targetblank4537f5ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/4537f5ecde064ce9a8fbd460138780ca34a732a7" target="_blank">4537f5e</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree6dc67b19d39219d6f626cce6dda615af79a4b923targetblank6dc67b1a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree4537f5ecde064ce9a8fbd460138780ca34a732a7targetblank4537f5ea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/6dc67b19d39219d6f626cce6dda615af79a4b923" target="_blank">6dc67b1</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/4537f5ecde064ce9a8fbd460138780ca34a732a7" target="_blank">4537f5e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -543,6 +543,7 @@ Untracked files:
     Untracked:  Code commit to github
     Untracked:  README.html
     Untracked:  analysis/Patient 1.Rmd
+    Untracked:  analysis/child/
     Untracked:  code/Boxplot_DIL_minus_Boost_mean2.R
     Untracked:  code/Boxplot_to_DIL_mean2.R
     Untracked:  code/boxplotdilminusboostggplot.R
@@ -582,6 +583,8 @@ Untracked files:
     Untracked:  data/BrowseFiles.py
     Untracked:  data/DVH_Auswertung.py
     Untracked:  data/DVH_Auswertung.pyc
+    Untracked:  data/Literatur ab 20200727/
+    Untracked:  data/pseudonymisiert/
 
 Unstaged changes:
     Modified:   _workflowr.yml
@@ -629,6 +632,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/4537f5ecde064ce9a8fbd460138780ca34a732a7/analysis/PatientX.Rmd" target="_blank">4537f5e</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-09
+</td>
+<td>
+zwischenspeicherung vor skript versuch und nach child document
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/77841ed57882a86ad9e88eae4da4622c9e377f41/docs/PatientX.html" target="_blank">77841ed</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-09
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1117,6 +1154,23 @@ Rectum &lt;- read_csv2(&#39;data/1/Rectum.csv&#39;)
 Bladder &lt;- read_csv2(&#39;data/1/Bladder.csv&#39;)
 XVI &lt;- read_csv2(&#39;data/1/XVI.csv&#39;)</code></pre>
 <p>TURP</p>
+<div id="header-in-child-document" class="section level2">
+<h2>Header in child document</h2>
+<p>Text in child document.</p>
+<pre class="r"><code>str(mtcars)</code></pre>
+<pre><code>&#39;data.frame&#39;:   32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
+</div>
 <div id="dose" class="section level1">
 <h1>Dose</h1>
 <div id="dil-and-boost-changes-during-the-treatment-period" class="section level2">
