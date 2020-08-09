@@ -66,17 +66,14 @@ source(here::here("code/Lollipopplot_DIL_mean.R"))
 
 ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) #DIL_relabs$x
                       ,y=y )) + #DIL_relabs$abschange)) +
-   geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
-    geom_point() +
-  scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  # expand takes two values, a multiplier and an addition. The multiplier expands the axis by that amount in both directions, here 5%. The addition is then added on top.
-  #scale_y_continuous(breaks = c(min(y), max(y))) ticks nur bei minimum und maximum y-wert
-     scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
-  geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
- ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
-  xlab("Fraction") + # X-Achsen-Beschriftung
-  ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
-    plottheme
+geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
+ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme
     
 ```
 
@@ -102,16 +99,14 @@ source(here::here("code/Lollipopplot_Boost_mean.R"))
 
 ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
                         ,y=y )) +
-  geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
-  geom_point() +
-   scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
-    geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
-  ggtitle("Boost - Relative dose changes in percent from the 1st fraction with Boost") +
-  xlab("Fraction") + # X-Achsen-Beschriftung
-  ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
-  plottheme +
-  lineplottheme
+geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
+ggtitle("Boost - Relative dose changes in percent from the 1st fraction with Boost") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme
 
 ```
 
@@ -124,19 +119,17 @@ aes(x=1:nrow(speed1)
 ```{r Relative dose changes DIL und boost in percent line plot, message = FALSE}
 
 ggplot() + 
-  geom_line(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = "DIL")) +
-  geom_line(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = "Boost")) +
- geom_point(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = "DIL")) +
-  geom_point(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = "Boost")) +
-      scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
-  # expand_limits(y = c(-2, 2)) +
- scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-    scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel_table)))  + # adds only specific ticks
-      geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
-  ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
-  xlab("Fraction") + # X-Achsen-Beschriftung
-  ylab("Relative dose changes") +   #+ # Y-Achsen-Beschriftung
-  plottheme
+geom_line(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = "DIL")) +
+geom_line(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = "Boost")) +
+geom_point(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = "DIL")) +
+geom_point(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = "Boost")) +
+scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel_table)))  + # adds only specific ticks
+ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") +   #+ # Y-Achsen-Beschriftung
+plottheme + 
+lineplottheme
 
 ```
 
@@ -238,16 +231,14 @@ source(here::here("code/Rectum_mean_rel.R"))
 
 ggplot(Rectum_mean_rel, aes(x=1:nrow(Rectum_mean_rel)
                             , y=y)) + 
-  geom_segment( aes(x=1:nrow(Rectum_mean_rel), xend=1:nrow(Rectum_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
-  geom_point() +
-   scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  scale_x_continuous(breaks = c(1,5,10,nrow(Rectum_mean_rel)))  + # adds only specific ticks
-   geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
-  ggtitle("DIL - Relative dose changes in percent from the 1st fraction") +
-  xlab("Fraction") + # X-Achsen-Beschriftung
-  ylab("Relative dose changes") +
-  plottheme
-
+geom_segment( aes(x=1:nrow(Rectum_mean_rel), xend=1:nrow(Rectum_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Rectum_mean_rel)))  + # adds only specific ticks
+ggtitle("DIL - Relative dose changes in percent from the 1st fraction") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") +
+plottheme + 
+lineplottheme
 
 
 ```
@@ -302,20 +293,15 @@ source(here::here("code/Bladder_mean_rel.R"))
 
 
 ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
-   geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
-    geom_point() +
-scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  
-  #pretty_breaks()
-  
-   # scale_y_continuous(breaks = c(min(y), max(y)), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  #scale_y_continuous(breaks = seq(-5, 10, 1.0), labels=function(x) paste0(x,"%")) + #labels=function(x) paste0(x,"%") adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-    scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
-   geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
-   ggtitle("DIL - Relative dose changes in percent from the 1st fraction in rectum dvh") +
-  xlab("Fraction") + # X-Achsen-Beschriftung
-  ylab("Relative dose changes") +
-   plottheme
+ geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
+geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
+ggtitle("DIL - Relative dose changes in percent from the 1st fraction in rectum dvh") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") +
+plottheme + 
+lineplottheme
 
 ```
 
