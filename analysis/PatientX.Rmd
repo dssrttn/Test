@@ -39,6 +39,11 @@ XVI <- read_csv2('data/1/XVI.csv')
 
 TURP
 
+
+```{r parent, child = here::here("analysis/child/child.Rmd")}
+```
+
+
 # Dose
 ## DIL and boost changes during the treatment period
 
