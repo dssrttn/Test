@@ -426,7 +426,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-08-08
+<strong>Last updated:</strong> 2020-08-09
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree694a490c4a530ce8c29fa1e14d7e4b3a02778de0targetblank694a490a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/694a490c4a530ce8c29fa1e14d7e4b3a02778de0" target="_blank">694a490</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree465050f328ada246da4eca05e2e7039b5f4baaf6targetblank465050fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/465050f328ada246da4eca05e2e7039b5f4baaf6" target="_blank">465050f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree694a490c4a530ce8c29fa1e14d7e4b3a02778de0targetblank694a490a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree465050f328ada246da4eca05e2e7039b5f4baaf6targetblank465050fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/694a490c4a530ce8c29fa1e14d7e4b3a02778de0" target="_blank">694a490</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/465050f328ada246da4eca05e2e7039b5f4baaf6" target="_blank">465050f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -624,6 +624,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/465050f328ada246da4eca05e2e7039b5f4baaf6/analysis/PatientX.Rmd" target="_blank">465050f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-09
+</td>
+<td>
+lineplot theme für alle line oder lollipop plots
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/8d9518f5fe465ea5c801438e1fc89f26b01f2387/docs/PatientX.html" target="_blank">8d9518f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-08
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1066,17 +1100,14 @@ Relative change
 
 ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) #DIL_relabs$x
                       ,y=y )) + #DIL_relabs$abschange)) +
-   geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
-    geom_point() +
-  scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  # expand takes two values, a multiplier and an addition. The multiplier expands the axis by that amount in both directions, here 5%. The addition is then added on top.
-  #scale_y_continuous(breaks = c(min(y), max(y))) ticks nur bei minimum und maximum y-wert
-     scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
-  geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
- ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
-  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
-    plottheme</code></pre>
+geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme</code></pre>
 <p><img src="figure/PatientX.Rmd/Lollipop%20plot%20DIL%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-DIL-relative-change-1">
@@ -1314,16 +1345,14 @@ Relative change
 
 ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
                         ,y=y )) +
-  geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
-  geom_point() +
-   scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
-    geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
-  ggtitle(&quot;Boost - Relative dose changes in percent from the 1st fraction with Boost&quot;) +
-  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
-  plottheme +
-  lineplottheme</code></pre>
+geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
+ggtitle(&quot;Boost - Relative dose changes in percent from the 1st fraction with Boost&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme</code></pre>
 <p><img src="figure/PatientX.Rmd/Lollipop%20plot%20Boost%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-Boost-relative-change-1">
@@ -1400,19 +1429,17 @@ Mein Vorname
 <h3>Line plot for DIL and boost mean changes relative to their respective first fraction</h3>
 <p>nrow(DIL_mean_rel) aes(x=1:nrow(speed1)</p>
 <pre class="r"><code>ggplot() + 
-  geom_line(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
-  geom_line(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
- geom_point(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
-  geom_point(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
-      scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
-  # expand_limits(y = c(-2, 2)) +
- scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-    scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel_table)))  + # adds only specific ticks
-      geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
-  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
-  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
-  plottheme</code></pre>
+geom_line(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
+geom_line(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
+geom_point(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
+geom_point(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
+scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel_table)))  + # adds only specific ticks
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
+plottheme + 
+lineplottheme</code></pre>
 <p><img src="figure/PatientX.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot-1">
@@ -2125,15 +2152,14 @@ Relative change
 
 ggplot(Rectum_mean_rel, aes(x=1:nrow(Rectum_mean_rel)
                             , y=y)) + 
-  geom_segment( aes(x=1:nrow(Rectum_mean_rel), xend=1:nrow(Rectum_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
-  geom_point() +
-   scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  scale_x_continuous(breaks = c(1,5,10,nrow(Rectum_mean_rel)))  + # adds only specific ticks
-   geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
-  ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction&quot;) +
-  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;) +
-  plottheme</code></pre>
+geom_segment( aes(x=1:nrow(Rectum_mean_rel), xend=1:nrow(Rectum_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Rectum_mean_rel)))  + # adds only specific ticks
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) +
+plottheme + 
+lineplottheme</code></pre>
 <p><img src="figure/PatientX.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20rectum%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-relative-dose-changes-of-rectum-in-percent-1">
@@ -2511,20 +2537,15 @@ Relative change
 
 
 ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
-   geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
-    geom_point() +
-scale_y_continuous(expand=c(0.1, .01), breaks = pretty_breaks(), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  
-  #pretty_breaks()
-  
-   # scale_y_continuous(breaks = c(min(y), max(y)), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-  #scale_y_continuous(breaks = seq(-5, 10, 1.0), labels=function(x) paste0(x,&quot;%&quot;)) + #labels=function(x) paste0(x,&quot;%&quot;) adds percent symbol, but without multiplying it with 100, like when one does: scale_y_continuous(labels = scales::percent)
-    scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
-   geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
-   ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction in rectum dvh&quot;) +
-  xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
-  ylab(&quot;Relative dose changes&quot;) +
-   plottheme</code></pre>
+ geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
+geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction in rectum dvh&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) +
+plottheme + 
+lineplottheme</code></pre>
 <p><img src="figure/PatientX.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20bladder%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-relative-dose-changes-of-bladder-in-percent-1">
@@ -3087,7 +3108,7 @@ Posterior-Anterior
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       Europe/Berlin               
- date     2020-08-08                  
+ date     2020-08-09                  
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version   date       lib source        
