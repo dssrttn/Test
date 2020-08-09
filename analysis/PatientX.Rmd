@@ -28,7 +28,7 @@ options(digits=3) # zeigt nur drei Zahlenwerte an
 source("code/plottheme.R")
 source("code/cbPalette.R")
 source("code/lineplottheme.R")
-
+source("code/boxplottheme.R")
 
 DIL<- read_csv2('data/1/DIL.csv')
 Boost <- read_csv2('data/1/Boost.csv')
@@ -166,7 +166,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 source(here::here("code/boxplotdilminusboostggplot.R"))
 
-DILminusboost
+DILminusboost 
 
 ```
 
