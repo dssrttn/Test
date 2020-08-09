@@ -141,9 +141,11 @@ lineplottheme
 
 (Mittelwert_DIL/ Mittelwert_Boost[1])
 
-```{r DIL Boxplot, message=FALSE}
+```{r DIL to Boost Boxplot, message=FALSE}
 
-source(here::here("code/Boxplot_to_DIL_mean.R"))
+source(here::here("code/boxplotdiltoboostggplot.R"))
+
+DILtoBoost_1
 
 ```
 
@@ -151,12 +153,14 @@ source(here::here("code/Boxplot_to_DIL_mean.R"))
 
 (Mittelwert_DIL/ Mittelwert_Boost[1])
 
-{r DIL to Boost table, message=FALSE}
-source(here::here("code/Boxplot_to_DIL_mean2.R"))
-DIL_Boost_mean_relation %>%
+```{r DIL to Boost table, message=FALSE}
+source(here::here("code/boxplotdiltoboostggplot.R"))
+
+DILtoBoost_1_mean_table %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
+```
 
 ### DIL minus boost - boxplot with percentage relation
 
