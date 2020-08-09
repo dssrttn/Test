@@ -179,7 +179,7 @@ DILminusboost
 (Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))
 
 ```{r DIL minus Boost table, message=FALSE}
-# source(here::here("code/boxplotdilminusboostggplot.R"))
+source(here::here("code/boxplotdilminusboostggplot.R"))
 DIL_minus_Boost_mean_table %>%
   knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
