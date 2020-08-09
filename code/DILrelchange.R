@@ -17,7 +17,6 @@ DIL_mean_rel_table <- DIL_mean_rel_table %>% rename('Fraction' = '.id') #renmae 
 DIL_mean_rel_table <- DIL_mean_rel_table %>% rename('Relative change' = 'relchange')  #renmae column 'relchange' with 'Relative change'
 
 
-#DIL_mean_rel_table[1:14, 1] = (1:row_number())
 
 DIL_mean_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%
