@@ -1,5 +1,5 @@
 ---
-title: "Patient 1"
+title: "Patient X"
 author: "dssrttn"
 date: "2020-07-10"
 output: 
@@ -38,11 +38,7 @@ Bladder <- read_csv2('data/1/Bladder.csv')
 XVI <- read_csv2('data/1/XVI.csv')
 ```
 
-TURP
 
-
-```{r parent, child = here::here("analysis/child/child.Rmd")}
-```
 
 
 # Dose
@@ -195,7 +191,7 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 ```
 
-### DIL[n] to boost[n] - table with 2 percent dips 
+### DIL[n] to boost[n] - table with 2 percent difference 
 
 ```{r DIL to Boost 2 percent dips table, message=FALSE}
 
@@ -256,7 +252,7 @@ summary(linearregression_Boost_DIL)
 plot(x_Boost_mean_rel, y_DIL_mean_rel)
 abline(linearregression_Boost_DIL, col = "red")
 
-tidy(linearregression_Boost_DIL)
+#tidy(linearregression_Boost_DIL)
 
 ```
 
