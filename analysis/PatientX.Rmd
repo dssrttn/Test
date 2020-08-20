@@ -154,7 +154,6 @@ lineplottheme
 
 source(here::here("code/Boxplot_to_DIL_1.R"))
 
-#DILtoBoost_1
 
 ```
 
@@ -163,7 +162,6 @@ source(here::here("code/Boxplot_to_DIL_1.R"))
 (Mittelwert_DIL/ Mittelwert_Boost[1])
 
 ```{r DIL to Boost 1 table, message=FALSE}
-source(here::here("code/Boxplot_to_DIL_1.R"))
 
 DILtoBoost_1_mean_table %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
@@ -180,10 +178,9 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 source(here::here("code/Boxplot_to_DIL_n.R"))
 
-#DILtoBoost_n
+
 
 ```
-
 
 
 ### DIL[n] to boost[n] - table with percentage relation
@@ -191,13 +188,27 @@ source(here::here("code/Boxplot_to_DIL_n.R"))
 (Mittelwert_DIL[n]/ Mittelwert_Boost[n])
 
 ```{r DIL to Boost n table, message=FALSE}
-source(here::here("code/Boxplot_to_DIL_n.R"))
 
-DILtoBoost_1_mean_table %>%
+DILtoBoost_n_mean_table %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relative relation", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
 ```
+
+### DIL[n] to boost[n] - table with 2 percent dips 
+
+```{r DIL to Boost 2 percent dips table, message=FALSE}
+
+source(here::here("code/DILtoBoostn_2percent.R"))
+
+
+DILtoBoost_2percent_mean_table %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relative relation", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+```
+
+
 
 ### DIL minus boost - boxplot with percentage relation
 
@@ -205,9 +216,9 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 
 ```{r DIL minus boost Boxplot, message=FALSE}
 
-source(here::here("code/boxplotdilminusboostggplot.R"))
+source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
 
-DILminusboost 
+
 
 ```
 
@@ -216,7 +227,7 @@ DILminusboost
 (Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))
 
 ```{r DIL minus Boost table, message=FALSE}
-source(here::here("code/boxplotdilminusboostggplot.R"))
+
 DIL_minus_Boost_mean_table %>%
   knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
