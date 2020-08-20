@@ -22,6 +22,7 @@ library(scales)
 library(knitr)
 library(kableExtra)
 library(psych)
+library(broom)
 library(here)
 library(jtools) # for linear regression output. not used so far
 options(digits=3) # zeigt nur drei Zahlenwerte an
@@ -49,15 +50,18 @@ TURP
 
 ### DIL changes relative to the first fraction of DIL
 
+
+
+
 ```{r Relative dose changes in percent for DIL, message=FALSE}
 
 source(here::here("code/DILrelchange.R"))
-
 DIL_mean_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html' #, caption = "DIL descriptive statistics"
         ) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 full_width = TRUE)
+
 
 ```
 
@@ -146,11 +150,11 @@ lineplottheme
 
 (Mittelwert_DIL/ Mittelwert_Boost[1])
 
-```{r DIL to Boost Boxplot, message=FALSE}
+```{r DIL to Boost 1 Boxplot, message=FALSE}
 
-source(here::here("code/boxplotdiltoboostggplot.R"))
+source(here::here("code/Boxplot_to_DIL_1.R"))
 
-DILtoBoost_1
+#DILtoBoost_1
 
 ```
 
@@ -158,11 +162,39 @@ DILtoBoost_1
 
 (Mittelwert_DIL/ Mittelwert_Boost[1])
 
-```{r DIL to Boost table, message=FALSE}
-source(here::here("code/boxplotdiltoboostggplot.R"))
+```{r DIL to Boost 1 table, message=FALSE}
+source(here::here("code/Boxplot_to_DIL_1.R"))
 
 DILtoBoost_1_mean_table %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+```
+
+
+### DIL[n] to boost[n] - boxplot with percentage relation
+
+(Mittelwert_DIL/ Mittelwert_Boost[n])
+
+```{r DIL to Boost n Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_to_DIL_n.R"))
+
+#DILtoBoost_n
+
+```
+
+
+
+### DIL[n] to boost[n] - table with percentage relation
+
+(Mittelwert_DIL[n]/ Mittelwert_Boost[n])
+
+```{r DIL to Boost n table, message=FALSE}
+source(here::here("code/Boxplot_to_DIL_n.R"))
+
+DILtoBoost_1_mean_table %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relative relation", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
 ```
@@ -213,6 +245,7 @@ summary(linearregression_Boost_DIL)
 plot(x_Boost_mean_rel, y_DIL_mean_rel)
 abline(linearregression_Boost_DIL, col = "red")
 
+tidy(linearregression_Boost_DIL)
 
 ```
 
