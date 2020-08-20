@@ -18,7 +18,4 @@ DIL_mean_rel_table <- DIL_mean_rel_table %>% rename('Relative change' = 'relchan
 
 
 
-DIL_mean_rel_table %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "DIL descriptive statistics") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
-                full_width = TRUE)
+

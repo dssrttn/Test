@@ -1,19 +1,19 @@
 Boost_mean_boxplot <- Boost
 DIL_mean_boxplot <- DIL
 
-Boost_mean_boxplot
-DIL_mean_boxplot
+#Boost_mean_boxplot
+#DIL_mean_boxplot
 
 
 DIL_mean_boxplot <- distinct(DIL_mean_boxplot, Mittelwert) # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
 DIL_mean_boxplot <- DIL_mean_boxplot %>% select(Mittelwert_DIL = Mittelwert)
-DIL_mean_boxplot
+#DIL_mean_boxplot
 
 DILtoBoost_1_mean_boxplot <- DIL_mean_boxplot %>% add_column(Mittelwert_Boost = Boost_mean_boxplot$Mittelwert)
-DILtoBoost_1_mean_boxplot
+#DILtoBoost_1_mean_boxplot
 
 DILtoBoost_1_mean_table <- ddply(DILtoBoost_1_mean_boxplot, .(), transform, DILtoBoost_1 = (Mittelwert_DIL/ Mittelwert_Boost[1]))
-DILtoBoost_1_mean_table
+#DILtoBoost_1_mean_table
 
 DILtoBoost_1_mean_table <- DILtoBoost_1_mean_table %>% mutate(.id = row_number())
 DILtoBoost_1_mean_table <- DILtoBoost_1_mean_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
@@ -39,7 +39,7 @@ DILtoBoost_1_mean_table <- as.data.frame(DILtoBoost_1_mean_table) %>%
 
 
 DILtoBoost_1_mean_table %>%
-  knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost", "Numbers")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 
