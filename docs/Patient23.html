@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="dssrttn" />
+
+<meta name="date" content="2020-08-20" />
+
+<title>Patient 23</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Test</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Einstieg</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/dssrttn/Test">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Patient 23</h1>
+<h4 class="author">dssrttn</h4>
+<h4 class="date">2020-08-20</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2020-08-20
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>Test/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20200620code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20200620)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20200620code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20200620)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree26a027fa09080b595e90e2361501974059bf99d3targetblank26a027fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/26a027fa09080b595e90e2361501974059bf99d3" target="_blank">26a027f</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree26a027fa09080b595e90e2361501974059bf99d3targetblank26a027fa" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/26a027fa09080b595e90e2361501974059bf99d3" target="_blank">26a027f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    analysis/.Rhistory
+    Ignored:    code/.Rhistory
+    Ignored:    data/.Rhistory
+
+Untracked files:
+    Untracked:  Code commit to github
+    Untracked:  README.html
+    Untracked:  analysis/DILtoBoost.Rmd
+    Untracked:  analysis/Patient12.Rmd
+    Untracked:  analysis/Patientloop.Rmd
+    Untracked:  analysis/alphabeta.Rmd
+    Untracked:  analysis/alphabetaohnecsv.Rmd
+    Untracked:  analysis/alphabetaohnecsv2.Rmd
+    Untracked:  analysis/child/
+    Untracked:  codefueralle
+    Untracked:  data/1/
+    Untracked:  data/10/
+    Untracked:  data/11/
+    Untracked:  data/12/
+    Untracked:  data/13/
+    Untracked:  data/14/
+    Untracked:  data/15/
+    Untracked:  data/16/
+    Untracked:  data/17/
+    Untracked:  data/18/
+    Untracked:  data/19/
+    Untracked:  data/2/
+    Untracked:  data/20/
+    Untracked:  data/21/
+    Untracked:  data/22/
+    Untracked:  data/23/
+    Untracked:  data/24/
+    Untracked:  data/25/
+    Untracked:  data/26/
+    Untracked:  data/27/
+    Untracked:  data/3/
+    Untracked:  data/4/
+    Untracked:  data/5/
+    Untracked:  data/6/
+    Untracked:  data/7/
+    Untracked:  data/8/
+    Untracked:  data/9/
+    Untracked:  data/BrowseFiles.py
+    Untracked:  data/DVH_Auswertung.py
+    Untracked:  data/DVH_Auswertung.pyc
+    Untracked:  data/Literatur ab 20200727/
+    Untracked:  data/pseudonymisiert/
+
+Unstaged changes:
+    Modified:   _workflowr.yml
+    Modified:   analysis/DILminusBoost.Rmd
+    Modified:   analysis/Rechnungen.Rmd
+    Modified:   analysis/dilundboost.Rmd
+    Modified:   analysis/kable.Rmd
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/Patient23.Rmd</code>) and HTML (<code>docs/Patient23.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/26a027fa09080b595e90e2361501974059bf99d3/analysis/Patient23.Rmd" target="_blank">26a027f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+<td>
+wflow_publish(“analysis/Patient23.Rmd”)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<pre class="r"><code>knitr::opts_chunk$set(dev=c(&#39;png&#39;, &#39;pdf&#39;), width=7, height=5)</code></pre>
+<pre class="r"><code>library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(psych)
+library(broom)
+library(here)
+library(jtools) # for linear regression output. not used so far
+options(digits=3) # zeigt nur drei Zahlenwerte an
+source(&quot;code/plottheme.R&quot;)
+source(&quot;code/cbPalette.R&quot;)
+source(&quot;code/lineplottheme.R&quot;)
+source(&quot;code/boxplottheme.R&quot;)
+
+DIL&lt;- read_csv2(&#39;data/23/DIL.csv&#39;)
+Boost &lt;- read_csv2(&#39;data/23/Boost.csv&#39;)
+Rectum &lt;- read_csv2(&#39;data/23/Rectum.csv&#39;)
+Bladder &lt;- read_csv2(&#39;data/23/Bladder.csv&#39;)
+XVI &lt;- read_csv2(&#39;data/23/XVI.csv&#39;)</code></pre>
+<div id="dose" class="section level1">
+<h1>Dose</h1>
+<div id="dil-and-boost-changes-during-the-treatment-period" class="section level2">
+<h2>DIL and boost changes during the treatment period</h2>
+<div id="dil-changes-relative-to-the-first-fraction-of-dil" class="section level3">
+<h3>DIL changes relative to the first fraction of DIL</h3>
+<pre class="r"><code>source(here::here(&quot;code/DILrelchange.R&quot;))
+DIL_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39; #, caption = &quot;DIL descriptive statistics&quot;
+        ) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
+                full_width = TRUE)</code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mean
+</th>
+<th style="text-align:center;">
+Relative change
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+78.3
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+78.6
+</td>
+<td style="text-align:center;">
+0.396
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+78.5
+</td>
+<td style="text-align:center;">
+0.349
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+78.2
+</td>
+<td style="text-align:center;">
+-0.144
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+78.1
+</td>
+<td style="text-align:center;">
+-0.226
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+78.2
+</td>
+<td style="text-align:center;">
+-0.072
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+79.3
+</td>
+<td style="text-align:center;">
+1.365
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+78.8
+</td>
+<td style="text-align:center;">
+0.728
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+78.8
+</td>
+<td style="text-align:center;">
+0.642
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+78.7
+</td>
+<td style="text-align:center;">
+0.568
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+78.8
+</td>
+<td style="text-align:center;">
+0.614
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+78.9
+</td>
+<td style="text-align:center;">
+0.849
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+78.9
+</td>
+<td style="text-align:center;">
+0.772
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+78.6
+</td>
+<td style="text-align:center;">
+0.453
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lollipop-plot-for-dil-mean-changes-relative-to-the-first-fraction-of-dil" class="section level3">
+<h3>Lollipop plot for DIL mean changes relative to the first fraction of DIL</h3>
+<p>aes(x=1:nrow(speed1)</p>
+<pre class="r"><code>source(here::here(&quot;code/Lollipopplot_DIL_mean.R&quot;))
+
+ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) #DIL_relabs$x
+                      ,y=y )) + #DIL_relabs$abschange)) +
+geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme</code></pre>
+<p><img src="figure/Patient23.Rmd/Lollipop%20plot%20DIL%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="boost-changes-relative-to-the-first-fraction-of-boost" class="section level3">
+<h3>Boost changes relative to the first fraction of boost</h3>
+<pre class="r"><code>source(&quot;code/Boostrelchange.R&quot;)
+ 
+Boost_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39; #, caption = &quot;Boost descriptive statistics&quot;
+        ) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
+    full_width = TRUE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mean
+</th>
+<th style="text-align:center;">
+Relative change
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+76.2
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+76.6
+</td>
+<td style="text-align:center;">
+0.540
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+76.5
+</td>
+<td style="text-align:center;">
+0.454
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+76.0
+</td>
+<td style="text-align:center;">
+-0.185
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+76.0
+</td>
+<td style="text-align:center;">
+-0.174
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+76.1
+</td>
+<td style="text-align:center;">
+-0.045
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+77.4
+</td>
+<td style="text-align:center;">
+1.561
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+76.8
+</td>
+<td style="text-align:center;">
+0.881
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+76.8
+</td>
+<td style="text-align:center;">
+0.787
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+76.8
+</td>
+<td style="text-align:center;">
+0.791
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+76.8
+</td>
+<td style="text-align:center;">
+0.803
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+77.0
+</td>
+<td style="text-align:center;">
+1.119
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+77.0
+</td>
+<td style="text-align:center;">
+1.132
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+76.6
+</td>
+<td style="text-align:center;">
+0.632
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lollipop-plot-for-boost-mean-changes-relative-to-the-first-fraction-of-boost" class="section level3">
+<h3>Lollipop plot for Boost mean changes relative to the first fraction of Boost</h3>
+<pre class="r"><code>source(here::here(&quot;code/Lollipopplot_Boost_mean.R&quot;))
+
+ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
+                        ,y=y )) +
+geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
+ggtitle(&quot;Boost - Relative dose changes in percent from the 1st fraction with Boost&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme</code></pre>
+<p><img src="figure/Patient23.Rmd/Lollipop%20plot%20Boost%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="line-plot-for-dil-and-boost-mean-changes-relative-to-their-respective-first-fraction" class="section level3">
+<h3>Line plot for DIL and boost mean changes relative to their respective first fraction</h3>
+<p>nrow(DIL_mean_rel) aes(x=1:nrow(speed1)</p>
+<pre class="r"><code>ggplot() + 
+geom_line(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
+geom_line(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
+geom_point(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = &quot;DIL&quot;)) +
+geom_point(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = &quot;Boost&quot;)) +
+scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel_table)))  + # adds only specific ticks
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction with DIL&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
+plottheme + 
+lineplottheme</code></pre>
+<p><img src="figure/Patient23.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="relation-of-dil-and-boost" class="section level2">
+<h2>Relation of DIL and boost</h2>
+<div id="diln-to-boost1---boxplot-with-percentage-relation" class="section level3">
+<h3>DIL[n] to boost[1] - boxplot with percentage relation</h3>
+<p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
+<pre class="r"><code>source(here::here(&quot;code/Boxplot_to_DIL_1.R&quot;))</code></pre>
+<p><img src="figure/Patient23.Rmd/DIL%20to%20Boost%201%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="diln-to-boost1---table-with-percentage-relation" class="section level3">
+<h3>DIL[n] to boost[1] - table with percentage relation</h3>
+<p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
+<pre class="r"><code>DILtoBoost_1_mean_table %&gt;%
+ knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relation relative to the first fraction&quot;, &quot;Numbers&quot;)) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+DIL to boost relation relative to the first fraction
+</th>
+<th style="text-align:right;">
+Numbers
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt;95%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+95-96%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+96-97%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97-98%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98-99%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+99-100%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100-101%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+101-102%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+102-103%
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+103-104%
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+104-105%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&gt;105%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="diln-to-boostn---boxplot-with-percentage-relation" class="section level3">
+<h3>DIL[n] to boost[n] - boxplot with percentage relation</h3>
+<p>(Mittelwert_DIL/ Mittelwert_Boost[n])</p>
+<pre class="r"><code>source(here::here(&quot;code/Boxplot_to_DIL_n.R&quot;))</code></pre>
+<p><img src="figure/Patient23.Rmd/DIL%20to%20Boost%20n%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="diln-to-boostn---table-with-percentage-relation" class="section level3">
+<h3>DIL[n] to boost[n] - table with percentage relation</h3>
+<p>(Mittelwert_DIL[n]/ Mittelwert_Boost[n])</p>
+<pre class="r"><code>DILtoBoost_n_mean_table %&gt;%
+ knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relative relation&quot;, &quot;Numbers&quot;)) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+DIL to boost relative relation
+</th>
+<th style="text-align:right;">
+Numbers
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt;95%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+95-96%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+96-97%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97-98%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98-99%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+99-100%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100-101%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+101-102%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+102-103%
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+103-104%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+104-105%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&gt;105%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="diln-to-boostn---table-with-2-percent-difference" class="section level3">
+<h3>DIL[n] to boost[n] - table with 2 percent difference</h3>
+<pre class="r"><code>source(here::here(&quot;code/DILtoBoostn_2percent.R&quot;))
+
+
+DILtoBoost_2percent_mean_table %&gt;%
+ knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relative relation&quot;, &quot;Numbers&quot;)) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+DIL to boost relative relation
+</th>
+<th style="text-align:right;">
+Numbers
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt;98%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98-102%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&gt;102%
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="dil-minus-boost---boxplot-with-percentage-relation" class="section level3">
+<h3>DIL minus boost - boxplot with percentage relation</h3>
+<p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
+<pre class="r"><code>source(here::here(&quot;code/Boxplot_DIL_minus_Boost_mean.R&quot;))</code></pre>
+<p><img src="figure/Patient23.Rmd/DIL%20minus%20boost%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="dil-minus-boost---table-with-percentage-relation" class="section level3">
+<h3>DIL minus boost - table with percentage relation</h3>
+<p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
+<pre class="r"><code>DIL_minus_Boost_mean_table %&gt;%
+  knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL minus boost&quot;, &quot;Numbers&quot;)) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE)</code></pre>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+DIL minus boost
+</th>
+<th style="text-align:right;">
+Numbers
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt;0.95%
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+95-96%
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+96-97%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97-98%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98-99%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+99-100%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100-101%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+101-102%
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+102-103%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+103-104%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+104-105%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&gt;105%
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="linear-regression-boost-mean-dil-mean" class="section level3">
+<h3>Linear regression Boost mean DIL mean</h3>
+<pre class="r"><code>plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/Patient23.Rmd/linear%20regression%20Boost%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>x_Boost_mean_rel &lt;- Boost_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+linearregression_Boost_DIL &lt;- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+Coefficients:
+     (Intercept)  x_Boost_mean_rel  
+         -0.0395            0.8254  </code></pre>
+<pre class="r"><code>fitted.values(linearregression_Boost_DIL)</code></pre>
+<pre><code>      1       2       3       4       5       6       7       8       9      10 
+-0.0395  0.4060  0.3349 -0.1920 -0.1831 -0.0768  1.2491  0.6874  0.6099  0.6132 
+     11      12      13      14 
+ 0.6233  0.8844  0.8949  0.4824 </code></pre>
+<pre class="r"><code>residuals(linearregression_Boost_DIL)</code></pre>
+<pre><code>       1        2        3        4        5        6        7        8 
+ 0.03947 -0.00987  0.01437  0.04799 -0.04254  0.00484  0.11546  0.04076 
+       9       10       11       12       13       14 
+ 0.03199 -0.04535 -0.00961 -0.03538 -0.12297 -0.02916 </code></pre>
+<pre class="r"><code>summary(linearregression_Boost_DIL)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.12297 -0.03383 -0.00239  0.03760  0.11546 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       -0.0395     0.0240   -1.65     0.13    
+x_Boost_mean_rel   0.8254     0.0306   26.98  4.1e-12 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.0587 on 12 degrees of freedom
+Multiple R-squared:  0.984, Adjusted R-squared:  0.982 
+F-statistic:  728 on 1 and 12 DF,  p-value: 4.14e-12</code></pre>
+<pre class="r"><code>plot(x_Boost_mean_rel, y_DIL_mean_rel)
+abline(linearregression_Boost_DIL, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/Patient23.Rmd/linear%20regression%20Boost%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#tidy(linearregression_Boost_DIL)</code></pre>
+</div>
+</div>
+<div id="rectum" class="section level2">
+<h2>Rectum</h2>
+<div id="rectum-changes-relative-to-the-first-fraction-of-rectum" class="section level3">
+<h3>Rectum changes relative to the first fraction of Rectum</h3>
+<pre class="r"><code>source(here::here(&quot;code/Rectum_mean_rel.R&quot;))
+
+
+Rectum_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;Rectum mean descriptive statistics&quot;) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
+                full_width = TRUE)</code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+Rectum mean descriptive statistics
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mittelwert
+</th>
+<th style="text-align:center;">
+Relative change
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+40.3
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+40.0
+</td>
+<td style="text-align:center;">
+-0.751
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+41.2
+</td>
+<td style="text-align:center;">
+2.444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+40.7
+</td>
+<td style="text-align:center;">
+0.997
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+38.5
+</td>
+<td style="text-align:center;">
+-4.361
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+40.4
+</td>
+<td style="text-align:center;">
+0.316
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+41.8
+</td>
+<td style="text-align:center;">
+3.886
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+41.1
+</td>
+<td style="text-align:center;">
+2.181
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+41.2
+</td>
+<td style="text-align:center;">
+2.252
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+41.0
+</td>
+<td style="text-align:center;">
+1.913
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+40.8
+</td>
+<td style="text-align:center;">
+1.384
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+39.8
+</td>
+<td style="text-align:center;">
+-1.116
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+40.5
+</td>
+<td style="text-align:center;">
+0.703
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+40.2
+</td>
+<td style="text-align:center;">
+-0.158
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lollipop-plot-for-rectum-mean-changes-relative-to-the-first-fraction-of-rectum" class="section level3">
+<h3>Lollipop plot for rectum mean changes relative to the first fraction of rectum</h3>
+<pre class="r"><code>source(here::here(&quot;code/Rectum_mean_rel.R&quot;))
+
+
+ggplot(Rectum_mean_rel, aes(x=1:nrow(Rectum_mean_rel)
+                            , y=y)) + 
+geom_segment( aes(x=1:nrow(Rectum_mean_rel), xend=1:nrow(Rectum_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Rectum_mean_rel)))  + # adds only specific ticks
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) +
+plottheme + 
+lineplottheme</code></pre>
+<p><img src="figure/Patient23.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20rectum%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="linear-regression-rectum-mean-and-dil-mean" class="section level2">
+<h2>Linear regression rectum mean and DIL mean</h2>
+<pre class="r"><code>plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/Patient23.Rmd/linear%20regression%20Rectum%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>x_Rectum_mean_rel &lt;- Rectum_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+linearregression_rectum_DIL &lt;- lm(y_DIL_mean_rel ~ x_Rectum_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
+
+Coefficients:
+      (Intercept)  x_Rectum_mean_rel  
+            0.359              0.130  </code></pre>
+<pre class="r"><code>fitted.values(linearregression_rectum_DIL)</code></pre>
+<pre><code>     1      2      3      4      5      6      7      8      9     10     11 
+ 0.359  0.261  0.678  0.489 -0.210  0.401  0.866  0.644  0.653  0.609  0.540 
+    12     13     14 
+ 0.214  0.451  0.339 </code></pre>
+<pre class="r"><code>residuals(linearregression_rectum_DIL)</code></pre>
+<pre><code>      1       2       3       4       5       6       7       8       9      10 
+-0.3593  0.1349 -0.3288 -0.6334 -0.0158 -0.4725  0.4983  0.0843 -0.0112 -0.0411 
+     11      12      13      14 
+ 0.0738  0.6354  0.3209  0.1145 </code></pre>
+<pre class="r"><code>summary(linearregression_rectum_DIL)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Rectum_mean_rel)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.6334 -0.2569  0.0313  0.1298  0.6354 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)         0.3593     0.1057    3.40   0.0053 **
+x_Rectum_mean_rel   0.1305     0.0515    2.53   0.0263 * 
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.372 on 12 degrees of freedom
+Multiple R-squared:  0.348, Adjusted R-squared:  0.294 
+F-statistic: 6.42 on 1 and 12 DF,  p-value: 0.0263</code></pre>
+<pre class="r"><code>plot(x_Rectum_mean_rel, y_DIL_mean_rel)
+abline(linearregression_rectum_DIL, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/Patient23.Rmd/linear%20regression%20Rectum%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bladder" class="section level2">
+<h2>Bladder</h2>
+<div id="bladder-changes-relative-to-the-first-fraction-of-bladder" class="section level3">
+<h3>Bladder changes relative to the first fraction of bladder</h3>
+<pre class="r"><code>source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
+ 
+
+Bladder_mean_rel_table %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;Rectum mean descriptive statistics&quot;) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
+                full_width = TRUE)</code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+Rectum mean descriptive statistics
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Fraction
+</th>
+<th style="text-align:center;">
+Mittelwert
+</th>
+<th style="text-align:center;">
+Relative change
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+22.3
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+22.5
+</td>
+<td style="text-align:center;">
+0.903
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+22.5
+</td>
+<td style="text-align:center;">
+0.855
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+22.4
+</td>
+<td style="text-align:center;">
+0.631
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+22.6
+</td>
+<td style="text-align:center;">
+1.465
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+22.5
+</td>
+<td style="text-align:center;">
+0.792
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+22.8
+</td>
+<td style="text-align:center;">
+2.176
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+22.9
+</td>
+<td style="text-align:center;">
+2.978
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+23.1
+</td>
+<td style="text-align:center;">
+3.514
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+22.5
+</td>
+<td style="text-align:center;">
+1.056
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+22.7
+</td>
+<td style="text-align:center;">
+1.722
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+22.7
+</td>
+<td style="text-align:center;">
+1.739
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+22.6
+</td>
+<td style="text-align:center;">
+1.335
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+22.5
+</td>
+<td style="text-align:center;">
+0.903
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lollipop-plot-for-bladder-mean-changes-relative-to-the-first-fraction-of-bladder" class="section level3">
+<h3>Lollipop plot for bladder mean changes relative to the first fraction of bladder</h3>
+<pre class="r"><code>source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
+
+
+ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
+ geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
+geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
+ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction in rectum dvh&quot;) +
+xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
+ylab(&quot;Relative dose changes&quot;) +
+plottheme + 
+lineplottheme</code></pre>
+<p><img src="figure/Patient23.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20bladder%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="relation-bladder-mean-and-dil-mean" class="section level2">
+<h2>Relation bladder mean and DIL mean</h2>
+<pre class="r"><code>#source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
+
+plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+<p><img src="figure/Patient23.Rmd/linear%20regression%20Bladder%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>x_Bladder_mean_rel &lt;- Bladder_mean_rel$relchange
+y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
+
+linearregression_Bladder_DIL &lt;- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+
+Coefficients:
+       (Intercept)  x_Bladder_mean_rel  
+             0.064               0.269  </code></pre>
+<pre class="r"><code>fitted.values(linearregression_Bladder_DIL)</code></pre>
+<pre><code>    1     2     3     4     5     6     7     8     9    10    11    12    13 
+0.064 0.307 0.294 0.234 0.458 0.277 0.649 0.865 1.009 0.348 0.527 0.532 0.423 
+   14 
+0.307 </code></pre>
+<pre class="r"><code>residuals(linearregression_Bladder_DIL)</code></pre>
+<pre><code>      1       2       3       4       5       6       7       8       9      10 
+-0.0640  0.0892  0.0552 -0.3778 -0.6837 -0.3489  0.7154 -0.1369 -0.3673  0.2199 
+     11      12      13      14 
+ 0.0865  0.3173  0.3488  0.1463 </code></pre>
+<pre class="r"><code>summary(linearregression_Bladder_DIL)</code></pre>
+<pre><code>
+Call:
+lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.6837 -0.2959  0.0708  0.2015  0.7154 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept)           0.064      0.188    0.34    0.740  
+x_Bladder_mean_rel    0.269      0.111    2.43    0.032 *
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.378 on 12 degrees of freedom
+Multiple R-squared:  0.329, Adjusted R-squared:  0.273 
+F-statistic: 5.88 on 1 and 12 DF,  p-value: 0.032</code></pre>
+<pre class="r"><code>plot(x_Bladder_mean_rel, y_DIL_mean_rel)
+abline(linearregression_Bladder_DIL, col = &quot;red&quot;)</code></pre>
+<p><img src="figure/Patient23.Rmd/linear%20regression%20Bladder%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="displacement-relocation-in-cm" class="section level1">
+<h1>Displacement relocation in cm</h1>
+<pre class="r"><code>source(here::here(&quot;code/XVI.R&quot;))
+
+
+XVI_tibble_date %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;&quot;) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
+                full_width = TRUE)</code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Date
+</th>
+<th style="text-align:center;">
+Right-Left
+</th>
+<th style="text-align:center;">
+Inferior-Superior
+</th>
+<th style="text-align:center;">
+Posterior-Anterior
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+17.01.2018
+</td>
+<td style="text-align:center;">
+-0.1
+</td>
+<td style="text-align:center;">
+-0.3
+</td>
+<td style="text-align:center;">
+-0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18.01.2018
+</td>
+<td style="text-align:center;">
+-0.1
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19.01.2018
+</td>
+<td style="text-align:center;">
+-0.2
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+22.01.2018
+</td>
+<td style="text-align:center;">
+-0.2
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+23.01.2018
+</td>
+<td style="text-align:center;">
+-0.2
+</td>
+<td style="text-align:center;">
+0.7
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+26.01.2018
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+<td style="text-align:center;">
+-0.4
+</td>
+<td style="text-align:center;">
+-0.4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+31.01.2018
+</td>
+<td style="text-align:center;">
+0.0
+</td>
+<td style="text-align:center;">
+-0.4
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+05.02.2018
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.0
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+08.02.2018
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+<td style="text-align:center;">
+0.4
+</td>
+<td style="text-align:center;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13.02.2018
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+<td style="text-align:center;">
+0.4
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+16.02.2018
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+-0.5
+</td>
+<td style="text-align:center;">
+0.4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+21.02.2018
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+<td style="text-align:center;">
+-0.1
+</td>
+<td style="text-align:center;">
+0.0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+26.02.2018
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+<td style="text-align:center;">
+-0.3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+01.03.2018
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>XVI_tibble %&gt;%
+  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;&quot;) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
+    full_width = TRUE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Numbers
+</th>
+<th style="text-align:center;">
+Mean
+</th>
+<th style="text-align:center;">
+Standard deviation
+</th>
+<th style="text-align:center;">
+Median
+</th>
+<th style="text-align:center;">
+Minimum
+</th>
+<th style="text-align:center;">
+Maximum
+</th>
+<th style="text-align:center;">
+Range
+</th>
+<th style="text-align:center;">
+Standard errors
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Right-Left
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+0.121
+</td>
+<td style="text-align:center;">
+0.264
+</td>
+<td style="text-align:center;">
+0.15
+</td>
+<td style="text-align:center;">
+-0.2
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+<td style="text-align:center;">
+0.7
+</td>
+<td style="text-align:center;">
+0.070
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Inferior-Superior
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+0.064
+</td>
+<td style="text-align:center;">
+0.369
+</td>
+<td style="text-align:center;">
+0.10
+</td>
+<td style="text-align:center;">
+-0.5
+</td>
+<td style="text-align:center;">
+0.7
+</td>
+<td style="text-align:center;">
+1.2
+</td>
+<td style="text-align:center;">
+0.099
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Posterior-Anterior
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+0.107
+</td>
+<td style="text-align:center;">
+0.320
+</td>
+<td style="text-align:center;">
+0.15
+</td>
+<td style="text-align:center;">
+-0.5
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+<td style="text-align:center;">
+1.0
+</td>
+<td style="text-align:center;">
+0.085
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>devtools::session_info()</code></pre>
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value                       
+ version  R version 4.0.2 (2020-06-22)
+ os       Ubuntu 20.04 LTS            
+ system   x86_64, linux-gnu           
+ ui       X11                         
+ language (EN)                        
+ collate  en_US.UTF-8                 
+ ctype    en_US.UTF-8                 
+ tz       Europe/Berlin               
+ date     2020-08-20                  
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package     * version   date       lib source        
+ assertthat    0.2.1     2019-03-21 [1] CRAN (R 4.0.1)
+ backports     1.1.8     2020-06-17 [1] CRAN (R 4.0.1)
+ blob          1.2.1     2020-01-20 [1] CRAN (R 4.0.1)
+ broom       * 0.5.6     2020-04-20 [1] CRAN (R 4.0.1)
+ callr         3.4.3     2020-03-28 [1] CRAN (R 4.0.1)
+ cellranger    1.1.0     2016-07-27 [1] CRAN (R 4.0.1)
+ cli           2.0.2     2020-02-28 [1] CRAN (R 4.0.1)
+ colorspace    1.4-1     2019-03-18 [1] CRAN (R 4.0.1)
+ crayon        1.3.4     2017-09-16 [1] CRAN (R 4.0.1)
+ DBI           1.1.0     2019-12-15 [1] CRAN (R 4.0.1)
+ dbplyr        1.4.4     2020-05-27 [1] CRAN (R 4.0.1)
+ desc          1.2.0     2018-05-01 [1] CRAN (R 4.0.1)
+ devtools      2.3.0     2020-04-10 [1] CRAN (R 4.0.1)
+ digest        0.6.25    2020-02-23 [1] CRAN (R 4.0.1)
+ dplyr       * 1.0.0     2020-05-29 [1] CRAN (R 4.0.1)
+ ellipsis      0.3.1     2020-05-15 [1] CRAN (R 4.0.1)
+ evaluate      0.14      2019-05-28 [1] CRAN (R 4.0.1)
+ fansi         0.4.1     2020-01-08 [1] CRAN (R 4.0.1)
+ farver        2.0.3     2020-01-16 [1] CRAN (R 4.0.1)
+ forcats     * 0.5.0     2020-03-01 [1] CRAN (R 4.0.1)
+ fs            1.4.1     2020-04-04 [1] CRAN (R 4.0.1)
+ generics      0.0.2     2018-11-29 [1] CRAN (R 4.0.1)
+ ggplot2     * 3.3.2     2020-06-19 [1] CRAN (R 4.0.1)
+ git2r         0.27.1    2020-05-03 [1] CRAN (R 4.0.1)
+ glue          1.4.1     2020-05-13 [1] CRAN (R 4.0.1)
+ gtable        0.3.0     2019-03-25 [1] CRAN (R 4.0.1)
+ haven         2.3.1     2020-06-01 [1] CRAN (R 4.0.1)
+ here        * 0.1       2017-05-28 [1] CRAN (R 4.0.2)
+ highr         0.8       2019-03-20 [1] CRAN (R 4.0.1)
+ hms           0.5.3     2020-01-08 [1] CRAN (R 4.0.1)
+ htmltools     0.5.0     2020-06-16 [1] CRAN (R 4.0.1)
+ httpuv        1.5.4     2020-06-06 [1] CRAN (R 4.0.1)
+ httr          1.4.1     2019-08-05 [1] CRAN (R 4.0.1)
+ jsonlite      1.6.1     2020-02-02 [1] CRAN (R 4.0.1)
+ jtools      * 2.1.0     2020-06-23 [1] CRAN (R 4.0.2)
+ kableExtra  * 1.1.0     2019-03-16 [1] CRAN (R 4.0.1)
+ knitr       * 1.29      2020-06-23 [1] CRAN (R 4.0.1)
+ later         1.1.0.1   2020-06-05 [1] CRAN (R 4.0.1)
+ lattice       0.20-41   2020-04-02 [4] CRAN (R 4.0.0)
+ lifecycle     0.2.0     2020-03-06 [1] CRAN (R 4.0.1)
+ lubridate     1.7.9     2020-06-08 [1] CRAN (R 4.0.1)
+ magrittr      1.5       2014-11-22 [1] CRAN (R 4.0.1)
+ memoise       1.1.0     2017-04-21 [1] CRAN (R 4.0.1)
+ mnormt        2.0.0     2020-06-02 [1] CRAN (R 4.0.1)
+ modelr        0.1.8     2020-05-19 [1] CRAN (R 4.0.1)
+ munsell       0.5.0     2018-06-12 [1] CRAN (R 4.0.1)
+ nlme          3.1-147   2020-04-13 [4] CRAN (R 4.0.0)
+ pander        0.6.3     2018-11-06 [1] CRAN (R 4.0.2)
+ pillar        1.4.4     2020-05-05 [1] CRAN (R 4.0.1)
+ pkgbuild      1.0.8     2020-05-07 [1] CRAN (R 4.0.1)
+ pkgconfig     2.0.3     2019-09-22 [1] CRAN (R 4.0.1)
+ pkgload       1.1.0     2020-05-29 [1] CRAN (R 4.0.1)
+ plyr        * 1.8.6     2020-03-03 [1] CRAN (R 4.0.1)
+ prettyunits   1.1.1     2020-01-24 [1] CRAN (R 4.0.1)
+ processx      3.4.2     2020-02-09 [1] CRAN (R 4.0.1)
+ promises      1.1.1     2020-06-09 [1] CRAN (R 4.0.1)
+ ps            1.3.3     2020-05-08 [1] CRAN (R 4.0.1)
+ psych       * 1.9.12.31 2020-01-08 [1] CRAN (R 4.0.1)
+ purrr       * 0.3.4     2020-04-17 [1] CRAN (R 4.0.1)
+ R6            2.4.1     2019-11-12 [1] CRAN (R 4.0.1)
+ Rcpp          1.0.4.6   2020-04-09 [1] CRAN (R 4.0.1)
+ readr       * 1.3.1     2018-12-21 [1] CRAN (R 4.0.1)
+ readxl        1.3.1     2019-03-13 [1] CRAN (R 4.0.1)
+ remotes       2.1.1     2020-02-15 [1] CRAN (R 4.0.1)
+ reprex        0.3.0     2019-05-16 [1] CRAN (R 4.0.1)
+ rlang         0.4.6     2020-05-02 [1] CRAN (R 4.0.1)
+ rmarkdown     2.3       2020-06-18 [1] CRAN (R 4.0.1)
+ rprojroot     1.3-2     2018-01-03 [1] CRAN (R 4.0.1)
+ rstudioapi    0.11      2020-02-07 [1] CRAN (R 4.0.1)
+ rvest         0.3.5     2019-11-08 [1] CRAN (R 4.0.1)
+ scales      * 1.1.1     2020-05-11 [1] CRAN (R 4.0.1)
+ sessioninfo   1.1.1     2018-11-05 [1] CRAN (R 4.0.1)
+ stringi       1.4.6     2020-02-17 [1] CRAN (R 4.0.1)
+ stringr     * 1.4.0     2019-02-10 [1] CRAN (R 4.0.1)
+ testthat      2.3.2     2020-03-02 [1] CRAN (R 4.0.1)
+ tibble      * 3.0.1     2020-04-20 [1] CRAN (R 4.0.1)
+ tidyr       * 1.1.0     2020-05-20 [1] CRAN (R 4.0.1)
+ tidyselect    1.1.0     2020-05-11 [1] CRAN (R 4.0.1)
+ tidyverse   * 1.3.0     2019-11-21 [1] CRAN (R 4.0.1)
+ tmvnsim       1.0-2     2016-12-15 [1] CRAN (R 4.0.1)
+ usethis       1.6.1     2020-04-29 [1] CRAN (R 4.0.1)
+ vctrs         0.3.1     2020-06-05 [1] CRAN (R 4.0.1)
+ viridisLite   0.3.0     2018-02-01 [1] CRAN (R 4.0.1)
+ webshot       0.5.2     2019-11-22 [1] CRAN (R 4.0.1)
+ whisker       0.4       2019-08-28 [1] CRAN (R 4.0.1)
+ withr         2.2.0     2020-04-20 [1] CRAN (R 4.0.1)
+ workflowr   * 1.6.2     2020-04-30 [1] CRAN (R 4.0.1)
+ xfun          0.15      2020-06-21 [1] CRAN (R 4.0.1)
+ xml2          1.3.2     2020-04-23 [1] CRAN (R 4.0.1)
+ yaml          2.2.1     2020-02-01 [1] CRAN (R 4.0.1)
+
+[1] /home/diss/R/x86_64-pc-linux-gnu-library/4.0
+[2] /usr/local/lib/R/site-library
+[3] /usr/lib/R/site-library
+[4] /usr/lib/R/library</code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
