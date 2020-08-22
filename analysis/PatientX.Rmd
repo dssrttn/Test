@@ -388,16 +388,15 @@ abline(linearregression_Bladder_DIL, col = "red")
 
 source(here::here("code/XVI.R"))
 
-
 XVI_tibble_date %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+  kable(align = c("cccc"), escape = FALSE, format ='html', caption = "") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 full_width = TRUE)
 
 
 
 XVI_tibble %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+  kable(align = c("cccccccc"), escape = FALSE, format ='html', caption = "") %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
     full_width = TRUE) 
 
