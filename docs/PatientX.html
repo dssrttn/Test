@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree05e3a147a918bce7a4ef9f72c8196f15611f1c37targetblank05e3a14a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/05e3a147a918bce7a4ef9f72c8196f15611f1c37" target="_blank">05e3a14</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree71c47163a48791ddb10af4873c70234c1fee0ad8targetblank71c4716a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/71c47163a48791ddb10af4873c70234c1fee0ad8" target="_blank">71c4716</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree05e3a147a918bce7a4ef9f72c8196f15611f1c37targetblank05e3a14a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree71c47163a48791ddb10af4873c70234c1fee0ad8targetblank71c4716a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/05e3a147a918bce7a4ef9f72c8196f15611f1c37" target="_blank">05e3a14</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/71c47163a48791ddb10af4873c70234c1fee0ad8" target="_blank">71c4716</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -591,6 +591,7 @@ Unstaged changes:
     Modified:   analysis/dilundboost.Rmd
     Modified:   analysis/kable.Rmd
     Modified:   analysis/xvi.Rmd
+    Modified:   code/Bladder_mean_rel.R
     Deleted:    code/Boxplot_to_DIL_mean.R
     Deleted:    code/Boxplot_to_DIL_mean2.R
 
@@ -631,6 +632,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/71c47163a48791ddb10af4873c70234c1fee0ad8/analysis/PatientX.Rmd" target="_blank">71c4716</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-26
+</td>
+<td>
+Blase auf D_10 angepasst
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/daed05e91c89e3cd72b212458274d47bdaa1f69d/docs/PatientX.html" target="_blank">daed05e</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-26
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2405,6 +2440,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/dssrttn/Test/blob/daed05e91c89e3cd72b212458274d47bdaa1f69d/docs/figure/PatientX.Rmd/DIL minus boost Boxplot-1.png" target="_blank">daed05e</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-26
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/dssrttn/Test/blob/f1629808f877c0f0604b2794dba7f0e9006702b8/docs/figure/PatientX.Rmd/DIL minus boost Boxplot-1.png" target="_blank">f162980</a>
 </td>
 <td>
@@ -3112,7 +3158,7 @@ Mein Vorname
 <pre class="r"><code>source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
  
 
-Bladder_mean_rel_table %&gt;%
+Bladder_D_10_rel_table %&gt;%
   kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;Rectum mean descriptive statistics&quot;) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
                 full_width = TRUE)</code></pre>
@@ -3126,7 +3172,7 @@ Rectum mean descriptive statistics
 Fraction
 </th>
 <th style="text-align:center;">
-Mittelwert
+D_10
 </th>
 <th style="text-align:center;">
 Relative change
@@ -3139,7 +3185,7 @@ Relative change
 1
 </td>
 <td style="text-align:center;">
-25.2
+69.1
 </td>
 <td style="text-align:center;">
 0.000
@@ -3150,10 +3196,10 @@ Relative change
 2
 </td>
 <td style="text-align:center;">
-25.1
+68.9
 </td>
 <td style="text-align:center;">
--0.509
+-0.236
 </td>
 </tr>
 <tr>
@@ -3161,10 +3207,10 @@ Relative change
 3
 </td>
 <td style="text-align:center;">
-25.1
+68.6
 </td>
 <td style="text-align:center;">
--0.378
+-0.683
 </td>
 </tr>
 <tr>
@@ -3172,10 +3218,10 @@ Relative change
 4
 </td>
 <td style="text-align:center;">
-24.5
+67.9
 </td>
 <td style="text-align:center;">
--2.759
+-1.696
 </td>
 </tr>
 <tr>
@@ -3183,10 +3229,10 @@ Relative change
 5
 </td>
 <td style="text-align:center;">
-24.7
+67.9
 </td>
 <td style="text-align:center;">
--2.058
+-1.788
 </td>
 </tr>
 <tr>
@@ -3194,10 +3240,10 @@ Relative change
 6
 </td>
 <td style="text-align:center;">
-25.1
+68.6
 </td>
 <td style="text-align:center;">
--0.267
+-0.653
 </td>
 </tr>
 <tr>
@@ -3205,10 +3251,10 @@ Relative change
 7
 </td>
 <td style="text-align:center;">
-25.3
+68.5
 </td>
 <td style="text-align:center;">
-0.439
+-0.894
 </td>
 </tr>
 <tr>
@@ -3216,10 +3262,10 @@ Relative change
 8
 </td>
 <td style="text-align:center;">
-25.3
+68.1
 </td>
 <td style="text-align:center;">
-0.338
+-1.373
 </td>
 </tr>
 <tr>
@@ -3227,10 +3273,10 @@ Relative change
 9
 </td>
 <td style="text-align:center;">
-24.8
+67.8
 </td>
 <td style="text-align:center;">
--1.432
+-1.907
 </td>
 </tr>
 <tr>
@@ -3238,10 +3284,10 @@ Relative change
 10
 </td>
 <td style="text-align:center;">
-25.1
+69.1
 </td>
 <td style="text-align:center;">
--0.399
+0.035
 </td>
 </tr>
 <tr>
@@ -3249,10 +3295,10 @@ Relative change
 11
 </td>
 <td style="text-align:center;">
-24.4
+67.2
 </td>
 <td style="text-align:center;">
--2.996
+-2.672
 </td>
 </tr>
 <tr>
@@ -3260,10 +3306,10 @@ Relative change
 12
 </td>
 <td style="text-align:center;">
-24.7
+68.6
 </td>
 <td style="text-align:center;">
--2.084
+-0.644
 </td>
 </tr>
 <tr>
@@ -3271,10 +3317,10 @@ Relative change
 13
 </td>
 <td style="text-align:center;">
-25.2
+69.0
 </td>
 <td style="text-align:center;">
--0.047
+-0.112
 </td>
 </tr>
 <tr>
@@ -3282,10 +3328,10 @@ Relative change
 14
 </td>
 <td style="text-align:center;">
-25.4
+69.5
 </td>
 <td style="text-align:center;">
-0.919
+0.648
 </td>
 </tr>
 </tbody>
@@ -3296,10 +3342,10 @@ Relative change
 <pre class="r"><code>source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
 
 
-ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
- geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+ggplot(Bladder_D_10_rel, aes(x=1:nrow(Bladder_D_10_rel), y=y)) + 
+ geom_segment( aes(x=1:nrow(Bladder_D_10_rel), xend=1:nrow(Bladder_D_10_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
 geom_point() +
-scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
+scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_D_10_rel)))  + # adds only specific ticks
 geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
 ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction in rectum dvh&quot;) +
 xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
@@ -3383,7 +3429,7 @@ Mein Vorname
 <h2>Relation bladder mean and DIL mean</h2>
 <pre class="r"><code>#source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
 
-plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+plot(Bladder_D_10_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/PatientX.Rmd/linear%20regression%20Bladder%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-1">
@@ -3422,48 +3468,48 @@ Mein Vorname
 </table>
 </div>
 </div>
-<pre class="r"><code>x_Bladder_mean_rel &lt;- Bladder_mean_rel$relchange
+<pre class="r"><code>x_Bladder_D_10_rel &lt;- Bladder_D_10_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
-linearregression_Bladder_DIL &lt;- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)</code></pre>
+linearregression_Bladder_DIL &lt;- lm(y_DIL_mean_rel ~ x_Bladder_D_10_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)</code></pre>
 <pre><code>
 Call:
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)
 
 Coefficients:
-       (Intercept)  x_Bladder_mean_rel  
-           -0.3282              0.0558  </code></pre>
+       (Intercept)  x_Bladder_D_10_rel  
+            -0.221               0.178  </code></pre>
 <pre class="r"><code>fitted.values(linearregression_Bladder_DIL)</code></pre>
 <pre><code>     1      2      3      4      5      6      7      8      9     10     11 
--0.328 -0.357 -0.349 -0.482 -0.443 -0.343 -0.304 -0.309 -0.408 -0.350 -0.495 
+-0.221 -0.263 -0.342 -0.522 -0.539 -0.337 -0.380 -0.465 -0.560 -0.215 -0.696 
     12     13     14 
--0.444 -0.331 -0.277 </code></pre>
+-0.335 -0.241 -0.106 </code></pre>
 <pre class="r"><code>residuals(linearregression_Bladder_DIL)</code></pre>
 <pre><code>      1       2       3       4       5       6       7       8       9      10 
- 0.3282 -0.1977 -0.1456 -0.3297 -0.1626 -0.2781 -0.6749  0.1334 -0.1967  0.3440 
+ 0.2210 -0.2914 -0.1525 -0.2895 -0.0670 -0.2843 -0.5987  0.2890 -0.0451  0.2084 
      11      12      13      14 
- 0.1989  0.5387  0.0573  0.3848 </code></pre>
+ 0.3992  0.4295 -0.0325  0.2138 </code></pre>
 <pre class="r"><code>summary(linearregression_Bladder_DIL)</code></pre>
 <pre><code>
 Call:
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--0.6749 -0.1974 -0.0442  0.2959  0.5387 
+-0.5987 -0.2513 -0.0388  0.2192  0.4295 
 
 Coefficients:
                    Estimate Std. Error t value Pr(&gt;|t|)  
-(Intercept)         -0.3282     0.1135   -2.89    0.014 *
-x_Bladder_mean_rel   0.0558     0.0789    0.71    0.493  
+(Intercept)         -0.2210     0.1174   -1.88    0.084 .
+x_Bladder_D_10_rel   0.1776     0.0951    1.87    0.087 .
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 0.353 on 12 degrees of freedom
-Multiple R-squared:  0.04,  Adjusted R-squared:  -0.04 
-F-statistic:  0.5 on 1 and 12 DF,  p-value: 0.493</code></pre>
-<pre class="r"><code>plot(x_Bladder_mean_rel, y_DIL_mean_rel)
+Residual standard error: 0.317 on 12 degrees of freedom
+Multiple R-squared:  0.225, Adjusted R-squared:  0.161 
+F-statistic: 3.49 on 1 and 12 DF,  p-value: 0.0865</code></pre>
+<pre class="r"><code>plot(x_Bladder_D_10_rel, y_DIL_mean_rel)
 abline(linearregression_Bladder_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/PatientX.Rmd/linear%20regression%20Bladder%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
