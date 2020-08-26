@@ -14,10 +14,15 @@ DILtoBoost_1_mean_boxplot <- DIL_mean_boxplot %>% add_column(Mittelwert_Boost = 
 
 DILtoBoost_n_mean_table <- ddply(DILtoBoost_1_mean_boxplot, .(), transform, DILtoBoost_n = (Mittelwert_DIL/ Mittelwert_Boost))
 #DILtoBoost_1_mean_table
+DILtoBoost_n_mean_table
+#DILtoBoost_n_mean_table <-DILtoBoost_n_mean_table_print
+
+
 
 DILtoBoost_n_mean_table <- DILtoBoost_n_mean_table %>% mutate(.id = row_number())
-DILtoBoost_n_mean_table <- DILtoBoost_n_mean_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
-DILtoBoost_n_mean_table
+DILtoBoost_n_mean_table_output <- DILtoBoost_n_mean_table %>% rename('Fraction' = '.id') #renmae column '.id' with 'Fraction'
+DILtoBoost_n_mean_table_output
+DILtoBoost_n_mean_table <- DILtoBoost_n_mean_table_output
 
 #y <- DILtoBoost_n_mean_table$DILtoBoost_n
 
