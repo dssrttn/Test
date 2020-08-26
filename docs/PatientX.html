@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9482ed05c2a508ec6cebf7d94cba02e927c8551atargetblank9482ed0a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/9482ed05c2a508ec6cebf7d94cba02e927c8551a" target="_blank">9482ed0</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree05e3a147a918bce7a4ef9f72c8196f15611f1c37targetblank05e3a14a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/05e3a147a918bce7a4ef9f72c8196f15611f1c37" target="_blank">05e3a14</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree9482ed05c2a508ec6cebf7d94cba02e927c8551atargetblank9482ed0a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree05e3a147a918bce7a4ef9f72c8196f15611f1c37targetblank05e3a14a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/9482ed05c2a508ec6cebf7d94cba02e927c8551a" target="_blank">9482ed0</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/05e3a147a918bce7a4ef9f72c8196f15611f1c37" target="_blank">05e3a14</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -550,7 +550,6 @@ Untracked files:
     Untracked:  analysis/alphabetaohnecsv2.Rmd
     Untracked:  analysis/child/
     Untracked:  analysis/dataframefromall.Rmd
-    Untracked:  code/XVIall.R
     Untracked:  codefueralle
     Untracked:  data/1/
     Untracked:  data/10/
@@ -592,9 +591,8 @@ Unstaged changes:
     Modified:   analysis/dilundboost.Rmd
     Modified:   analysis/kable.Rmd
     Modified:   analysis/xvi.Rmd
-    Modified:   code/Boxplot_to_DIL_1.R
-    Modified:   code/Boxplot_to_DIL_n.R
-    Modified:   code/XVI.R
+    Deleted:    code/Boxplot_to_DIL_mean.R
+    Deleted:    code/Boxplot_to_DIL_mean2.R
 
 </code></pre>
 <p>
@@ -633,6 +631,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/05e3a147a918bce7a4ef9f72c8196f15611f1c37/analysis/PatientX.Rmd" target="_blank">05e3a14</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-26
+</td>
+<td>
+alle dil und boost relationen verbessert mit dplyr
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/9ce9ac5e7e002a1a4faf0c7571461e22fd5414aa/docs/PatientX.html" target="_blank">9ce9ac5</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-26
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2017,7 +2049,7 @@ Mein Vorname
 <div id="diln-to-boost1---table-with-percentage-relation" class="section level3">
 <h3>DIL[n] to boost[1] - table with percentage relation</h3>
 <p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
-<pre class="r"><code>DILtoBoost_1_mean_table %&gt;%
+<pre class="r"><code>DIL_n_Boost_1_mean_boxplot %&gt;%
  knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relation relative to the first fraction&quot;, &quot;Numbers&quot;)) %&gt;%
 kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2445,7 +2477,7 @@ Mein Vorname
 <div id="dil-minus-boost---table-with-percentage-relation" class="section level3">
 <h3>DIL minus boost - table with percentage relation</h3>
 <p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
-<pre class="r"><code>DIL_minus_Boost_mean_table %&gt;%
+<pre class="r"><code>DIL_minus_Boost_mean_boxplot %&gt;%
   knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL minus boost&quot;, &quot;Numbers&quot;)) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE)</code></pre>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2464,7 +2496,7 @@ Numbers
 <tbody>
 <tr>
 <td style="text-align:left;">
-&lt;0.95%
+&lt;95%
 </td>
 <td style="text-align:right;">
 7
