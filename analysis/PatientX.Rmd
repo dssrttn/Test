@@ -329,7 +329,7 @@ abline(linearregression_rectum_DIL, col = "red")
 source(here::here("code/Bladder_mean_rel.R"))
  
 
-Bladder_mean_rel_table %>%
+Bladder_D_10_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Rectum mean descriptive statistics") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 full_width = TRUE)
@@ -343,10 +343,10 @@ Bladder_mean_rel_table %>%
 source(here::here("code/Bladder_mean_rel.R"))
 
 
-ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
- geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+ggplot(Bladder_D_10_rel, aes(x=1:nrow(Bladder_D_10_rel), y=y)) + 
+ geom_segment( aes(x=1:nrow(Bladder_D_10_rel), xend=1:nrow(Bladder_D_10_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
 geom_point() +
-scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
+scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_D_10_rel)))  + # adds only specific ticks
 geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
 ggtitle("DIL - Relative dose changes in percent from the 1st fraction in rectum dvh") +
 xlab("Fraction") + # X-Achsen-Beschriftung
@@ -361,13 +361,13 @@ lineplottheme
 ```{r linear regression Bladder DIL means, message=FALSE}
 #source(here::here("code/Bladder_mean_rel.R"))
 
-plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)
+plot(Bladder_D_10_rel$relchange, DIL_mean_rel$relchange)
 
-x_Bladder_mean_rel <- Bladder_mean_rel$relchange
+x_Bladder_D_10_rel <- Bladder_D_10_rel$relchange
 y_DIL_mean_rel <- DIL_mean_rel$relchange
 
-linearregression_Bladder_DIL <- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+linearregression_Bladder_DIL <- lm(y_DIL_mean_rel ~ x_Bladder_D_10_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)
 
 fitted.values(linearregression_Bladder_DIL)
 residuals(linearregression_Bladder_DIL)
@@ -375,7 +375,7 @@ residuals(linearregression_Bladder_DIL)
 summary(linearregression_Bladder_DIL)
 
 
-plot(x_Bladder_mean_rel, y_DIL_mean_rel)
+plot(x_Bladder_D_10_rel, y_DIL_mean_rel)
 abline(linearregression_Bladder_DIL, col = "red")
 
 
