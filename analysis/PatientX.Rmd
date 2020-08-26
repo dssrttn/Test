@@ -182,15 +182,10 @@ source(here::here("code/Boxplot_to_DIL_n.R"))
 
 (Mittelwert_DIL[n]/ Mittelwert_Boost[n])
 
+
 ```{r DIL to Boost n table, message=FALSE}
 
-DILtoBoost_n_mean_table_output   %>%
- knitr::kable(align = c("cccc"), format ='html', caption = "", col.names = c("Fraction", "DIL", "Boost", "relation")) %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
-
-
-
-DILtoBoost_n_mean_table %>%
+DIL_n_Boost_n_mean_boxplot %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relative relation", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
