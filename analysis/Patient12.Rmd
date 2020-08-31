@@ -1,0 +1,314 @@
+---
+title: "Patient 12"
+author: "dssrttn"
+date: "2020-08-20"
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+
+```
+
+
+```{r DIL mean for boxplot, message=FALSE, warning=FALSE}
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(psych)
+library(broom)
+library(here)
+library(jtools) # for linear regression output. not used so far
+options(digits=3) # zeigt nur drei Zahlenwerte an
+source("code/plottheme.R")
+source("code/cbPalette.R")
+source("code/lineplottheme.R")
+source("code/boxplottheme.R")
+
+DIL<- read_csv2('data/12/DIL.csv')
+Boost <- read_csv2('data/12/Boost.csv')
+#Rectum <- read_csv2('data/12/Rectum.csv')
+#Bladder <- read_csv('data/12/Bladder.csv')
+#XVI <- read_csv('data/12/XVI.csv')
+```
+
+
+
+
+# Dose
+
+## DIL and boost changes during the treatment period
+
+
+```{r, message=FALSE}
+
+Boost_mean_boxplot <- Boost
+DIL_mean_boxplot <- DIL
+
+#data = tibble(File = files) %>%
+    #extract(File, "Site", "([A-Z]{2}-[A-Za-z0-9]{3})", remove = FALSE) %>%
+    #mutate(Data = lapply(File, read_csv)) %>%
+   # unnest(Data) %>%
+  #  select(-File)
+
+
+DIL_n_Boost_n_mean_boxplot <- DIL_mean_boxplot %>%
+  # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+#select(Mittelwert_DIL = Mittelwert)
+distinct(Mittelwert)  %>% 
+  # Kolumne Mittelwert in Kolumne DIL_Mean umbenannt
+rename('DIL_Mean' = 'Mittelwert')  %>%
+  # Kolumne Boost_Mean aus Boost_nean_boxplot-Dataframe wird hinzugefügt
+add_column(Boost_Mean = Boost_mean_boxplot$Mittelwert) %>%
+# Rechnung DIL_Mean/ Boost_Mean in Kolumne DILtoBoost_n wird durchgeführt
+transform(DILtoBoost_n = (DIL_Mean/Boost_Mean)) %>%
+  transform(dilminusboost = (DIL_Mean-Boost_Mean)/(DIL_Mean[1]-Boost_Mean[1])) %>%
+  transform(DILtoBoost_1 = (DIL_Mean/ Boost_Mean[1])) %>%
+mutate(.id = row_number()) %>%
+rename('Patient' = '.id') %>%
+  #mutate(Patient ) %>%
+select(Patient, everything()) # changes position of column "Fraction" to first place
+
+
+#DIL_n_Boost_n_mean_boxplot
+
+DIL_n_Boost_n_mean_boxplot %>%
+ knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+              ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+#Tabelle mit psych-Package: 
+
+#DIL_n_Boost_n_mean_boxplot <- describe(DIL_n_Boost_n_mean_boxplot)
+
+
+#DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>% rename('Numbers' = n, Mean = mean, #'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, #Range = range)
+
+#DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>%
+ # select(Numbers,   Mean,   'Standard deviation',   Median, Minimum,    Maximum, Range, 'Standard #errors')
+
+
+#DIL_n_Boost_n_mean_boxplot %>%
+ #knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+         #     ) %>%
+#kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+```
+
+
+### DIL changes relative to the first fraction of DIL
+
+
+
+
+```{r Relative dose changes in percent for DIL, message=FALSE}
+
+source(here::here("code/DILrelchange.R"))
+DIL_mean_rel_table %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html' #, caption = "DIL descriptive statistics"
+        ) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE)
+
+
+```
+
+### Lollipop plot for DIL mean changes relative to the first fraction of DIL
+
+
+aes(x=1:nrow(speed1)
+
+```{r Lollipop plot DIL relative change, message=FALSE}
+source(here::here("code/Lollipopplot_DIL_mean.R"))
+
+ggplot(DIL_mean_rel,aes(x=1:nrow(DIL_mean_rel) #DIL_relabs$x
+                      ,y=y )) + #DIL_relabs$abschange)) +
+geom_segment( aes(x=1:nrow(DIL_mean_rel), xend=1:nrow(DIL_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel)))  + # adds only specific ticks
+ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme
+    
+```
+
+
+### Boost changes relative to the first fraction of boost 
+
+```{r Relative dose changes in percent for boost, message=FALSE}
+
+source("code/Boostrelchange.R")
+ 
+Boost_mean_rel_table %>%
+  kable(align = c("ccccccccc"), escape = FALSE, format ='html' #, caption = "Boost descriptive statistics"
+        ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+    full_width = TRUE) 
+
+```
+
+### Lollipop plot for Boost mean changes relative to the first fraction of Boost
+
+```{r Lollipop plot Boost relative change, message=FALSE}
+source(here::here("code/Lollipopplot_Boost_mean.R"))
+
+ggplot(Boost_mean_rel,aes(x=1:nrow(Boost_mean_rel)
+                        ,y=y )) +
+geom_segment( aes(x=1:nrow(Boost_mean_rel), xend=1:nrow(Boost_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+geom_point() +
+scale_x_continuous(breaks = c(1,5,10,nrow(Boost_mean_rel)))  + # adds only specific ticks
+ggtitle("Boost - Relative dose changes in percent from the 1st fraction with Boost") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") + # Y-Achsen-Beschriftung 
+plottheme +
+lineplottheme
+
+```
+
+
+
+### Line plot for DIL and boost mean changes relative to their respective first fraction
+nrow(DIL_mean_rel)
+aes(x=1:nrow(speed1)
+
+```{r Relative dose changes DIL und boost in percent line plot, message = FALSE}
+
+ggplot() + 
+geom_line(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = "DIL")) +
+geom_line(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = "Boost")) +
+geom_point(data = DIL_mean_rel_table, aes(x = 1:nrow(DIL_mean_rel_table), y = DIL_mean_rel$relchange, color = "DIL")) +
+geom_point(data = Boost_mean_rel_table , aes(x = 1:nrow(DIL_mean_rel_table), y = Boost_mean_rel$relchange, color = "Boost")) +
+scale_colour_manual(values=cbPalette) +  # To use for line and point colors, add
+scale_x_continuous(breaks = c(1,5,10,nrow(DIL_mean_rel_table)))  + # adds only specific ticks
+ggtitle("DIL - Relative dose changes in percent from the 1st fraction with DIL") +
+xlab("Fraction") + # X-Achsen-Beschriftung
+ylab("Relative dose changes") +   #+ # Y-Achsen-Beschriftung
+plottheme + 
+lineplottheme
+
+```
+
+
+
+## Relation of DIL and boost
+
+### DIL[n] to boost[1] - boxplot with percentage relation
+
+(Mittelwert_DIL/ Mittelwert_Boost[1])
+
+```{r DIL to Boost 1 Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_to_DIL_1.R"))
+
+
+```
+
+### DIL[n] to boost[1] - table with percentage relation
+
+(Mittelwert_DIL/ Mittelwert_Boost[1])
+
+```{r DIL to Boost 1 table, message=FALSE}
+
+DIL_n_Boost_1_mean_boxplot %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+```
+
+
+### DIL[n] to boost[n] - boxplot with percentage relation
+
+(Mittelwert_DIL/ Mittelwert_Boost[n])
+
+```{r DIL to Boost n Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_to_DIL_n.R"))
+
+
+```
+
+
+### DIL[n] to boost[n] - table with percentage relation
+
+(Mittelwert_DIL[n]/ Mittelwert_Boost[n])
+
+
+```{r DIL to Boost n table, message=FALSE}
+
+DIL_n_Boost_n_mean_boxplot %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relative relation", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+```
+
+### DIL[n] to boost[n] - table with 2 percent difference 
+
+```{r DIL to Boost 2 percent dips table, message=FALSE}
+
+source(here::here("code/DILtoBoostn_2percent.R"))
+
+
+DILtoBoost_2percent_mean_table %>%
+ knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relative relation", "Numbers")) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+```
+
+
+
+### DIL minus boost - boxplot with percentage relation
+
+(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))
+
+```{r DIL minus boost Boxplot, message=FALSE}
+
+source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
+
+
+
+```
+
+### DIL minus boost - table with percentage relation
+
+(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))
+
+```{r DIL minus Boost table, message=FALSE}
+
+DIL_minus_Boost_mean_boxplot %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+```
+
+
+### Linear regression Boost mean DIL mean
+
+```{r linear regression Boost DIL means,  width=7, height=5, dev=c('png', 'pdf'), message=FALSE}
+
+plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)
+x_Boost_mean_rel <- Boost_mean_rel$relchange
+y_DIL_mean_rel <- DIL_mean_rel$relchange
+
+linearregression_Boost_DIL <- lm(y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+lm(formula = y_DIL_mean_rel ~ x_Boost_mean_rel)
+
+fitted.values(linearregression_Boost_DIL)
+residuals(linearregression_Boost_DIL)
+
+summary(linearregression_Boost_DIL)
+
+
+plot(x_Boost_mean_rel, y_DIL_mean_rel)
+abline(linearregression_Boost_DIL, col = "red")
+
+#tidy(linearregression_Boost_DIL)
+
+```
