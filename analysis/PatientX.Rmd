@@ -42,7 +42,68 @@ XVI <- read_csv2('data/1/XVI.csv')
 
 
 # Dose
+
 ## DIL and boost changes during the treatment period
+
+
+```{r, message=FALSE}
+
+Boost_mean_boxplot <- Boost
+DIL_mean_boxplot <- DIL
+
+
+
+
+
+
+#data = tibble(File = files) %>%
+    #extract(File, "Site", "([A-Z]{2}-[A-Za-z0-9]{3})", remove = FALSE) %>%
+    #mutate(Data = lapply(File, read_csv)) %>%
+   # unnest(Data) %>%
+  #  select(-File)
+
+
+DIL_n_Boost_n_mean_boxplot <- DIL_mean_boxplot %>%
+  # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+#select(Mittelwert_DIL = Mittelwert)
+distinct(Mittelwert)  %>% 
+  # Kolumne Mittelwert in Kolumne DIL_Mean umbenannt
+rename('DIL_Mean' = 'Mittelwert')  %>%
+  # Kolumne Boost_Mean aus Boost_nean_boxplot-Dataframe wird hinzugefügt
+add_column(Boost_Mean = Boost_mean_boxplot$Mittelwert) %>%
+# Rechnung DIL_Mean/ Boost_Mean in Kolumne DILtoBoost_n wird durchgeführt
+transform(DILtoBoost_n = (DIL_Mean/Boost_Mean)) %>%
+  transform(dilminusboost = (DIL_Mean-Boost_Mean)/(DIL_Mean[1]-Boost_Mean[1])) %>%
+  transform(DILtoBoost_1 = (DIL_Mean/ Boost_Mean[1])) %>%
+mutate(.id = row_number()) %>%
+rename('Patient' = '.id') %>%
+  #mutate(Patient ) %>%
+select(Patient, everything()) # changes position of column "Fraction" to first place
+
+
+#DIL_n_Boost_n_mean_boxplot
+
+DIL_n_Boost_n_mean_boxplot %>%
+ knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+              ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+
+DIL_n_Boost_n_mean_boxplot <- describe(DIL_n_Boost_n_mean_boxplot)
+
+
+DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>% rename('Numbers' = n, Mean = mean, 'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, Range = range)
+
+DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>%
+  select(Numbers,   Mean,   'Standard deviation',   Median, Minimum,    Maximum, Range, 'Standard errors')
+
+
+DIL_n_Boost_n_mean_boxplot %>%
+ knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+              ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+```
+
 
 ### DIL changes relative to the first fraction of DIL
 
@@ -326,7 +387,7 @@ abline(linearregression_rectum_DIL, col = "red")
 
 ```{r Relative dose changes in percent for bladder, message=FALSE}
 
-source(here::here("code/Bladder_mean_rel.R"))
+source(here::here("code/Bladder_D_10_rel.R"))
  
 
 Bladder_D_10_rel_table %>%
@@ -340,7 +401,7 @@ Bladder_D_10_rel_table %>%
 ### Lollipop plot for bladder mean changes relative to the first fraction of bladder
 
 ```{r Lollipop plot relative dose changes of bladder in percent, message = FALSE}
-source(here::here("code/Bladder_mean_rel.R"))
+source(here::here("code/Bladder_D_10_rel.R"))
 
 
 ggplot(Bladder_D_10_rel, aes(x=1:nrow(Bladder_D_10_rel), y=y)) + 
@@ -359,7 +420,7 @@ lineplottheme
 ## Relation bladder mean and DIL mean
 
 ```{r linear regression Bladder DIL means, message=FALSE}
-#source(here::here("code/Bladder_mean_rel.R"))
+#source(here::here("code/Bladder_D_10_rel.R"))
 
 plot(Bladder_D_10_rel$relchange, DIL_mean_rel$relchange)
 
