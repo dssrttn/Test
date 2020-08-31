@@ -41,8 +41,66 @@ XVI <- read_csv2('data/18/XVI.csv')
 
 
 
+
 # Dose
+
 ## DIL and boost changes during the treatment period
+
+
+```{r, message=FALSE}
+
+Boost_mean_boxplot <- Boost
+DIL_mean_boxplot <- DIL
+
+#data = tibble(File = files) %>%
+    #extract(File, "Site", "([A-Z]{2}-[A-Za-z0-9]{3})", remove = FALSE) %>%
+    #mutate(Data = lapply(File, read_csv)) %>%
+   # unnest(Data) %>%
+  #  select(-File)
+
+
+DIL_n_Boost_n_mean_boxplot <- DIL_mean_boxplot %>%
+  # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+#select(Mittelwert_DIL = Mittelwert)
+distinct(Mittelwert)  %>% 
+  # Kolumne Mittelwert in Kolumne DIL_Mean umbenannt
+rename('DIL_Mean' = 'Mittelwert')  %>%
+  # Kolumne Boost_Mean aus Boost_nean_boxplot-Dataframe wird hinzugefügt
+add_column(Boost_Mean = Boost_mean_boxplot$Mittelwert) %>%
+# Rechnung DIL_Mean/ Boost_Mean in Kolumne DILtoBoost_n wird durchgeführt
+transform(DILtoBoost_n = (DIL_Mean/Boost_Mean)) %>%
+  transform(dilminusboost = (DIL_Mean-Boost_Mean)/(DIL_Mean[1]-Boost_Mean[1])) %>%
+  transform(DILtoBoost_1 = (DIL_Mean/ Boost_Mean[1])) %>%
+mutate(.id = row_number()) %>%
+rename('Patient' = '.id') %>%
+  #mutate(Patient ) %>%
+select(Patient, everything()) # changes position of column "Fraction" to first place
+
+
+#DIL_n_Boost_n_mean_boxplot
+
+DIL_n_Boost_n_mean_boxplot %>%
+ knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+              ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+#Tabelle mit psych-Package: 
+
+#DIL_n_Boost_n_mean_boxplot <- describe(DIL_n_Boost_n_mean_boxplot)
+
+
+#DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>% rename('Numbers' = n, Mean = mean, #'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, #Range = range)
+
+#DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>%
+ # select(Numbers,   Mean,   'Standard deviation',   Median, Minimum,    Maximum, Range, 'Standard #errors')
+
+
+#DIL_n_Boost_n_mean_boxplot %>%
+ #knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+         #     ) %>%
+#kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+```
+
 
 ### DIL changes relative to the first fraction of DIL
 
@@ -159,7 +217,7 @@ source(here::here("code/Boxplot_to_DIL_1.R"))
 
 ```{r DIL to Boost 1 table, message=FALSE}
 
-DILtoBoost_1_mean_table %>%
+DIL_n_Boost_1_mean_boxplot %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relation relative to the first fraction", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
@@ -175,7 +233,6 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width
 source(here::here("code/Boxplot_to_DIL_n.R"))
 
 
-
 ```
 
 
@@ -183,9 +240,10 @@ source(here::here("code/Boxplot_to_DIL_n.R"))
 
 (Mittelwert_DIL[n]/ Mittelwert_Boost[n])
 
+
 ```{r DIL to Boost n table, message=FALSE}
 
-DILtoBoost_n_mean_table %>%
+DIL_n_Boost_n_mean_boxplot %>%
  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost relative relation", "Numbers")) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
@@ -224,7 +282,7 @@ source(here::here("code/Boxplot_DIL_minus_Boost_mean.R"))
 
 ```{r DIL minus Boost table, message=FALSE}
 
-DIL_minus_Boost_mean_table %>%
+DIL_minus_Boost_mean_boxplot %>%
   knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
@@ -326,10 +384,10 @@ abline(linearregression_rectum_DIL, col = "red")
 
 ```{r Relative dose changes in percent for bladder, message=FALSE}
 
-source(here::here("code/Bladder_mean_rel.R"))
+source(here::here("code/Bladder_D_10_rel.R"))
  
 
-Bladder_mean_rel_table %>%
+Bladder_D_10_rel_table %>%
   kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "Rectum mean descriptive statistics") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 full_width = TRUE)
@@ -340,13 +398,13 @@ Bladder_mean_rel_table %>%
 ### Lollipop plot for bladder mean changes relative to the first fraction of bladder
 
 ```{r Lollipop plot relative dose changes of bladder in percent, message = FALSE}
-source(here::here("code/Bladder_mean_rel.R"))
+source(here::here("code/Bladder_D_10_rel.R"))
 
 
-ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
- geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
+ggplot(Bladder_D_10_rel, aes(x=1:nrow(Bladder_D_10_rel), y=y)) + 
+ geom_segment( aes(x=1:nrow(Bladder_D_10_rel), xend=1:nrow(Bladder_D_10_rel), y=0, yend=y), color="black") + # Striche von der Hoehe y bis zu den Punkten
 geom_point() +
-scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
+scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_D_10_rel)))  + # adds only specific ticks
 geom_abline(intercept = 0, slope = 0, lty=1, col='orange') + # horizontale Linie ohne Steigung, da slope = 0 
 ggtitle("DIL - Relative dose changes in percent from the 1st fraction in rectum dvh") +
 xlab("Fraction") + # X-Achsen-Beschriftung
@@ -359,15 +417,15 @@ lineplottheme
 ## Relation bladder mean and DIL mean
 
 ```{r linear regression Bladder DIL means, message=FALSE}
-#source(here::here("code/Bladder_mean_rel.R"))
+#source(here::here("code/Bladder_D_10_rel.R"))
 
-plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)
+plot(Bladder_D_10_rel$relchange, DIL_mean_rel$relchange)
 
-x_Bladder_mean_rel <- Bladder_mean_rel$relchange
+x_Bladder_D_10_rel <- Bladder_D_10_rel$relchange
 y_DIL_mean_rel <- DIL_mean_rel$relchange
 
-linearregression_Bladder_DIL <- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+linearregression_Bladder_DIL <- lm(y_DIL_mean_rel ~ x_Bladder_D_10_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)
 
 fitted.values(linearregression_Bladder_DIL)
 residuals(linearregression_Bladder_DIL)
@@ -375,7 +433,7 @@ residuals(linearregression_Bladder_DIL)
 summary(linearregression_Bladder_DIL)
 
 
-plot(x_Bladder_mean_rel, y_DIL_mean_rel)
+plot(x_Bladder_D_10_rel, y_DIL_mean_rel)
 abline(linearregression_Bladder_DIL, col = "red")
 
 
@@ -388,16 +446,15 @@ abline(linearregression_Bladder_DIL, col = "red")
 
 source(here::here("code/XVI.R"))
 
-
 XVI_tibble_date %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+  kable(align = c("cccc"), escape = FALSE, format ='html', caption = "") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 full_width = TRUE)
 
 
 
 XVI_tibble %>%
-  kable(align = c("ccccccccc"), escape = FALSE, format ='html', caption = "") %>%
+  kable(align = c("cccccccc"), escape = FALSE, format ='html', caption = "") %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
     full_width = TRUE) 
 
