@@ -426,7 +426,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-08-20
+<strong>Last updated:</strong> 2020-08-31
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree23c95d7e44a5545778525f7d1b4bc529a3e8ac6btargetblank23c95d7a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/23c95d7e44a5545778525f7d1b4bc529a3e8ac6b" target="_blank">23c95d7</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreebcefdce28c3fcbe978aeedf23b7138121af14c7ftargetblankbcefdcea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/bcefdce28c3fcbe978aeedf23b7138121af14c7f" target="_blank">bcefdce</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree23c95d7e44a5545778525f7d1b4bc529a3e8ac6btargetblank23c95d7a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttreebcefdce28c3fcbe978aeedf23b7138121af14c7ftargetblankbcefdcea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/23c95d7e44a5545778525f7d1b4bc529a3e8ac6b" target="_blank">23c95d7</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/bcefdce28c3fcbe978aeedf23b7138121af14c7f" target="_blank">bcefdce</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -544,11 +544,13 @@ Untracked files:
     Untracked:  README.html
     Untracked:  analysis/DILtoBoost.Rmd
     Untracked:  analysis/Patient12.Rmd
+    Untracked:  analysis/Patientencharakteristika.Rmd
     Untracked:  analysis/Patientloop.Rmd
     Untracked:  analysis/alphabeta.Rmd
     Untracked:  analysis/alphabetaohnecsv.Rmd
     Untracked:  analysis/alphabetaohnecsv2.Rmd
     Untracked:  analysis/child/
+    Untracked:  code/Bladder_D_10_rel.R
     Untracked:  codefueralle
     Untracked:  data/1/
     Untracked:  data/10/
@@ -581,14 +583,21 @@ Untracked files:
     Untracked:  data/DVH_Auswertung.py
     Untracked:  data/DVH_Auswertung.pyc
     Untracked:  data/Literatur ab 20200727/
+    Untracked:  data/Patientencharakteristika_202008028.csv
     Untracked:  data/pseudonymisiert/
 
 Unstaged changes:
     Modified:   _workflowr.yml
     Modified:   analysis/DILminusBoost.Rmd
+    Modified:   analysis/PatientX.Rmd
     Modified:   analysis/Rechnungen.Rmd
+    Modified:   analysis/dataframefromall.Rmd
     Modified:   analysis/dilundboost.Rmd
     Modified:   analysis/kable.Rmd
+    Modified:   analysis/xvi.Rmd
+    Deleted:    code/Bladder_mean_rel.R
+    Deleted:    code/Boxplot_to_DIL_mean.R
+    Deleted:    code/Boxplot_to_DIL_mean2.R
 
 </code></pre>
 <p>
@@ -627,6 +636,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/bcefdce28c3fcbe978aeedf23b7138121af14c7f/analysis/Patient15.Rmd" target="_blank">bcefdce</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-31
+</td>
+<td>
+wflow_publish(“analysis/Patient15.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/Patient15.html" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -677,6 +720,363 @@ XVI &lt;- read_csv2(&#39;data/15/XVI.csv&#39;)</code></pre>
 <h1>Dose</h1>
 <div id="dil-and-boost-changes-during-the-treatment-period" class="section level2">
 <h2>DIL and boost changes during the treatment period</h2>
+<pre class="r"><code>Boost_mean_boxplot &lt;- Boost
+DIL_mean_boxplot &lt;- DIL
+
+#data = tibble(File = files) %&gt;%
+    #extract(File, &quot;Site&quot;, &quot;([A-Z]{2}-[A-Za-z0-9]{3})&quot;, remove = FALSE) %&gt;%
+    #mutate(Data = lapply(File, read_csv)) %&gt;%
+   # unnest(Data) %&gt;%
+  #  select(-File)
+
+
+DIL_n_Boost_n_mean_boxplot &lt;- DIL_mean_boxplot %&gt;%
+  # aus dem ursprünglichen tibble wird nur die column Mittelwert behalten
+#select(Mittelwert_DIL = Mittelwert)
+distinct(Mittelwert)  %&gt;% 
+  # Kolumne Mittelwert in Kolumne DIL_Mean umbenannt
+rename(&#39;DIL_Mean&#39; = &#39;Mittelwert&#39;)  %&gt;%
+  # Kolumne Boost_Mean aus Boost_nean_boxplot-Dataframe wird hinzugefügt
+add_column(Boost_Mean = Boost_mean_boxplot$Mittelwert) %&gt;%
+# Rechnung DIL_Mean/ Boost_Mean in Kolumne DILtoBoost_n wird durchgeführt
+transform(DILtoBoost_n = (DIL_Mean/Boost_Mean)) %&gt;%
+  transform(dilminusboost = (DIL_Mean-Boost_Mean)/(DIL_Mean[1]-Boost_Mean[1])) %&gt;%
+  transform(DILtoBoost_1 = (DIL_Mean/ Boost_Mean[1])) %&gt;%
+mutate(.id = row_number()) %&gt;%
+rename(&#39;Patient&#39; = &#39;.id&#39;) %&gt;%
+  #mutate(Patient ) %&gt;%
+select(Patient, everything()) # changes position of column &quot;Fraction&quot; to first place
+
+
+#DIL_n_Boost_n_mean_boxplot
+
+DIL_n_Boost_n_mean_boxplot %&gt;%
+ knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, #col.names = c(&quot;DIL to boost relative relations&quot;, #&quot;Numbers&quot;)
+              ) %&gt;%
+kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Patient
+</th>
+<th style="text-align:right;">
+DIL_Mean
+</th>
+<th style="text-align:right;">
+Boost_Mean
+</th>
+<th style="text-align:right;">
+DILtoBoost_n
+</th>
+<th style="text-align:right;">
+dilminusboost
+</th>
+<th style="text-align:right;">
+DILtoBoost_1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+77.3
+</td>
+<td style="text-align:right;">
+76.7
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+77.6
+</td>
+<td style="text-align:right;">
+76.8
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.321
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+77.1
+</td>
+<td style="text-align:right;">
+76.4
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.230
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+77.1
+</td>
+<td style="text-align:right;">
+76.3
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.404
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+77.1
+</td>
+<td style="text-align:right;">
+76.4
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.099
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+77.5
+</td>
+<td style="text-align:right;">
+76.8
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.123
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+77.3
+</td>
+<td style="text-align:right;">
+76.4
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.572
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+77.5
+</td>
+<td style="text-align:right;">
+76.8
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.061
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+77.9
+</td>
+<td style="text-align:right;">
+77.1
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.307
+</td>
+<td style="text-align:right;">
+1.02
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+77.6
+</td>
+<td style="text-align:right;">
+77.0
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.022
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+77.6
+</td>
+<td style="text-align:right;">
+76.9
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.230
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+77.5
+</td>
+<td style="text-align:right;">
+76.9
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+0.875
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+77.5
+</td>
+<td style="text-align:right;">
+76.6
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.382
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+77.9
+</td>
+<td style="text-align:right;">
+77.2
+</td>
+<td style="text-align:right;">
+1.01
+</td>
+<td style="text-align:right;">
+1.225
+</td>
+<td style="text-align:right;">
+1.02
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>#Tabelle mit psych-Package: 
+
+#DIL_n_Boost_n_mean_boxplot &lt;- describe(DIL_n_Boost_n_mean_boxplot)
+
+
+#DIL_n_Boost_n_mean_boxplot &lt;- DIL_n_Boost_n_mean_boxplot %&gt;% rename(&#39;Numbers&#39; = n, Mean = mean, #&#39;Standard deviation&#39; = sd, Median = median, &#39;Standard errors&#39; = se, Minimum = min, Maximum = max, #Range = range)
+
+#DIL_n_Boost_n_mean_boxplot &lt;- DIL_n_Boost_n_mean_boxplot %&gt;%
+ # select(Numbers,   Mean,   &#39;Standard deviation&#39;,   Median, Minimum,    Maximum, Range, &#39;Standard #errors&#39;)
+
+
+#DIL_n_Boost_n_mean_boxplot %&gt;%
+ #knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, #col.names = c(&quot;DIL to boost relative relations&quot;, #&quot;Numbers&quot;)
+         #     ) %&gt;%
+#kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
 <div id="dil-changes-relative-to-the-first-fraction-of-dil" class="section level3">
 <h3>DIL changes relative to the first fraction of DIL</h3>
 <pre class="r"><code>source(here::here(&quot;code/DILrelchange.R&quot;))
@@ -873,6 +1273,43 @@ ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung
 plottheme +
 lineplottheme</code></pre>
 <p><img src="figure/Patient15.Rmd/Lollipop%20plot%20DIL%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-DIL-relative-change-1">
+Past versions of “Lollipop plot DIL relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-DIL-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/Lollipop plot DIL relative change-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="boost-changes-relative-to-the-first-fraction-of-boost" class="section level3">
 <h3>Boost changes relative to the first fraction of boost</h3>
@@ -1070,6 +1507,43 @@ ylab(&quot;Relative dose changes&quot;) + # Y-Achsen-Beschriftung
 plottheme +
 lineplottheme</code></pre>
 <p><img src="figure/Patient15.Rmd/Lollipop%20plot%20Boost%20relative%20change-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-Boost-relative-change-1">
+Past versions of “Lollipop plot Boost relative change-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-Boost-relative-change-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/Lollipop plot Boost relative change-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="line-plot-for-dil-and-boost-mean-changes-relative-to-their-respective-first-fraction" class="section level3">
 <h3>Line plot for DIL and boost mean changes relative to their respective first fraction</h3>
@@ -1087,6 +1561,43 @@ ylab(&quot;Relative dose changes&quot;) +   #+ # Y-Achsen-Beschriftung
 plottheme + 
 lineplottheme</code></pre>
 <p><img src="figure/Patient15.Rmd/Relative%20dose%20changes%20DIL%20und%20boost%20in%20percent%20line%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot-1">
+Past versions of “Relative dose changes DIL und boost in percent line plot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Relative-dose-changes-DIL-und-boost-in-percent-line-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/Relative dose changes DIL und boost in percent line plot-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="relation-of-dil-and-boost" class="section level2">
@@ -1096,11 +1607,48 @@ lineplottheme</code></pre>
 <p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
 <pre class="r"><code>source(here::here(&quot;code/Boxplot_to_DIL_1.R&quot;))</code></pre>
 <p><img src="figure/Patient15.Rmd/DIL%20to%20Boost%201%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-to-Boost-1-Boxplot-1">
+Past versions of “DIL to Boost 1 Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-to-Boost-1-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/DIL to Boost 1 Boxplot-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="diln-to-boost1---table-with-percentage-relation" class="section level3">
 <h3>DIL[n] to boost[1] - table with percentage relation</h3>
 <p>(Mittelwert_DIL/ Mittelwert_Boost[1])</p>
-<pre class="r"><code>DILtoBoost_1_mean_table %&gt;%
+<pre class="r"><code>DIL_n_Boost_1_mean_boxplot %&gt;%
  knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relation relative to the first fraction&quot;, &quot;Numbers&quot;)) %&gt;%
 kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1221,11 +1769,48 @@ Numbers
 <p>(Mittelwert_DIL/ Mittelwert_Boost[n])</p>
 <pre class="r"><code>source(here::here(&quot;code/Boxplot_to_DIL_n.R&quot;))</code></pre>
 <p><img src="figure/Patient15.Rmd/DIL%20to%20Boost%20n%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-to-Boost-n-Boxplot-1">
+Past versions of “DIL to Boost n Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-to-Boost-n-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/DIL to Boost n Boxplot-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="diln-to-boostn---table-with-percentage-relation" class="section level3">
 <h3>DIL[n] to boost[n] - table with percentage relation</h3>
 <p>(Mittelwert_DIL[n]/ Mittelwert_Boost[n])</p>
-<pre class="r"><code>DILtoBoost_n_mean_table %&gt;%
+<pre class="r"><code>DIL_n_Boost_n_mean_boxplot %&gt;%
  knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL to boost relative relation&quot;, &quot;Numbers&quot;)) %&gt;%
 kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1395,11 +1980,48 @@ Numbers
 <p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
 <pre class="r"><code>source(here::here(&quot;code/Boxplot_DIL_minus_Boost_mean.R&quot;))</code></pre>
 <p><img src="figure/Patient15.Rmd/DIL%20minus%20boost%20Boxplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-DIL-minus-boost-Boxplot-1">
+Past versions of “DIL minus boost Boxplot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-DIL-minus-boost-Boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/DIL minus boost Boxplot-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="dil-minus-boost---table-with-percentage-relation" class="section level3">
 <h3>DIL minus boost - table with percentage relation</h3>
 <p>(Mittelwert_DIL-Mittelwert_Boost)/(Mittelwert_DIL[1]-Mittelwert_Boost[1]))</p>
-<pre class="r"><code>DIL_minus_Boost_mean_table %&gt;%
+<pre class="r"><code>DIL_minus_Boost_mean_boxplot %&gt;%
   knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, col.names = c(&quot;DIL minus boost&quot;, &quot;Numbers&quot;)) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE)</code></pre>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1418,7 +2040,7 @@ Numbers
 <tbody>
 <tr>
 <td style="text-align:left;">
-&lt;0.95%
+&lt;95%
 </td>
 <td style="text-align:right;">
 1
@@ -1519,6 +2141,43 @@ Numbers
 <h3>Linear regression Boost mean DIL mean</h3>
 <pre class="r"><code>plot(Boost_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/Patient15.Rmd/linear%20regression%20Boost%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-1">
+Past versions of “linear regression Boost DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/linear regression Boost DIL means-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>x_Boost_mean_rel &lt;- Boost_mean_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
@@ -1564,6 +2223,43 @@ F-statistic: 59.4 on 1 and 12 DF,  p-value: 5.52e-06</code></pre>
 <pre class="r"><code>plot(x_Boost_mean_rel, y_DIL_mean_rel)
 abline(linearregression_Boost_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/Patient15.Rmd/linear%20regression%20Boost%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Boost-DIL-means-2">
+Past versions of “linear regression Boost DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Boost-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/linear regression Boost DIL means-2.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>#tidy(linearregression_Boost_DIL)</code></pre>
 </div>
 </div>
@@ -1769,12 +2465,86 @@ ylab(&quot;Relative dose changes&quot;) +
 plottheme + 
 lineplottheme</code></pre>
 <p><img src="figure/Patient15.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20rectum%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-relative-dose-changes-of-rectum-in-percent-1">
+Past versions of “Lollipop plot relative dose changes of rectum in percent-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-relative-dose-changes-of-rectum-in-percent-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/Lollipop plot relative dose changes of rectum in percent-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="linear-regression-rectum-mean-and-dil-mean" class="section level2">
 <h2>Linear regression rectum mean and DIL mean</h2>
 <pre class="r"><code>plot(Rectum_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/Patient15.Rmd/linear%20regression%20Rectum%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Rectum-DIL-means-1">
+Past versions of “linear regression Rectum DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Rectum-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/linear regression Rectum DIL means-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>x_Rectum_mean_rel &lt;- Rectum_mean_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
@@ -1819,15 +2589,52 @@ F-statistic: 1.39 on 1 and 12 DF,  p-value: 0.261</code></pre>
 <pre class="r"><code>plot(x_Rectum_mean_rel, y_DIL_mean_rel)
 abline(linearregression_rectum_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/Patient15.Rmd/linear%20regression%20Rectum%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Rectum-DIL-means-2">
+Past versions of “linear regression Rectum DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Rectum-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/linear regression Rectum DIL means-2.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bladder" class="section level2">
 <h2>Bladder</h2>
 <div id="bladder-changes-relative-to-the-first-fraction-of-bladder" class="section level3">
 <h3>Bladder changes relative to the first fraction of bladder</h3>
-<pre class="r"><code>source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
+<pre class="r"><code>source(here::here(&quot;code/Bladder_D_10_rel.R&quot;))
  
 
-Bladder_mean_rel_table %&gt;%
+Bladder_D_10_rel_table %&gt;%
   kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;Rectum mean descriptive statistics&quot;) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
                 full_width = TRUE)</code></pre>
@@ -1841,7 +2648,7 @@ Rectum mean descriptive statistics
 Fraction
 </th>
 <th style="text-align:center;">
-Mittelwert
+D_10
 </th>
 <th style="text-align:center;">
 Relative change
@@ -1854,7 +2661,7 @@ Relative change
 1
 </td>
 <td style="text-align:center;">
-17.6
+58.6
 </td>
 <td style="text-align:center;">
 0.000
@@ -1865,10 +2672,10 @@ Relative change
 2
 </td>
 <td style="text-align:center;">
-17.7
+56.3
 </td>
 <td style="text-align:center;">
-0.416
+-3.988
 </td>
 </tr>
 <tr>
@@ -1876,10 +2683,10 @@ Relative change
 3
 </td>
 <td style="text-align:center;">
-17.1
+56.0
 </td>
 <td style="text-align:center;">
--3.189
+-4.505
 </td>
 </tr>
 <tr>
@@ -1887,10 +2694,10 @@ Relative change
 4
 </td>
 <td style="text-align:center;">
-17.4
+57.0
 </td>
 <td style="text-align:center;">
--1.571
+-2.733
 </td>
 </tr>
 <tr>
@@ -1898,10 +2705,10 @@ Relative change
 5
 </td>
 <td style="text-align:center;">
-17.9
+58.3
 </td>
 <td style="text-align:center;">
-1.261
+-0.501
 </td>
 </tr>
 <tr>
@@ -1909,10 +2716,10 @@ Relative change
 6
 </td>
 <td style="text-align:center;">
-17.3
+56.1
 </td>
 <td style="text-align:center;">
--1.947
+-4.198
 </td>
 </tr>
 <tr>
@@ -1920,10 +2727,10 @@ Relative change
 7
 </td>
 <td style="text-align:center;">
-17.3
+56.5
 </td>
 <td style="text-align:center;">
--1.757
+-3.631
 </td>
 </tr>
 <tr>
@@ -1931,10 +2738,10 @@ Relative change
 8
 </td>
 <td style="text-align:center;">
-17.5
+56.8
 </td>
 <td style="text-align:center;">
--0.620
+-2.975
 </td>
 </tr>
 <tr>
@@ -1942,10 +2749,10 @@ Relative change
 9
 </td>
 <td style="text-align:center;">
-17.5
+57.2
 </td>
 <td style="text-align:center;">
--0.521
+-2.288
 </td>
 </tr>
 <tr>
@@ -1953,10 +2760,10 @@ Relative change
 10
 </td>
 <td style="text-align:center;">
-18.1
+58.0
 </td>
 <td style="text-align:center;">
-2.858
+-1.011
 </td>
 </tr>
 <tr>
@@ -1964,10 +2771,10 @@ Relative change
 11
 </td>
 <td style="text-align:center;">
-17.7
+57.6
 </td>
 <td style="text-align:center;">
-0.326
+-1.673
 </td>
 </tr>
 <tr>
@@ -1975,10 +2782,10 @@ Relative change
 12
 </td>
 <td style="text-align:center;">
-18.2
+58.4
 </td>
 <td style="text-align:center;">
-2.958
+-0.373
 </td>
 </tr>
 <tr>
@@ -1986,10 +2793,10 @@ Relative change
 13
 </td>
 <td style="text-align:center;">
-17.7
+57.7
 </td>
 <td style="text-align:center;">
-0.593
+-1.439
 </td>
 </tr>
 <tr>
@@ -1997,10 +2804,10 @@ Relative change
 14
 </td>
 <td style="text-align:center;">
-17.4
+57.1
 </td>
 <td style="text-align:center;">
--1.478
+-2.595
 </td>
 </tr>
 </tbody>
@@ -2008,13 +2815,13 @@ Relative change
 </div>
 <div id="lollipop-plot-for-bladder-mean-changes-relative-to-the-first-fraction-of-bladder" class="section level3">
 <h3>Lollipop plot for bladder mean changes relative to the first fraction of bladder</h3>
-<pre class="r"><code>source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
+<pre class="r"><code>source(here::here(&quot;code/Bladder_D_10_rel.R&quot;))
 
 
-ggplot(Bladder_mean_rel, aes(x=1:nrow(Bladder_mean_rel), y=y)) + 
- geom_segment( aes(x=1:nrow(Bladder_mean_rel), xend=1:nrow(Bladder_mean_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
+ggplot(Bladder_D_10_rel, aes(x=1:nrow(Bladder_D_10_rel), y=y)) + 
+ geom_segment( aes(x=1:nrow(Bladder_D_10_rel), xend=1:nrow(Bladder_D_10_rel), y=0, yend=y), color=&quot;black&quot;) + # Striche von der Hoehe y bis zu den Punkten
 geom_point() +
-scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_mean_rel)))  + # adds only specific ticks
+scale_x_continuous(breaks = c(1,5,10,nrow(Bladder_D_10_rel)))  + # adds only specific ticks
 geom_abline(intercept = 0, slope = 0, lty=1, col=&#39;orange&#39;) + # horizontale Linie ohne Steigung, da slope = 0 
 ggtitle(&quot;DIL - Relative dose changes in percent from the 1st fraction in rectum dvh&quot;) +
 xlab(&quot;Fraction&quot;) + # X-Achsen-Beschriftung
@@ -2022,67 +2829,175 @@ ylab(&quot;Relative dose changes&quot;) +
 plottheme + 
 lineplottheme</code></pre>
 <p><img src="figure/Patient15.Rmd/Lollipop%20plot%20relative%20dose%20changes%20of%20bladder%20in%20percent-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Lollipop-plot-relative-dose-changes-of-bladder-in-percent-1">
+Past versions of “Lollipop plot relative dose changes of bladder in percent-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-Lollipop-plot-relative-dose-changes-of-bladder-in-percent-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/Lollipop plot relative dose changes of bladder in percent-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="relation-bladder-mean-and-dil-mean" class="section level2">
 <h2>Relation bladder mean and DIL mean</h2>
-<pre class="r"><code>#source(here::here(&quot;code/Bladder_mean_rel.R&quot;))
+<pre class="r"><code>#source(here::here(&quot;code/Bladder_D_10_rel.R&quot;))
 
-plot(Bladder_mean_rel$relchange, DIL_mean_rel$relchange)</code></pre>
+plot(Bladder_D_10_rel$relchange, DIL_mean_rel$relchange)</code></pre>
 <p><img src="figure/Patient15.Rmd/linear%20regression%20Bladder%20DIL%20means-1.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>x_Bladder_mean_rel &lt;- Bladder_mean_rel$relchange
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-1">
+Past versions of “linear regression Bladder DIL means-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/linear regression Bladder DIL means-1.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>x_Bladder_D_10_rel &lt;- Bladder_D_10_rel$relchange
 y_DIL_mean_rel &lt;- DIL_mean_rel$relchange
 
-linearregression_Bladder_DIL &lt;- lm(y_DIL_mean_rel ~ x_Bladder_mean_rel)
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)</code></pre>
+linearregression_Bladder_DIL &lt;- lm(y_DIL_mean_rel ~ x_Bladder_D_10_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)</code></pre>
 <pre><code>
 Call:
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)
 
 Coefficients:
-       (Intercept)  x_Bladder_mean_rel  
-            0.2647              0.0298  </code></pre>
+       (Intercept)  x_Bladder_D_10_rel  
+           0.24970            -0.00407  </code></pre>
 <pre class="r"><code>fitted.values(linearregression_Bladder_DIL)</code></pre>
 <pre><code>    1     2     3     4     5     6     7     8     9    10    11    12    13 
-0.265 0.277 0.170 0.218 0.302 0.207 0.212 0.246 0.249 0.350 0.274 0.353 0.282 
+0.250 0.266 0.268 0.261 0.252 0.267 0.264 0.262 0.259 0.254 0.257 0.251 0.256 
    14 
-0.221 </code></pre>
+0.260 </code></pre>
 <pre class="r"><code>residuals(linearregression_Bladder_DIL)</code></pre>
-<pre><code>       1        2        3        4        5        6        7        8 
--0.26467  0.11843 -0.33270 -0.36604 -0.49654  0.08306 -0.11629 -0.00417 
-       9       10       11       12       13       14 
- 0.56041  0.10082  0.19109 -0.08203 -0.00984  0.61846 </code></pre>
+<pre><code>      1       2       3       4       5       6       7       8       9      10 
+-0.2497  0.1296 -0.4312 -0.4090 -0.4460  0.0229 -0.1685 -0.0198  0.5505  0.1969 
+     11      12      13      14 
+ 0.2090  0.0196  0.0169  0.5788 </code></pre>
 <pre class="r"><code>summary(linearregression_Bladder_DIL)</code></pre>
 <pre><code>
 Call:
-lm(formula = y_DIL_mean_rel ~ x_Bladder_mean_rel)
+lm(formula = y_DIL_mean_rel ~ x_Bladder_D_10_rel)
 
 Residuals:
-   Min     1Q Median     3Q    Max 
--0.496 -0.228 -0.007  0.114  0.619 
+    Min      1Q  Median      3Q     Max 
+-0.4460 -0.2294  0.0183  0.1801  0.5788 
 
 Coefficients:
-                   Estimate Std. Error t value Pr(&gt;|t|)  
-(Intercept)          0.2647     0.0901    2.94    0.012 *
-x_Bladder_mean_rel   0.0298     0.0523    0.57    0.579  
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                   Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)         0.24970    0.17018    1.47     0.17
+x_Bladder_D_10_rel -0.00407    0.06318   -0.06     0.95
 
-Residual standard error: 0.335 on 12 degrees of freedom
-Multiple R-squared:  0.0264,    Adjusted R-squared:  -0.0548 
-F-statistic: 0.325 on 1 and 12 DF,  p-value: 0.579</code></pre>
-<pre class="r"><code>plot(x_Bladder_mean_rel, y_DIL_mean_rel)
+Residual standard error: 0.339 on 12 degrees of freedom
+Multiple R-squared:  0.000346,  Adjusted R-squared:  -0.083 
+F-statistic: 0.00415 on 1 and 12 DF,  p-value: 0.95</code></pre>
+<pre class="r"><code>plot(x_Bladder_D_10_rel, y_DIL_mean_rel)
 abline(linearregression_Bladder_DIL, col = &quot;red&quot;)</code></pre>
 <p><img src="figure/Patient15.Rmd/linear%20regression%20Bladder%20DIL%20means-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-linear-regression-Bladder-DIL-means-2">
+Past versions of “linear regression Bladder DIL means-2.png”
+</button>
+</p>
+<div id="fig-no-spaces-linear-regression-Bladder-DIL-means-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/b1fb89ff784bc6966acb0a7eb1b5270476695ef7/docs/figure/Patient15.Rmd/linear regression Bladder DIL means-2.png" target="_blank">b1fb89f</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="displacement-relocation-in-cm" class="section level1">
 <h1>Displacement relocation in cm</h1>
 <pre class="r"><code>source(here::here(&quot;code/XVI.R&quot;))
 
-
 XVI_tibble_date %&gt;%
-  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;&quot;) %&gt;%
+  kable(align = c(&quot;cccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;&quot;) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
                 full_width = TRUE)</code></pre>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
@@ -2091,7 +3006,7 @@ XVI_tibble_date %&gt;%
 <thead>
 <tr>
 <th style="text-align:center;">
-Date
+Fraction
 </th>
 <th style="text-align:center;">
 Right-Left
@@ -2107,7 +3022,7 @@ Posterior-Anterior
 <tbody>
 <tr>
 <td style="text-align:center;">
-14.11.2019
+1
 </td>
 <td style="text-align:center;">
 -0.1
@@ -2121,7 +3036,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-15.11.2019
+2
 </td>
 <td style="text-align:center;">
 -0.1
@@ -2135,7 +3050,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-18.11.2019
+3
 </td>
 <td style="text-align:center;">
 0.1
@@ -2149,7 +3064,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-19.11.2019
+4
 </td>
 <td style="text-align:center;">
 -0.3
@@ -2163,7 +3078,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-20.11.2019
+5
 </td>
 <td style="text-align:center;">
 -0.1
@@ -2177,7 +3092,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-25.11.2019
+6
 </td>
 <td style="text-align:center;">
 0.3
@@ -2191,7 +3106,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-28.11.2019
+7
 </td>
 <td style="text-align:center;">
 0.2
@@ -2205,7 +3120,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-03.12.2019
+8
 </td>
 <td style="text-align:center;">
 0.3
@@ -2219,7 +3134,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-06.12.2019
+9
 </td>
 <td style="text-align:center;">
 0.1
@@ -2233,7 +3148,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-11.12.2019
+10
 </td>
 <td style="text-align:center;">
 0.2
@@ -2247,7 +3162,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-16.12.2019
+11
 </td>
 <td style="text-align:center;">
 0.2
@@ -2261,7 +3176,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-19.12.2019
+12
 </td>
 <td style="text-align:center;">
 0.1
@@ -2275,7 +3190,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-23.12.2019
+13
 </td>
 <td style="text-align:center;">
 0.0
@@ -2289,7 +3204,7 @@ Posterior-Anterior
 </tr>
 <tr>
 <td style="text-align:center;">
-30.12.2019
+14
 </td>
 <td style="text-align:center;">
 0.2
@@ -2304,7 +3219,7 @@ Posterior-Anterior
 </tbody>
 </table>
 <pre class="r"><code>XVI_tibble %&gt;%
-  kable(align = c(&quot;ccccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;&quot;) %&gt;%
+  kable(align = c(&quot;cccccccc&quot;), escape = FALSE, format =&#39;html&#39;, caption = &quot;&quot;) %&gt;%
 kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), 
     full_width = TRUE) </code></pre>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
@@ -2448,7 +3363,7 @@ Posterior-Anterior
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       Europe/Berlin               
- date     2020-08-20                  
+ date     2020-08-31                  
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version   date       lib source        
