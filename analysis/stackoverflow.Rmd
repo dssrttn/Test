@@ -33,11 +33,6 @@ source("code/cbPalette.R")
 source("code/lineplottheme.R")
 source("code/boxplottheme.R")
 
-DIL<- read_csv2('data/1/DIL.csv')
-Boost <- read_csv2('data/1/Boost.csv')
-Rectum <- read_csv2('data/1/Rectum.csv')
-Bladder <- read_csv2('data/1/Bladder.csv')
-XVI <- read_csv2('data/1/XVI.csv')
 ```
 
 ```{r, message=FALSE}
@@ -47,11 +42,11 @@ XVI <- read_csv2('data/1/XVI.csv')
 all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE)
 result <- purrr::map_df(all_folders, function(x) {
   all_Files <- list.files(x, full.names = TRUE, pattern = 'DIL|Boost')
-df1 <- read.csv2(all_Files[1])
-df2 <- read.csv2(all_Files[2])
-tibble::tibble(DIL = df1$Mittelwert, Boost = df2$Mittelwert, diltoboost = DIL/Boost)
+df1 <- read.csv2(all_Files[2])
+df2 <- read.csv2(all_Files[1])
+tibble::tibble(DIL = df1$Mittelwert, Boost = df2$Mittelwert, diltoboost = DIL/Boost, diltoboost_1 = DIL/Boost[1], dilminusboost =  (DIL-Boost)/(DIL[1]-Boost[1]))
 }, .id = "id")
-result
+#result
 
 
 
