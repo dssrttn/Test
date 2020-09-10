@@ -426,7 +426,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-08-31
+<strong>Last updated:</strong> 2020-09-10
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -517,16 +517,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree539dfbfdaf64eab76d3e3adb0d45ca4a3a0dd90dtargetblank539dfbfa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/539dfbfdaf64eab76d3e3adb0d45ca4a3a0dd90d" target="_blank">539dfbf</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree01b7630c4ef69599b49d11300ec1b30340f2f04ctargetblank01b7630a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/dssrttn/Test/tree/01b7630c4ef69599b49d11300ec1b30340f2f04c" target="_blank">01b7630</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree539dfbfdaf64eab76d3e3adb0d45ca4a3a0dd90dtargetblank539dfbfa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdssrttnTesttree01b7630c4ef69599b49d11300ec1b30340f2f04ctargetblank01b7630a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/539dfbfdaf64eab76d3e3adb0d45ca4a3a0dd90d" target="_blank">539dfbf</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/dssrttn/Test/tree/01b7630c4ef69599b49d11300ec1b30340f2f04c" target="_blank">01b7630</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -543,7 +543,6 @@ Untracked files:
     Untracked:  Code commit to github
     Untracked:  README.html
     Untracked:  analysis/DILtoBoost.Rmd
-    Untracked:  analysis/Patient12.Rmd
     Untracked:  analysis/Patientencharakteristika.Rmd
     Untracked:  analysis/Patientloop.Rmd
     Untracked:  analysis/alphabeta.Rmd
@@ -590,6 +589,7 @@ Unstaged changes:
     Modified:   _workflowr.yml
     Modified:   analysis/DILminusBoost.Rmd
     Modified:   analysis/Rechnungen.Rmd
+    Deleted:    analysis/allesineinem.Rmd
     Modified:   analysis/dataframefromall.Rmd
     Modified:   analysis/dilundboost.Rmd
     Modified:   analysis/kable.Rmd
@@ -635,6 +635,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dssrttn/Test/blob/01b7630c4ef69599b49d11300ec1b30340f2f04c/analysis/PatientX.Rmd" target="_blank">01b7630</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-09-10
+</td>
+<td>
+zwischendurch
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dssrttn/Test/8210d4a3e3a8830c77fb1211069ba1c5fc3fabec/docs/PatientX.html" target="_blank">8210d4a</a>
+</td>
+<td>
+Mein Vorname
+</td>
+<td>
+2020-08-31
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1487,11 +1521,6 @@ XVI &lt;- read_csv2(&#39;data/1/XVI.csv&#39;)</code></pre>
 <pre class="r"><code>Boost_mean_boxplot &lt;- Boost
 DIL_mean_boxplot &lt;- DIL
 
-
-
-
-
-
 #data = tibble(File = files) %&gt;%
     #extract(File, &quot;Site&quot;, &quot;([A-Z]{2}-[A-Za-z0-9]{3})&quot;, remove = FALSE) %&gt;%
     #mutate(Data = lapply(File, read_csv)) %&gt;%
@@ -1831,229 +1860,21 @@ DILtoBoost_1
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>DIL_n_Boost_n_mean_boxplot &lt;- describe(DIL_n_Boost_n_mean_boxplot)
+<pre class="r"><code>#Tabelle mit psych-Package: 
+
+#DIL_n_Boost_n_mean_boxplot &lt;- describe(DIL_n_Boost_n_mean_boxplot)
 
 
-DIL_n_Boost_n_mean_boxplot &lt;- DIL_n_Boost_n_mean_boxplot %&gt;% rename(&#39;Numbers&#39; = n, Mean = mean, &#39;Standard deviation&#39; = sd, Median = median, &#39;Standard errors&#39; = se, Minimum = min, Maximum = max, Range = range)
+#DIL_n_Boost_n_mean_boxplot &lt;- DIL_n_Boost_n_mean_boxplot %&gt;% rename(&#39;Numbers&#39; = n, Mean = mean, #&#39;Standard deviation&#39; = sd, Median = median, &#39;Standard errors&#39; = se, Minimum = min, Maximum = max, #Range = range)
 
-DIL_n_Boost_n_mean_boxplot &lt;- DIL_n_Boost_n_mean_boxplot %&gt;%
-  select(Numbers,   Mean,   &#39;Standard deviation&#39;,   Median, Minimum,    Maximum, Range, &#39;Standard errors&#39;)
+#DIL_n_Boost_n_mean_boxplot &lt;- DIL_n_Boost_n_mean_boxplot %&gt;%
+ # select(Numbers,   Mean,   &#39;Standard deviation&#39;,   Median, Minimum,    Maximum, Range, &#39;Standard #errors&#39;)
 
 
-DIL_n_Boost_n_mean_boxplot %&gt;%
- knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, #col.names = c(&quot;DIL to boost relative relations&quot;, #&quot;Numbers&quot;)
-              ) %&gt;%
-kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-Numbers
-</th>
-<th style="text-align:right;">
-Mean
-</th>
-<th style="text-align:right;">
-Standard deviation
-</th>
-<th style="text-align:right;">
-Median
-</th>
-<th style="text-align:right;">
-Minimum
-</th>
-<th style="text-align:right;">
-Maximum
-</th>
-<th style="text-align:right;">
-Range
-</th>
-<th style="text-align:right;">
-Standard errors
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Patient
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-7.500
-</td>
-<td style="text-align:right;">
-4.183
-</td>
-<td style="text-align:right;">
-7.500
-</td>
-<td style="text-align:right;">
-1.000
-</td>
-<td style="text-align:right;">
-14.00
-</td>
-<td style="text-align:right;">
-13.000
-</td>
-<td style="text-align:right;">
-1.118
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-DIL_Mean
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-76.882
-</td>
-<td style="text-align:right;">
-0.267
-</td>
-<td style="text-align:right;">
-76.864
-</td>
-<td style="text-align:right;">
-76.414
-</td>
-<td style="text-align:right;">
-77.25
-</td>
-<td style="text-align:right;">
-0.838
-</td>
-<td style="text-align:right;">
-0.071
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Boost_Mean
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-75.957
-</td>
-<td style="text-align:right;">
-0.291
-</td>
-<td style="text-align:right;">
-75.930
-</td>
-<td style="text-align:right;">
-75.521
-</td>
-<td style="text-align:right;">
-76.37
-</td>
-<td style="text-align:right;">
-0.852
-</td>
-<td style="text-align:right;">
-0.078
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-DILtoBoost_n
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-1.012
-</td>
-<td style="text-align:right;">
-0.002
-</td>
-<td style="text-align:right;">
-1.012
-</td>
-<td style="text-align:right;">
-1.011
-</td>
-<td style="text-align:right;">
-1.02
-</td>
-<td style="text-align:right;">
-0.007
-</td>
-<td style="text-align:right;">
-0.001
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-dilminusboost
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-0.993
-</td>
-<td style="text-align:right;">
-0.151
-</td>
-<td style="text-align:right;">
-0.958
-</td>
-<td style="text-align:right;">
-0.864
-</td>
-<td style="text-align:right;">
-1.47
-</td>
-<td style="text-align:right;">
-0.604
-</td>
-<td style="text-align:right;">
-0.040
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-DILtoBoost_1
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-1.008
-</td>
-<td style="text-align:right;">
-0.003
-</td>
-<td style="text-align:right;">
-1.008
-</td>
-<td style="text-align:right;">
-1.002
-</td>
-<td style="text-align:right;">
-1.01
-</td>
-<td style="text-align:right;">
-0.011
-</td>
-<td style="text-align:right;">
-0.001
-</td>
-</tr>
-</tbody>
-</table>
+#DIL_n_Boost_n_mean_boxplot %&gt;%
+ #knitr::kable(format =&#39;html&#39;, caption = &quot;&quot;, #col.names = c(&quot;DIL to boost relative relations&quot;, #&quot;Numbers&quot;)
+         #     ) %&gt;%
+#kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;), full_width = FALSE) </code></pre>
 <div id="dil-changes-relative-to-the-first-fraction-of-dil" class="section level3">
 <h3>DIL changes relative to the first fraction of DIL</h3>
 <pre class="r"><code>source(here::here(&quot;code/DILrelchange.R&quot;))
@@ -4562,7 +4383,7 @@ Posterior-Anterior
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
  tz       Europe/Berlin               
- date     2020-08-31                  
+ date     2020-09-10                  
 
 ─ Packages ───────────────────────────────────────────────────────────────────
  package     * version   date       lib source        
