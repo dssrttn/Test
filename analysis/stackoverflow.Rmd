@@ -155,8 +155,10 @@ boxplot(result$diltoboost_1,
 
 
 
-```{r, message=FALSE}
+```{r diltoboost, message=FALSE}
 
+
+result$id <- factor(result$id, levels=c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26))
 
 boxplot(result$diltoboost ~ result$id) 
 
@@ -168,6 +170,25 @@ boxplot(result$dilminusboost ~ result$id)
 
 
 ```
+
+
+par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(2, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
+boxplot(result$diltoboost ~ result$id,
+ylab= "DIL[n] to Boost[n]", #y-Achse-Beschriftung
+        #yaxt="n", #suppresses y-axis. Brauch ich das?
+        col="transparent", #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        #ylim = c(0, 1),
+        ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
+        # , xpd = TRUE
+        #labels = FALSE
+)
 
 
 
