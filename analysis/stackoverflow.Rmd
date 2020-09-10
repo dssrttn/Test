@@ -1,0 +1,88 @@
+---
+title: "data from all"
+author: "dssrttn"
+date: "2020-07-10"
+output: 
+  workflowr::wflow_html:
+    code_folding: hide
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+
+knitr::opts_chunk$set(dev=c('png', 'pdf'), width=7, height=5)
+
+```
+
+
+```{r DIL mean for boxplot, message=FALSE, warning=FALSE}
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(purrr)
+library(knitr)
+library(kableExtra)
+library(psych)
+library(broom)
+library(here)
+library(data.table)
+library(jtools) # for linear regression output. not used so far
+options(digits=3) # zeigt nur drei Zahlenwerte an
+source("code/plottheme.R")
+source("code/cbPalette.R")
+source("code/lineplottheme.R")
+source("code/boxplottheme.R")
+
+DIL<- read_csv2('data/1/DIL.csv')
+Boost <- read_csv2('data/1/Boost.csv')
+Rectum <- read_csv2('data/1/Rectum.csv')
+Bladder <- read_csv2('data/1/Bladder.csv')
+XVI <- read_csv2('data/1/XVI.csv')
+```
+
+```{r, message=FALSE}
+
+
+
+all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE)
+result <- purrr::map_df(all_folders, function(x) {
+  all_Files <- list.files(x, full.names = TRUE, pattern = 'DIL|Boost')
+df1 <- read.csv2(all_Files[1])
+df2 <- read.csv2(all_Files[2])
+tibble::tibble(DIL = df1$Mittelwert, Boost = df2$Mittelwert, diltoboost = DIL/Boost)
+}, .id = "id")
+result
+
+
+
+result %>%
+ knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+              ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+``` 
+
+
+df3 <- read.csv2(all_Files[3])
+df4 <- read.csv2(all_Files[4])
+df5 <- read.csv2(all_Files[5])
+df6 <- read.csv2(all_Files[6])
+df7 <- read.csv2(all_Files[7])
+df8 <- read.csv2(all_Files[8])
+df9 <- read.csv2(all_Files[9])
+df10 <- read.csv2(all_Files[10])
+df11 <- read.csv2(all_Files[11])
+#df12 <- read.csv2(all_Files[12])
+df13 <- read.csv2(all_Files[13])
+df14 <- read.csv2(all_Files[14])
+df15 <- read.csv2(all_Files[15])
+df16 <- read.csv2(all_Files[16])
+df17 <- read.csv2(all_Files[17])
+df18 <- read.csv2(all_Files[18])
+df19 <- read.csv2(all_Files[19])
+df20 <- read.csv2(all_Files[20])
+df21 <- read.csv2(all_Files[21])
+df22 <- read.csv2(all_Files[22])
+df23 <- read.csv2(all_Files[23])
+df24 <- read.csv2(all_Files[24])
+df25 <- read.csv2(all_Files[25])
+df26 <- read.csv2(all_Files[26])
