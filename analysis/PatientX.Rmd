@@ -51,11 +51,6 @@ XVI <- read_csv2('data/1/XVI.csv')
 Boost_mean_boxplot <- Boost
 DIL_mean_boxplot <- DIL
 
-
-
-
-
-
 #data = tibble(File = files) %>%
     #extract(File, "Site", "([A-Z]{2}-[A-Za-z0-9]{3})", remove = FALSE) %>%
     #mutate(Data = lapply(File, read_csv)) %>%
@@ -88,20 +83,21 @@ DIL_n_Boost_n_mean_boxplot %>%
               ) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
+#Tabelle mit psych-Package: 
 
-DIL_n_Boost_n_mean_boxplot <- describe(DIL_n_Boost_n_mean_boxplot)
-
-
-DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>% rename('Numbers' = n, Mean = mean, 'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, Range = range)
-
-DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>%
-  select(Numbers,   Mean,   'Standard deviation',   Median, Minimum,    Maximum, Range, 'Standard errors')
+#DIL_n_Boost_n_mean_boxplot <- describe(DIL_n_Boost_n_mean_boxplot)
 
 
-DIL_n_Boost_n_mean_boxplot %>%
- knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
-              ) %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+#DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>% rename('Numbers' = n, Mean = mean, #'Standard deviation' = sd, Median = median, 'Standard errors' = se, Minimum = min, Maximum = max, #Range = range)
+
+#DIL_n_Boost_n_mean_boxplot <- DIL_n_Boost_n_mean_boxplot %>%
+ # select(Numbers,   Mean,   'Standard deviation',   Median, Minimum,    Maximum, Range, 'Standard #errors')
+
+
+#DIL_n_Boost_n_mean_boxplot %>%
+ #knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+         #     ) %>%
+#kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 ```
 
 
