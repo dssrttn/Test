@@ -55,6 +55,12 @@ result %>%
               ) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
+countdiltoboost <- result
+
+countdiltoboost_1 <- result
+
+countdilminusboost <- result
+
 
 
 ```
@@ -86,6 +92,38 @@ boxplot(result$diltoboost,
         # , xpd = TRUE
         #labels = FALSE
 )
+
+
+
+countdiltoboost <- cut(result$diltoboost, c(-Inf, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, 1.04, 1.05, Inf), labels=c('<95%', '95-96%', '96-97%', '97-98%', '98-99%', '99-100%', '100-101%', '101-102%', '102-103%', '103-104%', '104-105%', '>105%'))  # benutzt dplyr, 7 Intervalle
+
+
+countdiltoboost <- as.data.frame(countdiltoboost) %>%
+  group_by(countdiltoboost, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+  dplyr::summarise(Numbers = n()) 
+
+
+countdiltoboost %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL_n to Boost_n relation", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+
+countdiltoboost_2percent <- cut(result$diltoboost, c(-Inf, 0.98, 1.02, Inf), labels=c('<98%', '98-102%', '>102%'))  # benutzt dplyr, 7 Intervalle
+
+countdiltoboost_2percent <- as.data.frame(countdiltoboost_2percent) %>%
+  group_by(countdiltoboost_2percent, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+  dplyr::summarise(Numbers = n())  #%>% # %>% #=n())
+#mutate(Nummers = rowSums(.[-1]))
+
+
+countdiltoboost_2percent %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+
+
+
+
 
 ```
 
@@ -119,6 +157,36 @@ boxplot(result$dilminusboost,
 )
 
 
+
+
+countdilminusboost<- cut(result$dilminusboost, c(-Inf, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, 1.04, 1.05, Inf), labels=c('<95%', '95-96%', '96-97%', '97-98%', '98-99%', '99-100%', '100-101%', '101-102%', '102-103%', '103-104%', '104-105%', '>105%'))  # benutzt dplyr, 7 Intervalle
+
+countdilminusboost <- as.data.frame(countdilminusboost) %>%
+  group_by(countdilminusboost, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+  dplyr::summarise(Numbers = n()) 
+
+countdilminusboost %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL minus Boost relation", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+
+
+
+countdilminusboost2percent <- cut(result$dilminusboost, c(-Inf, 0.98, 1.02, Inf), labels=c('<98%', '98-102%', '>102%'))  # benutzt dplyr, 7 Intervalle
+
+countdilminusboost2percent <- as.data.frame(countdilminusboost2percent) %>%
+  group_by(countdilminusboost2percent, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+  dplyr::summarise(Numbers = n())  #%>% # %>% #=n())
+#mutate(Nummers = rowSums(.[-1]))
+
+
+countdilminusboost2percent %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL minus boost", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+
+
+
 ```
 
 
@@ -150,6 +218,39 @@ boxplot(result$diltoboost_1,
         # , xpd = TRUE
         #labels = FALSE
 )
+
+
+
+countdiltoboost_1 <- cut(result$diltoboost_1, c(-Inf, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00, 1.01, 1.02, 1.03, 1.04, 1.05, Inf), labels=c('<95%', '95-96%', '96-97%', '97-98%', '98-99%', '99-100%', '100-101%', '101-102%', '102-103%', '103-104%', '104-105%', '>105%'))  # benutzt dplyr, 7 Intervalle
+
+
+countdiltoboost_1 <- as.data.frame(countdiltoboost_1) %>%
+  group_by(countdiltoboost_1, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+  dplyr::summarise(Numbers = n()) 
+
+
+countdiltoboost_1 %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL_n to Boost_1 relation", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+
+
+
+countdiltoboost_1_2percent <- cut(result$diltoboost_1, c(-Inf, 0.98, 1.02, Inf), labels=c('<98%', '98-102%', '>102%'))  # benutzt dplyr, 7 Intervalle
+
+countdiltoboost_1_2percent <- as.data.frame(countdiltoboost_1_2percent) %>%
+  group_by(countdiltoboost_1_2percent, .drop = FALSE) %>% #.drop = FALSE ansonsten Fehlermeldung, weil  empty categories are dropped by default. You can change this behavior by adding .drop = FALSE
+  dplyr::summarise(Numbers = n())  #%>% # %>% #=n())
+#mutate(Nummers = rowSums(.[-1]))
+
+
+countdiltoboost_1_2percent %>%
+  knitr::kable(format ='html', caption = "", col.names = c("DIL to boost_1", "Numbers")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+
+
+
 
 ```
 
