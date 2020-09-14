@@ -306,19 +306,20 @@ ylab= "DIL[n] to Boost[n]", #y-Achse-Beschriftung
 
 resulttable <- result
 
-resulttable_desc_stat <- result
-resulttable_desc_stat <- metan::desc_stat(result, stats = "all")
+resulttable_desc_stat <-resulttable <- resulttable[ , -c(1:3)] # removing 1st to 3rd column in dataframe "resulttable"
+
+resulttable_desc_stat <- metan::desc_stat(resulttable, stats = c("n, min, median, mean, max, range, iqr, q2.5, q25, q75, q97.5, ci, sd.amo")) 
+resulttable_desc_stat <- resulttable_desc_stat  %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd.amo, Median = median, Minimum = min, 'Interquartile range' = iqr, 'Percentile 2.5' = q2.5, Quartile = q25, 'Third quartile' = q75, 'Percentile 97.5' = q97.5, Maximum = max, Range = range, '95 percent confidence interval of the mean' = ci)
+
+                                          
+write_csv(resulttable_desc_stat,"~/Documents/RStudio/Test/Test/output/resulttable_desc_stat.csv")
+
 
 resulttable_desc_stat %>%
   kable(align = c("cccccccc"),'html') %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
 
 
-resulttable <- describe(resulttable)
 
-resulttable %>%
-  kable(align = c("cccccccc"),'html') %>%
-kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
 ```
-
 
