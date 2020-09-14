@@ -26,6 +26,7 @@ library(psych)
 library(broom)
 library(here)
 library(data.table)
+library(metan)
 library(jtools) # for linear regression output. not used so far
 options(digits=3) # zeigt nur drei Zahlenwerte an
 source("code/plottheme.R")
@@ -62,6 +63,7 @@ countdiltoboost_1 <- result
 countdilminusboost <- result
 
 
+write_csv(result,"~/Documents/RStudio/Test/Test/output/result.csv")
 
 ```
 
@@ -108,6 +110,9 @@ countdiltoboost %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 
+write_csv(countdiltoboost,"~/Documents/RStudio/Test/Test/output/countdiltoboost.csv")
+
+
 countdiltoboost_2percent <- cut(result$diltoboost, c(-Inf, 0.98, 1.02, Inf), labels=c('<98%', '98-102%', '>102%'))  # benutzt dplyr, 7 Intervalle
 
 countdiltoboost_2percent <- as.data.frame(countdiltoboost_2percent) %>%
@@ -122,6 +127,7 @@ countdiltoboost_2percent %>%
 
 
 
+write_csv(countdiltoboost_2percent,"~/Documents/RStudio/Test/Test/output/countdiltoboost_2percent.csv")
 
 
 
@@ -170,7 +176,7 @@ countdilminusboost %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 
-
+write_csv(countdilminusboost,"~/Documents/RStudio/Test/Test/output/countdilminusboost.csv")
 
 countdilminusboost2percent <- cut(result$dilminusboost, c(-Inf, 0.98, 1.02, Inf), labels=c('<98%', '98-102%', '>102%'))  # benutzt dplyr, 7 Intervalle
 
@@ -185,6 +191,7 @@ countdilminusboost2percent %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 
+write_csv(countdilminusboost2percent,"~/Documents/RStudio/Test/Test/output/countdilminusboost2percent.csv")
 
 
 ```
@@ -234,6 +241,7 @@ countdiltoboost_1 %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 
+write_csv(countdiltoboost_1,"~/Documents/RStudio/Test/Test/output/countdiltoboost_1.csv")
 
 
 countdiltoboost_1_2percent <- cut(result$diltoboost_1, c(-Inf, 0.98, 1.02, Inf), labels=c('<98%', '98-102%', '>102%'))  # benutzt dplyr, 7 Intervalle
@@ -250,7 +258,7 @@ countdiltoboost_1_2percent %>%
 
 
 
-
+write_csv(countdiltoboost_1_2percent,"~/Documents/RStudio/Test/Test/output/countdiltoboost_1_2percent.csv")
 
 ```
 
@@ -292,15 +300,25 @@ ylab= "DIL[n] to Boost[n]", #y-Achse-Beschriftung
 )
 
 
-
+## Descriptive statistics
 ´
 ```{r descriptive statistics, message=FALSE}
 
-resulttable <- result 
+resulttable <- result
+
+resulttable_desc_stat <- result
+resulttable_desc_stat <- metan::desc_stat(result, stats = "all")
+
+resulttable_desc_stat %>%
+  kable(align = c("cccccccc"),'html') %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
+
+
 resulttable <- describe(resulttable)
 
 resulttable %>%
   kable(align = c("cccccccc"),'html') %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
 ```
+
 
