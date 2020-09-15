@@ -1,7 +1,7 @@
 ---
-title: "data from all"
+title: "All patients"
 author: "dssrttn"
-date: "2020-07-10"
+date: "2020-09-15"
 output: 
   workflowr::wflow_html:
     code_folding: hide
@@ -36,6 +36,9 @@ source("code/boxplottheme.R")
 
 ```
 
+
+# DIL and boost relations
+## DIL and boost changes during the treatment period
 ```{r, message=FALSE}
 
 
@@ -213,7 +216,7 @@ par(family="serif") # Schriftart
 par(mar = c(2, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
 par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
 boxplot(result$diltoboost_1,
-        ylab= "DIL[n] to Boost[1]", #y-Achse-Beschriftung
+        ylab= "Tolle Beschrifung", #y-Achse-Beschriftung DIL[n] to Boost[1]
         #yaxt="n", #suppresses y-axis. Brauch ich das?
         col="transparent", #Farbe des Boxplots
         las = 2, # horizontale Markierung der Tick-Beschriftungen
@@ -300,7 +303,7 @@ ylab= "DIL[n] to Boost[n]", #y-Achse-Beschriftung
 )
 
 
-## Descriptive statistics
+## Descriptive statistics DIL-boost relations 
 ´
 ```{r descriptive statistics, message=FALSE}
 
@@ -323,3 +326,175 @@ kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
 
 ```
 
+# Rectum
+
+```{r Rectum, message=FALSE}
+
+
+
+all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE)
+rectumresult <- purrr::map_df(all_folders, function(x) {
+  all_Files <- list.files(x, full.names = TRUE, pattern = 'Rectum')
+df1 <- read.csv2(all_Files[1])
+#df2 <- read.csv2(all_Files[1])
+tibble::tibble(rectum = df1$Mittelwert, rectumtorectum_1 = rectum/rectum[1])
+}, .id = "id")
+#result
+
+
+rectumresult %>%
+ knitr::kable(format ='html', caption = "", #col.names = c("Rectum to rectum relations", #"Numbers")
+              ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+rectumresulttable <- rectumresult
+
+
+```
+
+
+## Descriptive statistics rectum-rectum[1] relations 
+
+
+```{r Descriptive statistics rectum-rectum[1], message=FALSE}
+
+#rectumresulttable_desc_stat <-rectumresulttable <- rectumresulttable[ , -c(1:3)] # removing 1st to 3rd column in dataframe "resulttable"
+
+rectumresulttable_desc_stat <- metan::desc_stat(rectumresulttable, stats = c("n, min, median, mean, max, range, iqr, q2.5, q25, q75, q97.5, ci, sd.amo")) 
+rectumresulttable_desc_stat <- rectumresulttable_desc_stat  %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd.amo, Median = median, Minimum = min, 'Interquartile range' = iqr, 'Percentile 2.5' = q2.5, Quartile = q25, 'Third quartile' = q75, 'Percentile 97.5' = q97.5, Maximum = max, Range = range, '95 percent confidence interval of the mean' = ci)
+
+                                          
+write_csv(rectumresulttable_desc_stat,"~/Documents/RStudio/Test/Test/output/rectumresulttable_desc_stat.csv")
+
+
+rectumresulttable_desc_stat %>%
+  kable(align = c("cccccccc"),'html') %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
+
+maxrectum <-max(rectumresult$rectumtorectum_1) 
+minrectum <-min(rectumresult$rectumtorectum_1)
+
+par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(2, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
+boxplot(rectumresult$rectumtorectum_1,
+        ylab= "Rectum[n] to Rectum[1]", #y-Achse-Beschriftung
+        #yaxt="n", #suppresses y-axis. Brauch ich das?
+        col="transparent", #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        #ylim = c(0, 1),
+        ylim=c(min(0.995*minrectum), max(1.005*maxrectum)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
+        # , xpd = TRUE
+        #labels = FALSE
+)
+
+
+
+```
+
+
+par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(2, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
+boxplot(rectumresult$rectumtorectum_1 ~ result$id,
+        ylab= "Rectum[n] to Rectum[1]", #y-Achse-Beschriftung
+        #yaxt="n", #suppresses y-axis. Brauch ich das?
+        col="transparent", #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        #ylim = c(0, 1),
+        ylim=c(min(0.995*min), max(1.005*max)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
+        # , xpd = TRUE
+        #labels = FALSE
+)
+
+
+# Bladder
+
+```{r Bladder, message=FALSE}
+
+
+
+all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE)
+bladderresult <- purrr::map_df(all_folders, function(x) {
+  all_Files <- list.files(x, full.names = TRUE, pattern = 'Bladder')
+  df1 <- read.csv2(all_Files[1])
+  #df2 <- read.csv2(all_Files[1])
+  tibble::tibble(bladder = df1$Mittelwert, bladdertobladder_1 = bladder/bladder[1])
+}, .id = "id")
+#result
+
+
+bladderresult %>%
+  knitr::kable(format ='html', caption = "", #col.names = c("bladder to bladder relations", #"Numbers")
+  ) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+bladderresulttable <- bladderresult
+
+```
+
+## Descriptive statistics bladder-bladder[1] relations 
+
+
+```{r Descriptive statistics bladder-bladder[1], message=FALSE}
+
+#bladderresulttable_desc_stat <-bladderresulttable <- bladderresulttable[ , -c(1:3)] # removing 1st to 3rd column in dataframe "resulttable"
+
+bladderresulttable_desc_stat <- metan::desc_stat(bladderresulttable, stats = c("n, min, median, mean, max, range, iqr, q2.5, q25, q75, q97.5, ci, sd.amo")) 
+bladderresulttable_desc_stat <- bladderresulttable_desc_stat  %>% rename(Numbers = n, Mean = mean, 'Standard deviation' = sd.amo, Median = median, Minimum = min, 'Interquartile range' = iqr, 'Percentile 2.5' = q2.5, Quartile = q25, 'Third quartile' = q75, 'Percentile 97.5' = q97.5, Maximum = max, Range = range, '95 percent confidence interval of the mean' = ci)
+
+
+write_csv(bladderresulttable_desc_stat,"~/Documents/RStudio/Test/Test/output/bladderresulttable_desc_stat.csv")
+
+
+bladderresulttable_desc_stat %>%
+  kable(align = c("cccccccc"),'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) # %>%
+
+
+
+maxbladder <-max(bladderresult$bladdertobladder_1) 
+minbladder <-min(bladderresult$bladdertobladder_1)
+
+par(bty="n") # keinen Rahmen
+par(family="serif") # Schriftart
+par(mar = c(2, 6.5, 2, 2)) # Abstände um den Plot. 2. Position y-Achse
+par(mgp=c(5,1,0)) # mpg: Abstand Label zu Achse
+boxplot(bladderresult$bladdertobladder_1,
+        ylab= "bladder[n] to bladder[1]", #y-Achse-Beschriftung
+        #yaxt="n", #suppresses y-axis. Brauch ich das?
+        col="transparent", #Farbe des Boxplots
+        las = 2, # horizontale Markierung der Tick-Beschriftungen
+        #ylim = c(0, 1),
+        ylim=c(min(0.995*minbladder), max(1.005*maxbladder)), # y-Achse range
+        cex.lab = 2, # Größe Label-Beschriftung
+        cex.axis = 1.5, # Größe Achsenbeschriftungen
+        mgp=c(2.5,0.2,0) # mpg: Abstand Label zu Achse
+        # , xpd = TRUE
+        #labels = FALSE
+)
+
+
+
+
+```
+
+
+
+
+
+#countdiltoboost <- result
+#
+#countdiltoboost_1 <- result
+##countdilminusboost <- result
+
+
+write_csv(result,"~/Documents/RStudio/Test/Test/output/rectumresult.csv")
