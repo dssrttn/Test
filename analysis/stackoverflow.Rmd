@@ -27,6 +27,7 @@ library(broom)
 library(here)
 library(data.table)
 library(metan)
+library(gtools)
 library(jtools) # for linear regression output. not used so far
 options(digits=3) # zeigt nur drei Zahlenwerte an
 source("code/plottheme.R")
@@ -44,7 +45,8 @@ source("code/boxplottheme.R")
 
 
 all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE)
-result <- purrr::map_df(all_folders, function(x) {
+all_sort <- gtools::mixedsort(all_folders)
+result <- purrr::map_df(all_sort, function(x) {
   all_Files <- list.files(x, full.names = TRUE, pattern = 'DIL|Boost')
 df1 <- read.csv2(all_Files[2])
 df2 <- read.csv2(all_Files[1])
