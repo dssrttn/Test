@@ -37,12 +37,34 @@ source("code/boxplottheme.R")
 
 ```
 
+# XVI
+## XVI-Daten
 
-# DIL and boost relations
-## DIL and boost changes during the treatment period
-```{r, message=FALSE}
+```{r XVI, message=FALSE}
+#all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE) 
+files <- list.files('data/stack/', pattern = 'XVI', full.names = TRUE)
+files
+full <- map_df(files, read.csv2)
+dplyr::glimpse(full)
+full
+```
+
+xvi_all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE)
+xvi_all_sort <- gtools::mixedsort(xvi_all_folders)
+XVI_all <- purrr::map_df(xvi_all_sort, function(x) {
+  XVI_folders <- list.files(x, full.names = TRUE, pattern = 'XVI') 
+  XVI <- read.csv2(XVI_folders)
+#  map_df(str_remove, pattern = "-") %>% 
+   # map_df(as.numeric)
+  #tibble::tibble(Reli = XVI$'Re-li', #Infsup = XVI$Inf-sup, 
+           #      Postant = XVI$'Post-ant')
+}, .id = "id")
 
 
+
+
+
+#  XVI_folders <-   XVI_folders %>%   rename('Re-li' = 'Reli', 'Inf-sup' = 'Infsup', 'Post-ant' = #'Postant')
 
 all_folders <- list.dirs('data/stack', recursive = FALSE, full.names = TRUE)
 all_sort <- gtools::mixedsort(all_folders)
@@ -52,11 +74,54 @@ df1 <- read.csv2(all_Files[2])
 df2 <- read.csv2(all_Files[1])
 tibble::tibble(DIL = df1$Mittelwert, Boost = df2$Mittelwert, diltoboost = DIL/Boost, diltoboost_1 = DIL/Boost[1], dilminusboost =  (DIL-Boost)/(DIL[1]-Boost[1]))
 }, .id = "id") # dies funktioniert!
-#}, .id = 'folder')
-#}, .id = "source")
 
 
-#}, .id = "id")#result
+  
+XVI <- read.csv2(XVI_folders)
+tibble::tibble(Reli = XVI$Reli, Infsup = XVI$Infsup, Postant = XVI$Postant)
+}, .id = "id") # dies funktioniert!
+
+  
+
+
+lapply(lst, function(item) {
+    colnames(item)[2] <- 'reli'   # This would be 9 if you wanted the 9th column
+    colnames(item)[3] <- 'infsup' 
+    colnames(item)[4] <- 'antpos' 
+    return(item)
+    })
+  
+
+
+
+
+XVI_allfolders %>%
+ knitr::kable(format ='html', caption = "", #col.names = c("DIL to boost relative relations", #"Numbers")
+              ) %>%
+kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
+
+
+
+
+write_csv(result,"~/Documents/RStudio/Test/Test/output/XVI_allfolders.csv")
+
+
+
+# DIL and boost relations
+## DIL and boost changes during the treatment period
+```{r, message=FALSE}
+
+
+
+all_folders <- list.dirs('data/stack/', recursive = FALSE, full.names = TRUE)
+all_sort <- gtools::mixedsort(all_folders)
+result <- purrr::map_df(all_sort, function(x) {
+  all_Files <- list.files(x, full.names = TRUE, pattern = 'DIL|Boost')
+df1 <- read.csv2(all_Files[2])
+df2 <- read.csv2(all_Files[1])
+tibble::tibble(DIL = df1$Mittelwert, Boost = df2$Mittelwert, diltoboost = DIL/Boost, diltoboost_1 = DIL/Boost[1], dilminusboost =  (DIL-Boost)/(DIL[1]-Boost[1]))
+}, .id = "id") # dies funktioniert!
+
 
 
 
@@ -65,11 +130,6 @@ result %>%
               ) %>%
 kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE) 
 
-countdiltoboost <- result
-
-countdiltoboost_1 <- result
-
-countdilminusboost <- result
 
 
 write_csv(result,"~/Documents/RStudio/Test/Test/output/result.csv")
@@ -433,7 +493,7 @@ bladderresult <- purrr::map_df(all_folders, function(x) {
   all_Files <- list.files(x, full.names = TRUE, pattern = 'Bladder')
   df1 <- read.csv2(all_Files[1])
   #df2 <- read.csv2(all_Files[1])
-  tibble::tibble(bladder = df1$Mittelwert, bladdertobladder_1 = bladder/bladder[1])
+  tibble::tibble(bladder = df1$D_10, bladdertobladder_1 = bladder/bladder[1])
 }, .id = "id")
 #result
 
